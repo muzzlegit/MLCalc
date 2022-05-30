@@ -1,0 +1,2037 @@
+{
+  "undead": {
+    "porter": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "94px"
+      },
+      "unitIcon": "-280px -1px",
+      "level1": {
+        "unit": "porter",
+        "level": 1,
+        "name": "Молодой гуль",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 8,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -1px"
+      },
+      "level2": {
+        "unit": "porter",
+        "level": 2,
+        "name": "Опытный гуль",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 12,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -84px"
+      },
+      "level3": {
+        "unit": "porter",
+        "level": 3,
+        "name": "Быстрый гуль",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 15,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px",
+        "amount": "0"
+      },
+      "level4": {
+        "unit": "porter",
+        "level": 4,
+        "name": "Командир обоза",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 20,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px"
+      }
+    },
+    "swordsman": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "168px"
+      },
+      "unitIcon": "-280px -25px",
+      "level1": {
+        "unit": "swordsman",
+        "level": 1,
+        "name": "Мертвец",
+        "attackMin": 2,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 10,
+        "position": "-70px -1px"
+      },
+      "level2": {
+        "unit": "swordsman",
+        "level": 2,
+        "name": "Зомби",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 15,
+        "position": "-70px -84px"
+      },
+      "level3": {
+        "unit": "swordsman",
+        "level": 3,
+        "name": "Командир-зомби",
+        "attackMin": 6,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 25,
+        "position": "-70px -167px"
+      },
+      "level4": {
+        "unit": "swordsman",
+        "level": 4,
+        "name": "Бессмертный пехотинец",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 30,
+        "position": "-70px -167px"
+      }
+    },
+    "cavalier": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "242px"
+      },
+      "unitIcon": "-280px -49px",
+      "level1": {
+        "unit": "cavalier",
+        "level": 1,
+        "name": "Темный всадник",
+        "attackMin": 3,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 15,
+        "position": "-139px -1px"
+      },
+      "level2": {
+        "unit": "cavalier",
+        "level": 2,
+        "name": "Черный рыцарь",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 25,
+        "position": "-139px -84px"
+      },
+      "level3": {
+        "unit": "cavalier",
+        "level": 3,
+        "name": "Рыцарь тьмы",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 35,
+        "position": "-139px -167px"
+      },
+      "level4": {
+        "unit": "cavalier",
+        "level": 4,
+        "name": "Рыцарь смерти",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-139px -167px"
+      }
+    },
+    "flying": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "316px"
+      },
+      "unitIcon": "-280px -73px",
+      "level1": {
+        "unit": "flying",
+        "level": 1,
+        "name": "Костяной дракон",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 20,
+        "position": "-208px -1px"
+      },
+      "level2": {
+        "unit": "flying",
+        "level": 2,
+        "name": "Боевой дракон",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 30,
+        "position": "-208px -84px"
+      },
+      "level3": {
+        "unit": "flying",
+        "level": 3,
+        "name": "Эфирный дракон",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-208px -167px"
+      },
+      "level4": {
+        "unit": "flying",
+        "level": 4,
+        "name": "Призрачный дракон",
+        "attackMin": 14,
+        "attackMax": 16,
+        "defense": 0,
+        "health": 60,
+        "position": "-208px -167px"
+      }
+    },
+    "archer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "390px"
+      },
+      "unitIcon": "-280px -97px",
+      "level1": {
+        "unit": "archer",
+        "level": 1,
+        "name": "Оборотень",
+        "attackMin": 25,
+        "attackMax": 35,
+        "defense": 0,
+        "health": 6,
+        "position": "-277px -1px"
+      },
+      "level2": {
+        "unit": "archer",
+        "level": 2,
+        "name": "Кровавый оборотень",
+        "attackMin": 35,
+        "attackMax": 45,
+        "defense": 0,
+        "health": 10,
+        "position": "-277px -84px"
+      },
+      "level3": {
+        "unit": "archer",
+        "level": 3,
+        "name": "Вурдалак",
+        "attackMin": 45,
+        "attackMax": 55,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      },
+      "level4": {
+        "unit": "archer",
+        "level": 4,
+        "name": "Лунный стрелок",
+        "attackMin": 50,
+        "attackMax": 60,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      }
+    },
+    "healer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "464px"
+      },
+      "unitIcon": "-280px -121px",
+      "level1": {
+        "unit": "healer",
+        "level": 1,
+        "name": "Озерная ведьма",
+        "attackMin": 0,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 10,
+        "resurrection": 1,
+        "description": "Воскрешает 1 персонажа после боя",
+        "position": "-346px -1px"
+      },
+      "level2": {
+        "unit": "healer",
+        "level": 2,
+        "name": "Банша",
+        "attackMin": 1,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 15,
+        "resurrection": 2,
+        "description": "Воскрешает 2 персонажа после боя",
+        "position": "-346px -84px"
+      },
+      "level3": {
+        "unit": "healer",
+        "level": 3,
+        "name": "Древняя банша",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 3,
+        "description": "Воскрешает 3 персонажа после боя",
+        "position": "-346px -167px"
+      },
+      "level4": {
+        "unit": "healer",
+        "level": 4,
+        "name": "Верховная банша",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 4,
+        "description": "Воскрешает 4 персонажа после боя",
+        "position": "-346px -167px"
+      }
+    },
+    "mercenary": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "538px"
+      },
+      "unitIcon": "-280px -145px",
+      "level1": {
+        "unit": "mercenary",
+        "level": 1,
+        "name": "Затерянная душа",
+        "attackMin": 3,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -1px"
+      },
+      "level2": {
+        "unit": "mercenary",
+        "level": 2,
+        "name": "Призрак",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -84px"
+      },
+      "level3": {
+        "unit": "mercenary",
+        "level": 3,
+        "name": "Призрак тьмы",
+        "attackMin": 7,
+        "attackMax": 9,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      },
+      "level4": {
+        "unit": "mercenary",
+        "level": 4,
+        "name": "Призрак короля",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      }
+    },
+    "mage": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "612px"
+      },
+      "unitIcon": "-280px -169px",
+      "level1": {
+        "unit": "mage",
+        "level": 1,
+        "name": "Слуга тьмы",
+        "attackMin": 3,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 5,
+        "suppression": 10,
+        "description": "Уменьшение урона на 10 от Башен и магических башен",
+        "position": "-484px -1px"
+      },
+      "level2": {
+        "unit": "mage",
+        "level": 2,
+        "name": "Некромант",
+        "attackMin": 4,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 10,
+        "suppression": 20,
+        "description": "Уменьшение урона на 20 от Башен и магических башен",
+        "position": "-484px -84px"
+      },
+      "level3": {
+        "unit": "mage",
+        "level": 3,
+        "name": "Собиратель душ",
+        "attackMin": 5,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 15,
+        "suppression": 30,
+        "description": "Уменьшение урона на 30 от Башен и магических башен",
+        "position": "-484px -167px"
+      },
+      "level4": {
+        "unit": "mage",
+        "level": 4,
+        "name": "Повелитель душ",
+        "attackMin": 8,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 20,
+        "suppression": 40,
+        "description": "Уменьшение урона на 40 от Башен и магических башен",
+        "position": "-484px -167px"
+      }
+    }
+  },
+  "demon": {
+    "porter": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "94px"
+      },
+      "unitIcon": "-280px -1px",
+      "level1": {
+        "unit": "porter",
+        "level": 1,
+        "name": "Мародер-собиратель",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 8,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -1px"
+      },
+      "level2": {
+        "unit": "porter",
+        "level": 2,
+        "name": "Мародер-поглотитель",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 12,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -84px"
+      },
+      "level3": {
+        "unit": "porter",
+        "level": 3,
+        "name": "Мародер- поджигатель",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 15,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px",
+        "amount": "0"
+      },
+      "level4": {
+        "unit": "porter",
+        "level": 4,
+        "name": "Мародер-разрушитель",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 20,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px"
+      }
+    },
+    "swordsman": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "168px"
+      },
+      "unitIcon": "-280px -25px",
+      "level1": {
+        "unit": "swordsman",
+        "level": 1,
+        "name": "Скелет",
+        "attackMin": 2,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 10,
+        "position": "-70px -1px"
+      },
+      "level2": {
+        "unit": "swordsman",
+        "level": 2,
+        "name": "Боевой скелет",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 15,
+        "position": "-70px -84px"
+      },
+      "level3": {
+        "unit": "swordsman",
+        "level": 3,
+        "name": "Огненный скелет",
+        "attackMin": 6,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 25,
+        "position": "-70px -167px"
+      },
+      "level4": {
+        "unit": "swordsman",
+        "level": 4,
+        "name": "Адский скелет",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 30,
+        "position": "-70px -167px"
+      }
+    },
+    "cavalier": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "242px"
+      },
+      "unitIcon": "-280px -49px",
+      "level1": {
+        "unit": "cavalier",
+        "level": 1,
+        "name": "Террозавр",
+        "attackMin": 3,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 15,
+        "position": "-139px -1px"
+      },
+      "level2": {
+        "unit": "cavalier",
+        "level": 2,
+        "name": "Тварь",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 25,
+        "position": "-139px -84px"
+      },
+      "level3": {
+        "unit": "cavalier",
+        "level": 3,
+        "name": "Адская тварь",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 35,
+        "position": "-139px -167px"
+      },
+      "level4": {
+        "unit": "cavalier",
+        "level": 4,
+        "name": "Порождение зла",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-139px -167px"
+      }
+    },
+    "flying": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "316px"
+      },
+      "unitIcon": "-280px -73px",
+      "level1": {
+        "unit": "flying",
+        "level": 1,
+        "name": "Дракон",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 20,
+        "position": "-208px -1px"
+      },
+      "level2": {
+        "unit": "flying",
+        "level": 2,
+        "name": "Ржавый дракон",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 30,
+        "position": "-208px -84px"
+      },
+      "level3": {
+        "unit": "flying",
+        "level": 3,
+        "name": "Чёрный дракон",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-208px -167px"
+      },
+      "level4": {
+        "unit": "flying",
+        "level": 4,
+        "name": "Мифриловый дракон",
+        "attackMin": 14,
+        "attackMax": 16,
+        "defense": 0,
+        "health": 60,
+        "position": "-208px -167px"
+      }
+    },
+    "archer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "390px"
+      },
+      "unitIcon": "-280px -97px",
+      "level1": {
+        "unit": "archer",
+        "level": 1,
+        "name": "Элементаль",
+        "attackMin": 25,
+        "attackMax": 35,
+        "defense": 0,
+        "health": 6,
+        "position": "-277px -1px"
+      },
+      "level2": {
+        "unit": "archer",
+        "level": 2,
+        "name": "Элементаль лавы",
+        "attackMin": 35,
+        "attackMax": 45,
+        "defense": 0,
+        "health": 10,
+        "position": "-277px -84px"
+      },
+      "level3": {
+        "unit": "archer",
+        "level": 3,
+        "name": "Элементаль огня",
+        "attackMin": 45,
+        "attackMax": 55,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      },
+      "level4": {
+        "unit": "archer",
+        "level": 4,
+        "name": "Адский элементаль",
+        "attackMin": 50,
+        "attackMax": 60,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      }
+    },
+    "healer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "464px"
+      },
+      "unitIcon": "-280px -121px",
+      "level1": {
+        "unit": "healer",
+        "level": 1,
+        "name": "Блад-эйзер",
+        "attackMin": 0,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 10,
+        "resurrection": 1,
+        "description": "Воскрешает 1 персонажа после боя",
+        "position": "-346px -1px"
+      },
+      "level2": {
+        "unit": "healer",
+        "level": 2,
+        "name": "Исцеляющий эйзер",
+        "attackMin": 1,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 15,
+        "resurrection": 2,
+        "description": "Воскрешает 2 персонажа после боя",
+        "position": "-346px -84px"
+      },
+      "level3": {
+        "unit": "healer",
+        "level": 3,
+        "name": "Огненный эйзер",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 3,
+        "description": "Воскрешает 3 персонажа после боя",
+        "position": "-346px -167px"
+      },
+      "level4": {
+        "unit": "healer",
+        "level": 4,
+        "name": "Повелитель душ",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 4,
+        "description": "Воскрешает 4 персонажа после боя",
+        "position": "-346px -167px"
+      }
+    },
+    "mercenary": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "538px"
+      },
+      "unitIcon": "-280px -145px",
+      "level1": {
+        "unit": "mercenary",
+        "level": 1,
+        "name": "Демонесса",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -1px"
+      },
+      "level2": {
+        "unit": "mercenary",
+        "level": 2,
+        "name": "Боевая демонесса",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -84px"
+      },
+      "level3": {
+        "unit": "mercenary",
+        "level": 3,
+        "name": "Пламенеющая демонесса",
+        "attackMin": 11,
+        "attackMax": 13,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      },
+      "level4": {
+        "unit": "mercenary",
+        "level": 4,
+        "name": "Адская демонесса",
+        "attackMin": 12,
+        "attackMax": 14,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      }
+    },
+    "mage": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "612px"
+      },
+      "unitIcon": "-280px -169px",
+      "level1": {
+        "unit": "mage",
+        "level": 1,
+        "name": "Ледяной лич",
+        "attackMin": 3,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 5,
+        "suppression": 10,
+        "description": "Уменьшение урона на 10 от Башен и магических башен",
+        "position": "-484px -1px"
+      },
+      "level2": {
+        "unit": "mage",
+        "level": 2,
+        "name": "Лич",
+        "attackMin": 4,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 10,
+        "suppression": 20,
+        "description": "Уменьшение урона на 20 от Башен и магических башен",
+        "position": "-484px -84px"
+      },
+      "level3": {
+        "unit": "mage",
+        "level": 3,
+        "name": "Пылающий лич",
+        "attackMin": 5,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 15,
+        "suppression": 30,
+        "description": "Уменьшение урона на 30 от Башен и магических башен",
+        "position": "-484px -167px"
+      },
+      "level4": {
+        "unit": "mage",
+        "level": 4,
+        "name": "Древний лич",
+        "attackMin": 8,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 20,
+        "suppression": 40,
+        "description": "Уменьшение урона на 40 от Башен и магических башен",
+        "position": "-484px -167px"
+      }
+    }
+  },
+  "drow": {
+    "porter": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "94px"
+      },
+      "unitIcon": "-280px -1px",
+      "level1": {
+        "unit": "porter",
+        "level": 1,
+        "name": "Презренный Роф",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 8,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -1px"
+      },
+      "level2": {
+        "unit": "porter",
+        "level": 2,
+        "name": "Раб Роф",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 12,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -84px"
+      },
+      "level3": {
+        "unit": "porter",
+        "level": 3,
+        "name": "Вьючный Роф",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 15,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px",
+        "amount": "0"
+      },
+      "level4": {
+        "unit": "porter",
+        "level": 4,
+        "name": "Мерзкий Роф",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 20,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px"
+      }
+    },
+    "swordsman": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "168px"
+      },
+      "unitIcon": "-280px -25px",
+      "level1": {
+        "unit": "swordsman",
+        "level": 1,
+        "name": "Служитель клинка",
+        "attackMin": 2,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 10,
+        "position": "-70px -1px"
+      },
+      "level2": {
+        "unit": "swordsman",
+        "level": 2,
+        "name": "Хранитель клинка",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 15,
+        "position": "-70px -84px"
+      },
+      "level3": {
+        "unit": "swordsman",
+        "level": 3,
+        "name": "Мастер клинка",
+        "attackMin": 6,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 25,
+        "position": "-70px -167px"
+      },
+      "level4": {
+        "unit": "swordsman",
+        "level": 4,
+        "name": "Повелитель клинка",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 30,
+        "position": "-70px -167px"
+      }
+    },
+    "cavalier": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "242px"
+      },
+      "unitIcon": "-280px -49px",
+      "level1": {
+        "unit": "cavalier",
+        "level": 1,
+        "name": "Наездник на ящере",
+        "attackMin": 3,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 15,
+        "position": "-139px -1px"
+      },
+      "level2": {
+        "unit": "cavalier",
+        "level": 2,
+        "name": "Разрушитель",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 25,
+        "position": "-139px -84px"
+      },
+      "level3": {
+        "unit": "cavalier",
+        "level": 3,
+        "name": "Джаггернаут",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 35,
+        "position": "-139px -167px"
+      },
+      "level4": {
+        "unit": "cavalier",
+        "level": 4,
+        "name": "Бессмертный джаггернаут",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-139px -167px"
+      }
+    },
+    "flying": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "316px"
+      },
+      "unitIcon": "-280px -73px",
+      "level1": {
+        "unit": "flying",
+        "level": 1,
+        "name": "Гарпия",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 20,
+        "position": "-208px -1px"
+      },
+      "level2": {
+        "unit": "flying",
+        "level": 2,
+        "name": "Гарпия-ведьма",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 30,
+        "position": "-208px -84px"
+      },
+      "level3": {
+        "unit": "flying",
+        "level": 3,
+        "name": "Боевая гарпия",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-208px -167px"
+      },
+      "level4": {
+        "unit": "flying",
+        "level": 4,
+        "name": "Безумная гарпия",
+        "attackMin": 14,
+        "attackMax": 16,
+        "defense": 0,
+        "health": 60,
+        "position": "-208px -167px"
+      }
+    },
+    "archer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "390px"
+      },
+      "unitIcon": "-280px -97px",
+      "level1": {
+        "unit": "archer",
+        "level": 1,
+        "name": "Охотник",
+        "attackMin": 25,
+        "attackMax": 35,
+        "defense": 0,
+        "health": 6,
+        "position": "-277px -1px"
+      },
+      "level2": {
+        "unit": "archer",
+        "level": 2,
+        "name": "Снайпер",
+        "attackMin": 35,
+        "attackMax": 45,
+        "defense": 0,
+        "health": 10,
+        "position": "-277px -84px"
+      },
+      "level3": {
+        "unit": "archer",
+        "level": 3,
+        "name": "Тёмный снайпер",
+        "attackMin": 45,
+        "attackMax": 55,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      },
+      "level4": {
+        "unit": "archer",
+        "level": 4,
+        "name": "Элитный снайпер",
+        "attackMin": 50,
+        "attackMax": 60,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      }
+    },
+    "healer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "464px"
+      },
+      "unitIcon": "-280px -121px",
+      "level1": {
+        "unit": "healer",
+        "level": 1,
+        "name": "Жрица",
+        "attackMin": 0,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 10,
+        "resurrection": 1,
+        "description": "Воскрешает 1 персонажа после боя",
+        "position": "-346px -1px"
+      },
+      "level2": {
+        "unit": "healer",
+        "level": 2,
+        "name": "Жрица Ллот",
+        "attackMin": 1,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 15,
+        "resurrection": 2,
+        "description": "Воскрешает 2 персонажа после боя",
+        "position": "-346px -84px"
+      },
+      "level3": {
+        "unit": "healer",
+        "level": 3,
+        "name": "Архижрица",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 3,
+        "description": "Воскрешает 3 персонажа после боя",
+        "position": "-346px -167px"
+      },
+      "level4": {
+        "unit": "healer",
+        "level": 4,
+        "name": "Жрица тьмы",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 4,
+        "description": "Воскрешает 4 персонажа после боя",
+        "position": "-346px -167px"
+      }
+    },
+    "mercenary": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "538px"
+      },
+      "unitIcon": "-280px -145px",
+      "level1": {
+        "unit": "mercenary",
+        "level": 1,
+        "name": "Охотник за головами",
+        "attackMin": 3,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -1px"
+      },
+      "level2": {
+        "unit": "mercenary",
+        "level": 2,
+        "name": "Убийца",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -84px"
+      },
+      "level3": {
+        "unit": "mercenary",
+        "level": 3,
+        "name": "Совершенный убийца",
+        "attackMin": 7,
+        "attackMax": 9,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      },
+      "level4": {
+        "unit": "mercenary",
+        "level": 4,
+        "name": "Легендарный убийца",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      }
+    },
+    "mage": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "612px"
+      },
+      "unitIcon": "-280px -169px",
+      "level1": {
+        "unit": "mage",
+        "level": 1,
+        "name": "Арахнид",
+        "attackMin": 3,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 5,
+        "suppression": 20,
+        "description": "Уменьшение урона на 20 от Башен и магических башен",
+        "position": "-484px -1px"
+      },
+      "level2": {
+        "unit": "mage",
+        "level": 2,
+        "name": "Человек-скорпион",
+        "attackMin": 4,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 10,
+        "suppression": 40,
+        "description": "Уменьшение урона на 40 от Башен и магических башен",
+        "position": "-484px -84px"
+      },
+      "level3": {
+        "unit": "mage",
+        "level": 3,
+        "name": "Человек-паук",
+        "attackMin": 5,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 15,
+        "suppression": 60,
+        "description": "Уменьшение урона на 60 от Башен и магических башен",
+        "position": "-484px -167px"
+      },
+      "level4": {
+        "unit": "mage",
+        "level": 4,
+        "name": "Повелитель тьмы",
+        "attackMin": 8,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 20,
+        "suppression": 80,
+        "description": "Уменьшение урона на 80 от Башен и магических башен",
+        "position": "-484px -167px"
+      }
+    }
+  },
+  "human": {
+    "porter": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "94px"
+      },
+      "unitIcon": "-280px -1px",
+      "level1": {
+        "unit": "porter",
+        "level": 1,
+        "name": "Прислужник",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 8,
+        "capacity": 50,
+        "description": "Вмещает 100 единиц ресурсов",
+        "position": "-1px -1px"
+      },
+      "level2": {
+        "unit": "porter",
+        "level": 2,
+        "name": "Слуга",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 12,
+        "capacity": 50,
+        "description": "Вмещает 100 единиц ресурсов",
+        "position": "-1px -84px"
+      },
+      "level3": {
+        "unit": "porter",
+        "level": 3,
+        "name": "Оруженосец",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 15,
+        "capacity": 50,
+        "description": "Вмещает 100 единиц ресурсов",
+        "position": "-1px -167px",
+        "amount": "0"
+      },
+      "level4": {
+        "unit": "porter",
+        "level": 4,
+        "name": "Адъютант",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 20,
+        "capacity": 50,
+        "description": "Вмещает 100 единиц ресурсов",
+        "position": "-1px -167px"
+      }
+    },
+    "swordsman": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "168px"
+      },
+      "unitIcon": "-280px -25px",
+      "level1": {
+        "unit": "swordsman",
+        "level": 1,
+        "name": "Крестьянин",
+        "attackMin": 2,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 10,
+        "position": "-70px -1px"
+      },
+      "level2": {
+        "unit": "swordsman",
+        "level": 2,
+        "name": "Пикинёр",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 15,
+        "position": "-70px -84px"
+      },
+      "level3": {
+        "unit": "swordsman",
+        "level": 3,
+        "name": "Рыцарь",
+        "attackMin": 6,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 25,
+        "position": "-70px -167px"
+      },
+      "level4": {
+        "unit": "swordsman",
+        "level": 4,
+        "name": "Святой рыцарь",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 30,
+        "position": "-70px -167px"
+      }
+    },
+    "cavalier": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "242px"
+      },
+      "unitIcon": "-280px -49px",
+      "level1": {
+        "unit": "cavalier",
+        "level": 1,
+        "name": "Лёгкая конница",
+        "attackMin": 3,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 15,
+        "position": "-139px -1px"
+      },
+      "level2": {
+        "unit": "cavalier",
+        "level": 2,
+        "name": "Средняя конница",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 25,
+        "position": "-139px -84px"
+      },
+      "level3": {
+        "unit": "cavalier",
+        "level": 3,
+        "name": "Тяжёлая конница",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 35,
+        "position": "-139px -167px"
+      },
+      "level4": {
+        "unit": "cavalier",
+        "level": 4,
+        "name": "Элитная кавалерия",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-139px -167px"
+      }
+    },
+    "flying": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "316px"
+      },
+      "unitIcon": "-280px -73px",
+      "level1": {
+        "unit": "flying",
+        "level": 1,
+        "name": "Пегас",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 20,
+        "position": "-208px -1px"
+      },
+      "level2": {
+        "unit": "flying",
+        "level": 2,
+        "name": "Серебряный пегас",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 30,
+        "position": "-208px -84px"
+      },
+      "level3": {
+        "unit": "flying",
+        "level": 3,
+        "name": "Золотой пегас",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-208px -167px"
+      },
+      "level4": {
+        "unit": "flying",
+        "level": 4,
+        "name": "Алмазный пегас",
+        "attackMin": 14,
+        "attackMax": 16,
+        "defense": 0,
+        "health": 60,
+        "position": "-208px -167px"
+      }
+    },
+    "archer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "390px"
+      },
+      "unitIcon": "-280px -97px",
+      "level1": {
+        "unit": "archer",
+        "level": 1,
+        "name": "Лучник",
+        "attackMin": 25,
+        "attackMax": 35,
+        "defense": 0,
+        "health": 6,
+        "position": "-277px -1px"
+      },
+      "level2": {
+        "unit": "archer",
+        "level": 2,
+        "name": "Арбалетчик",
+        "attackMin": 35,
+        "attackMax": 45,
+        "defense": 0,
+        "health": 10,
+        "position": "-277px -84px"
+      },
+      "level3": {
+        "unit": "archer",
+        "level": 3,
+        "name": "Тяжелый арбалетчик",
+        "attackMin": 45,
+        "attackMax": 55,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      },
+      "level4": {
+        "unit": "archer",
+        "level": 4,
+        "name": "Элитный стрелок",
+        "attackMin": 50,
+        "attackMax": 60,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      }
+    },
+    "healer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "464px"
+      },
+      "unitIcon": "-280px -121px",
+      "level1": {
+        "unit": "healer",
+        "level": 1,
+        "name": "Послушник",
+        "attackMin": 0,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 10,
+        "resurrection": 1,
+        "description": "Воскрешает 1 персонажа после боя",
+        "position": "-346px -1px"
+      },
+      "level2": {
+        "unit": "healer",
+        "level": 2,
+        "name": "Монах",
+        "attackMin": 1,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 15,
+        "resurrection": 2,
+        "description": "Воскрешает 2 персонажа после боя",
+        "position": "-346px -84px"
+      },
+      "level3": {
+        "unit": "healer",
+        "level": 3,
+        "name": "Боевой монах",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 3,
+        "description": "Воскрешает 3 персонажа после боя",
+        "position": "-346px -167px"
+      },
+      "level4": {
+        "unit": "healer",
+        "level": 4,
+        "name": "Кардинал",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 4,
+        "description": "Воскрешает 4 персонажа после боя",
+        "position": "-346px -167px"
+      }
+    },
+    "mercenary": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "538px"
+      },
+      "unitIcon": "-280px -145px",
+      "level1": {
+        "unit": "mercenary",
+        "level": 1,
+        "name": "Разбойник",
+        "attackMin": 3,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -1px"
+      },
+      "level2": {
+        "unit": "mercenary",
+        "level": 2,
+        "name": "Сорвиголова",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -84px"
+      },
+      "level3": {
+        "unit": "mercenary",
+        "level": 3,
+        "name": "Мастер меча",
+        "attackMin": 7,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      },
+      "level4": {
+        "unit": "mercenary",
+        "level": 4,
+        "name": "Элитный наемник",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      }
+    },
+    "mage": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "612px"
+      },
+      "unitIcon": "-280px -169px",
+      "level1": {
+        "unit": "mage",
+        "level": 1,
+        "name": "Ученик мага",
+        "attackMin": 3,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 5,
+        "suppression": 10,
+        "description": "Уменьшение урона на 10 от Башен и магических башен",
+        "position": "-484px -1px"
+      },
+      "level2": {
+        "unit": "mage",
+        "level": 2,
+        "name": "Маг",
+        "attackMin": 4,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 10,
+        "suppression": 20,
+        "description": "Уменьшение урона на 20 от Башен и магических башен",
+        "position": "-484px -84px"
+      },
+      "level3": {
+        "unit": "mage",
+        "level": 3,
+        "name": "Архимаг",
+        "attackMin": 5,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 15,
+        "suppression": 30,
+        "description": "Уменьшение урона на 30 от Башен и магических башен",
+        "position": "-484px -167px"
+      },
+      "level4": {
+        "unit": "mage",
+        "level": 4,
+        "name": "Повелитель стихий",
+        "attackMin": 8,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 20,
+        "suppression": 40,
+        "description": "Уменьшение урона на 40 от Башен и магических башен",
+        "position": "-484px -167px"
+      }
+    }
+  },
+  "elf": {
+    "porter": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "94px"
+      },
+      "unitIcon": "-280px -1px",
+      "level1": {
+        "unit": "porter",
+        "level": 1,
+        "name": "Гном-носильщик",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 8,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -1px"
+      },
+      "level2": {
+        "unit": "porter",
+        "level": 2,
+        "name": "Гном-слуга",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 12,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -84px"
+      },
+      "level3": {
+        "unit": "porter",
+        "level": 3,
+        "name": "Гном- оруженосец",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 15,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px",
+        "amount": "0"
+      },
+      "level4": {
+        "unit": "porter",
+        "level": 4,
+        "name": "Гном-адьютант",
+        "attackMin": 0,
+        "attackMax": 0,
+        "defense": 0,
+        "health": 20,
+        "capacity": 50,
+        "description": "Вмещает 50 единиц ресурсов",
+        "position": "-1px -167px"
+      }
+    },
+    "swordsman": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "168px"
+      },
+      "unitIcon": "-280px -25px",
+      "level1": {
+        "unit": "swordsman",
+        "level": 1,
+        "name": "Эльфийский стражник",
+        "attackMin": 2,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 10,
+        "position": "-70px -1px"
+      },
+      "level2": {
+        "unit": "swordsman",
+        "level": 2,
+        "name": "Эльфийский боец",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 15,
+        "position": "-70px -84px"
+      },
+      "level3": {
+        "unit": "swordsman",
+        "level": 3,
+        "name": "Эльфийский рыцарь",
+        "attackMin": 6,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 25,
+        "position": "-70px -167px"
+      },
+      "level4": {
+        "unit": "swordsman",
+        "level": 4,
+        "name": "Капитан стражи",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 30,
+        "position": "-70px -167px"
+      }
+    },
+    "cavalier": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "242px"
+      },
+      "unitIcon": "-280px -49px",
+      "level1": {
+        "unit": "cavalier",
+        "level": 1,
+        "name": "Молодой кентавр",
+        "attackMin": 3,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 15,
+        "position": "-139px -1px"
+      },
+      "level2": {
+        "unit": "cavalier",
+        "level": 2,
+        "name": "Кентавр",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 25,
+        "position": "-139px -84px"
+      },
+      "level3": {
+        "unit": "cavalier",
+        "level": 3,
+        "name": "Боевой кентавр",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 35,
+        "position": "-139px -167px"
+      },
+      "level4": {
+        "unit": "cavalier",
+        "level": 4,
+        "name": "Древний кентавр",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-139px -167px"
+      }
+    },
+    "flying": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "316px"
+      },
+      "unitIcon": "-280px -73px",
+      "level1": {
+        "unit": "flying",
+        "level": 1,
+        "name": "Молодой грифон",
+        "attackMin": 4,
+        "attackMax": 6,
+        "defense": 0,
+        "health": 20,
+        "position": "-208px -1px"
+      },
+      "level2": {
+        "unit": "flying",
+        "level": 2,
+        "name": "Грифон",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 30,
+        "position": "-208px -84px"
+      },
+      "level3": {
+        "unit": "flying",
+        "level": 3,
+        "name": "Боевой грифон",
+        "attackMin": 10,
+        "attackMax": 12,
+        "defense": 0,
+        "health": 40,
+        "position": "-208px -167px"
+      },
+      "level4": {
+        "unit": "flying",
+        "level": 4,
+        "name": "Древний грифон",
+        "attackMin": 14,
+        "attackMax": 16,
+        "defense": 0,
+        "health": 60,
+        "position": "-208px -167px"
+      }
+    },
+    "archer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "390px"
+      },
+      "unitIcon": "-280px -97px",
+      "level1": {
+        "unit": "archer",
+        "level": 1,
+        "name": "Эльфийский лучник",
+        "attackMin": 25,
+        "attackMax": 35,
+        "defense": 0,
+        "health": 6,
+        "position": "-277px -1px"
+      },
+      "level2": {
+        "unit": "archer",
+        "level": 2,
+        "name": "Рейнджер",
+        "attackMin": 35,
+        "attackMax": 45,
+        "defense": 0,
+        "health": 10,
+        "position": "-277px -84px"
+      },
+      "level3": {
+        "unit": "archer",
+        "level": 3,
+        "name": "Серебряный рейнджер",
+        "attackMin": 45,
+        "attackMax": 55,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      },
+      "level4": {
+        "unit": "archer",
+        "level": 4,
+        "name": "Элитный рейнджер",
+        "attackMin": 50,
+        "attackMax": 60,
+        "defense": 0,
+        "health": 15,
+        "position": "-277px -167px"
+      }
+    },
+    "healer": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "464px"
+      },
+      "unitIcon": "-280px -121px",
+      "level1": {
+        "unit": "healer",
+        "level": 1,
+        "name": "Лекарь",
+        "attackMin": 0,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 10,
+        "resurrection": 2,
+        "description": "Воскрешает 2 персонажа после боя",
+        "position": "-346px -1px"
+      },
+      "level2": {
+        "unit": "healer",
+        "level": 2,
+        "name": "Храмовник",
+        "attackMin": 1,
+        "attackMax": 1,
+        "defense": 0,
+        "health": 15,
+        "resurrection": 3,
+        "description": "Воскрешает 3 персонажа после боя",
+        "position": "-346px -84px"
+      },
+      "level3": {
+        "unit": "healer",
+        "level": 3,
+        "name": "Верховный храмовник",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 4,
+        "description": "Воскрешает 4 персонажа после боя",
+        "position": "-346px -167px"
+      },
+      "level4": {
+        "unit": "healer",
+        "level": 4,
+        "name": "Повелительница жизни",
+        "attackMin": 1,
+        "attackMax": 2,
+        "defense": 0,
+        "health": 20,
+        "resurrection": 5,
+        "description": "Воскрешает 5 персонажа после боя",
+        "position": "-346px -167px"
+      }
+    },
+    "mercenary": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "538px"
+      },
+      "unitIcon": "-280px -145px",
+      "level1": {
+        "unit": "mercenary",
+        "level": 1,
+        "name": "Ассасин",
+        "attackMin": 3,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -1px"
+      },
+      "level2": {
+        "unit": "mercenary",
+        "level": 2,
+        "name": "Мастер-ассасин",
+        "attackMin": 5,
+        "attackMax": 7,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -84px"
+      },
+      "level3": {
+        "unit": "mercenary",
+        "level": 3,
+        "name": "Грандмастер-ассасин",
+        "attackMin": 7,
+        "attackMax": 9,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      },
+      "level4": {
+        "unit": "mercenary",
+        "level": 4,
+        "name": "Легендарный ассасин",
+        "attackMin": 8,
+        "attackMax": 10,
+        "defense": 0,
+        "health": 1,
+        "description": "Преодолевает укрепления",
+        "position": "-415px -167px"
+      }
+    },
+    "mage": {
+      "squadPosition": {
+        "top": "17px",
+        "left": "612px"
+      },
+      "unitIcon": "-280px -169px",
+      "level1": {
+        "unit": "mage",
+        "level": 1,
+        "name": "Травник",
+        "attackMin": 3,
+        "attackMax": 3,
+        "defense": 0,
+        "health": 5,
+        "suppression": 10,
+        "description": "Уменьшение урона на 10 от Башен и магических башен",
+        "position": "-484px -1px"
+      },
+      "level2": {
+        "unit": "mage",
+        "level": 2,
+        "name": "Друид",
+        "attackMin": 4,
+        "attackMax": 4,
+        "defense": 0,
+        "health": 10,
+        "suppression": 20,
+        "description": "Уменьшение урона на 20 от Башен и магических башен",
+        "position": "-484px -84px"
+      },
+      "level3": {
+        "unit": "mage",
+        "level": 3,
+        "name": "Архидруид",
+        "attackMin": 5,
+        "attackMax": 5,
+        "defense": 0,
+        "health": 15,
+        "suppression": 30,
+        "description": "Уменьшение урона на 30 от Башен и магических башен",
+        "position": "-484px -167px"
+      },
+      "level4": {
+        "unit": "mage",
+        "level": 4,
+        "name": "Владыка леса",
+        "attackMin": 8,
+        "attackMax": 8,
+        "defense": 0,
+        "health": 20,
+        "suppression": 40,
+        "description": "Уменьшение урона на 40 от Башен и магических башен",
+        "position": "-484px -167px"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "HeroFamePosition": "-1px -1px",
+    "unitFramePosition": "-97px -1px",
+    "levelFramePosition": "-119px -1px",
+    "healthIcon":"-221px -34px",
+    "defenseIcon":"-221px -1px",
+    "attackIcon":"-221px -17px",
+    "towerPosition": "-27px -117px", 
+    "magicTowerPosition": "-1px -117px",
+    "fortificationPosition": "-56px -117px",
+    "towerSelectorPosition": "-96px -117px"
+            
+}
