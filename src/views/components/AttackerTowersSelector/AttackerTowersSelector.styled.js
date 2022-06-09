@@ -9,7 +9,8 @@ export const TowerSelectorBox = styled.button(
         alignItems: 'center',
         width: '48px',
         height: '53px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        border: 'none'
     },
 
 props => ({

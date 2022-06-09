@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useStore } from '../../data/store/useStore';
+import { AppBox } from './index.styled';
 import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelector';
 import RaceSelector from '../components/RaceSelector/RaceSelector';
 import Squad from '../components/squad';
@@ -37,7 +38,7 @@ function App() {
 
 
   return (
-    <>
+    <AppBox>
       {/* <button onClick={onClickButton}>Чпуньк</button> */}
       <RaceSelector setRace={setMainAttackerRace}/>
       <AttackRateSelector setAttackRate={setMainAttackerRateAttack}/>
@@ -57,7 +58,7 @@ function App() {
         attackRate = {mainDefenderRateAttack}
       />
       <button onClick={onClickAttackButton} style = {{color: 'white', backgroundColor: 'red', width: '690px' }} >В атаку</button>
-    </>
+    </AppBox>
     
   );
 }

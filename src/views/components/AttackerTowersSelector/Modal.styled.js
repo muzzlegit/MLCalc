@@ -19,35 +19,63 @@ props => ({
     background: props.background
   })
 )
-export const TowerBox = styled.div(
-  {   
+export const TowersBox = styled.div(
+  { 
+    position: 'absolute',
+    top: '47px',
+    left: '34px',
     margin: 0,
-    padding: 0,
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '10px',
-
-  },
-
-props => ({
-  background: props.background
-})
-)
-export const Tower = styled.div(
-  {   
-    margin: 0,
-    padding: 0,
+    width: '189px',
+    height: '119px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '40px',
-    height: '40px',
-    outline: '1px solid green',
-    color: 'transparent'
-  },
+    flexWrap: 'wrap',
+    backgroundColor: '#d6caac'
 
+  }
+)
+export const TowerBox = styled.div(
+  {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
+    cursor: 'pointer'
+  }
+)
+export const Tower = styled.div(
+  {
+    color: 'transparent',
+    height: '38px'
+  },
 props => ({
-  background: props.background
+  width: props.width,
+  background: props.background,
+  filter: props.filter
 })
+)
+
+export const LevelBox = styled.ul(
+  {
+    margin: 0,
+    padding: 0,
+    width: '100%',
+    listStyle: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  }
+)
+export const Level = styled.li(
+  {
+    width: '10px',
+    cursor: 'pointer'
+  },
+  props => ({
+    filter: props.filter
+  })
 )
 ;

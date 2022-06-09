@@ -22,7 +22,7 @@ export default function AttackerTowersSelector({setAttackRate}) {
         onClick = {toggleModal}
     >
       </TowerSelectorBox>
-      {showModal && <Modal/>}
+      {showModal && <Modal toggleModal = {toggleModal} />}
     </>
       // <select id="attackRate" onChange={onSelect}>
       //   <option value="Min">MIN</option> 

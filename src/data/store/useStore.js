@@ -18,7 +18,8 @@ export const useStore = create(devtools(set => ({
       mercenary: { ...units.undead.mercenary.level1 },
       mage: { ...units.undead.mage.level1 }
     },
-
+    towers: [],
+    fortification: []
   },
   mainDefender: {
     race: 'undead',
@@ -131,5 +132,11 @@ export const useStore = create(devtools(set => ({
     }
   },
   setMainAttackerRateAttack: (attackRate) => set((state) => (state.mainAttacker.attackRate = attackRate)),
-  setMainDefenderRateAttack: (attackRate) => set((state) => (state.mainDefender.attackRate = attackRate)), 
+  setMainDefenderRateAttack: (attackRate) => set((state) => (state.mainDefender.attackRate = attackRate)),
+  setMainAttackerTowers:  (tower) =>set((state) => (state.mainAttacker.towers = {
+    ...state.mainAttacker.towers,
+    tower})),
+
+
+
 })))
