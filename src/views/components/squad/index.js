@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import UnitCard from '../UnitCard';
-import { SquadBox } from './index.styled';
+import { SquadBox,ArmyBox } from './index.styled';
+import TowersCard from '../TowersCard/TowersCard';
 
 export default function Squad ({race, troops , setUnit, attackRate  }) {
     // console.log('troops to squad',troops);

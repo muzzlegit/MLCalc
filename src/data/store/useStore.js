@@ -133,9 +133,10 @@ export const useStore = create(devtools(set => ({
   },
   setMainAttackerRateAttack: (attackRate) => set((state) => (state.mainAttacker.attackRate = attackRate)),
   setMainDefenderRateAttack: (attackRate) => set((state) => (state.mainDefender.attackRate = attackRate)),
-  setMainAttackerTowers:  (tower) =>set((state) => (state.mainAttacker.towers = {
-    ...state.mainAttacker.towers,
-    tower})),
+  setMainAttackerTowers:  (tower) =>set((state) => (state.mainAttacker.towers = tower)),
+  addMainAttackerTowers:  (tower) =>set((state) => (state.mainAttacker.towers = [...state.mainAttacker.towers, tower])),
+  setMainAttackerFortification:  (fortification) =>set((state) => (state.mainAttacker.fortification = fortification)),
+  addMainAttackerFortification:  (fortification) =>set((state) => (state.mainAttacker.fortification = [...state.mainAttacker.fortification, fortification]))
 
 
 

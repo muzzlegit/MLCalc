@@ -14,10 +14,6 @@ export const ArticleBox = styled.article(
 );
 export const UnitImg = styled.div(
   {
-    position: 'absolute',
-    top: '50%',
-    translate: '0 -50%',
-    zIndex: '-1',
     width: '68px',
     height: '82px',
     backgroundColor: 'aquamarine',
@@ -31,7 +27,6 @@ export const UnitImg = styled.div(
 export const UnitImgBox = styled.div(
   {
     position: 'relative',
-    zIndex: '999',
     marginBottom: '4px',
     display: 'flex',
     justifyContent: 'center',

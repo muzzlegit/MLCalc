@@ -5,7 +5,7 @@ import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelec
 import RaceSelector from '../components/RaceSelector/RaceSelector';
 import Squad from '../components/squad';
 import AttackerTowersSelector from '../components/AttackerTowersSelector/AttackerTowersSelector';
-
+import TowersCard from '../components/TowersCard/TowersCard';
 
 function App() {
 
@@ -47,6 +47,9 @@ function App() {
         setUnit = {setAttackerUnit}
         troops = {mainAttackerTroops}
         attackRate = {mainAttackerRateAttack}
+      />
+      <TowersCard
+        race={mainAttackerRace}
       />
       <AttackerTowersSelector />
       <RaceSelector setRace={setMainDefenderRace}/>

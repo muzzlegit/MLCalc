@@ -8,6 +8,8 @@
     "towerPosition": "-27px -117px", 
     "magicTowerPosition": "-1px -117px",
     "fortificationPosition": "-56px -117px",
-    "towerSelectorPosition": "-96px -117px"
-            
+    "towerSelectorPosition": "-96px -117px",
+    "towerPositionUnit": "-1px -1px", 
+    "magicTowerPositionUnit": "-1px -43px",
+    "fortificationPositionUnit": "-1px -85px"           
 }
