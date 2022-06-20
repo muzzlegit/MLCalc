@@ -9,29 +9,25 @@ import elfTowersImg from '../../../img/elf/ElfCommon.png';
 import commonAssets from '../../../data/CommonAssets.json';
 import { nanoid } from 'nanoid'
 
-export default function TowersCard ({ race }) {
-    const mainAttackerTowers = useStore(state => state.mainAttacker.towers);
-    const mainAttackerFortification = useStore(state => state.mainAttacker.fortification);
-    const setMainAttackerTowers = useStore(state => state.setMainAttackerTowers);
-    const setMainAttackerFortification = useStore(state => state.setMainAttackerFortification);  
-    const [mainAttackerRaceImg, setMainAttackerRaceImg] = useState(undeadTowersImg);
+export default function TowersCard ({ race, towers, fortifications, setTowers, setFortification }) {
+    const [towersImg, setTowersImg] = useState(undeadTowersImg);
 
     useEffect(() => {
         switch (race) {
             case 'undead':
-                setMainAttackerRaceImg(undeadTowersImg);
+                setTowersImg(undeadTowersImg);
                 break;
             case 'demon':
-                setMainAttackerRaceImg(demonTowersImg);
+                setTowersImg(demonTowersImg);
                 break;
             case 'drow':
-                setMainAttackerRaceImg(drowTowersImg);
+                setTowersImg(drowTowersImg);
                 break;
             case 'human':
-                setMainAttackerRaceImg(humanTowersImg);
+                setTowersImg(humanTowersImg);
                 break;
             case 'elf':
-                setMainAttackerRaceImg(elfTowersImg);
+                setTowersImg(elfTowersImg);
                 break;  
             default:
                 break;
@@ -39,32 +35,41 @@ export default function TowersCard ({ race }) {
     }, [race])
     
     const onTowerClick = (e) => {
-
-        setMainAttackerTowers(mainAttackerTowers.filter(tower => tower.id !== e.currentTarget.id));
-        setMainAttackerFortification(mainAttackerFortification.filter(fortification => fortification.id !== e.currentTarget.id));
+        setTowers(towers.filter(tower => tower.id !== e.currentTarget.id));
+        setFortification(fortifications.filter(fortification => fortification.id !== e.currentTarget.id));
     }
 
 
     return (
         <TowerBox>
-            { mainAttackerTowers.map((tower) => {
+            { towers.map((tower) => {
                 return (
                     <TowerImgBox
                         key={nanoid()}
                         id = {tower.id}
-                        background = { `url(${mainAttackerRaceImg}) ${commonAssets[`${tower.type}PositionUnit`]}` }
+                        background = { `url(${towersImg}) ${commonAssets[`${tower.type}PositionUnit`]}` }
                         onClick = {onTowerClick}
                     />
                 )
             })}
-            { mainAttackerFortification.map((fortification) => {
+            { fortifications.map((fortification) => {
                 return (
-                    <TowerImgBox
+                    <div
                         key={nanoid()}
-                        id = {fortification.id}
-                        background = { `url(${mainAttackerRaceImg}) ${commonAssets.fortificationPositionUnit}` }
-                        onClick = {onTowerClick}
-                    />
+                    >
+                        <TowerImgBox
+
+                            id = {fortification.id}
+                            background = { `url(${towersImg}) ${commonAssets.fortificationPositionUnit}` }
+                            onClick = {onTowerClick}
+                        />
+                        <div
+  
+                        >
+                            x{fortification.quantity}
+                        </div>
+                    </div>
+
                 )
             })}
         </TowerBox>

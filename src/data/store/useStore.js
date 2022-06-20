@@ -35,6 +35,8 @@ export const useStore = create(devtools(set => ({
       mercenary: { ...units.undead.mercenary.level1 },
       mage: { ...units.undead.mage.level1 }
     },
+    towers: [],
+    fortification: []
   },
 
   setMainAttackerRace: (race) => set((state) => (state.mainAttacker.race = race)),
@@ -136,8 +138,51 @@ export const useStore = create(devtools(set => ({
   setMainAttackerTowers:  (tower) =>set((state) => (state.mainAttacker.towers = tower)),
   addMainAttackerTowers:  (tower) =>set((state) => (state.mainAttacker.towers = [...state.mainAttacker.towers, tower])),
   setMainAttackerFortification:  (fortification) =>set((state) => (state.mainAttacker.fortification = fortification)),
-  addMainAttackerFortification:  (fortification) =>set((state) => (state.mainAttacker.fortification = [...state.mainAttacker.fortification, fortification]))
-
-
-
+  addMainAttackerFortification:   (fortification) =>{
+    set((state) => {
+      let total = true;
+      if(state.mainAttacker.fortification.length === 0){
+        state.mainAttacker.fortification = [...state.mainAttacker.fortification, fortification];
+        return;
+      }
+      if(state.mainAttacker.fortification.length !== 0) {
+        state.mainAttacker.fortification.forEach((fort) =>{
+          if(fort.level === fortification.level) {
+            fort.quantity += 1;
+            state.mainAttacker.fortification = [...state.mainAttacker.fortification,];
+            total = false;
+            return
+          } 
+        })
+      }
+      if(total){
+        state.mainAttacker.fortification = [...state.mainAttacker.fortification, fortification];
+        return;
+      }
+  })},
+  setMainDefenderTowers:  (tower) =>set((state) => (state.mainDefender.towers = tower)),
+  addMainDefenderTowers:  (tower) =>set((state) => (state.mainDefender.towers = [...state.mainDefender.towers, tower])),
+  setMainDefenderFortification: (fortification) =>set((state) => (state.mainDefender.fortification = fortification)),
+  addMainDefenderFortification:   (fortification) =>{
+    set((state) => {
+      let total = true;
+      if(state.mainDefender.fortification.length === 0){
+        state.mainDefender.fortification = [...state.mainDefender.fortification, fortification];
+        return;
+      }
+      if(state.mainDefender.fortification.length !== 0) {
+        state.mainDefender.fortification.forEach((fort) =>{
+          if(fort.level === fortification.level) {
+            fort.quantity += 1;
+            state.mainDefender.fortification = [...state.mainDefender.fortification,];
+            total = false;
+            return
+          } 
+        })
+      }
+      if(total){
+        state.mainDefender.fortification = [...state.mainDefender.fortification, fortification];
+        return;
+      }
+  })}
 })))
