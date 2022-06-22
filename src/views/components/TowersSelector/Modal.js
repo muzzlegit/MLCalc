@@ -13,7 +13,7 @@ const levels = [1,2,3,4,5,6,7,8]
 const selectShadow = 'drop-shadow(rgb(0, 128, 255) 0px 0px 5px) drop-shadow(rgb(0, 128, 255) 0px 0px 5px)';
 
 export default function Modal({toggleModal,towers, fortifications, addTowers, addFortification}) {
-  console.log(fortifications);
+
   const [isSelected, setIsSelected] = useState('magicTower');
   const [level, setLevel] = useState(1);
   const [isButtonActive, setIsButtonActive] = useState(towers.length >= 2 || isSelected === 'fortification' ? true : false);

@@ -6,6 +6,8 @@ import { UnitAttack } from '../../views/components/UnitCard/index.styled';
 export const useStore = create(devtools(set => ({
   mainAttacker: {
     race: 'undead',
+    apostate: false,
+    homeLand: 'cursedForest',
     attackRate: 'Min',
     hero: {},
     troops: {
@@ -23,6 +25,8 @@ export const useStore = create(devtools(set => ({
   },
   mainDefender: {
     race: 'undead',
+    apostate: false,
+    homeLand: 'cursedForest',
     attackRate: 'Min',
     hero: {},
     troops: {
@@ -184,5 +188,9 @@ export const useStore = create(devtools(set => ({
         state.mainDefender.fortification = [...state.mainDefender.fortification, fortification];
         return;
       }
-  })}
+  })},
+  setMainAttakerHomeLand: (land) => set((state) => (state.mainAttacker.homeLand = land)),
+  setMainDefenderHomeLand: (land) => set((state) => (state.mainDefender.homeLand = land)),
+  setMainAttakerApostateValue: (apostate) => set((state) => (state.mainAttacker.apostate = apostate)),
+  setMainDefenderApostateValue: (apostate) => set((state) => (state.mainDefender.apostate = apostate))
 })))

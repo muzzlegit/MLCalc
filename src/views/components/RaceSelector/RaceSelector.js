@@ -1,8 +1,11 @@
-export default function RaceSelector({setRace}) {
+import raceLand from "../../../helpers/raceLands";
+
+export default function RaceSelector({setRace, setHomeLand}) {
 
     const onSelect = (e) => {
         let race = e.target.value;
         setRace(race);
+        setHomeLand(raceLand(race));
     }
     return (
         <select id="race" onChange={onSelect}>

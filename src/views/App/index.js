@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useStore } from '../../data/store/useStore';
 import { AppBox } from './index.styled';
 import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelector';
+import ApostateChecker from '../components/ApostateChecker/ApostateChecker';
 import RaceSelector from '../components/RaceSelector/RaceSelector';
 import Squad from '../components/squad';
 import TowersSelector from '../components/TowersSelector/TowersSelector';
@@ -14,6 +15,12 @@ function App() {
 
   const mainAttackerRateAttack = useStore(state => state.mainAttacker.attackRate);
   const mainDefenderRateAttack = useStore(state => state.mainDefender.attackRate);
+
+  const mainAttackerHomeLand = useStore(state => state.mainAttacker.homeLand);
+  const mainDefenderHomeLand = useStore(state => state.mainDefender.homeLand);
+
+  const mainAttackerApostateValue = useStore(state => state.mainAttacker.apostate);
+  const mainDefenderApostateValue = useStore(state => state.mainDefender.apostate);
 
   const mainAttackerTroops = useStore(state => state.mainAttacker.troops);
   const mainDefenderTroops =  useStore(state => state.mainDefender.troops);
@@ -40,20 +47,26 @@ function App() {
   const addMainDefenderTowers = useStore(state => state.addMainDefenderTowers);
   const addMainDefenderFortification = useStore(state => state.addMainDefenderFortification);
 
+  const setMainAttackerHomeLand = useStore(state => state.setMainAttakerHomeLand);
+  const setMainDefenderHomeLand = useStore(state => state.setMainDefenderHomeLand);
+
+  const setMainAttakerApostateValue = useStore(state => state.setMainAttakerApostateValue);
+  const setMainDefenderApostateValue = useStore(state => state.setMainDefenderApostateValue);
+
   const onClickAttackButton = () => {
-    let a = mainAttackerTroops;
-    let d = mainDefenderTroops;
-    console.log('mainAttackerTroops', mainAttackerTroops);
-    console.log('mainDefenderTroops', mainDefenderTroops);
-    console.log('a', a);
-    console.log('d', d);    
+    console.log('mainAttackerTroops', mainAttackerApostateValue);
+    console.log('mainAttackerTroops', mainDefenderApostateValue);
   }
-  console.log(mainAttackerFortification);
+
   return (
     <AppBox>
       {/* <button onClick={onClickButton}>Чпуньк</button> */}
-      <RaceSelector setRace = {setMainAttackerRace}/>
+      <RaceSelector 
+        setRace = {setMainAttackerRace}
+        setHomeLand = {setMainAttackerHomeLand}
+      />
       <AttackRateSelector setAttackRate = {setMainAttackerRateAttack}/>
+      <ApostateChecker setApostateValue = {setMainAttakerApostateValue}/>
       <Squad
         race = {mainAttackerRace}
         setUnit = {setAttackerUnit}
@@ -73,8 +86,12 @@ function App() {
         addTowers = {addMainAttackerTowers}
         addFortification = {addMainAttackerFortification}
       />
-      <RaceSelector setRace = {setMainDefenderRace}/>
+      <RaceSelector 
+        setRace = {setMainDefenderRace}
+        setHomeLand = {setMainDefenderHomeLand}
+      />
       <AttackRateSelector setAttackRate = {setMainDefenderRateAttack}/>
+      <ApostateChecker setApostateValue = {setMainDefenderApostateValue}/>
       <Squad
         race = {mainDefenderRace}
         setUnit = {setDefenderUnit}
