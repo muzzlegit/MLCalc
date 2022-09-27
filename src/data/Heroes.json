@@ -1,0 +1,107 @@
+[
+    {
+      "class": "стратег",
+      "name": "воитель",
+      "maleIcon": "-84px 1px",
+      "femaleIcon": "1px 1px",
+      "skills": {
+        "1":{
+          "id": "7DD63AE4587B4A62AD4979859F398623",
+          "icon": "0 0",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "attackArr",
+          "name": "Сила войск",
+          "description": "Атака всех войск",
+          "value": [ 5, 10, 15, 20, 25 ],
+          "battle": true
+        },
+        "2":{
+          "id": "35DA238C8CC444C6AF560D1863B3ED3B",
+          "icon": "0 52px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "ally",
+          "property": "attackArr",
+          "name": "Сила союзнику",
+          "description": "Атака всех войск",
+          "influenceDescription": "Действует на союзника",
+          "value": [ 5, 10, 15, 20, 25 ],
+          "battle": true
+        },
+        "3":{
+          "id": "72C3C5472C334BDDBBCC037EE704D1EB",
+          "icon": "0 104px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Индульгенция отступнику",
+          "description": "Отрицательный фракционный рейтинг за атаку своей фракции",
+          "value": [ -20, -40, -60, -80, -100 ],
+          "battle": false
+        },
+        "4":{
+          "id": "E9F4363491014789B5C5F67CBD8AA3CD",
+          "icon": "0 156px",
+          "type": "spell",
+          "name": "Добивание раненых",
+          "battle": false
+        },
+        "5":{
+          "id": "E4CDB3DD01534620879E747F63724222",
+          "icon": "0 208px",
+          "type": "spell",
+          "name": "Выносливость носильщиков",
+          "battle": false
+        },
+        "6":{
+          "id": "5D6D299C71EC454991507BC008D8D3CC",
+          "icon": "0 260px",
+          "type": "spell",
+          "name": "Удача",
+          "battle": false
+        },
+        "7":{
+          "id": "494B4737A0A44014B1D7568E9FEAD4A1",
+          "icon": "0 312px",
+          "type": "spell",
+          "name": "Всеобщее преследование",
+          "battle": false
+        }
+      }
+    },
+    {
+      "class": "стратег",
+      "name": "миротворец",
+      "maleIcon": "-84px 101px",
+      "femaleIcon": "1px 101px",
+      "skills": {
+      }
+    },
+    {
+      "class": "стратег",
+      "name": "паладин",
+      "maleIcon": "-84px 201px",
+      "femaleIcon": "1px 201px",
+      "skills": {
+      }
+    },
+    {
+      "class": "стратег",
+      "name": "разведчик",
+      "maleIcon": "-84px 301px",
+      "femaleIcon": "1px 301px",
+      "skills": {
+      }
+    },
+    {
+      "class": "стратег",
+      "name": "диверсант",
+      "maleIcon": "-84px 401px",
+      "femaleIcon": "1px 401px",
+      "skills": {
+      }
+    }
+  ]

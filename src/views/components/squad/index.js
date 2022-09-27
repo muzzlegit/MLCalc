@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
+import { useStore } from '../../../data/store/useStore';
+
 import UnitCard from '../UnitCard';
+import Hero from '../../Hero/Hero';
+
+import getValueFromUnitPropertyArray from '../../../helpers/getValueFromUnitPropertyArray';
 import { SquadBox,ArmyBox } from './index.styled';
 import TowersCard from '../TowersCard/TowersCard';
 
-export default function Squad ({race, troops , setUnit, attackRate  }) {
-    // console.log('troops to squad',troops);
+export default function Squad ({ player, setUnit, attackRate  }) {
+
+    const troops = player.troops;
     const troopsArray = [
         troops.porter,
         troops.swordsman, 
@@ -15,13 +21,22 @@ export default function Squad ({race, troops , setUnit, attackRate  }) {
         troops.mercenary,
         troops.mage 
     ]
+
     return (
         <>
             <SquadBox>
+                <Hero
+                    player={player}
+                />
                 { troopsArray.map((trooper) => {
                         return (
                             <li key={trooper.unit}>  
-                                <UnitCard trooper={trooper} setUnit={setUnit} race={race} attackRate = {attackRate}/>
+                                <UnitCard
+                                    player={player}
+                                    trooper={trooper}
+                                    setUnit={setUnit}
+                                    attackRate = {attackRate}
+                                />
                             </li>
                         )
                     })}

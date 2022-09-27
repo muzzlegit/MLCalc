@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useStore } from '../../data/store/useStore';
+import useMainAttaker from '../../data/store/useMainAttacker';
+import useMainDefender from '../../data/store/useMainDefender';
+import shallow from 'zustand/shallow'
 import { AppBox } from './index.styled';
+import isNativeLand from '../../helpers/isNativeLand';
+import BattlefieldSelector from '../components/BattlefieldSelector/BattlefieldSelector';
 import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelector';
 import ApostateChecker from '../components/ApostateChecker/ApostateChecker';
 import RaceSelector from '../components/RaceSelector/RaceSelector';
@@ -9,68 +14,63 @@ import TowersSelector from '../components/TowersSelector/TowersSelector';
 import TowersCard from '../components/TowersCard/TowersCard';
 
 function App() {
+  const battlefield = useStore(state => state.battlefield);
+  const setBattlefield = useStore(state => state.setBattlefield);
+  //MAIN ATTACKER
+  const mainAttacker = useMainAttaker();
+  const mainAttackerRace = useMainAttaker(state => state.race);
+  const mainAttackerRateAttack = useMainAttaker(state => state.attackRate);
 
-  const mainAttackerRace = useStore(state => state.mainAttacker.race);
-  const mainDefenderRace = useStore(state => state.mainDefender.race);
+  const setAttackerUnit = useMainAttaker(state => state.setUnit);
+  const setMainAttackerRace = useMainAttaker(state => state.setRace);
+  const setMainAttakerApostateValue = useMainAttaker(state => state.setApostateValue);
+  const setMainAttackerHomeLand = useMainAttaker(state => state.setHomeLand);
+  const setMainAttackerRateAttack = useMainAttaker(state => state.setRateAttack);
+  const mainAttackerTowers = useMainAttaker(state => state.towers);
+  const mainAttackerFortification = useMainAttaker(state => state.fortification);
+  const setMainAttackerTowers = useMainAttaker(state => state.setTowers);
+  const setMainAttackerFortification = useMainAttaker(state => state.setFortification);
+  const addMainAttackerTowers = useMainAttaker(state => state.addTowers);
+  const addMainAttackerFortification = useMainAttaker(state => state.addFortification);
+  //MAIN DEFENDER
+  const mainDefender =  useMainDefender();
+  const mainDefenderRace = useMainDefender(state => state.race);
+  const mainDefenderRateAttack = useMainDefender(state => state.attackRate);
 
-  const mainAttackerRateAttack = useStore(state => state.mainAttacker.attackRate);
-  const mainDefenderRateAttack = useStore(state => state.mainDefender.attackRate);
+  const setDefenderUnit = useMainDefender(state => state.setUnit);
+  const setMainDefenderRace = useMainDefender(state => state.setRace);
+  const setMainDefenderApostateValue = useMainDefender(state => state.setApostateValue);
+  const setMainDefenderHomeLand = useMainDefender(state => state.setHomeLand);
+  const setMainDefenderRateAttack = useMainDefender(state => state.setRateAttack);
+  const mainDefenderTowers = useMainDefender(state => state.towers);
+  const mainDefenderFortification = useMainDefender(state => state.fortification);
+  const setMainDefenderTowers = useMainDefender(state => state.setTowers);
+  const setMainDefenderFortification = useMainDefender(state => state.setFortification);
+  const addMainDefenderTowers = useMainDefender(state => state.addTowers);
+  const addMainDefenderFortification = useMainDefender(state => state.addFortification);
 
-  const mainAttackerHomeLand = useStore(state => state.mainAttacker.homeLand);
-  const mainDefenderHomeLand = useStore(state => state.mainDefender.homeLand);
-
-  const mainAttackerApostateValue = useStore(state => state.mainAttacker.apostate);
-  const mainDefenderApostateValue = useStore(state => state.mainDefender.apostate);
-
-  const mainAttackerTroops = useStore(state => state.mainAttacker.troops);
-  const mainDefenderTroops =  useStore(state => state.mainDefender.troops);
-
-  const setMainAttackerRace = useStore(state => state.setMainAttackerRace);
-  const setMainDefenderRace = useStore(state => state.setMainDefenderRace);
-  const setAttackerUnit = useStore(state => state.setAttackerUnit);
-  const setDefenderUnit = useStore(state => state.setDefenderUnit);
-  const setMainAttackerRateAttack = useStore(state => state.setMainAttackerRateAttack);
-  const setMainDefenderRateAttack = useStore(state => state.setMainDefenderRateAttack);
-
-  const mainAttackerTowers = useStore(state => state.mainAttacker.towers);
-  const mainAttackerFortification = useStore(state => state.mainAttacker.fortification);
-  const setMainAttackerTowers = useStore(state => state.setMainAttackerTowers);
-  const setMainAttackerFortification = useStore(state => state.setMainAttackerFortification);
-
-  const mainDefenderTowers = useStore(state => state.mainDefender.towers);
-  const mainDefenderFortification = useStore(state => state.mainDefender.fortification);
-  const setMainDefenderTowers = useStore(state => state.setMainDefenderTowers);
-  const setMainDefenderFortification = useStore(state => state.setMainDefenderFortification);
-
-  const addMainAttackerTowers = useStore(state => state.addMainAttackerTowers);
-  const addMainAttackerFortification = useStore(state => state.addMainAttackerFortification);
-  const addMainDefenderTowers = useStore(state => state.addMainDefenderTowers);
-  const addMainDefenderFortification = useStore(state => state.addMainDefenderFortification);
-
-  const setMainAttackerHomeLand = useStore(state => state.setMainAttakerHomeLand);
-  const setMainDefenderHomeLand = useStore(state => state.setMainDefenderHomeLand);
-
-  const setMainAttakerApostateValue = useStore(state => state.setMainAttakerApostateValue);
-  const setMainDefenderApostateValue = useStore(state => state.setMainDefenderApostateValue);
 
   const onClickAttackButton = () => {
-    console.log('mainAttackerTroops', mainAttackerApostateValue);
-    console.log('mainAttackerTroops', mainDefenderApostateValue);
+    console.log('mainAttacker', mainAttacker.troops);
+    console.log('mainDefender', mainDefender.troops);
   }
 
   return (
     <AppBox>
-      {/* <button onClick={onClickButton}>Чпуньк</button> */}
+
       <RaceSelector 
         setRace = {setMainAttackerRace}
         setHomeLand = {setMainAttackerHomeLand}
       />
-      <AttackRateSelector setAttackRate = {setMainAttackerRateAttack}/>
-      <ApostateChecker setApostateValue = {setMainAttakerApostateValue}/>
+      <AttackRateSelector
+        setAttackRate = {setMainAttackerRateAttack}
+      />
+      <ApostateChecker 
+        setApostateValue = {setMainAttakerApostateValue}
+      />
       <Squad
-        race = {mainAttackerRace}
+        player = {mainAttacker}
         setUnit = {setAttackerUnit}
-        troops = {mainAttackerTroops}
         attackRate = {mainAttackerRateAttack}
       />
       <TowersCard
@@ -90,12 +90,15 @@ function App() {
         setRace = {setMainDefenderRace}
         setHomeLand = {setMainDefenderHomeLand}
       />
-      <AttackRateSelector setAttackRate = {setMainDefenderRateAttack}/>
-      <ApostateChecker setApostateValue = {setMainDefenderApostateValue}/>
+      <AttackRateSelector 
+        setAttackRate = {setMainDefenderRateAttack}
+      />
+      <ApostateChecker 
+        setApostateValue = {setMainDefenderApostateValue}
+      />
       <Squad
-        race = {mainDefenderRace}
+        player = {mainDefender}
         setUnit = {setDefenderUnit}
-        troops = {mainDefenderTroops}
         attackRate = {mainDefenderRateAttack}
       />
       <TowersCard
@@ -110,7 +113,8 @@ function App() {
         fortifications = {mainDefenderFortification}
         addTowers = {addMainDefenderTowers}
         addFortification = {addMainDefenderFortification}
-      />      
+      />     
+      <BattlefieldSelector/> 
       <button onClick={onClickAttackButton} style = {{color: 'white', backgroundColor: 'red', width: '690px' }} >В атаку</button>
     </AppBox>
     

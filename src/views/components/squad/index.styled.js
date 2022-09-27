@@ -7,7 +7,7 @@ export const SquadBox = styled.ul(
         display: 'flex',
         // justifyContent: 'center',
         // alignItems: 'center',
-        width: '690px',
+        // width: '690px',
         listStyle: 'none',
     },
 

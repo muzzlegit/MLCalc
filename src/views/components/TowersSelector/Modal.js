@@ -8,7 +8,7 @@ import towersData from '../../../data/Towers.json';
 import { nanoid } from 'nanoid'
 
 
-const modalRoot =document.querySelector('#modal-root')
+const modalRoot =document.querySelector('#modal-root-level-1')
 const levels = [1,2,3,4,5,6,7,8]
 const selectShadow = 'drop-shadow(rgb(0, 128, 255) 0px 0px 5px) drop-shadow(rgb(0, 128, 255) 0px 0px 5px)';
 

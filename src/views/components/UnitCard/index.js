@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useStore } from '../../../data/store/useStore';
 import { UnitImg, UnitImgBox, ArticleBox, ArticleInput, UnitHealth, UnitDefense, UnitAttack, UnitLevel, UnitFrame  } from './index.styled';
+
+import useMainAttacker from '../../../data/store/useMainAttacker';
+import useMainDefender from '../../../data/store/useMainDefender';
 
 import UndeadUnitsCard from '../../../img/undead/UndeadCards.png';
 import DemonUnitsCard from '../../../img/demon/DemonCards.png';
@@ -17,19 +21,29 @@ import commonHumanImg from '../../../img/human/HumanCommon.png';
 import units from '../../../data/Units.json';
 import commonAssets from '../../../data/CommonAssets.json';
 
+import isUnitNativeLand from '../../../helpers/isUnitNativeLand';
+import getValueFromUnitPropertyArray from '../../../helpers/getValueFromUnitPropertyArray';
 
-export default function UnitCard ({trooper, setUnit, race, attackRate}) {
+export default function UnitCard ({player, trooper, setUnit, attackRate}) {
+
     const [level, setLevel] = useState(1);
     const [amount, setAmount] = useState(0);
     const [troopsRaceImg, setTroopsRaceImg] = useState(UndeadUnitsCard);
-    // console.log('v kartu', trooper);
+
+    const battlefield = useMainDefender(state => state.battlefield);
+    const setMainAttackerAttackArr = useMainAttacker(state => state.setAttackArr);
+    const setMainDefenderttackArr = useMainDefender(state => state.setAttackArr);
+
+    const race = player.race;
+
     const onClick = (e) => {
         if(level === 4) {
             setLevel(1);
         } else {
            setLevel(prev => prev += 1);
         }
-        setUnit({...units[race][trooper.unit][`level${level}`], amount: amount, partOfTroops:0, totalHealth:0, totalAttackMax:0, totalAttackMin:0});
+        setUnit({...units[race][trooper.unit][`level${level}`]});
+;
     }
     const handleAmount = (e) => {
         if(e.target.value === ""){
@@ -61,9 +75,28 @@ export default function UnitCard ({trooper, setUnit, race, attackRate}) {
     }, [race])
 
     useEffect(() => {
-        setUnit({...units[race][trooper.unit][`level${level}`], amount: amount, partOfTroops:0, totalHealth: 0, totalAttackMax:0, totalAttackMin:0 });   
-    }, [amount, level, race,trooper.unit, setUnit])
-
+            setUnit({...units[race][trooper.unit][`level${level}`]});
+        }, [
+            amount,
+            level,
+            player.apostate,
+            race,
+            trooper.unit,
+            setUnit
+        ]
+    )
+    useEffect(() => {
+        isUnitNativeLand(trooper.homeLand, battlefield)
+            ? setMainAttackerAttackArr({ name: "homeLand", unit: `${trooper.unit}`, property: 'attackArr', value: .5 })
+            : setMainAttackerAttackArr({ name: "homeLand", unit: `${trooper.unit}`, property: 'attackArr', value: 0 });
+     }, [ battlefield, setMainAttackerAttackArr, trooper.homeLand,trooper.alienLand, trooper.unit ]);
+    
+     useEffect(() => {
+        isUnitNativeLand(trooper.alienLand, battlefield)
+            ? setMainAttackerAttackArr({ name: "alienLand", unit: `${trooper.unit}`, property: 'attackArr', value: -.5 })
+            : setMainAttackerAttackArr({ name: "alienLand", unit: `${trooper.unit}`, property: 'attackArr', value: 0 });
+    }, [ battlefield, setMainAttackerAttackArr, trooper.homeLand,trooper.alienLand, trooper.unit ]);
+    
     return (
         <ArticleBox>
             <UnitImgBox
@@ -78,27 +111,36 @@ export default function UnitCard ({trooper, setUnit, race, attackRate}) {
 
             </UnitImgBox>
             <ArticleInput
-                    type="text"
-                    
-                    autoComplete="off"
-                    autoFocus
-                    placeholder="0"
-                    value={amount}
-                    onChange={handleAmount}                    
+                type="text"
+                autoComplete="off"
+                autoFocus
+                placeholder="0"
+                value={amount}
+                onChange={handleAmount}                    
             />
             <div>
                 <UnitLevel
                     background = { `url(${commonAssetsImg}) ${units[race][trooper.unit].unitIcon}` } 
-                >{trooper.level}</UnitLevel>
+                >
+                    {trooper.level}
+                </UnitLevel>
                 <UnitAttack
                     background = { `url(${commonAssetsImg}) ${commonAssets.attackIcon}` }                 
-                >{trooper[`attack${attackRate}`]}</UnitAttack>
+                >
+                    { trooper[`attack${attackRate}`] }
+                    { (getValueFromUnitPropertyArray(trooper.attackArr)) >= 0? ' +' : ' -' }
+                    { Math.abs((getValueFromUnitPropertyArray(trooper.attackArr)) * 100) }%
+                </UnitAttack>
                 <UnitDefense
                     background = { `url(${commonAssetsImg}) ${commonAssets.defenseIcon}` }                   
-                >{trooper.defense}</UnitDefense>
+                >
+                    {getValueFromUnitPropertyArray(trooper.defenseArr)}
+                </UnitDefense>
                 <UnitHealth
                     background = { `url(${commonAssetsImg}) ${commonAssets.healthIcon}` }               
-                >{trooper.health}</UnitHealth>
+                >
+                    {trooper.health}
+                </UnitHealth>
             </div>
         </ArticleBox>
     )

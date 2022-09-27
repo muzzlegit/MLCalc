@@ -3,22 +3,36 @@ import { devtools } from 'zustand/middleware'
 import units from '../../data/Units.json';
 import { UnitAttack } from '../../views/components/UnitCard/index.styled';
 
+import findPropertyIndex from '../../helpers/findPropertyIndex';
+
+const additionalProperties = {
+  amount: 0,
+  attackGain: 1,
+  attackGainArray: [],
+  defense: 0,
+  defensisArray: [],
+  defenseLevel: 50,
+  defenseLevelLimit: 50,
+}
+const troopsNamesArray = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage']
+
 export const useStore = create(devtools(set => ({
+  battlefield: 'cursedForest',
   mainAttacker: {
     race: 'undead',
     apostate: false,
     homeLand: 'cursedForest',
-    attackRate: 'Min',
     hero: {},
+    attackRate: 'Min',
     troops: {
-      porter: { ...units.undead.porter.level1 },
-      swordsman: { ...units.undead.swordsman.level1 },
-      cavalier: { ...units.undead.cavalier.level1 },
-      flying: { ...units.undead.flying.level1 },
-      archer: { ...units.undead.archer.level1 },
-      healer: { ...units.undead.healer.level1 },
-      mercenary: { ...units.undead.mercenary.level1 },
-      mage: { ...units.undead.mage.level1 }
+      porter: { ...units.undead.porter.level1, ...additionalProperties, homeLand: units.undead.porter.homeLand, alienLand: units.undead.porter.alienLand },
+      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, homeLand: units.undead.swordsman.homeLand, alienLand: units.undead.swordsman.alienLand },
+      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, homeLand: units.undead.cavalier.homeLand, alienLand: units.undead.cavalier.alienLand },
+      flying: { ...units.undead.flying.level1, ...additionalProperties, homeLand: units.undead.flying.homeLand, alienLand: units.undead.flying.alienLand },
+      archer: { ...units.undead.archer.level1, ...additionalProperties, homeLand: units.undead.archer.homeLand, alienLand: units.undead.archer.alienLand },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, homeLand: units.undead.healer.homeLand, alienLand: units.undead.healer.alienLand },
+      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, homeLand: units.undead.mercenary.homeLand, alienLand: units.undead.mercenary.alienLand },
+      mage: { ...units.undead.mage.level1, ...additionalProperties, homeLand: units.undead.mage.homeLand, alienLand: units.undead.mage.alienLand }
     },
     towers: [],
     fortification: []
@@ -26,66 +40,109 @@ export const useStore = create(devtools(set => ({
   mainDefender: {
     race: 'undead',
     apostate: false,
-    homeLand: 'cursedForest',
-    attackRate: 'Min',
+    homeLand: 'cursedForest', 
     hero: {},
+    attackRate: 'Min',
     troops: {
-      porter: { ...units.undead.porter.level1 },
-      swordsman: { ...units.undead.swordsman.level1 },
-      cavalier: { ...units.undead.cavalier.level1 },
-      flying: { ...units.undead.flying.level1 },
-      archer: { ...units.undead.archer.level1 },
-      healer: { ...units.undead.healer.level1 },
-      mercenary: { ...units.undead.mercenary.level1 },
-      mage: { ...units.undead.mage.level1 }
+      porter: { ...units.undead.porter.level1, ...additionalProperties, homeLand: units.undead.porter.homeLand, alienLand: units.undead.porter.alienLand },
+      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, homeLand: units.undead.swordsman.homeLand, alienLand: units.undead.swordsman.alienLand },
+      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, homeLand: units.undead.cavalier.homeLand, alienLand: units.undead.cavalier.alienLand },
+      flying: { ...units.undead.flying.level1, ...additionalProperties, homeLand: units.undead.flying.homeLand, alienLand: units.undead.flying.alienLand },
+      archer: { ...units.undead.archer.level1, ...additionalProperties, homeLand: units.undead.archer.homeLand, alienLand: units.undead.archer.alienLand },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, homeLand: units.undead.healer.homeLand, alienLand: units.undead.healer.alienLand },
+      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, homeLand: units.undead.mercenary.homeLand, alienLand: units.undead.mercenary.alienLand },
+      mage: { ...units.undead.mage.level1, ...additionalProperties, homeLand: units.undead.mage.homeLand, alienLand: units.undead.mage.alienLand }
     },
     towers: [],
     fortification: []
   },
+  setBattlefield: (battlefield) => set((state) => (state.battlefield = battlefield)),
 
   setMainAttackerRace: (race) => set((state) => (state.mainAttacker.race = race)),
   setMainDefenderRace: (race) => set((state) => (state.mainDefender.race = race)),
+
+  // setUnitPropertyArray: (player, item) => {
+  //   if(item.unit !== 'all'){
+  //     set((state) => {
+  //       state[player].troops[item.unit][item.property][findPropertyIndex(state[player].troops[item.unit][item.property], item)] = {name: item.name, value: item.value};    
+  // })
+  //   }
+  //   if(item.unit === 'all'){
+  //     console.log(player, item.property)
+  //     set((state) => {
+  //       troopsNamesArray.forEach(trooper => {
+  //         item.value === 0
+  //         ? state[player].troops[trooper][item.property].splice(findPropertyIndex(state[player].troops[trooper][item.property], item), 1)
+  //         : state[player].troops[trooper][item.property][findPropertyIndex(state[player].troops[trooper][item.property], item)] = {name: item.name, value: item.value};
+  //       });
+  //     })
+  //   }
+  // },
+  setMainAttakerUnitPropertyArray: (item) => {
+    if(item.unit !== 'all'){
+      set((state) => {
+        state.mainAttacker.troops[item.unit][item.property][findPropertyIndex(state.mainAttacker.troops[item.unit][item.property], item)] = {name: item.name, value: item.value};    
+  })
+    }
+    if(item.unit === 'all'){
+      set((state) => {
+        troopsNamesArray.forEach(trooper => {
+
+          item.value === 0
+          ? state.mainAttacker.troops[trooper][item.property].splice(findPropertyIndex(state.mainAttacker.troops[trooper][item.property], item), 1)
+          : state.mainAttacker.troops[trooper][item.property][findPropertyIndex(state.mainAttacker.troops[trooper][item.property], item)] = {name: item.name, value: item.value};
+        });
+        console.log('state.mainAttacker', state.mainAttacker)
+        console.log('state.mainDefender', state.mainDefender)
+      })
+
+    }
+  },
+
+
+  setAllUnitsAttack: (attack) => set((state) => (state.mainAttacker.allUnitsAttack = state.mainAttacker.allUnitsAttack + attack)),
+
   setAttackerUnit: (unit) => {
     switch (unit.unit) {
       case 'porter':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          porter:unit}));
+          porter:{...state.mainAttacker.troops.porter, ...unit}}));
         break;
       case 'swordsman':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          swordsman:unit}));  
+          swordsman:{...state.mainAttacker.troops.swordsman, ...unit}}));  
         break;
       case 'cavalier':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          cavalier:unit}));
+          cavalier:{...state.mainAttacker.troops.cavalier, ...unit}}));
         break;
       case 'flying':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          flying:unit}));  
+          flying:{...state.mainAttacker.troops.flying, ...unit}}));  
         break;
       case 'archer':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          archer:unit}));
+          archer:{...state.mainAttacker.troops.archer, ...unit}}));
         break;
       case 'healer':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          healer:unit}));  
+          healer:{...state.mainAttacker.troops.healer, ...unit}}));  
         break;
       case 'mercenary':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          mercenary:unit}));   
+          mercenary:{...state.mainAttacker.troops.mercenary, ...unit}}));   
         break; 
       case 'mage':
         set((state) => (state.mainAttacker.troops = {
           ...state.mainAttacker.troops,
-          mage:unit}));
+          mage:{...state.mainAttacker.troops.mage, ...unit}}));
         break;      
       default:
         break;
@@ -96,42 +153,42 @@ export const useStore = create(devtools(set => ({
       case 'porter':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          porter:unit}));
+          porter:{...state.mainDefender.troops.porter, ...unit}}));
         break;
       case 'swordsman':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          swordsman:unit}));  
+          swordsman:{...state.mainDefender.troops.swordsman, ...unit}}));  
         break;
       case 'cavalier':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          cavalier:unit}));
+          cavalier:{...state.mainDefender.troops.cavalier, ...unit}}));
         break;
       case 'flying':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          flying:unit}));  
+          flying:{...state.mainDefender.troops.flying, ...unit}}));  
         break;
       case 'archer':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          archer:unit}));
+          archer:{...state.mainDefender.troops.archer, ...unit}}));
         break;
       case 'healer':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          healer:unit}));  
+          healer:{...state.mainDefender.troops.healer, ...unit}}));  
         break;
       case 'mercenary':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          mercenary:unit}));   
+          mercenary:{...state.mainDefender.troops.mercenary, ...unit}}));   
         break; 
       case 'mage':
         set((state) => (state.mainDefender.troops = {
           ...state.mainDefender.troops,
-          mage:unit}));
+          mage:{...state.mainDefender.troops.mage, ...unit}}));
         break;      
       default:
         break;
@@ -192,5 +249,33 @@ export const useStore = create(devtools(set => ({
   setMainAttakerHomeLand: (land) => set((state) => (state.mainAttacker.homeLand = land)),
   setMainDefenderHomeLand: (land) => set((state) => (state.mainDefender.homeLand = land)),
   setMainAttakerApostateValue: (apostate) => set((state) => (state.mainAttacker.apostate = apostate)),
-  setMainDefenderApostateValue: (apostate) => set((state) => (state.mainDefender.apostate = apostate))
+  setMainDefenderApostateValue: (apostate) => set((state) => (state.mainDefender.apostate = apostate)),
+  setMainAttakerTroopsDefense: (defenseAmount) => {
+    set((state) => (state.mainAttacker.troops = {
+      ...state.mainAttacker.troops,
+      ...state.mainAttacker.troops.porter.defense += defenseAmount,
+      ...state.mainAttacker.troops.swordsman.defense += defenseAmount,
+      ...state.mainAttacker.troops.cavalier.defense += defenseAmount,
+      ...state.mainAttacker.troops.flying.defense += defenseAmount,
+      ...state.mainAttacker.troops.archer.defense += defenseAmount,
+      ...state.mainAttacker.troops.healer.defense += defenseAmount,
+      ...state.mainAttacker.troops.mercenary.defense += defenseAmount,
+      ...state.mainAttacker.troops.mage.defense += defenseAmount
+      
+     }))
+  },
+  setMainDefenderTroopsDefense: (defenseAmount) => {
+    set((state) => (state.mainDefender.troops = {
+      ...state.mainDefender.troops,
+      ...state.mainDefender.troops.porter.defense += defenseAmount,
+      ...state.mainDefender.troops.swordsman.defense += defenseAmount,
+      ...state.mainDefender.troops.cavalier.defense += defenseAmount,
+      ...state.mainDefender.troops.flying.defense += defenseAmount,
+      ...state.mainDefender.troops.archer.defense += defenseAmount,
+      ...state.mainDefender.troops.healer.defense += defenseAmount,
+      ...state.mainDefender.troops.mercenary.defense += defenseAmount,
+      ...state.mainDefender.troops.mage.defense += defenseAmount
+      
+     }))
+  },
 })))
