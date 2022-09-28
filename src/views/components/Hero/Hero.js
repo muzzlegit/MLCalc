@@ -4,14 +4,14 @@ import HeroModal from './HeroModal';
 //STYLES
 import { HeroBox, HeroImg } from "./Hero.styled";
 //IMAGES
-import commonAssetsImg from '../../img/common/CommonAssets.png';
-import commonDemonImg from '../../img/demon/DemonCommon.png';
-import commonUndeadImg from '../../img/undead/UndeadCommon.png';
-import commonDrowImg from '../../img/drow/DrowCommon.png';
-import commonElfImg from '../../img/elf/ElfCommon.png';
-import commonHumanImg from '../../img/human/HumanCommon.png';
+import commonAssetsImg from '../../../img/common/CommonAssets.png';
+import commonDemonImg from '../../../img/demon/DemonCommon.png';
+import commonUndeadImg from '../../../img/undead/UndeadCommon.png';
+import commonDrowImg from '../../../img/drow/DrowCommon.png';
+import commonElfImg from '../../../img/elf/ElfCommon.png';
+import commonHumanImg from '../../../img/human/HumanCommon.png';
 //DATA
-import commonAssets from '../../data/CommonAssets.json';
+import commonAssets from '../../../data/CommonAssets.json';
 
 export default function Hero({player}){
   const [heroBackgraundImg, setHeroBackgraundImg] = useState(commonUndeadImg);
@@ -49,12 +49,10 @@ export default function Hero({player}){
         background={ `url(${commonAssetsImg}) ${commonAssets.heroFamePosition}, url(${heroBackgraundImg}) -27px 7px`}
         onClick={toggleModal}
       > 
-        <HeroImg>
 
-        </HeroImg>
       </HeroBox>
       {showModal && <HeroModal 
-
+        hero={player.hero}
       />} 
     </>
   )

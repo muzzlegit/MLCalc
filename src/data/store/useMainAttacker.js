@@ -19,7 +19,7 @@ const useMainAttacker = create((set) => ({
     race: 'undead',
     apostate: false,
     homeLand: 'cursedForest',
-    hero: {},
+    hero: {checker: false},
     attackRate: 'Min',
     troops: {
       porter: { ...units.undead.porter.level1, ...additionalProperties, homeLand: units.undead.porter.homeLand, alienLand: units.undead.porter.alienLand },
@@ -38,7 +38,7 @@ const useMainAttacker = create((set) => ({
   setRateAttack: (attackRate) => set((state) => (state.attackRate = attackRate)),
   setHomeLand: (land) => set((state) => (state.homeLand = land)),
   setApostateValue: () => set((state) => (state.apostate = !state.apostate)),
-
+  setHero: (hero) => set((state) => (state.hero = hero)),
 
   setTowers:  (tower) =>set((state) => (state.towers = tower)),
   setFortification:  (fortification) =>set((state) => (state.fortification = fortification)),

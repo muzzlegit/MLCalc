@@ -51,7 +51,7 @@ function App() {
 
 
   const onClickAttackButton = () => {
-    console.log('mainAttacker', mainAttacker.troops);
+    console.log('mainAttacker', mainAttacker);
     console.log('mainDefender', mainDefender.troops);
   }
 

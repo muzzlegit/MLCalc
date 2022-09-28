@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useStore } from '../../../data/store/useStore';
-
+//COMPONENTS
 import UnitCard from '../UnitCard';
-import Hero from '../../Hero/Hero';
-
-import getValueFromUnitPropertyArray from '../../../helpers/getValueFromUnitPropertyArray';
-import { SquadBox,ArmyBox } from './index.styled';
+import Hero from '../../../views/components/Hero/Hero';
 import TowersCard from '../TowersCard/TowersCard';
+//HELPERS
+import getValueFromUnitPropertyArray from '../../../helpers/getValueFromUnitPropertyArray';
+//STYLES
+import { SquadBox,ArmyBox } from './index.styled';
+
 
 export default function Squad ({ player, setUnit, attackRate  }) {
 

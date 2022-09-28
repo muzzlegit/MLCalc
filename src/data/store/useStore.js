@@ -22,7 +22,7 @@ export const useStore = create(devtools(set => ({
     race: 'undead',
     apostate: false,
     homeLand: 'cursedForest',
-    hero: {},
+    hero: {checker: false},
     attackRate: 'Min',
     troops: {
       porter: { ...units.undead.porter.level1, ...additionalProperties, homeLand: units.undead.porter.homeLand, alienLand: units.undead.porter.alienLand },
