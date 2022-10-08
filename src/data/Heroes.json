@@ -3,12 +3,12 @@
       "id": "7DA8CF38F3DB4A9B8E90C18D548462F2",
       "class": "стратег",
       "name": "воитель",
-      "maleIcon": "-84px 1px",
-      "femaleIcon": "1px 1px",
+      "maleIcon": "-84px 0px",
+      "femaleIcon": "1px 0px",
       "skills": {
         "1":{
           "id": "7DD63AE4587B4A62AD4979859F398623",
-          "icon": "1px 1px",
+          "icon": "1px -1px",
           "unit": "all",
           "type": "passive",
           "effect": "player",
@@ -35,7 +35,7 @@
         },
         "3":{
           "id": "72C3C5472C334BDDBBCC037EE704D1EB",
-          "icon": "0 -104px",
+          "icon": "1px -104px",
           "unit": "all",
           "type": "passive",
           "effect": "player",
@@ -48,7 +48,7 @@
         },
         "4":{
           "id": "E9F4363491014789B5C5F67CBD8AA3CD",
-          "icon": "0 -156px",
+          "icon": "1px -156px",
           "type": "spell",
           "name": "Добивание раненых",
           "level": 1,
@@ -56,7 +56,7 @@
         },
         "5":{
           "id": "E4CDB3DD01534620879E747F63724222",
-          "icon": "0 -208px",
+          "icon": "1px -208px",
           "type": "spell",
           "name": "Выносливость носильщиков",
           "level": 1,
@@ -65,14 +65,14 @@
         "6":{
           "id": "5D6D299C71EC454991507BC008D8D3CC",
           "level": 1,
-          "icon": "0 -260px",
+          "icon": "1px -260px",
           "type": "spell",
           "name": "Удача",
           "battle": false
         },
         "7":{
           "id": "494B4737A0A44014B1D7568E9FEAD4A1",
-          "icon": "0 -312px",
+          "icon": "1px -312px",
           "type": "spell",
           "name": "Всеобщее преследование",
           "level": 1,
@@ -87,6 +87,77 @@
       "maleIcon": "-84px 401px",
       "femaleIcon": "0px 401px",
       "skills": {
+        "1":{
+          "id": "CEF9D317304442BA980A6C12E4AFC1A9",
+          "icon": "-58px -1px",
+          "unit": "hero",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Бережный захват",
+          "description": " % зданий во внешнем владении не получают никаких повреждений при захвате",
+          "level": 1,
+          "value": [ 40, 55, 70, 85, 100 ],
+          "battle": false
+        },
+        "2":{
+          "id": "33CD9884879547838363531939C4DB07",
+          "icon": "-58px -52px",
+          "unit": "hero",
+          "type": "passive",
+          "effect": "enemy",
+          "property": "",
+          "name": "Снижение опыта противнику",
+          "description": "Получаемый героем опыт в бою ",
+          "level": 1,
+          "value": [ -20, -40, -60, -80, -100 ],
+          "battle": false
+        },
+        "3":{
+          "id": "E119C7F8D8CC415FA596424115702F77",
+          "icon": "-58px -104px",
+          "unit": "hero",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Уничтожитель монстров",
+          "description": "Получаемый героем опыт в бою В бою против расы Монстры",
+          "level": 1,
+          "value": [ 100, 200, 300, 400, 500 ],
+          "battle": false
+        },
+        "4":{
+          "id": "B86F469E1FF948849ED7E0A6463EB9F3",
+          "icon": "-58px -156px",
+          "type": "spell",
+          "name": "Слабость преследователей",
+          "level": 1,
+          "battle": false
+        },
+        "5":{
+          "id": "B58B5611B1C84CC99D9C88A1404192CE",
+          "icon": "-58px -208px",
+          "type": "spell",
+          "name": "Всеобщая слабость",
+          "level": 1,
+          "battle": false
+        },
+        "6":{
+          "id": "C784A163C75F4D58A8D498491BA7FB4F",
+          "icon": "-58px -260px",
+          "type": "spell",
+          "name": "Всеобщая неудача",
+          "level": 1,
+          "battle": false
+        },
+        "7":{
+          "id": "461904DD91C04D4F964ACCBE8E737B68",
+          "icon": "-58px -312px",
+          "type": "spell",
+          "name": "Отказ служить",
+          "level": 1,
+          "battle": false
+        }
       }
     },
     {
@@ -96,6 +167,85 @@
       "maleIcon": "-84px 301px",
       "femaleIcon": "0px 301px",
       "skills": {
+        "1":{
+          "id": "701FDDE86DD643B8A73877D5D6E35F16",
+          "icon": "-115px -1px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Защита от укреплений",
+          "description": "Эффективность уничтожения войск на укреплениях",
+          "influenceDescription": "Действует на противника",
+          "level": 1,
+          "value": [ 20, 40, 60, 80, 100 ],
+          "battle": false
+        },
+        "2":{
+          "id": "1EB6502E1B924D52AE2E30CE7A647E94",
+          "icon": "-115px -52px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "enemy",
+          "property": "",
+          "name": "Неудача противнику",
+          "description": "Вероятность минимальной атаки всех войск",
+          "influenceDescription": "Действует на противника",
+          "level": 1,
+          "value": [ 10, 20, 30, 40, 50 ],
+          "battle": false
+        },
+        "3":{
+          "id": "0E215F74A8AC43449F03FFA3801B436A",
+          "icon": "-115px -104px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Защита",
+          "description": "Защита всех войск",
+          "level": 1,
+          "value": [ 5, 10, 15, 20, 25 ],
+          "battle": true
+        },
+        "4":{
+          "id": "982F4EFCA8E64E2F93E38C6843062284",
+          "icon": "-115px -156px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "ally",
+          "property": "",
+          "name": "Охрана союника",
+          "description": "Защита всех войск",
+          "influenceDescription": "Действует на союзника",
+          "level": 1,
+          "value": [ 5, 10, 15, 20, 25 ],
+          "battle": true
+        },
+        "5":{
+          "id": "A46F4FDEE4E8406F899BA0CAD19BFF0A",
+          "icon": "-115px -208px",
+          "type": "spell",
+          "name": "Подавление монстров",
+          "level": 1,
+          "battle": false
+        },
+        "6":{
+          "id": "F75132EB0F9140838CD9C2EDB3DE760E",
+          "level": 1,
+          "icon": "-115px -260px",
+          "type": "spell",
+          "name": "Слабость всех магов",
+          "battle": false
+        },
+        "7":{
+          "id": "7BCF5D6A947C491782AF057D35406BDC",
+          "icon": "-115px -312px",
+          "type": "spell",
+          "name": "Слабость противника",
+          "level": 1,
+          "battle": false
+        }
       }
     },
     {
@@ -105,6 +255,82 @@
       "maleIcon": "-84px 201px",
       "femaleIcon": "0px 201px",
       "skills": {
+        "1":{
+          "id": "D8FBD279BE7544E783C7CB33233FB208",
+          "icon": "-172px -1px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Охотник за артефактами",
+          "description": "",
+          "level": 1,
+          "value": [ ],
+          "battle": false
+        },
+        "2":{
+          "id": "E46FA66C1B1A4E4CA0F5E2A4B25B3578",
+          "icon": "-172px -52px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Ускорение исследователей",
+          "description": "",
+          "level": 1,
+          "value": [ ],
+          "battle": false
+        },
+        "3":{
+          "id": "37BB952A8A30456F838B20814CA2C97B",
+          "icon": "-172px -104px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Дальний шпионаж",
+          "description": "",
+          "level": 1,
+          "value": [ ],
+          "battle": false
+        },
+        "4":{
+          "id": "BE51A74FE00A4218BCB1D2880D7E0A78",
+          "icon": "-172px -156px",
+          "unit": "all",
+          "type": "passive",
+          "effect": "player",
+          "property": "",
+          "name": "Дальнее наблюдение",
+          "description": "",
+          "level": 1,
+          "value": [ ],
+          "battle": false
+        },
+        "5":{
+          "id": "A3B43FFC26DF4835A75104D58C1467F9",
+          "icon": "-172px -208px",
+          "type": "spell",
+          "name": "Дозорный",
+          "level": 1,
+          "battle": false
+        },
+        "6":{
+          "id": "C21F0134B16341A58E29F410A0F535DB",
+          "icon": "-172px -260px",
+          "type": "spell",
+          "name": "Око исследователей",
+          "level": 1,
+          "battle": false
+        },
+        "7":{
+          "id": "51C27562C3C541A58DC512B3AD991227",
+          "icon": "-172px -312px",
+          "type": "spell",
+          "name": "Походные шпионы",
+          "level": 1,
+          "battle": false
+        }
       }
     },
     {
@@ -114,6 +340,62 @@
       "maleIcon": "-84px 101px",
       "femaleIcon": "0px 101px",
       "skills": {
+        "1":{
+          "id": "7A303851CE3F4A559B0B3927A5897133",
+          "icon": "-229px -1px",
+          "type": "spell",
+          "name": "Диверсия купцов",
+          "level": 1,
+          "battle": false
+        },
+        "2":{
+          "id": "9A35DE807A2F4D53B20795C1309DC7E6",
+          "icon": "-229px -52px",
+          "type": "spell",
+          "name": "Саботаж строительства",
+          "level": 1,
+          "battle": false
+        },
+        "3":{
+          "id": "776CB42A69D948289EB9E3FF544080B8",
+          "icon": "-229px -104px",
+          "type": "spell",
+          "name": "Диверсия башен",
+          "level": 1,
+          "battle": false
+        },
+        "4":{
+          "id": "694F8B20F49E4CEB84D5B5A166A8A7AF",
+          "icon": "-229px -156px",
+          "type": "spell",
+          "name": "Диверсия добычи",
+          "level": 1,
+          "battle": false
+        },
+        "5":{
+          "id": "A82DAFCCB79848D194175422A239F244",
+          "icon": "-229px -208px",
+          "type": "spell",
+          "name": "Диверсия исследователей",
+          "level": 1,
+          "battle": false
+        },
+        "6":{
+          "id": "3EB6122B96734EAA91F07887C033FA7C",
+          "icon": "-229px -260px",
+          "type": "spell",
+          "name": "Диверсия зеркал и антишпионов",
+          "level": 1,
+          "battle": false
+        },
+        "7":{
+          "id": "D34AD3EE3DFB44309DBED7D4CACD9FEA",
+          "icon": "-229px -312px",
+          "type": "spell",
+          "name": "Диверсия тренировок",
+          "level": 1,
+          "battle": false
+        }
       }
     }
   ]

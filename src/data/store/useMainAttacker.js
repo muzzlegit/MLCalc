@@ -39,7 +39,12 @@ const useMainAttacker = create((set) => ({
   setHomeLand: (land) => set((state) => (state.homeLand = land)),
   setApostateValue: () => set((state) => (state.apostate = !state.apostate)),
   setHero: (hero) => set((state) => (state.hero = hero)),
+  setHeroSkillLevel: (branch, skill) => set(state => (
 
+    state.hero[branch][skill].level >= 5
+    ? state.hero[branch][skill].level = 1
+    : state.hero[branch][skill].level += 1)),
+  setHeroSkillsBranch: (branch, skills) => set((state) => (state.hero[branch] = skills)),
   setTowers:  (tower) =>set((state) => (state.towers = tower)),
   setFortification:  (fortification) =>set((state) => (state.fortification = fortification)),
   addTowers:  (tower) =>set((state) => (state.towers = [...state.towers, tower])),

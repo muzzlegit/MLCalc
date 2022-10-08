@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 //COMPONENTS
-import HeroModal from './HeroModal';
+import Modal from "../Modal/Modal";
+import HeroWindow from './HeroWindow/HeroWindow';
 //STYLES
 import { HeroBox, HeroImg } from "./Hero.styled";
 //IMAGES
@@ -13,7 +14,12 @@ import commonHumanImg from '../../../img/human/HumanCommon.png';
 //DATA
 import commonAssets from '../../../data/CommonAssets.json';
 
-export default function Hero({player}){
+export default function Hero({
+    player,
+    setHero,
+    setMainAttackerHeroSkillsBranch,
+    setHeroSkillLevel
+  }){
   const [heroBackgraundImg, setHeroBackgraundImg] = useState(commonUndeadImg);
   const [showModal, setShowModal] = useState(false);
 
@@ -49,11 +55,23 @@ export default function Hero({player}){
         background={ `url(${commonAssetsImg}) ${commonAssets.heroFamePosition}, url(${heroBackgraundImg}) -27px 7px`}
         onClick={toggleModal}
       > 
-
       </HeroBox>
-      {showModal && <HeroModal 
+      {/* {showModal && <HeroModal
         hero={player.hero}
-      />} 
+      />}  */}
+      { showModal &&
+        <Modal
+          level={1}
+          toggleModal={toggleModal}
+        >
+          <HeroWindow
+            hero={player.hero}
+            setHero={setHero}
+            setMainAttackerHeroSkillsBranch={setMainAttackerHeroSkillsBranch}
+            setHeroSkillLevel={setHeroSkillLevel}
+          />
+        </Modal>
+      }
     </>
   )
 }

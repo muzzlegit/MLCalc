@@ -1,25 +1,23 @@
-import { useState } from "react";
-import { createPortal } from "react-dom";
-//STORE
-import useMainAttacker from "../../../data/store/useMainAttacker";
+
+
 //DATA
-import heroes from '../../../data/Heroes.json';
+import heroes from '../../../../data/Heroes.json';
 //HELPERS
 import { nanoid } from "nanoid";
 //STYLES
-import { ModalBox, HeroBox } from "./HeroListModal.styled"
+import { ModalBox, HeroBox } from "./HeroesList.styled"
 //IMAGES
-import commonHeroAssetsImg from '../../../img/common/CommonHeroAssets.png';
-import heroesImg from '../../../img/common/Heroes.png';
+import commonHeroAssetsImg from '../../../../img/common/CommonHeroAssets.png';
+import heroesImg from '../../../../img/common/Heroes.png';
 
-const modalRoot =document.querySelector('#modal-root-level-2')
 
-export default function HeroListModal(){
-  const setMainAttackerHero = useMainAttacker(state => state.setHero);
+export default function HeroesList({toggleModal, setHero}){
+
+
   const onHeroClick = (e) => {
     const hero = heroes.find(hero => hero.id === e.currentTarget.id);
-    console.log(e.target)
-    setMainAttackerHero({
+
+    setHero({
       checker: true,
       id: hero.id,
       class: hero.class,
@@ -28,13 +26,11 @@ export default function HeroListModal(){
       skillsBranch1: hero.skills,
       skillsBranch2: false,
       skillsBranch3: false
-
-    })
+    });
+    toggleModal();
   }
 
-
-
-  return createPortal(
+  return (
     <ModalBox>
       { heroes.map((hero) => {
         return (
@@ -58,6 +54,6 @@ export default function HeroListModal(){
           </>
         )
     })}
-    </ModalBox>, modalRoot
+    </ModalBox>
   )
 }

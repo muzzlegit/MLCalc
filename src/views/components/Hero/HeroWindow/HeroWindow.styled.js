@@ -7,25 +7,25 @@ export const ModalBox = styled.div(
     left: '50%',
     transform: 'translate(-50%, -50%)',
     margin: 0,
-    padding: 0,
-    width: '606px',
-    height: '530px',
+    padding: '40px 30px 24px 30px',
+    width: '546px',
+    height: '466px',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
+   
     outline: '1px solid tomato',
   },
   props => ({
     background: props.background,
   }),
 );
-export const HeroWindow = styled.div(
+export const HeroBox = styled.div(
   {
     position: 'absolute',
-    top: '97px',
-    left: '79px',
-    transform: 'translate(-50%, -50%)',
-    margin: 0,
+    top: 0,
+    left: 0,
+    margin: '8px 0 0 8px',
     padding: 0,
     width: '82px',
     height: '99px',
@@ -35,4 +35,15 @@ export const HeroWindow = styled.div(
   props => ({
     background: props.background,
   }),
+);
+export const HeroDoll = styled.div(
+  {
+    position: 'relative',
+    margin: 0,
+    padding: 0,
+    width: '263px',
+    height: '100%',
+    display: 'block',
+    outline: '1px solid tomato',
+  }
 );

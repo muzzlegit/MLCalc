@@ -10,7 +10,14 @@ import getValueFromUnitPropertyArray from '../../../helpers/getValueFromUnitProp
 import { SquadBox,ArmyBox } from './index.styled';
 
 
-export default function Squad ({ player, setUnit, attackRate  }) {
+export default function Squad ({
+        player,
+        setUnit,
+        attackRate,
+        setHero,
+        setMainAttackerHeroSkillsBranch,
+        setHeroSkillLevel
+    }) {
 
     const troops = player.troops;
     const troopsArray = [
@@ -29,6 +36,9 @@ export default function Squad ({ player, setUnit, attackRate  }) {
             <SquadBox>
                 <Hero
                     player={player}
+                    setHero={setHero}
+                    setMainAttackerHeroSkillsBranch={setMainAttackerHeroSkillsBranch}
+                    setHeroSkillLevel={setHeroSkillLevel}
                 />
                 { troopsArray.map((trooper) => {
                         return (

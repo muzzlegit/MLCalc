@@ -21,6 +21,9 @@ function App() {
   const mainAttackerRace = useMainAttaker(state => state.race);
   const mainAttackerRateAttack = useMainAttaker(state => state.attackRate);
 
+  const setMainAttackerHero = useMainAttaker(state => state.setHero);
+  const setMainAttackerHeroSkillLevel = useMainAttaker(state => state.setHeroSkillLevel);
+  const setMainAttackerHeroSkillsBranch = useMainAttaker(state => state.setHeroSkillsBranch);
   const setAttackerUnit = useMainAttaker(state => state.setUnit);
   const setMainAttackerRace = useMainAttaker(state => state.setRace);
   const setMainAttakerApostateValue = useMainAttaker(state => state.setApostateValue);
@@ -69,9 +72,12 @@ function App() {
         setApostateValue = {setMainAttakerApostateValue}
       />
       <Squad
-        player = {mainAttacker}
-        setUnit = {setAttackerUnit}
-        attackRate = {mainAttackerRateAttack}
+        player={mainAttacker}
+        setUnit={setAttackerUnit}
+        attackRate={mainAttackerRateAttack}
+        setHero={setMainAttackerHero}
+        setMainAttackerHeroSkillsBranch={setMainAttackerHeroSkillsBranch}
+        setHeroSkillLevel={setMainAttackerHeroSkillLevel}
       />
       <TowersCard
         race = {mainAttackerRace}
