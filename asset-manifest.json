@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/mlcalc/static/js/main.3213befa.js",
+    "main.js": "/mlcalc/static/js/main.94ef3e52.js",
     "static/media/Heroes.png": "/mlcalc/static/media/Heroes.6f50264c86a535de802c.png",
     "static/media/ElfCards.png": "/mlcalc/static/media/ElfCards.e681101376acfadae69f.png",
     "static/media/DrowCards.png": "/mlcalc/static/media/DrowCards.e5bdbd9da504579229df.png",
@@ -8,6 +8,7 @@
     "static/media/UndeadCards.png": "/mlcalc/static/media/UndeadCards.bec5c5d8760770006577.png",
     "static/media/HumanCards.png": "/mlcalc/static/media/HumanCards.8e0811296c98385dee30.png",
     "static/media/CommonHeroAssets.png": "/mlcalc/static/media/CommonHeroAssets.bbb8e5c72e9c622a2806.png",
+    "static/media/heroSkills.png": "/mlcalc/static/media/heroSkills.c0520043680531aedd29.png",
     "static/media/DemonCommon.png": "/mlcalc/static/media/DemonCommon.85905c4c9f5b424e522a.png",
     "static/media/dialog.png": "/mlcalc/static/media/dialog.0886d1f182d7b65a65f5.png",
     "static/media/CommonAssets.png": "/mlcalc/static/media/CommonAssets.5bce94a3e2adf7e3da79.png",
@@ -15,11 +16,10 @@
     "static/media/DrowCommon.png": "/mlcalc/static/media/DrowCommon.0cfe0160c284556ae113.png",
     "static/media/ElfCommon.png": "/mlcalc/static/media/ElfCommon.4b9dfac0eebb7a3dc76e.png",
     "static/media/HumanCommon.png": "/mlcalc/static/media/HumanCommon.9359080a384d50708206.png",
-    "static/media/heroSkills.png": "/mlcalc/static/media/heroSkills.8d353a9c8c64beaaeb37.png",
     "index.html": "/mlcalc/index.html",
-    "main.3213befa.js.map": "/mlcalc/static/js/main.3213befa.js.map"
+    "main.94ef3e52.js.map": "/mlcalc/static/js/main.94ef3e52.js.map"
   },
   "entrypoints": [
-    "static/js/main.3213befa.js"
+    "static/js/main.94ef3e52.js"
   ]
 }
