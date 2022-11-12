@@ -3,7 +3,11 @@ import { useStore } from '../../data/store/useStore';
 import useMainAttaker from '../../data/store/useMainAttacker';
 import useMainDefender from '../../data/store/useMainDefender';
 import shallow from 'zustand/shallow'
-import { AppBox } from './index.styled';
+//COMPONENTS
+import TestsPanel from '../TESTSPANEL/TestsPanel';
+
+//STYLES
+import { AppBox } from './App.styled';
 import isNativeLand from '../../helpers/isNativeLand';
 import BattlefieldSelector from '../components/BattlefieldSelector/BattlefieldSelector';
 import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelector';
@@ -59,9 +63,9 @@ function App() {
   }
 
   return (
+  <> 
     <AppBox>
-
-      <RaceSelector 
+      {/* <RaceSelector 
         setRace = {setMainAttackerRace}
         setHomeLand = {setMainAttackerHomeLand}
       />
@@ -121,9 +125,10 @@ function App() {
         addFortification = {addMainDefenderFortification}
       />     
       <BattlefieldSelector/> 
-      <button onClick={onClickAttackButton} style = {{color: 'white', backgroundColor: 'red', width: '690px' }} >В атаку</button>
+      <button onClick={onClickAttackButton} style = {{color: 'white', backgroundColor: 'red', width: '690px' }} >В атаку</button> */}
     </AppBox>
-    
+    <TestsPanel/>
+  </>  
   );
 }
 

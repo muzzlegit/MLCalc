@@ -1,7 +1,7 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
 import units from '../../data/Units.json';
-import { UnitAttack } from '../../views/components/UnitCard/index.styled';
+import { UnitAttack } from '../../views/components/UnitCard/UnitCard.styled';
 
 import findPropertyIndex from '../../helpers/findPropertyIndex';
 

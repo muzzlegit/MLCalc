@@ -16,27 +16,32 @@ const additionalProperties = {
 const troopsNamesArray = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage']
 //----------- STORE -----------
 const useMainAttacker = create((set) => ({
+  player:{    
     race: 'undead',
     apostate: false,
     homeLand: 'cursedForest',
     hero: {checker: false},
     attackRate: 'Min',
-    troops: {
-      porter: { ...units.undead.porter.level1, ...additionalProperties, homeLand: units.undead.porter.homeLand, alienLand: units.undead.porter.alienLand },
-      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, homeLand: units.undead.swordsman.homeLand, alienLand: units.undead.swordsman.alienLand },
-      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, homeLand: units.undead.cavalier.homeLand, alienLand: units.undead.cavalier.alienLand },
-      flying: { ...units.undead.flying.level1, ...additionalProperties, homeLand: units.undead.flying.homeLand, alienLand: units.undead.flying.alienLand },
-      archer: { ...units.undead.archer.level1, ...additionalProperties, homeLand: units.undead.archer.homeLand, alienLand: units.undead.archer.alienLand },
-      healer: { ...units.undead.healer.level1, ...additionalProperties, homeLand: units.undead.healer.homeLand, alienLand: units.undead.healer.alienLand },
-      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, homeLand: units.undead.mercenary.homeLand, alienLand: units.undead.mercenary.alienLand },
-      mage: { ...units.undead.mage.level1, ...additionalProperties, homeLand: units.undead.mage.homeLand, alienLand: units.undead.mage.alienLand }
-    },
+    porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
+    swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
+    cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
+    flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
+    archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
+    healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties },
+    mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
+    mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
     towers: [],
-    fortification: [],
+    fortification: []
+  },
 
-  setRace: (race) => set((state) => (state.race = race)),
+    setRace: (race) => set((state) => (state.player.race = race)),
+    setHomeLand: (land) => set((state) => (state.player.homeLand = land)),
+    setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit } }) },
+
+
+
   setRateAttack: (attackRate) => set((state) => (state.attackRate = attackRate)),
-  setHomeLand: (land) => set((state) => (state.homeLand = land)),
+ 
   setApostateValue: () => set((state) => (state.apostate = !state.apostate)),
   setHero: (hero) => set((state) => (state.hero = hero)),
   setHeroSkillLevel: (branch, skill) => set(state => (
@@ -70,11 +75,7 @@ const useMainAttacker = create((set) => ({
         return;
       }
   })},
-  setUnit: (unit) => {
-        set(produce(state => {
-          state.troops[unit.unit] = {...state.troops[unit.unit], ...unit}
-        }))
-  },
+
 
   setDefenseArr: (item) => {
     if(item.unit === 'all') {

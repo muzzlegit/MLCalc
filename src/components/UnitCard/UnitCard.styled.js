@@ -1,47 +1,58 @@
 import styled from '@emotion/styled';
 
-export const ArticleBox = styled.article(
+export const UnitCardBox = styled.div(
   {
+    width: '74px',
+    height: 'auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    outline: '1px solid tomato',
+    gap: '4px',
+    outline: '1px solid tomato'
+  }
+);
+export const UnitFrameWrap = styled.div(
+  {
+    width: '100%',
+    height: '100px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',    
+    '&:hover': {
+      cursor: 'pointer'
+    }
+  }
+);
+export const UnitFrame = styled.div(
+  {
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    outline: '1px solid blue',
   },
   props => ({
     background: props.background,
+    height: props.height
   }),
 );
 export const UnitImg = styled.div(
   {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: -1,
     width: '68px',
     height: '82px',
-    backgroundColor: 'aquamarine',
-    cursor: 'pointer',
-  },
-  props => ({
-    background: props.background,
-    filter: props.filter,
-  }),
-);
-export const UnitImgBox = styled.div(
-  {
-    position: 'relative',
-    marginBottom: '4px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '78px',
-    height: '92px',
-
     outline: '1px solid tomato',
   },
   props => ({
     background: props.background,
   }),
 );
-export const ArticleInput = styled.input({
-  width: '74px',
+export const UnitCardInput = styled.input({
+  width: '90%',
   height: '10px',
   fontSize: '12px',
 });
