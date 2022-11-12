@@ -4,16 +4,18 @@ import useMainAttaker from '../../data/store/useMainAttacker';
 import useMainDefender from '../../data/store/useMainDefender';
 import shallow from 'zustand/shallow'
 //COMPONENTS
+import RaceSelector from '../../components/RaceSelector/RaceSelector';
+import Squad from '../Squad/Squad';
 import TestsPanel from '../TESTSPANEL/TestsPanel';
 
 //STYLES
 import { AppBox } from './App.styled';
-import isNativeLand from '../../helpers/isNativeLand';
+import isNativeLand from '../../helpers/2/isNativeLand';
 import BattlefieldSelector from '../components/BattlefieldSelector/BattlefieldSelector';
 import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelector';
 import ApostateChecker from '../components/ApostateChecker/ApostateChecker';
-import RaceSelector from '../components/RaceSelector/RaceSelector';
-import Squad from '../components/squad';
+
+
 import TowersSelector from '../components/TowersSelector/TowersSelector';
 import TowersCard from '../components/TowersCard/TowersCard';
 
@@ -65,6 +67,18 @@ function App() {
   return (
   <> 
     <AppBox>
+      <RaceSelector
+        role={'mainAttacker'}
+      />
+      <Squad
+        role={'mainAttacker'}
+      />
+      <RaceSelector
+        role={'mainDefender'}
+      />
+            <Squad
+        role={'mainDefender'}
+      />
       {/* <RaceSelector 
         setRace = {setMainAttackerRace}
         setHomeLand = {setMainAttackerHomeLand}

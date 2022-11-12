@@ -4,7 +4,7 @@ import { useStore } from "../../../data/store/useStore";
 import useMainAttacker from "../../../data/store/useMainAttacker";
 import useMainDefender from "../../../data/store/useMainDefender";
 
-import isNativeLand from "../../../helpers/isNativeLand";
+import isNativeLand from "../../../helpers/2/isNativeLand";
 
 export default function BattlefieldSelector() {
   //MAIN ATTACKER

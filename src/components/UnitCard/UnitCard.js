@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { UnitCardBox, UnitFrameWrap, UnitFrame, UnitImg, UnitCardInput, UnitAttack, UnitLevel} from './UnitCard.styled';
+
 //STORE
 //DATA
-import UNITS from '../../data/Units.json'
+import UNITS from '../../data/Units.json';
+import commonAssets from '../../data/CommonAssets.json';
 //IMAGES
 import frames from '../../img/common/Frames.png';
 import UndeadUnitsCard from '../../img/undead/UndeadCards.png';
@@ -10,29 +11,44 @@ import DemonUnitsCard from '../../img/demon/DemonCards.png';
 import DrowUnitsCard from '../../img/drow/DrowCards.png';
 import ElfUnitsCard from '../../img/elf/ElfCards.png';
 import HumanUnitsCard from '../../img/human/HumanCards.png';
+import commonAssetsImg from '../../img/common/CommonAssets.png';
+//STYLES
+import {
+    UnitCardBox,
+    UnitFrameWrap,
+    UnitFrame,
+    UnitImg,
+    UnitCardInput,
+    PropertiesWrap,
+    UnitProperty
+} from './UnitCard.styled';
+//CONST
+const unitFrameIcon = UNITS.commonProperties.unitFrameIcon;
 
-const UnitFramePosition = '-1px -117px'
+
 
 export default function UnitCard ({player, unit, setUnit}) {
 
-    const [unitImgs, setUnitImg] = useState(UndeadUnitsCard);
-    const [unitImgsPositions, setUnitImgsPositions] = useState(player[unit].position);
-    const [unitFrame, setUnitFrame] = useState(`url(frames) ${UnitFramePosition}`);
+    const [unitImg, setUnitImg] = useState(`url(${UndeadUnitsCard}) ${player[unit].position}`);
+    const [unitFrame, setUnitFrame] = useState(`url(${frames}) ${unitFrameIcon}`);
 
     const [query, setQuery] = useState(0);
     const [unitLevel, setUnitLevel] = useState(player[unit].level);
+//CONSTS
     const { 
         race,
         
     } = player;
     const {
-        amount,
         frameIcon,
         level,
+        attackMin,
+        defense,
+        health,
 
     } = player[unit]
 
-
+//HELPERS
     const getUnitImgs = (race) => {
         switch (race) {
             case 'undead':
@@ -49,26 +65,23 @@ export default function UnitCard ({player, unit, setUnit}) {
             break;
         }
     }
-
+//HaNDLE FUNCTIONS
     const handleInput = (e) => {
         if(e.target.value === ""){
             e.target.value = 0;
         }
         setQuery(Number.parseInt(e.target.value.replaceAll(/\D/g, ''), 0));
     }
-
     const onUnitClick = () => {
         unitLevel === 4 ? setUnitLevel(1) : setUnitLevel(prev => prev += 1);
-        console.log(player[unit])
     }
-
+//USE EFFECTS
     useEffect(() => {
-        setUnitImg(getUnitImgs(race));
-    }, [race]);
+        setUnitImg(`url(${getUnitImgs(race)}) ${player[unit].position}`);
+    }, [race, player, unit, level]);
 
     useEffect(() => {
         setUnit({...UNITS[race][unit][`level${unitLevel}`]});
-        setUnitImgsPositions(UNITS[race][unit][`level${unitLevel}`].position);
     }, [unitLevel, setUnit, unit, race]);
 
     useEffect(() => {
@@ -78,40 +91,56 @@ export default function UnitCard ({player, unit, setUnit}) {
     }, [query, setUnit, unit, player]);
 
     useEffect(() => {
-        level === 4 ?
-        setUnitFrame(`url(${frames}) ${frameIcon} `)
-        : setUnitFrame(`url(${frames}) ${UnitFramePosition}`);
-    }, [level, frameIcon]);
+        level !== 4 ?
+        setUnitFrame(`url(${frames}) ${unitFrameIcon} `)
+        : setUnitFrame(`url(${frames}) ${UNITS[race].levelFrameIcon}`);
+    }, [level, frameIcon, race]);
 
     return (
         <UnitCardBox>
             <UnitFrameWrap
-                onClick={onUnitClick}
+                onClick={ onUnitClick }
             >
                 <UnitFrame
-                    background={unitFrame}
-                    height={
-                        level !== 4 ?
-                        `92px`
-                        :`100px`
-                    }                
+                    background={ unitFrame }
+                    height={ level }                
                 >
                     <UnitImg
-                        background={
-                            `url(${unitImgs}) ${unitImgsPositions}`
-                        }
+                        background={ unitImg }
                     >
                     </UnitImg>
                 </UnitFrame>
             </UnitFrameWrap>
-            <UnitCardInput
-                type="text"
-                autoComplete="off"
-                autoFocus
-                placeholder="0"
-                value={query}
-                onChange={handleInput}                    
-            />
+            <PropertiesWrap>
+                <UnitCardInput
+                    type="text"
+                    autoComplete="off"
+                    autoFocus
+                    placeholder="0"
+                    value={ query }
+                    onChange={handleInput}                    
+                />
+                <UnitProperty
+                    background = { `url(${commonAssetsImg}) ${UNITS[race][unit].unitIcon}` }                 
+                >
+                    { level }
+                </UnitProperty>
+                <UnitProperty
+                    background = { `url(${commonAssetsImg}) ${commonAssets.attackIcon}` }                 
+                >
+                    { attackMin }
+                </UnitProperty>
+                <UnitProperty
+                    background = { `url(${commonAssetsImg}) ${commonAssets.defenseIcon}` }                   
+                >
+                    { defense }
+                </UnitProperty>
+                <UnitProperty
+                    background = { `url(${commonAssetsImg}) ${commonAssets.healthIcon}` }               
+                >
+                    { health }
+                </UnitProperty>
+            </PropertiesWrap>
         </UnitCardBox>
     )
 }

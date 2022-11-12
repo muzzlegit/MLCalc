@@ -1,7 +1,10 @@
 {
-    "heroFamePosition": "1px -1px",
-    "unitFramePosition": "-97px -1px",
-    "levelFramePosition": "-119px -1px",
+    "heroFamePosition": "-1px -1px",
+    "undeadHeroBackgroundImg": "-97px -1px",
+    "demonHeroBackgroundImg": "-181px -1px",
+    "drowHeroBackgroundImg": "-264px -1px",
+    "humanHeroBackgroundImg": "-347px -1px",
+    "elfHeroBackgroundImg": "-430px -1px",
     "healthIcon":"-221px -34px",
     "defenseIcon":"-221px -1px",
     "attackIcon":"-221px -17px",

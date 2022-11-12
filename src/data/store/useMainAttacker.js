@@ -16,11 +16,15 @@ const additionalProperties = {
 const troopsNamesArray = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage']
 //----------- STORE -----------
 const useMainAttacker = create((set) => ({
-  player:{    
+  player: {    
     race: 'undead',
     apostate: false,
     homeLand: 'cursedForest',
-    hero: {checker: false},
+    // hero: {checker: false},
+    hero: {
+      checker: false,
+      icon: '-1px -1px'
+    },
     attackRate: 'Min',
     porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
     swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
@@ -33,7 +37,7 @@ const useMainAttacker = create((set) => ({
     towers: [],
     fortification: []
   },
-
+  functions: {
     setRace: (race) => set((state) => (state.player.race = race)),
     setHomeLand: (land) => set((state) => (state.player.homeLand = land)),
     setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit } }) },
@@ -102,6 +106,6 @@ const useMainAttacker = create((set) => ({
     }
   },
   
-}))
+}}))
 
 export default useMainAttacker;

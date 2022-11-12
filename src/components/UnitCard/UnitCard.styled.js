@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
 
 export const UnitCardBox = styled.div(
-  {
+  {    
+    marginTop: '15px',
     width: '74px',
     height: 'auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '4px',
-    outline: '1px solid tomato'
+    gap: '4px'
+
   }
 );
 export const UnitFrameWrap = styled.div(
@@ -18,7 +19,7 @@ export const UnitFrameWrap = styled.div(
     height: '100px',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',    
+    alignItems: 'center',
     '&:hover': {
       cursor: 'pointer'
     }
@@ -28,12 +29,11 @@ export const UnitFrame = styled.div(
   {
     position: 'relative',
     width: '100%',
-    height: '100%',
-    outline: '1px solid blue',
+    height: '100%'
   },
   props => ({
     background: props.background,
-    height: props.height
+    height: `${ props.height  === 4 ? `100px` : `92px` }`
   }),
 );
 export const UnitImg = styled.div(
@@ -44,67 +44,46 @@ export const UnitImg = styled.div(
     transform: 'translate(-50%, -50%)',
     zIndex: -1,
     width: '68px',
-    height: '82px',
-    outline: '1px solid tomato',
+    height: '82px'
   },
   props => ({
     background: props.background,
   }),
 );
+export const PropertiesWrap = styled.div(
+  {
+    marginBottom: '4px',
+    padding: '2px',
+    width: '90%',
+    display: 'inline-flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '8px',
+    borderRadius: '4px',
+    backgroundColor: '#4a5153'
+  }
+);
 export const UnitCardInput = styled.input({
   width: '90%',
-  height: '10px',
-  fontSize: '12px',
+  height: '16px',
+  fontSize: '12px'
 });
-export const UnitLevel = styled.p`
+export const UnitProperty = styled.p`
   min-width: 50px;
-  padding: 3px;
-  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
   &::before {
     content: '';
+    margin-right: 8px;
     display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: ${props => props.background};
-  }
-`;
-export const UnitAttack = styled.p`
-  min-width: 50px;
-  padding: 3px;
-  margin-bottom: 10px;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
+    width: 18px;
     height: 16px;
     background: ${props => props.background};
   }
 `;
-export const UnitDefense = styled.p`
-  min-width: 50px;
-  padding: 3px;
-  margin-bottom: 10px;
 
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: ${props => props.background};
-  }
-`;
-export const UnitHealth = styled.p`
-  min-width: 50px;
-  padding: 3px;
-  margin-bottom: 10px;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: ${props => props.background};
-  }
-`;

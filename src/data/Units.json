@@ -1,16 +1,18 @@
 {
+  "commonProperties": {
+    "unitFrameIcon": "-1px -117px"
+  },
   "undead": {
+    "levelFrameIcon": "-102px -101px",
     "porter": {
-      "commonProperties": {
-        "squadPosition": {
-          "top": "17px",
-          "left": "94px"
-        },
-        "unitIcon": "-280px -1px",
-        "frameIcon": "-102px -101px",
-        "homeLand": "",
-        "alienLand": ""
+      "squadPosition": {
+        "top": "17px",
+        "left": "94px"
       },
+      "unitIcon": "-282px -1px",
+      "homeLand": "",
+      "alienLand": "",
+
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -63,8 +65,7 @@
           "top": "17px",
           "left": "168px"
         },
-        "unitIcon": "-280px -25px",
-        "frameIcon": "-102px -101px",
+        "unitIcon": "-282px -25px",
         "homeLand": "desert",
         "alienLand": "mountain"
       },
@@ -108,23 +109,19 @@
       }
     },
     "cavalier": {
-      "commonProperties":{
-        "squadPosition": {
-          "top": "17px",
-          "left": "242px"
-        },
-        "unitIcon": "-280px -49px",
-        "frameIcon": "-102px -101px",
-        "homeLand": "steppe",
-        "alienLand": "forest"
+      "squadPosition": {
+        "top": "17px",
+        "left": "242px"
       },
+      "unitIcon": "-282px -49px",
+      "homeLand": "steppe",
+      "alienLand": "forest",
       "level1": {
         "unit": "cavalier",
         "level": 1,
         "name": "Темный всадник",
         "attackMin": 3,
         "attackMax": 4,
-        
         "health": 15,
         "position": "-139px -1px"
       },
@@ -160,16 +157,13 @@
       }
     },
     "flying": {
-      "commonProperties":{
-        "squadPosition": {
-          "top": "17px",
-          "left": "316px"
-        },
-        "unitIcon": "-280px -73px",
-        "frameIcon": "-102px -101px",
-        "homeLand": "mountain",
-        "alienLand": "desert"
+      "squadPosition": {
+        "top": "17px",
+        "left": "316px"
       },
+      "unitIcon": "-282px -73px",
+      "homeLand": "mountain",
+      "alienLand": "desert",
       "level1": {
         "unit": "flying",
         "level": 1,
@@ -212,16 +206,13 @@
       }
     },
     "archer": {
-      "commonProperties": {
-        "squadPosition": {
-          "top": "17px",
-          "left": "390px"
-        },
-        "unitIcon": "-280px -97px",
-        "frameIcon": "-102px -101px",
-        "homeLand": "forest",
-        "alienLand": "steppe"
+      "squadPosition": {
+        "top": "17px",
+        "left": "390px"
       },
+      "unitIcon": "-282px -97px",
+      "homeLand": "forest",
+      "alienLand": "steppe",
       "level1": {
         "unit": "archer",
         "level": 1,
@@ -264,21 +255,17 @@
       }
     },
     "healer": {
-      "commonProperties":{
-        "squadPosition": {
-          "top": "17px",
-          "left": "464px"
-        },
-        "unitIcon": "-280px -121px",
-        "frameIcon": "-102px -101px"
+      "squadPosition": {
+        "top": "17px",
+        "left": "464px"
       },
+      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
         "name": "Озерная ведьма",
         "attackMin": 0,
         "attackMax": 1,
-        
         "health": 10,
         "resurrection": 1,
         "description": "Воскрешает 1 персонажа после боя",
@@ -322,15 +309,12 @@
       }
     },
     "mercenary": {
-      "commonProperties": {
-        "squadPosition": {
-          "top": "17px",
-          "left": "538px"
-        },
-        "unitIcon": "-280px -145px",
-        "frameIcon": "-102px -101px",
-        "alienLand": "mine"
+      "squadPosition": {
+        "top": "17px",
+        "left": "538px"
       },
+      "unitIcon": "-282px -145px",
+      "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
         "level": 1,
@@ -377,14 +361,11 @@
       }
     },
     "mage": {
-      "commonProperties": {
-        "squadPosition": {
-          "top": "17px",
-          "left": "612px"
-        },
-        "unitIcon": "-280px -169px",
-        "frameIcon": "-102px -101px"
+      "squadPosition": {
+        "top": "17px",
+        "left": "612px"
       },
+      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -436,12 +417,13 @@
     }
   },
   "demon": {
+    "levelFrameIcon": "-185px -101px",
     "porter": {
       "squadPosition": {
         "top": "17px",
         "left": "94px"
       },
-      "unitIcon": "-280px -1px",
+      "unitIcon": "-282px -1px",
       "homeLand": "desert",
       "alienLand": "mountain",
       "level1": {
@@ -499,7 +481,7 @@
         "top": "17px",
         "left": "168px"
       },
-      "unitIcon": "-280px -25px",
+      "unitIcon": "-282px -25px",
       "level1": {
         "unit": "swordsman",
         "level": 1,
@@ -546,7 +528,7 @@
         "top": "17px",
         "left": "242px"
       },
-      "unitIcon": "-280px -49px",
+      "unitIcon": "-282px -49px",
       "homeLand": "steppe",
       "alienLand": "forest",
       "level1": {
@@ -595,7 +577,7 @@
         "top": "17px",
         "left": "316px"
       },
-      "unitIcon": "-280px -73px",
+      "unitIcon": "-282px -73px",
       "homeLand": "mountain",
       "alienLand": "desert",
       "level1": {
@@ -644,7 +626,7 @@
         "top": "17px",
         "left": "390px"
       },
-      "unitIcon": "-280px -97px",
+      "unitIcon": "-282px -97px",
       "homeLand": "forest",
       "alienLand": "steppe",
       "level1": {
@@ -693,7 +675,7 @@
         "top": "17px",
         "left": "464px"
       },
-      "unitIcon": "-280px -121px",
+      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -748,7 +730,7 @@
         "top": "17px",
         "left": "538px"
       },
-      "unitIcon": "-280px -145px",
+      "unitIcon": "-282px -145px",
       "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
@@ -800,7 +782,7 @@
         "top": "17px",
         "left": "612px"
       },
-      "unitIcon": "-280px -169px",
+      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -852,12 +834,13 @@
     }
   },
   "drow": {
+    "levelFrameIcon": "-268px -101px",
     "porter": {
       "squadPosition": {
         "top": "17px",
         "left": "94px"
       },
-      "unitIcon": "-280px -1px",
+      "unitIcon": "-282px -1px",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -913,7 +896,7 @@
         "top": "17px",
         "left": "168px"
       },
-      "unitIcon": "-280px -25px",
+      "unitIcon": "-282px -25px",
       "homeLand": "desert",
       "alienLand": "mountain",
       "level1": {
@@ -962,7 +945,7 @@
         "top": "17px",
         "left": "242px"
       },
-      "unitIcon": "-280px -49px",
+      "unitIcon": "-282px -49px",
       "homeLand": "steppe",
       "alienLand": "forest",
       "level1": {
@@ -1011,7 +994,7 @@
         "top": "17px",
         "left": "316px"
       },
-      "unitIcon": "-280px -73px",
+      "unitIcon": "-282px -73px",
       "homeLand": "mountain",
       "alienLand": "desert",
       "level1": {
@@ -1060,7 +1043,7 @@
         "top": "17px",
         "left": "390px"
       },
-      "unitIcon": "-280px -97px",
+      "unitIcon": "-282px -97px",
       "homeLand": "forest",
       "alienLand": "steppe",
       "level1": {
@@ -1109,7 +1092,7 @@
         "top": "17px",
         "left": "464px"
       },
-      "unitIcon": "-280px -121px",
+      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -1164,7 +1147,7 @@
         "top": "17px",
         "left": "538px"
       },
-      "unitIcon": "-280px -145px",
+      "unitIcon": "-282px -145px",
       "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
@@ -1216,7 +1199,7 @@
         "top": "17px",
         "left": "612px"
       },
-      "unitIcon": "-280px -169px",
+      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -1268,12 +1251,13 @@
     }
   },
   "human": {
+    "levelFrameIcon": "-351px -101px",
     "porter": {
       "squadPosition": {
         "top": "17px",
         "left": "94px"
       },
-      "unitIcon": "-280px -1px",
+      "unitIcon": "-282px -1px",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -1329,7 +1313,7 @@
         "top": "17px",
         "left": "168px"
       },
-      "unitIcon": "-280px -25px",
+      "unitIcon": "-282px -25px",
       "homeLand": "desert",
       "alienLand": "mountain",
       "level1": {
@@ -1378,7 +1362,7 @@
         "top": "17px",
         "left": "242px"
       },
-      "unitIcon": "-280px -49px",
+      "unitIcon": "-282px -49px",
       "homeLand": "steppe",
       "alienLand": "forest",
       "level1": {
@@ -1427,7 +1411,7 @@
         "top": "17px",
         "left": "316px"
       },
-      "unitIcon": "-280px -73px",
+      "unitIcon": "-282px -73px",
       "homeLand": "mountain",
       "alienLand": "desert",
       "level1": {
@@ -1476,7 +1460,7 @@
         "top": "17px",
         "left": "390px"
       },
-      "unitIcon": "-280px -97px",
+      "unitIcon": "-282px -97px",
       "homeLand": "forest",
       "alienLand": "steppe",
       "level1": {
@@ -1525,7 +1509,7 @@
         "top": "17px",
         "left": "464px"
       },
-      "unitIcon": "-280px -121px",
+      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -1580,7 +1564,7 @@
         "top": "17px",
         "left": "538px"
       },
-      "unitIcon": "-280px -145px",
+      "unitIcon": "-282px -145px",
       "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
@@ -1632,7 +1616,7 @@
         "top": "17px",
         "left": "612px"
       },
-      "unitIcon": "-280px -169px",
+      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -1684,12 +1668,13 @@
     }
   },
   "elf": {
+    "levelFrameIcon": "-434px -101px",
     "porter": {
       "squadPosition": {
         "top": "17px",
         "left": "94px"
       },
-      "unitIcon": "-280px -1px",
+      "unitIcon": "-282px -1px",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -1745,7 +1730,7 @@
         "top": "17px",
         "left": "168px"
       },
-      "unitIcon": "-280px -25px",
+      "unitIcon": "-282px -25px",
       "homeLand": "desert",
       "alienLand": "mountain",
       "level1": {
@@ -1794,7 +1779,7 @@
         "top": "17px",
         "left": "242px"
       },
-      "unitIcon": "-280px -49px",
+      "unitIcon": "-282px -49px",
       "homeLand": "steppe",
       "alienLand": "forest",
       "level1": {
@@ -1843,7 +1828,7 @@
         "top": "17px",
         "left": "316px"
       },
-      "unitIcon": "-280px -73px",
+      "unitIcon": "-282px -73px",
       "homeLand": "mountain",
       "alienLand": "desert",
       "level1": {
@@ -1892,7 +1877,7 @@
         "top": "17px",
         "left": "390px"
       },
-      "unitIcon": "-280px -97px",
+      "unitIcon": "-282px -97px",
       "homeLand": "forest",
       "alienLand": "steppe",
       "level1": {
@@ -1941,7 +1926,7 @@
         "top": "17px",
         "left": "464px"
       },
-      "unitIcon": "-280px -121px",
+      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -1996,7 +1981,7 @@
         "top": "17px",
         "left": "538px"
       },
-      "unitIcon": "-280px -145px",
+      "unitIcon": "-282px -145px",
       "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
@@ -2046,7 +2031,7 @@
         "top": "17px",
         "left": "612px"
       },
-      "unitIcon": "-280px -169px",
+      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,

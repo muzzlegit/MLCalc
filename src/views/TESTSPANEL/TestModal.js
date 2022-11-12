@@ -4,8 +4,10 @@ import useMainAttacker from '../../data/store/useMainAttacker';
 
 //COMPONENTS
 import UnitCard from "../../components/UnitCard/UnitCard";
+import Hero from "../../components/Hero/Hero";
 //STYLES
 import { Backdrop, Center } from "./TestsPanel.styled";
+
 
 export default function Modal({setToggle}) {
   const modalRoot =document.querySelector(`#modal-root-test`)
@@ -23,11 +25,14 @@ export default function Modal({setToggle}) {
         onClick={onBackdropClick}
       >
       <Center>
-        <UnitCard
+        {/* <UnitCard
           player={player}
           unit={'mage'}
           setUnit={setunit}
-        />
+        /> */}
+      <Hero
+        player={player}
+      />
       </Center>
       </Backdrop>
     </>, modalRoot
