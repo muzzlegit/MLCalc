@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const SquadBox = styled.div(
     {   
-        margin: 0,
+        marginBottom: '12px',
         padding: 0,
         // width: '100px',
         // height: '100px',

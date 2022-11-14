@@ -20,7 +20,8 @@ import {
     UnitImg,
     UnitCardInput,
     PropertiesWrap,
-    UnitProperty
+    UnitProperty,
+    AddValue
 } from './UnitCard.styled';
 //CONST
 const unitFrameIcon = UNITS.commonProperties.unitFrameIcon;
@@ -37,15 +38,15 @@ export default function UnitCard ({player, unit, setUnit}) {
 //CONSTS
     const { 
         race,
-        
+        attackRateIndex
     } = player;
     const {
         frameIcon,
         level,
-        attackMin,
+        attackRate,
         defense,
         health,
-
+        healthRate,
     } = player[unit]
 
 //HELPERS
@@ -128,7 +129,12 @@ export default function UnitCard ({player, unit, setUnit}) {
                 <UnitProperty
                     background = { `url(${commonAssetsImg}) ${commonAssets.attackIcon}` }                 
                 >
-                    { attackMin }
+                    { player[unit][`attack${attackRateIndex}`] }
+                    <AddValue
+                        color={'#08f169'}
+                    >
+                        {attackRate === 0 ? null : '+' + (attackRate * 100) + '%'}
+                    </AddValue>
                 </UnitProperty>
                 <UnitProperty
                     background = { `url(${commonAssetsImg}) ${commonAssets.defenseIcon}` }                   
@@ -139,6 +145,11 @@ export default function UnitCard ({player, unit, setUnit}) {
                     background = { `url(${commonAssetsImg}) ${commonAssets.healthIcon}` }               
                 >
                     { health }
+                    <AddValue
+                        color={'#08f169'}
+                    >
+                        {healthRate === 0 ? null : '+' + (healthRate * 100) + '%'}
+                    </AddValue>
                 </UnitProperty>
             </PropertiesWrap>
         </UnitCardBox>

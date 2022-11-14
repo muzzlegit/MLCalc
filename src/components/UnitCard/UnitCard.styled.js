@@ -58,21 +58,23 @@ export const PropertiesWrap = styled.div(
     display: 'inline-flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: '8px',
     borderRadius: '4px',
     backgroundColor: '#4a5153'
   }
 );
-export const UnitCardInput = styled.input({
-  width: '90%',
-  height: '16px',
-  fontSize: '12px'
-});
+export const UnitCardInput = styled.input(
+  {
+    width: '90%',
+    height: '16px',
+    fontSize: '12px'
+  }
+);
 export const UnitProperty = styled.p`
   min-width: 50px;
   color: white;
-  font-size: 16px;
+  font-size: 10px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -87,3 +89,11 @@ export const UnitProperty = styled.p`
   }
 `;
 
+export const AddValue = styled.span(
+  {
+    marginLeft: '4px'
+  },
+  props => ({
+    color: props.color,
+  })
+);

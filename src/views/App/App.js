@@ -4,16 +4,17 @@ import useMainAttaker from '../../data/store/useMainAttacker';
 import useMainDefender from '../../data/store/useMainDefender';
 import shallow from 'zustand/shallow'
 //COMPONENTS
+import BattlefieldSelector from '../../components/BattlefieldSelector/BattlefieldSelector';
 import RaceSelector from '../../components/RaceSelector/RaceSelector';
+import AttackRateSelector from '../../components/AttackRateSelector/AttackRateSelector';
+import ApostateChecker from '../../components/ApostateChecker/ApostateChecker';
 import Squad from '../Squad/Squad';
 import TestsPanel from '../TESTSPANEL/TestsPanel';
 
 //STYLES
-import { AppBox } from './App.styled';
+import { AppBox, SelectorsBox } from './App.styled';
 import isNativeLand from '../../helpers/2/isNativeLand';
-import BattlefieldSelector from '../components/BattlefieldSelector/BattlefieldSelector';
-import AttackRateSelector from '../components/AttackRateSelector/AttackRateSelector';
-import ApostateChecker from '../components/ApostateChecker/ApostateChecker';
+
 
 
 import TowersSelector from '../components/TowersSelector/TowersSelector';
@@ -67,16 +68,33 @@ function App() {
   return (
   <> 
     <AppBox>
-      <RaceSelector
-        role={'mainAttacker'}
-      />
+      <BattlefieldSelector/>
+      <SelectorsBox>
+        <RaceSelector
+          role={'mainAttacker'}
+        />
+        <AttackRateSelector
+          role={'mainAttacker'}
+        />
+        <ApostateChecker
+          role={'mainAttacker'}
+        />
+      </SelectorsBox>
       <Squad
         role={'mainAttacker'}
       />
-      <RaceSelector
-        role={'mainDefender'}
-      />
-            <Squad
+      <SelectorsBox>
+        <RaceSelector
+          role={'mainDefender'}
+        />
+        <AttackRateSelector
+          role={'mainDefender'}
+        />
+        <ApostateChecker
+          role={'mainDefender'}
+        />
+      </SelectorsBox>
+      <Squad
         role={'mainDefender'}
       />
       {/* <RaceSelector 

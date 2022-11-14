@@ -26,7 +26,7 @@ export default function usePlayerStoreData(role) {
       default:
         break;
     }
-  }, [role]);
+  }, [role, mainAttacker, mainDefender]);
 
   return [playerData, playerFunctions];
 }

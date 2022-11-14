@@ -8,16 +8,23 @@ import findPropertyIndex from '../../helpers/findPropertyIndex';
 const additionalProperties = {
   amount: 0,
   attackArr: [],
+  attackRate: 0,
   defenseArr: [],
+  defense: 0,
   defenseLevel: [],
   defenseLevelLimit: 50,
-  healthArr: []
+  healthArr: [],
+  healthRate: 0,
 }
 const troopsNamesArray = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage']
 //----------- STORE -----------
 const useMainAttacker = create((set) => ({
   player: {    
     race: 'undead',
+    ally: {
+      flag: false,
+
+    },
     apostate: false,
     homeLand: 'cursedForest',
     // hero: {checker: false},
@@ -25,7 +32,7 @@ const useMainAttacker = create((set) => ({
       checker: false,
       icon: '-1px -1px'
     },
-    attackRate: 'Min',
+    attackRateIndex: 'Min',
     porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
     swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
     cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
@@ -40,13 +47,29 @@ const useMainAttacker = create((set) => ({
   functions: {
     setRace: (race) => set((state) => (state.player.race = race)),
     setHomeLand: (land) => set((state) => (state.player.homeLand = land)),
+    setApostateValue: () => set((state) => (state.player.apostate = !state.player.apostate)),
     setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit } }) },
-
-
-
-  setRateAttack: (attackRate) => set((state) => (state.attackRate = attackRate)),
+    setRateAttack: (attackRate) => set((state) => (state.player.attackRateIndex = attackRate)),
+    setUnitProperty: (item) => {
+      item.unit.forEach( trooper => {
+          item.value === 0
+          ? set(state => {
+            state.player[trooper][item.property].splice(findPropertyIndex(state.player[trooper][item.property], item), 1)
+          })
+          : set(state => {
+            state.player[trooper][item.property][findPropertyIndex(state.player[trooper][item.property], item)] = {name: item.name, value: item.value, unit: item.unit}
+          })
+      });
+      item.unit.forEach( trooper => {
+        set((state) => (state.player[trooper][item.childProperty] = state.player[trooper][item.property].reduce((acc, item) =>
+          acc += item.value, 0
+        )))
+      });
+    },
+    
+  
  
-  setApostateValue: () => set((state) => (state.apostate = !state.apostate)),
+
   setHero: (hero) => set((state) => (state.hero = hero)),
   setHeroSkillLevel: (branch, skill) => set(state => (
 
