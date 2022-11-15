@@ -1,17 +1,31 @@
 import { useState, useEffect } from 'react';
-import { useStore } from '../../../data/store/useStore';
-import { TowerBox, TowerImgBox } from './TowersCard.styled';
-import undeadTowersImg from '../../../img/undead/UndeadCommon.png';
-import drowTowersImg from '../../../img/drow/DrowCommon.png';
-import demonTowersImg from '../../../img/demon/DemonCommon.png';
-import humanTowersImg from '../../../img/human/HumanCommon.png';
-import elfTowersImg from '../../../img/elf/ElfCommon.png';
-import commonAssets from '../../../data/CommonAssets.json';
 import { nanoid } from 'nanoid'
+//HOOKS
+import usePlayerStoreData from '../../hooks/usePlayerStoreData';
+//IMAGES
+import undeadTowersImg from '../../img/undead/UndeadCommon.png';
+import drowTowersImg from '../../img/drow/DrowCommon.png';
+import demonTowersImg from '../../img/demon/DemonCommon.png';
+import humanTowersImg from '../../img/human/HumanCommon.png';
+import elfTowersImg from '../..//img/elf/ElfCommon.png';
+import commonAssets from '../../data/CommonAssets.json';
 
-export default function TowersCard ({ race, towers, fortifications, setTowers, setFortification }) {
+
+//STYLES
+import { TowerBox, TowerImgBox } from './TowersCard.styled';
+
+export default function TowersCard ({ role }) {
+    const [playerData, playerFunctions] = usePlayerStoreData(role);
     const [towersImg, setTowersImg] = useState(undeadTowersImg);
 
+    //CONSTS
+    const {
+        race,
+        towers,
+        fortifications
+    } = playerData
+
+    //USE EFFECTS
     useEffect(() => {
         switch (race) {
             case 'undead':
@@ -33,43 +47,40 @@ export default function TowersCard ({ race, towers, fortifications, setTowers, s
                 break;
         }
     }, [race])
-    
-    const onTowerClick = (e) => {
-        setTowers(towers.filter(tower => tower.id !== e.currentTarget.id));
-        setFortification(fortifications.filter(fortification => fortification.id !== e.currentTarget.id));
-    }
 
+    //HaNDLE FUNCTIONS    
+    const onTowerClick = (e) => {
+        playerFunctions.setTowers(towers.filter(tower => tower.id !== e.currentTarget.id));
+        playerFunctions.setFortification(fortifications.filter(fortification => fortification.id !== e.currentTarget.id));
+    }
 
     return (
         <TowerBox>
             { towers.map((tower) => {
                 return (
                     <TowerImgBox
-                        key={nanoid()}
-                        id = {tower.id}
+                        key={ nanoid() }
+                        id = { tower.id }
                         background = { `url(${towersImg}) ${commonAssets[`${tower.type}PositionUnit`]}` }
-                        onClick = {onTowerClick}
+                        onClick = { onTowerClick }
                     />
                 )
             })}
             { fortifications.map((fortification) => {
                 return (
                     <div
-                        key={nanoid()}
+                        key={ nanoid() }
                     >
                         <TowerImgBox
 
-                            id = {fortification.id}
+                            id = { fortification.id }
                             background = { `url(${towersImg}) ${commonAssets.fortificationPositionUnit}` }
-                            onClick = {onTowerClick}
+                            onClick = { onTowerClick }
                         />
-                        <div
-  
-                        >
-                            x{fortification.quantity}
+                        <div>
+                            x{ fortification.quantity }
                         </div>
                     </div>
-
                 )
             })}
         </TowerBox>

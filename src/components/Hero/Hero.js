@@ -10,7 +10,7 @@ import {
     HeroBoxImg
   } from "./Hero.styled"
 
-export default function Her({player}) {
+export default function Hero({player}) {
   const [heroImg, setHeroImg] = useState(`url(${frames}) ${commonAssets.undeadHeroBackgroundImg}`)
 
   //CONST
@@ -20,7 +20,7 @@ export default function Her({player}) {
 
   } = player
   //HELPERS
-  const getBackgraundImgs = (race) => {
+  const getBackgroundImgs = (race) => {
     switch (race) {
         case 'undead':
         return 'undeadHeroBackgroundImg';
@@ -39,9 +39,9 @@ export default function Her({player}) {
   //USE EFFECTS
   useEffect(() => {
     if(hero.checker) {
-      setHeroImg(`url(${heroesImg}) ${hero.icon}`)
+      setHeroImg(`url(${ heroesImg }) ${ hero.icon }`)
     } else {
-      setHeroImg(`url(${frames}) ${commonAssets[`${getBackgraundImgs(race)}`]}`)
+      setHeroImg(`url(${ frames }) ${ commonAssets[`${ getBackgroundImgs(race) }`] }`)
     };
   }, [hero, race]);
   

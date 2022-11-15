@@ -9,7 +9,6 @@ export default function ApostateChecker({role}) {
   //HaNDLE FUNCTIONS
   const onClick = (e) => {
     playerFunctions.setApostateValue();
-    console.log(playerData.apostate)
   }
 
   return (

@@ -5,6 +5,7 @@ import useMainAttacker from '../../data/store/useMainAttacker';
 //COMPONENTS
 import UnitCard from "../../components/UnitCard/UnitCard";
 import Hero from "../../components/Hero/Hero";
+import TowersCard from "../../components/TowersCard/TowersCard";
 //STYLES
 import { Backdrop, Center } from "./TestsPanel.styled";
 
@@ -30,8 +31,11 @@ export default function Modal({setToggle}) {
           unit={'mage'}
           setUnit={setunit}
         /> */}
-      <Hero
+      {/* <Hero
         player={player}
+      /> */}
+      <TowersCard
+        role={'mainAttacker'}
       />
       </Center>
       </Backdrop>

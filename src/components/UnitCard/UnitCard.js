@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-//STORE
 //DATA
 import UNITS from '../../data/Units.json';
 import commonAssets from '../../data/CommonAssets.json';
@@ -119,7 +118,7 @@ export default function UnitCard ({player, unit, setUnit}) {
                     autoFocus
                     placeholder="0"
                     value={ query }
-                    onChange={handleInput}                    
+                    onChange={ handleInput }                    
                 />
                 <UnitProperty
                     background = { `url(${commonAssetsImg}) ${UNITS[race][unit].unitIcon}` }                 

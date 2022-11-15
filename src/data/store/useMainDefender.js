@@ -41,7 +41,7 @@ const useMainDefender = create((set) => ({
     mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
     mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
     towers: [],
-    fortification: []
+    fortifications: []
   },
   functions: {
     setRace: (race) => set((state) => (state.player.race = race)),
@@ -65,7 +65,31 @@ const useMainDefender = create((set) => ({
         )))
       });
     },
-
+    setTowers:  (tower) =>set((state) => (state.player.towers = tower)),
+    setFortification:  (fortification) =>set((state) => (state.player.fortification = fortification)),
+    addTowers:  (tower) =>set((state) => (state.player.towers = [...state.player.towers, tower])),
+    addFortification:   (fortification) =>{
+      set((state) => {
+        let total = true;
+        if(state.player.fortification.length === 0){
+          state.player.fortification = [...state.player.fortification, fortification];
+          return;
+        }
+        if(state.player.fortification.length !== 0) {
+          state.player.fortification.forEach((fort) =>{
+            if(fort.level === fortification.level) {
+              fort.quantity += 1;
+              state.player.fortification = [...state.player.fortification,];
+              total = false;
+              return
+            } 
+          })
+        }
+        if(total){
+          state.player.fortification = [...state.player.fortification, fortification];
+          return;
+        }
+    })},
 
   
   setHero: (hero) => set((state) => (state.hero = hero)),
@@ -75,31 +99,6 @@ const useMainDefender = create((set) => ({
     ? state.hero[branch][skill].level = 1
     : state.hero[branch][skill].level += 1)),
   setHeroSkillsBranch: (branch, skills) => set((state) => (state.hero[branch] = skills)),
-  setTowers:  (tower) =>set((state) => (state.towers = tower)),
-  setFortification:  (fortification) =>set((state) => (state.fortification = fortification)),
-  addTowers:  (tower) =>set((state) => (state.towers = [...state.towers, tower])),
-  addFortification:   (fortification) =>{
-    set((state) => {
-      let total = true;
-      if(state.fortification.length === 0){
-        state.fortification = [...state.fortification, fortification];
-        return;
-      }
-      if(state.fortification.length !== 0) {
-        state.fortification.forEach((fort) =>{
-          if(fort.level === fortification.level) {
-            fort.quantity += 1;
-            state.fortification = [...state.fortification,];
-            total = false;
-            return
-          } 
-        })
-      }
-      if(total){
-        state.fortification = [...state.fortification, fortification];
-        return;
-      }
-  })},
 
 
   setDefenseArr: (item) => {
