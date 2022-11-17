@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 // import { useStore } from '../../../data/store/useStore';
 
 //COMPONENTS
-import Hero from '../../components/Hero/Hero';
+import Hero from '../Hero/Hero';
 import UnitCard from '../../components/UnitCard/UnitCard';
 // import UnitCard from '../UnitCard';
 // import Hero from '../../../views/components/Hero/Hero';
@@ -25,15 +25,15 @@ const troopsArray = [
     'mage' 
 ]
 
-export default function Squad ({role}) {
+export default function Squad ({ role }) {
     const [playerData, playerFunctions] = usePlayerStoreData(role);
 
     return (
-            <SquadBox>
-                <Hero
-                    player={ playerData }
-                />
-                <UnitsBox>
+        <SquadBox>
+            <Hero
+                role={ role }
+            />
+            <UnitsBox>
                 { troopsArray.map((trooper) => {
                         return (
                             <li key={trooper.unit}>  
@@ -46,7 +46,7 @@ export default function Squad ({role}) {
                         )
                     })
                 }
-                </UnitsBox>
-            </SquadBox>
+            </UnitsBox>
+        </SquadBox>
     )
 }

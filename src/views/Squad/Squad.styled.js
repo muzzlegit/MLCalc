@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
 
 export const SquadBox = styled.div(
-    {   
-        marginBottom: '12px',
-        padding: 0,
+    {  
         // width: '100px',
         // height: '100px',
         display: 'flex',

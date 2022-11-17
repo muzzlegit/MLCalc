@@ -29,8 +29,31 @@ const useMainAttacker = create((set) => ({
     homeLand: 'cursedForest',
     hero: {
       checker: false,
-      icon: '-1px -1px'
     },
+    artefacts: [
+      {
+        id: '123',
+        level: '5',
+        ancient: true,
+        perfect: false,
+        name: 'Броня головореза',
+        place: 'armor',
+        set: '',
+        value: [
+          {
+            name: 'Броня головореза',
+            unit: ['swordsman', 'cavalier', 'flying', 'archer'],
+            property: 'healthArr',
+            childProperty: 'healthRate',
+            description: 'Здоровье воинов, всадников, летунов, стрелков своих +66%',
+            value: 0.66 
+          }
+        ],
+        icon: '-187px -249px',
+        battle: true,
+      }
+
+    ],
     attackRateIndex: 'Min',
     porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
     swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
@@ -40,11 +63,7 @@ const useMainAttacker = create((set) => ({
     healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties },
     mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
     mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
-    towers: [{ ...{
-      "level" : 2,
-      "attackMax" : 1100,
-      "attackMin" : 1200    
-    }, type: 'tower', id: 1}],
+    towers: [],
     fortifications: []
   },
   functions: {
@@ -54,6 +73,7 @@ const useMainAttacker = create((set) => ({
     setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit } }) },
     setRateAttack: (attackRate) => set((state) => (state.player.attackRateIndex = attackRate)),
     setUnitProperty: (item) => {
+
       item.unit.forEach( trooper => {
           item.value === 0
           ? set(state => {
@@ -70,44 +90,35 @@ const useMainAttacker = create((set) => ({
       });
     },
     setTowers:  (tower) =>set((state) => (state.player.towers = tower)),
-    setFortification:  (fortification) =>set((state) => (state.player.fortification = fortification)),
+    setFortification:  (fortification) =>set((state) => (state.player.fortifications = fortification)),
     addTowers:  (tower) =>set((state) => (state.player.towers = [...state.player.towers, tower])),
     addFortification:   (fortification) =>{
       set((state) => {
         let total = true;
-        if(state.player.fortification.length === 0){
-          state.player.fortification = [...state.player.fortification, fortification];
+        if(state.player.fortifications.length === 0){
+          state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
-        if(state.player.fortification.length !== 0) {
-          state.player.fortification.forEach((fort) =>{
+        if(state.player.fortifications.length !== 0) {
+          state.player.fortifications.forEach((fort) =>{
             if(fort.level === fortification.level) {
               fort.quantity += 1;
-              state.player.fortification = [...state.player.fortification,];
+              state.player.fortifications = [...state.player.fortifications,];
               total = false;
               return
             } 
           })
         }
         if(total){
-          state.player.fortification = [...state.player.fortification, fortification];
+          state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
       })
     },
-  
- 
-
-  setHero: (hero) => set((state) => (state.hero = hero)),
-  setHeroSkillLevel: (branch, skill) => set(state => (
-
-    state.hero[branch][skill].level >= 5
-    ? state.hero[branch][skill].level = 1
-    : state.hero[branch][skill].level += 1)),
-
-  setHeroSkillsBranch: (branch, skills) => set((state) => (state.hero[branch] = skills)),
-
-  
-}}))
+    setHero: (hero) => set((state) => (state.player.hero = hero)),
+    setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
+    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level)),
+    }})
+)
 
 export default useMainAttacker;

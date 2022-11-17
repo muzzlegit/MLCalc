@@ -1,13 +1,48 @@
 {
-    "heroFamePosition": "-1px -1px",
-    "undeadHeroBackgroundImg": "-97px -1px",
-    "demonHeroBackgroundImg": "-181px -1px",
-    "drowHeroBackgroundImg": "-264px -1px",
-    "humanHeroBackgroundImg": "-347px -1px",
-    "elfHeroBackgroundImg": "-430px -1px",
-    "healthIcon":"-221px -34px",
-    "defenseIcon":"-221px -1px",
-    "attackIcon":"-221px -17px",
+    "undead": {
+        "levelFrame": "-119px -1px",
+        "heroBackground": "-36px -1px",
+        "tower": "-1px -1px",
+        "magicTower": "-1px -43px",
+        "fortification": "-1px -85px"
+    },
+    "demon": {
+        "levelFrame": "-119px -1px",
+        "heroBackground": "-36px -1px",
+        "tower": "-1px -1px",
+        "magicTower": "-1px -43px",
+        "fortification": "-1px -85px"
+    },
+    "drow": {
+        "levelFrame": "-119px -1px",
+        "heroBackground": "-36px -1px",
+        "tower": "-1px -1px",
+        "magicTower": "-1px -43px",
+        "fortification": "-1px -85px"
+    },
+    "human": {
+        "levelFrame": "-119px -1px",
+        "heroBackground": "-36px -1px",
+        "tower": "-1px -1px",
+        "magicTower": "-1px -43px",
+        "fortification": "-1px -85px"
+    },
+    "elf": {
+        "levelFrame": "-119px -1px",
+        "heroBackground": "-36px -1px",
+        "tower": "-1px -1px",
+        "magicTower": "-1px -43px",
+        "fortification": "-1px -85px"
+    },
+
+    "heroFame": "-1px -1px",
+    "unitFame": "-98px -1px",
+    "artFrame": "-99px -96px",
+    "healthIcon": "-221px -34px",
+    "defenseIcon": "-221px -1px",
+    "attackIcon": "-221px -17px",
+    "heroSkillIcon": "-304px -1px",
+    "heroSpellIcon": "-304px -65px",
     "towerPosition": "-27px -117px", 
     "magicTowerPosition": "-1px -117px",
     "fortificationPosition": "-56px -117px",

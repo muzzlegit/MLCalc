@@ -3,8 +3,8 @@
       "id": "7DA8CF38F3DB4A9B8E90C18D548462F2",
       "class": "стратег",
       "name": "воитель",
-      "maleIcon": "-84px 0px",
-      "femaleIcon": "1px 0px",
+      "maleIcon": "-84px -1px",
+      "femaleIcon": "-1px -1px",
       "skills": {
         "1":{
           "id": "7DD63AE4587B4A62AD4979859F398623",
@@ -16,7 +16,13 @@
           "name": "Сила войск",
           "description": "Атака всех войск",
           "level": 1,
-          "value": [ 5, 10, 15, 20, 25 ],
+          "value": [ 
+            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.05 },
+            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.1 },
+            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.15 },
+            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.2 },
+            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.25 }
+          ],
           "battle": true
         },
         "2":{
@@ -31,7 +37,7 @@
           "influenceDescription": "Действует на союзника",
           "level": 1,
           "value": [ 5, 10, 15, 20, 25 ],
-          "battle": true
+          "battle": false
         },
         "3":{
           "id": "72C3C5472C334BDDBBCC037EE704D1EB",
@@ -84,8 +90,8 @@
       "id": "840CC6FA0D2D4FF9994881D3D236B66F",
       "class": "стратег",
       "name": "миротворец",
-      "maleIcon": "-84px 401px",
-      "femaleIcon": "0px 401px",
+      "maleIcon": "-84px -101px",
+      "femaleIcon": "-1px -101px",
       "skills": {
         "1":{
           "id": "CEF9D317304442BA980A6C12E4AFC1A9",
@@ -164,8 +170,8 @@
       "id": "0AD2CB37310746A1A94B49609DD07169",
       "class": "стратег",
       "name": "паладин",
-      "maleIcon": "-84px 301px",
-      "femaleIcon": "0px 301px",
+      "maleIcon": "-84px -201px",
+      "femaleIcon": "-1px -201px",
       "skills": {
         "1":{
           "id": "701FDDE86DD643B8A73877D5D6E35F16",
@@ -201,11 +207,17 @@
           "unit": "all",
           "type": "passive",
           "effect": "player",
-          "property": "",
+          "property": "defenseArr",
           "name": "Защита",
           "description": "Защита всех войск",
           "level": 1,
-          "value": [ 5, 10, 15, 20, 25 ],
+          "value": [ 
+            { "name": "Защита", "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 5 },
+            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 10 },
+            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 15 },
+            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 20 },
+            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 25 }
+          ],
           "battle": true
         },
         "4":{
@@ -220,7 +232,7 @@
           "influenceDescription": "Действует на союзника",
           "level": 1,
           "value": [ 5, 10, 15, 20, 25 ],
-          "battle": true
+          "battle": false
         },
         "5":{
           "id": "A46F4FDEE4E8406F899BA0CAD19BFF0A",
@@ -252,8 +264,8 @@
       "id": "7B49B3C48A3148CCBB56DF7D3A3603F2",
       "class": "стратег",
       "name": "разведчик",
-      "maleIcon": "-84px 201px",
-      "femaleIcon": "0px 201px",
+      "maleIcon": "-84px -301px",
+      "femaleIcon": "-1px -301px",
       "skills": {
         "1":{
           "id": "D8FBD279BE7544E783C7CB33233FB208",
@@ -337,8 +349,8 @@
       "id": "B93DBD36297540009B57F72F307B176B",
       "class": "стратег",
       "name": "диверсант",
-      "maleIcon": "-84px 101px",
-      "femaleIcon": "0px 101px",
+      "maleIcon": "-84px -401px",
+      "femaleIcon": "-1px -401px",
       "skills": {
         "1":{
           "id": "7A303851CE3F4A559B0B3927A5897133",

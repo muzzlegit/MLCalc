@@ -4,11 +4,14 @@ import useMainAttacker from '../../data/store/useMainAttacker';
 
 //COMPONENTS
 import UnitCard from "../../components/UnitCard/UnitCard";
-import Hero from "../../components/Hero/Hero";
+import HeroBox from "../../components/HeroBox/HeroBox";
 import TowersCard from "../../components/TowersCard/TowersCard";
+import TowersSelector from "../../components/TowersSelector/TowersSelector";
+import HeroDall from "../HeroDoll/HeroDoll";
+import HeroSkill from "../../components/HeroSkill/HeroSkill";
+import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
 //STYLES
 import { Backdrop, Center } from "./TestsPanel.styled";
-
 
 export default function Modal({setToggle}) {
   const modalRoot =document.querySelector(`#modal-root-test`)
@@ -34,8 +37,21 @@ export default function Modal({setToggle}) {
       {/* <Hero
         player={player}
       /> */}
-      <TowersCard
+      {/* <TowersCard
         role={'mainAttacker'}
+      /> */}
+      {/* <TowersSelector
+        role={'mainAttacker'}
+      /> */}
+      {/* <HeroDall/> */}
+      {/* <HeroSkill
+        role={'mainAttacker'}
+        branch={'skillsBranch1'}
+        skillNumber={1}
+      /> */}
+      <SkillsBranch
+        role={'mainAttacker'}
+        branch={'skillsBranch1'}
       />
       </Center>
       </Backdrop>

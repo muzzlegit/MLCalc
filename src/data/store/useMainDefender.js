@@ -31,6 +31,7 @@ const useMainDefender = create((set) => ({
       checker: false,
       icon: '-1px -1px'
     },
+    artefacts: [],
     attackRateIndex: 'Min',
     porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
     swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
@@ -71,28 +72,28 @@ const useMainDefender = create((set) => ({
     addFortification:   (fortification) =>{
       set((state) => {
         let total = true;
-        if(state.player.fortification.length === 0){
-          state.player.fortification = [...state.player.fortification, fortification];
+        if(state.player.fortifications.length === 0){
+          state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
-        if(state.player.fortification.length !== 0) {
-          state.player.fortification.forEach((fort) =>{
+        if(state.player.fortifications.length !== 0) {
+          state.player.fortifications.forEach((fort) =>{
             if(fort.level === fortification.level) {
               fort.quantity += 1;
-              state.player.fortification = [...state.player.fortification,];
+              state.player.fortifications = [...state.player.fortifications,];
               total = false;
               return
             } 
           })
         }
         if(total){
-          state.player.fortification = [...state.player.fortification, fortification];
+          state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
     })},
+    setHero: (hero) => set((state) => (state.player.hero = hero)),
 
-  
-  setHero: (hero) => set((state) => (state.hero = hero)),
+    
   setHeroSkillLevel: (branch, skill) => set(state => (
 
     state.hero[branch][skill].level >= 5
