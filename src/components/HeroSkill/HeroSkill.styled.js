@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const SkillBox = styled.li(
   {
+    position: 'relative',
     width: '82px',
     height: '63px',
     display: 'flex',
@@ -14,7 +15,6 @@ export const SkillBox = styled.li(
 );
 export const Skill = styled.div(
   {
-    position: 'relative',
     width:'58px',
     height: '53px'
   },
@@ -26,7 +26,7 @@ export const Skill = styled.div(
 export const LevelButton = styled.button(
   {
     position: 'absolute',
-    bottom: '-32%',
+    bottom: '-25%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     margin: 0,

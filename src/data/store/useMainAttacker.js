@@ -117,6 +117,7 @@ const useMainAttacker = create((set) => ({
     },
     setHero: (hero) => set((state) => (state.player.hero = hero)),
     setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
+    setHeroBranchesId: (branch, id) => set((state) => (state.player.hero.branchesId[branch] = id)),
     setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level)),
     }})
 )

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
+
 //HOOKS
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 //IMG
@@ -14,22 +14,25 @@ import { SkillBox, Skill, LevelButton } from './HeroSkill.styled';
 
 export default function HeroSkill({ role, branch, skillNumber }) {
   const [playerData, playerFunctions] = usePlayerStoreData(role);
-  const [level, setLevel] = useState(1);
- 
+  
   //CONSTS
-  const skill = playerData.hero[branch][skillNumber];
   const {
     hero
   } = playerData  
   const {
-    setHeroSkillLevel
+    setHeroSkillLevel,
+    setUnitProperty
   } = playerFunctions
+  const skill = hero.checker ? hero[branch][skillNumber] : {};
 
   //HANDLE FUNCTIONS
   const onLevelButtonClick = () => {
-    level >= 5 ? setLevel(1) : setLevel( prev => prev += 1)
-    setHeroSkillLevel(branch, skillNumber, level);
+
+    // console.log('!!',hero[branch][skillNumber]);
+    hero[branch][skillNumber].level >= 5 ? setHeroSkillLevel(branch, skillNumber, 1) : setHeroSkillLevel(branch, skillNumber, hero[branch][skillNumber].level + 1 )
+    setUnitProperty(skill.value[skill.level - 1])
   }
+
 
   return(
     <SkillBox 
@@ -41,14 +44,16 @@ export default function HeroSkill({ role, branch, skillNumber }) {
           background={ `url(${ heroSkillsImg }) ${ skill.icon }` }
           filter = { skill.battle ? 'none' : 'grayscale(100%) brightness(70%)' }
         >
-          <LevelButton
-            type="button"
-            background={ skill.level === 5 ? 'grey' : 'green' }
-            onClick={ onLevelButtonClick }
-          >
-            {`${skill.level}`}/5
-          </LevelButton>
         </Skill>
+      : null }
+      { hero.checker && skill.battle ?
+        <LevelButton
+          type="button"
+          background={ skill.level === 5 ? 'grey' : 'green' }
+          onClick={ onLevelButtonClick }
+        >
+          {`${skill.level}`}/5
+        </LevelButton>        
       : null }
     </SkillBox> 
   )

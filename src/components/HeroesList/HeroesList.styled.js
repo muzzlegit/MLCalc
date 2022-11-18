@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const ModalBox = styled.div(
+export const ModalBox = styled.ul(
   {
     position: 'absolute',
     top: '50%',
@@ -22,7 +22,7 @@ export const ModalBox = styled.div(
   //   background: props.background,
   // }),
 );
-export const HeroBox = styled.div(
+export const HeroBox = styled.li(
   {
     margin: 0,
     padding: 0,

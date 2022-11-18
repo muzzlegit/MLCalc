@@ -92,41 +92,10 @@ const useMainDefender = create((set) => ({
         }
     })},
     setHero: (hero) => set((state) => (state.player.hero = hero)),
-
-    
-  setHeroSkillLevel: (branch, skill) => set(state => (
-
-    state.hero[branch][skill].level >= 5
-    ? state.hero[branch][skill].level = 1
-    : state.hero[branch][skill].level += 1)),
-  setHeroSkillsBranch: (branch, skills) => set((state) => (state.hero[branch] = skills)),
-
-
-  setDefenseArr: (item) => {
-    if(item.unit === 'all') {
-      troopsNamesArray.forEach( trooper => {
-          item.value === 0
-          ? set(produce(state => {
-            state.troops[trooper][item.property].splice(findPropertyIndex(state.troops[trooper][item.property], item), 1)
-          }))
-          : set(produce(state => {
-            state.troops[trooper][item.property][findPropertyIndex(state.troops[trooper][item.property], item)] = {name: item.name, value: item.value, unit: item.unit}
-          }))
-      });
+    setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
+    setHeroBranchesId: (branch, id) => set((state) => (state.player.hero.branchesId[branch] = id)),
+    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level)),
     }
-  },
-  setAttackArr: (item) => {
-    if(item.unit !== 'all') {
-          item.value === 0
-          ? set(produce(state => {
-            state.troops[item.unit][item.property].splice(findPropertyIndex(state.troops[item.unit][item.property], item), 1)
-          }))
-          : set(produce(state => {
-            state.troops[item.unit][item.property][findPropertyIndex(state.troops[item.unit][item.property], item)] = {name: item.name, value: item.value, unit: item.unit}
-          }))
-    }
-  },
-  
-}}))
+}))
 
 export default useMainDefender;

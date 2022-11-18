@@ -1,88 +1,91 @@
 import { useState } from "react";
 //COMPONENTS
-// import Modal from "../../Modal/Modal";
-import SkillBranch from "../../components/SkillsBranch/SkillsBranch";
+import Modal from "../../components/Modal/Modal";
+import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
 import BranchesList from "../BranchesList/BranchesList";
+//HOOKS
+import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 //STYLES
-import { BranchesBox } from "./HeroBranches.tyled";
+import { BranchesBox, Branchwrap } from "./HeroBranches.tyled";
 
-export default function HeroBranches({
-    hero,
-    setHeroSkillsBranch,
-    setHeroSkillLevel
-  }) {
+export default function HeroBranches({ role }) {
+  const [playerData, playerFunctions] = usePlayerStoreData(role);
   const [showModal, setShowModal] = useState(false);
-  const [ buttonTitle, setButtonTitle ] = useState('');
+  const [branch, setBranch] = useState('');
+
+  //CONSTS
+  const {
+    hero
+  } = playerData
 
   const toggleModal = () => {
     setShowModal(!showModal);
   }
 
   const addBranch = (e) => {
-    setButtonTitle(e.currentTarget.title);
+    setBranch(e.currentTarget.name);
+
     toggleModal();
   }
 
   return(
     <>
       <BranchesBox>
+        <Branchwrap
+          marginTop={ '28px' }
+        >
         {
-          <SkillBranch
-            branch={ hero.skillsBranch1 }
-            branchName='skillsBranch1'
-            setHeroSkillLevel={ setHeroSkillLevel }
-            LevelButtonChecker={ true }
-            skillChecker={ hero.checker }
+          <SkillsBranch
+            role={ role }
+            branch={ 'skillsBranch1' }
           />
         }
-        {hero.checker && hero.skillsBranch2 &&
-          <SkillBranch
-            branch={ hero.skillsBranch2 }
-            branchName='skillsBranch2'
-            setHeroSkillLevel={ setHeroSkillLevel }
-            LevelButtonChecker={ true }
-            skillChecker={ true }
-          />
-        }
-        <button
-          type='button'
-          title="skillsBranch2"
-          onClick={ addBranch }
-          disabled={ hero.checker ? false : true }
-        >
-          { !hero.skillsBranch2 ? 'Добавить' : 'Изменить'}
-        </button>
-        { hero.checker && hero.skillsBranch3 &&
-          <SkillBranch
-            branch={ hero.skillsBranch3 }
-            branchName='skillsBranch3'
-            setHeroSkillLevel={ setHeroSkillLevel }
-            LevelButtonChecker={ true }
-            skillChecker={ true }
-          />
-        }
-        <button
-          type='button'
-          title="skillsBranch3"
-          onClick={ addBranch }
-          disabled={ hero.checker ? false : true }
-        >
-          { !hero.skillsBranch3 ? 'Добавить' : 'Изменить'}
-        </button>      
+        </Branchwrap>
+        <Branchwrap>
+          <button
+            type='button'
+            name="skillsBranch2"
+            onClick={ addBranch }
+            disabled={ hero.checker ? false : true }
+          >
+            { !hero.skillsBranch2 ? 'Добавить' : 'Изменить'}
+          </button>
+          { hero.skillsBranch2 ?
+            <SkillsBranch
+              role={ role }
+              branch={ 'skillsBranch2' }
+            />
+          : null }
+        </Branchwrap>
+        <Branchwrap>
+          <button
+            type='button'
+            name="skillsBranch3"
+            onClick={ addBranch }
+            disabled={ hero.checker ? false : true }
+          >
+            { !hero.skillsBranch3 ? 'Добавить' : 'Изменить'}
+          </button>
+          { hero.skillsBranch3 ?
+            <SkillsBranch
+              role={ role }
+              branch={ 'skillsBranch3' }
+            />
+          : null }
+        </Branchwrap>    
       </BranchesBox>
-      {/* { showModal &&
+      { showModal &&
         <Modal
-          level={ 1 }
+          level={ 2 }
           toggleModal={ toggleModal }
         >
           <BranchesList
-            hero={ hero }
-            branch={ buttonTitle }
+            role={ role }
+            branch={ branch }
             toggleModal={ toggleModal }
-            setMainAttackerHeroSkillsBranch={ setHeroSkillsBranch }
           />
         </Modal>
-      }       */}
+      }      
     </>
   )
 }

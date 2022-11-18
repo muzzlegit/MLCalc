@@ -1,14 +1,8 @@
-import { useState, useEffect } from 'react';
-// import { useStore } from '../../../data/store/useStore';
+import { nanoid } from "nanoid";
 
 //COMPONENTS
 import Hero from '../Hero/Hero';
 import UnitCard from '../../components/UnitCard/UnitCard';
-// import UnitCard from '../UnitCard';
-// import Hero from '../../../views/components/Hero/Hero';
-// import TowersCard from '../TowersCard/TowersCard';
-// //HELPERS
-// import getValueFromUnitPropertyArray from '../../../helpers/getValueFromUnitPropertyArray';
 //HOOKS
 import usePlayerStoreData from '../../hooks/usePlayerStoreData';
 //STYLES
@@ -33,10 +27,14 @@ export default function Squad ({ role }) {
             <Hero
                 role={ role }
             />
-            <UnitsBox>
+            <UnitsBox
+               
+            >
                 { troopsArray.map((trooper) => {
                         return (
-                            <li key={trooper.unit}>  
+                            <li 
+                                key={ trooper + role }
+                            >  
                                 <UnitCard
                                     player={ playerData }
                                     unit={ trooper }

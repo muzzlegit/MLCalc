@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { nanoid } from "nanoid";
 
 //COMPONENTS
 import ArtCell from '../../components/ArtCell/ArtCell';
 import HeroBranches from '../HeroBranches/HeroBranches';
+//HOOKS
+import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 //DATA
 import commonAssets from '../../data/CommonAssets.json';
 //IMAGES
@@ -27,17 +30,14 @@ const arts = [
   { place: 'leftHand', top: '400px', left: '200px', art: false },
 ]
 
-export default function HeroDall({ playerData, playerFunctions, toggleModal }){
+export default function HeroDall({ role, toggleModal }){
+  const [playerData, playerFunctions] = usePlayerStoreData(role);
   const [heroArts, setHeroArts] = useState(arts);
   //CONSTS
   const {
     hero,
     artefacts
-  } = playerData
-  const {
-    setHeroSkillsBranch,
-    setHeroSkillLevel
-  } = playerFunctions
+  } = playerData;
 
   //USE EFFECTS
   useEffect(() => {
@@ -64,12 +64,14 @@ export default function HeroDall({ playerData, playerFunctions, toggleModal }){
           heroArts.map(art => {
             return(
               <ArttefactWrap
+                key={ nanoid() }
                 id={ art.place }
                 top={ art.top }
                 left={ art.left }
                 background = {`url(${ commonImg }) ${ commonAssets.artFrame }`}
               >
                 <ArtCell
+                  key={ nanoid() }
                   artefact={ art.art }
                 />
               </ArttefactWrap>
@@ -78,11 +80,9 @@ export default function HeroDall({ playerData, playerFunctions, toggleModal }){
         }
       </DollWrap>
       <BranchesWrap>
-        {/* <HeroBranches
-          hero={ hero }
-          setHeroSkillsBranch={ setHeroSkillsBranch }
-          setHeroSkillLevel={ setHeroSkillLevel }
-        /> */}
+        <HeroBranches
+          role={ role }
+        />
       </BranchesWrap>
 
     </Wrap>

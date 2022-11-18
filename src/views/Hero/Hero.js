@@ -64,8 +64,7 @@ export default function Hero({ role }){
           toggleModal={ toggleModal }
         >
           <HeroDoll
-            playerData={ playerData }
-            playerFunctions={ playerFunctions }
+            role={ role }
             toggleModal={ toggleModal2 }
           />
         </Modal>

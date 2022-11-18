@@ -34,6 +34,11 @@ export default function HeroesList({ toggleModal, role }){
     setHero({
       checker: true,
       id: hero.id,
+      branchesId: {
+        skillsBranch1: hero.id,
+        skillsBranch2: false,
+        skillsBranch3: false,
+      },
       class: hero.class,
       name: hero.name,
       icon: hero[e.currentTarget.title],
@@ -45,7 +50,9 @@ export default function HeroesList({ toggleModal, role }){
   }
 
   return (
-    <ModalBox>
+    <ModalBox
+      key={nanoid()}
+    >
       { heroes.map((hero) => {
         return (
           <>
