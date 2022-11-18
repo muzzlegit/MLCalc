@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mlcalc/static/css/main.57108fca.css",
-    "main.js": "/mlcalc/static/js/main.3058c553.js",
+    "main.css": "/mlcalc/static/css/main.6770c653.css",
+    "main.js": "/mlcalc/static/js/main.958cd8d6.js",
     "static/media/ArtifactAssets.png": "/mlcalc/static/media/ArtifactAssets.c56501bcf4f6b5cd257b.png",
     "static/media/Heroes.png": "/mlcalc/static/media/Heroes.6f50264c86a535de802c.png",
     "static/media/ElfCards.png": "/mlcalc/static/media/ElfCards.e681101376acfadae69f.png",
@@ -19,11 +19,11 @@
     "static/media/ElfCommon.png": "/mlcalc/static/media/ElfCommon.4b9dfac0eebb7a3dc76e.png",
     "static/media/HumanCommon.png": "/mlcalc/static/media/HumanCommon.9359080a384d50708206.png",
     "index.html": "/mlcalc/index.html",
-    "main.57108fca.css.map": "/mlcalc/static/css/main.57108fca.css.map",
-    "main.3058c553.js.map": "/mlcalc/static/js/main.3058c553.js.map"
+    "main.6770c653.css.map": "/mlcalc/static/css/main.6770c653.css.map",
+    "main.958cd8d6.js.map": "/mlcalc/static/js/main.958cd8d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.57108fca.css",
-    "static/js/main.3058c553.js"
+    "static/css/main.6770c653.css",
+    "static/js/main.958cd8d6.js"
   ]
 }
