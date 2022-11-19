@@ -41,7 +41,7 @@ export default function UnitCard ({ player, unit, setUnit }) {
 
     const [query, setQuery] = useState(0);
     const [unitLevel, setUnitLevel] = useState(player[unit].level);
-//CONSTS
+    //CONSTS
     const { 
         race,
         attackRateIndex
@@ -54,7 +54,7 @@ export default function UnitCard ({ player, unit, setUnit }) {
         healthRate,
     } = player[unit]
 
-//HaNDLE FUNCTIONS
+    //HaNDLE FUNCTIONS
     const handleInput = (e) => {
         if(e.target.value === ""){
             e.target.value = 0;
@@ -117,11 +117,12 @@ export default function UnitCard ({ player, unit, setUnit }) {
                     background={ unitFrame }
                     height={ level }                
                 >
-                    <UnitImg
+
+                </UnitFrame>
+                <UnitImg
                         background={ unitImg }
                     >
                     </UnitImg>
-                </UnitFrame>
             </UnitFrameWrap>
             <PropertiesWrap>
                 <UnitCardInput

@@ -9,7 +9,7 @@ import Squad from '../Squad/Squad';
 import TestsPanel from '../TESTSPANEL/TestsPanel';
 
 //STYLES
-import { AppBox, CenterBox, LeftBox } from './App.styled';
+import { AppBox, PlayerBox, PlayerTitle, SelectorsBox } from './App.styled';
 
 
 function App() {
@@ -17,42 +17,48 @@ function App() {
   return (
   <> 
     <AppBox>
+      <BattlefieldSelector/>
+      <PlayerBox>
+        <PlayerTitle>Атакующий</PlayerTitle>
+        <SelectorsBox>
+          <RaceSelector
+            role={'mainAttacker'}
+          />
+          <AttackRateSelector
+            role={'mainAttacker'}
+          />
+          <ApostateChecker
+            role={'mainAttacker'}
+          />
+        </SelectorsBox>
+        <Squad
+          role={'mainAttacker'}
+        />
+      </PlayerBox>
+      <PlayerBox>
+        <PlayerTitle>Защитник</PlayerTitle>
+        <SelectorsBox>
+          <RaceSelector
+            role={'mainDefender'}
+          />
+          <AttackRateSelector
+            role={'mainDefender'}
+          />
+          <ApostateChecker
+            role={'mainDefender'}
+          />
+        </SelectorsBox>
+        <SelectorsBox>
+          <TowerSelector/>
+          <TowersCard
+            role={'mainAttacker'}
+          />
+        </SelectorsBox>
+        <Squad
+          role={'mainDefender'}
+        />
+      </PlayerBox>
 
-        <BattlefieldSelector/>
-          <CenterBox>
-            <RaceSelector
-              role={'mainAttacker'}
-            />
-            <AttackRateSelector
-              role={'mainAttacker'}
-            />
-            <ApostateChecker
-              role={'mainAttacker'}
-            />
-          </CenterBox>
-          <CenterBox>
-            <TowerSelector/>
-            <TowersCard
-                role={'mainAttacker'}
-              />
-          </CenterBox>
-      <Squad
-        role={'mainAttacker'}
-      />
-      <CenterBox>
-        <RaceSelector
-          role={'mainDefender'}
-        />
-        <AttackRateSelector
-          role={'mainDefender'}
-        />
-        <ApostateChecker
-          role={'mainDefender'}
-        />
-      </CenterBox>
-      <Squad
-        role={'mainDefender'}
-      />
     </AppBox>
     <TestsPanel/>
   </>  

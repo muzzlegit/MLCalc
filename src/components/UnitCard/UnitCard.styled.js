@@ -15,6 +15,7 @@ export const UnitCardBox = styled.div(
 );
 export const UnitFrameWrap = styled.div(
   {
+    position: 'relative',
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -27,7 +28,11 @@ export const UnitFrameWrap = styled.div(
 );
 export const UnitFrame = styled.div(
   {
-    position: 'relative',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1,
     width: '100%',
     height: '100%'
   },
@@ -42,7 +47,7 @@ export const UnitImg = styled.div(
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    zIndex: -1,
+    zIndex: 1,
     width: '68px',
     height: '82px'
   },

@@ -38,16 +38,24 @@
     "heroFame": "-1px -1px",
     "unitFame": "-98px -1px",
     "artFrame": "-99px -96px",
+
     "healthIcon": "-221px -34px",
     "defenseIcon": "-221px -1px",
     "attackIcon": "-221px -17px",
+
     "heroSkillIcon": "-304px -1px",
     "heroSpellIcon": "-304px -65px",
+
     "towerPosition": "-27px -117px", 
     "magicTowerPosition": "-1px -117px",
     "fortificationPosition": "-56px -117px",
     "towerSelectorPosition": "-96px -117px",
     "towerPositionUnit": "-1px -1px", 
     "magicTowerPositionUnit": "-1px -43px",
-    "fortificationPositionUnit": "-1px -85px"           
+    "fortificationPositionUnit": "-1px -85px" ,
+
+    "perfectIcon": "-1px -157px",
+    "smallPerfectIcon": "-40px -157px",
+    "addIcon": "-26px -171px",
+    "removeIcon": "-26px -157px"
 }

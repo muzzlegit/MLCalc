@@ -8,7 +8,6 @@ export const SquadBox = styled.div(
         justifyContent: 'center',
         alignItems: 'start',
         listStyle: 'none',
-        outline: '1px solid tomato'
     },
 
 props => ({

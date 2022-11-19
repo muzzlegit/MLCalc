@@ -42,7 +42,7 @@ export default function HeroSkill({ role, branch, skillNumber }) {
       { hero.checker ?
         <Skill
           background={ `url(${ heroSkillsImg }) ${ skill.icon }` }
-          filter = { skill.battle ? 'none' : 'grayscale(100%) brightness(70%)' }
+          filter = { skill.battle ? null : 'grayscale(100%) brightness(70%)' }
         >
         </Skill>
       : null }

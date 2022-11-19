@@ -7,24 +7,25 @@ export const Wrap = styled.div(
     width: '600px',
     height: '600px',
     display: 'flex',
-    backgroundColor:'#212425',
-    outline: '1px solid tomato',
+    gap: '30px',
+    // backgroundColor:'#212425',
+    // outline: '1px solid tomato',
   }
 );
 export const DollWrap = styled.div(
   {
     padding: '4px',
     width: '50%',
-    height: '100%',
-    outline: '1px solid tomato',
+    // height: '100%',
+    // outline: '1px solid tomato',
   }
 );
 export const BranchesWrap = styled.div(
   {
     padding: '4px',
     width: '50%',
-    height: '100%',
-    outline: '1px solid tomato',
+    // height: '100%',
+    // outline: '1px solid tomato',
   }
 );
 export const HeroWrap = styled.div(

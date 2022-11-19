@@ -6,7 +6,7 @@ import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 //IMAGES
 import heroesImg from '../../img/common/Heroes.webp';
 //STYLES
-import { ModalBox, HeroBox } from "./HeroesList.styled"
+import { ListBox, HeroesBox, HeroBoxWrap, HeroBox } from "./HeroesList.styled"
 
 
 
@@ -50,31 +50,39 @@ export default function HeroesList({ toggleModal, role }){
   }
 
   return (
-    <ModalBox
+    <ListBox
       key={nanoid()}
     >
       { heroes.map((hero) => {
         return (
-          <>
-          <HeroBox 
+          <HeroesBox
+            key={nanoid()}>
+            <HeroBoxWrap
+              key={nanoid()}
+            >
+              <HeroBox 
+                id={hero.id}
+                title={'maleIcon'}
+                background={`url(${heroesImg}) ${hero.maleIcon}`}
+                onClick={onHeroClick}
+              > 
+              </HeroBox>
+
+            </HeroBoxWrap>
+            <HeroBoxWrap
             key={nanoid()}
-            id={hero.id}
-            title={'maleIcon'}
-            background={`url(${heroesImg}) ${hero.maleIcon}`}
-            onClick={onHeroClick}
-          > 
-          </HeroBox>
-          <HeroBox 
-            key={nanoid()}
-            id={hero.id}
-            title={'femaleIcon'}
-            background={`url(${heroesImg}) ${hero.femaleIcon}`}
-            onClick={onHeroClick}
-          > 
-          </HeroBox>
-          </>
+            >
+              <HeroBox 
+                id={hero.id}
+                title={'femaleIcon'}
+                background={`url(${heroesImg}) ${hero.femaleIcon}`}
+                onClick={onHeroClick}
+              > 
+              </HeroBox>
+            </HeroBoxWrap>
+          </HeroesBox>
         )
     })}
-    </ModalBox>
+    </ListBox>
   )
 }

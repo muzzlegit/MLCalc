@@ -92,17 +92,18 @@ const useMainAttacker = create((set) => ({
     setTowers:  (tower) =>set((state) => (state.player.towers = tower)),
     setFortification:  (fortification) =>set((state) => (state.player.fortifications = fortification)),
     addTowers:  (tower) =>set((state) => (state.player.towers = [...state.player.towers, tower])),
-    addFortification:   (fortification) =>{
+    addFortification:   (fortification, amount) =>{
       set((state) => {
         let total = true;
         if(state.player.fortifications.length === 0){
+          fortification.quantity = amount;
           state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
         if(state.player.fortifications.length !== 0) {
           state.player.fortifications.forEach((fort) =>{
             if(fort.level === fortification.level) {
-              fort.quantity += 1;
+              fort.quantity += amount;
               state.player.fortifications = [...state.player.fortifications,];
               total = false;
               return
@@ -110,6 +111,7 @@ const useMainAttacker = create((set) => ({
           })
         }
         if(total){
+          fortification.quantity = amount;
           state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }

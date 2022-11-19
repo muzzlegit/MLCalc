@@ -69,7 +69,7 @@ const useMainDefender = create((set) => ({
     setTowers:  (tower) =>set((state) => (state.player.towers = tower)),
     setFortification:  (fortification) =>set((state) => (state.player.fortification = fortification)),
     addTowers:  (tower) =>set((state) => (state.player.towers = [...state.player.towers, tower])),
-    addFortification:   (fortification) =>{
+    addFortification:   (fortification, amount) =>{
       set((state) => {
         let total = true;
         if(state.player.fortifications.length === 0){
@@ -79,7 +79,8 @@ const useMainDefender = create((set) => ({
         if(state.player.fortifications.length !== 0) {
           state.player.fortifications.forEach((fort) =>{
             if(fort.level === fortification.level) {
-              fort.quantity += 1;
+              console.log(amount)
+              fort.quantity += amount;
               state.player.fortifications = [...state.player.fortifications,];
               total = false;
               return

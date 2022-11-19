@@ -7,6 +7,8 @@ export const Branch = styled.ul(
     width: '84px',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
     gap: '16px',
     listStyle: 'none',
   }

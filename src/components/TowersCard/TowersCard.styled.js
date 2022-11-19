@@ -2,22 +2,53 @@ import styled from '@emotion/styled';
 
 export const TowerBox = styled.div(
   {
-    height: '100%',
-    display: 'flex'
+    height: '82px',
+    display: 'flex',
+    justifyContent: 'start',
+    alignItems: 'flex-start',
+    gap: '8px',
   }
 );
 export const TowerImgBox = styled.div(
   {
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     width: '34px',
     height: '41px',
-    backgroundColor: 'blue',
-    cursor: 'pointer',
+    borderRadius: '4px',
+    backgroundColor: 'grey',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '0px 0px 4px 4px rgba(255,255,255,.4)',
+      backgroundColor: '#4a5153',
+    }
   },
   props => ({
     background: props.background,
   }),
-  
+);
+export const ImgWrap = styled.div(
+  {
+    position: 'relative'
+  }
+);
+export const LevelLabel = styled.div(
+  {
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    transform: 'translate(0, -50%)',
+    width: '13px',
+    height: '13px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '50%',
+    fontSize: '10px',
+    color: 'white',
+    backgroundColor: '#212425',
+    
+  },
+  props => ({
+    border: props.border === 8 ? null : '1px solid #FFFFFF',
+    background: props.background,
+  }),
 );

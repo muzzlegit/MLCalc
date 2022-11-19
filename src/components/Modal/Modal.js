@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 
 //STYLES
-import { Backdrop, Center } from "./Modal.styled";
+import { Backdrop, ModalBox } from "./Modal.styled";
 
 export default function Modal({level, toggleModal, children }) {
   const modalRoot =document.querySelector(`#modal-root-level-${level}`)
@@ -11,15 +11,13 @@ export default function Modal({level, toggleModal, children }) {
   }
 
   return createPortal(
-    <>
-      <Backdrop
-        title='backdrop'
-        onClick={onBackdropClick}
-      />
-      <Center>
+    <Backdrop
+       title='backdrop'
+      onClick={onBackdropClick}
+    >
+      <ModalBox>
         { children }
-      </Center>
-      
-    </>, modalRoot
+      </ModalBox>
+    </Backdrop>, modalRoot
   )
 }
