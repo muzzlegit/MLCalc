@@ -36,7 +36,9 @@ export const LevelButton = styled.button(
     lineHeight: 0,
     border: '1px solid darkgray',
     borderRadius: '3px',
-    cursor: 'pointer'
+    '&:hover': {
+      cursor: 'pointer'
+    }
   },
   props => ({
     background: props.background

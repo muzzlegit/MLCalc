@@ -3,7 +3,7 @@ import raceLand from '../../helpers/raceLands';
 //HOOKS
 import usePlayerStoreData from '../../hooks/usePlayerStoreData';
 //STYLES
-import { SelectorBox, SelectorLabel } from './RaceSelector.styled';
+import { SelectorBox, SelectorLabel, Select } from './RaceSelector.styled';
 
 export default function RaceSelector({role}) {
     const [playerData, playerFunctions] = usePlayerStoreData(role);
@@ -18,13 +18,13 @@ export default function RaceSelector({role}) {
     return (
         <SelectorBox>
             <SelectorLabel>Расса</SelectorLabel>
-            <select id="race" onChange={ onSelect }>
+            <Select id="race" onChange={ onSelect }>
                 <option value="undead">Нежить</option>
                 <option value="human">Рыцари</option>
                 <option value="demon">Демоны</option>
                 <option value="elf">Эльфы</option>
                 <option value="drow">Темные эльфы</option>           
-            </select>
+            </Select>
         </SelectorBox>
     )
 }

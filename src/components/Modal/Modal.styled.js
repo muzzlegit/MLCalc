@@ -8,7 +8,7 @@ export const Backdrop  = styled.div(
     zIndex: 4,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    backgroundColor: 'rgba(41, 75, 119, 0.8)',
     opacity: 1,
     transition: 'opacity 3800ms cubic-bezier(0.4, 0, 0.2, 1)'
   },

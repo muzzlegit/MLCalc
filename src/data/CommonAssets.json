@@ -57,5 +57,8 @@
     "perfectIcon": "-1px -157px",
     "smallPerfectIcon": "-40px -157px",
     "addIcon": "-26px -171px",
-    "removeIcon": "-26px -157px"
+    "removeIcon": "-26px -157px",
+    "addButton": "-173px -153px",
+    "removeButton": "-173px -115px",
+    "choiceButton": "-173px -134px"
 }

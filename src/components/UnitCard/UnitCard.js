@@ -115,14 +115,16 @@ export default function UnitCard ({ player, unit, setUnit }) {
             >
                 <UnitFrame
                     background={ unitFrame }
-                    height={ level }                
+                    height={ level }
+                    filter={ query === 0 ? 'grayscale(50%) brightness(70%)': null }            
                 >
 
                 </UnitFrame>
                 <UnitImg
-                        background={ unitImg }
-                    >
-                    </UnitImg>
+                    background={ unitImg }
+                    filter={ query === 0 ?'grayscale(60%) brightness(70%)': null }
+                >
+                </UnitImg>
             </UnitFrameWrap>
             <PropertiesWrap>
                 <UnitCardInput

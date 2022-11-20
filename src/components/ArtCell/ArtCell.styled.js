@@ -6,7 +6,7 @@ export const ArtefactWrap = styled.div(
     height: '61px'
   },
   props => ({
-    backgroundColor: props.backgroundColor,
+    background: props.ancient ? 'orange' : null ,
   })
 );
 export const ArtefactImg = styled.div(

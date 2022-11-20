@@ -57,7 +57,7 @@ export const LevelBox = styled.ul(
 );
 export const Level = styled.li(
   {
-    height: '24px',
+    height: '26px',
     width: '24px',
     display: 'flex',
     alignItems: 'center',

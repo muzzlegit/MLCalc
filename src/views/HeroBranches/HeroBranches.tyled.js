@@ -8,7 +8,7 @@ export const BranchesBox = styled.div(
     gap: '12px'
   }
 );
-export const Branchwrap = styled.div(
+export const BranchWrap = styled.div(
   {
     height: '100%',
     display: 'flex',
@@ -19,5 +19,29 @@ export const Branchwrap = styled.div(
   },
   props => ({
     marginTop: props.marginTop,
+  }),
+);
+export const ButtonsWrap = styled.div(
+  {
+    display: 'flex',
+    gap: '12px'
+  }
+);
+export const Button = styled.button(
+  {
+    height: '18px',
+    width: '18px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '0px 0px 4px 4px rgba(255,255,255,.4)'
+    }
+  },
+  props => ({
+    filter: props.filter,
+    background: props.background,
   }),
 );

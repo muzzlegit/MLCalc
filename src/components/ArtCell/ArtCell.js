@@ -8,7 +8,7 @@ export default function ArtCell({ artefact }) {
 
   return (
     <ArtefactWrap
-      backgroundColor={ artefact.ancient ? 'orange' : null }
+      ancient={ artefact.ancient }
     >
       <ArtefactImg
         background={ `url(${ artefactsAssets }) ${ artefact.icon }` }

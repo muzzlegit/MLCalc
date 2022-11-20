@@ -67,19 +67,19 @@ const useMainDefender = create((set) => ({
       });
     },
     setTowers:  (tower) =>set((state) => (state.player.towers = tower)),
-    setFortification:  (fortification) =>set((state) => (state.player.fortification = fortification)),
+    setFortification:  (fortification) =>set((state) => (state.player.fortifications = fortification)),
     addTowers:  (tower) =>set((state) => (state.player.towers = [...state.player.towers, tower])),
     addFortification:   (fortification, amount) =>{
       set((state) => {
         let total = true;
         if(state.player.fortifications.length === 0){
+          fortification.quantity = amount;
           state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
         if(state.player.fortifications.length !== 0) {
           state.player.fortifications.forEach((fort) =>{
             if(fort.level === fortification.level) {
-              console.log(amount)
               fort.quantity += amount;
               state.player.fortifications = [...state.player.fortifications,];
               total = false;
@@ -88,10 +88,12 @@ const useMainDefender = create((set) => ({
           })
         }
         if(total){
+          fortification.quantity = amount;
           state.player.fortifications = [...state.player.fortifications, fortification];
           return;
         }
-    })},
+      })
+    },
     setHero: (hero) => set((state) => (state.player.hero = hero)),
     setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
     setHeroBranchesId: (branch, id) => set((state) => (state.player.hero.branchesId[branch] = id)),

@@ -4,7 +4,7 @@ import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 //HELPERS
 import isNativeLand from "../../helpers/isNativeLand";
 //STYLES
-import { SelectorBox, SelectorLabel } from "./BattlefieldSelector.styled";
+import { SelectorBox, SelectorLabel, Select } from "./BattlefieldSelector.styled";
 
 
 export default function BattlefieldSelector() {
@@ -58,8 +58,8 @@ export default function BattlefieldSelector() {
 
   return (
     <SelectorBox>
-      <SelectorLabel>Боле битвы</SelectorLabel>
-      <select id="battlefield" onChange={ onSelect }>
+      <SelectorLabel>Поле битвы</SelectorLabel>
+      <Select id="battlefield" onChange={ onSelect }>
         <option value="cursedForest">Проклятые леса</option>
         <option value="deadLand">Мёртвая земля</option>
         <option value="hollyLand">Священная земля</option>
@@ -69,7 +69,7 @@ export default function BattlefieldSelector() {
         <option value="forest">Лес</option> 
         <option value="steppe">Степь</option>
         <option value="mine">Подземелье</option>
-      </select>  
+      </Select>  
     </SelectorBox>
  
   )

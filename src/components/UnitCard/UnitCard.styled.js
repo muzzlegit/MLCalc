@@ -32,13 +32,14 @@ export const UnitFrame = styled.div(
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    zIndex: 1,
+    zIndex: 2,
     width: '100%',
     height: '100%'
   },
   props => ({
     background: props.background,
-    height: `${ props.height  === 4 ? `100px` : `92px` }`
+    filter: props.filter,
+    height: `${ props.height  === 4 ? `100px` : `92px` }`,
   }),
 );
 export const UnitImg = styled.div(
@@ -53,12 +54,13 @@ export const UnitImg = styled.div(
   },
   props => ({
     background: props.background,
+    filter: props.filter
   }),
 );
 export const PropertiesWrap = styled.div(
   {
     marginBottom: '4px',
-    padding: '2px',
+    padding: '3px',
     width: '90%',
     display: 'inline-flex',
     flexDirection: 'column',
@@ -66,19 +68,25 @@ export const PropertiesWrap = styled.div(
     alignItems: 'flex-start',
     gap: '8px',
     borderRadius: '4px',
-    backgroundColor: '#4a5153'
+    backgroundColor: '#111728'
   }
 );
 export const UnitCardInput = styled.input(
   {
-    width: '90%',
+    width: '96%',
     height: '16px',
-    fontSize: '12px'
+    border: '1px solid #294b77',
+    borderRadius: '2px',
+    fontSize: '10px',
+    fontWeight: 'bold',
+    color: '#111728',
+    backgroundColor: '#294b77'
   }
 );
 export const UnitProperty = styled.p`
   min-width: 50px;
-  color: white;
+
+  color: #ddddbd;
   font-size: 10px;
   display: flex;
   justify-content: start;

@@ -7,10 +7,20 @@
 body {
 
     text-align: center;
-    background-color: 	#212425;
+    background-color: 	#294b77;
+    
 }
 .l {
     width: 100%;
-    background-color: 	#5794d1;
+    color: 	#111728;
+    color: 	#294b77; /*rgba(41, 75, 119, 1)*/
+
+    color: 	#8397a7; /*rgba(131, 151, 167, 1)*/
+
+    color: 	#89abad; /* text */
+    color: 	#ddddbd; /* text rgba(221, 221, 189, 1)*/
+    color:  #bb0a01;
+
+    color: #0641f3;
     background-color: rgba(71, 67, 67, 0.8);
     }

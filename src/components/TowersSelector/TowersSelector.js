@@ -26,8 +26,10 @@ export default function TowerSelector({role}) {
   //CONSTS
   const {
     towers,
+    fortifications,
   } = playerData;
   const {
+    setUnitProperty,
     setTowers,
     setFortification,
     addTowers,
@@ -39,7 +41,7 @@ export default function TowerSelector({role}) {
   const [isButtonActive, setIsButtonActive] = useState(towers.length >= 2 || isSelected === 'fortification' ? true : false);
   const [query, setQuery] = useState(1);
 
-  const levels = [1,2,3,4,5,6,7,8]
+  const levels = [1,2,3,4,5,6,7,8];
   const selectShadow = 'drop-shadow(#61e7fd 0px 0px 7px) drop-shadow(#61e7fd 0px 0px 7px)';
   const perfectIcon = `url(${commonAssetsImg}) ${commonAssets.perfectIcon}`;
   const addIcon = `url(${commonAssetsImg}) ${commonAssets.addIcon}`;
@@ -66,13 +68,15 @@ export default function TowerSelector({role}) {
     if (isSelected !== 'fortification' && towers.length < 2) {
       addTowers({ ...towersData[`${isSelected}`][`level${level}`], type: `${isSelected}`, id: nanoid()});
     } else {
-
       addFortification({...towersData[`${isSelected}`][`level${level}`], type: `${isSelected}`, id: nanoid()}, query);
     }
+
   }
-  const onremoveButtonClick = () => {
+  const onRemoveButtonClick = () => {
+    console.log(fortifications)
     setTowers([]);
     setFortification([]);
+    console.log(fortifications)
   }
   const handleInput = (e) => {
     if(e.target.value === ""){
@@ -98,6 +102,28 @@ export default function TowerSelector({role}) {
       }
     }
   }, [towers, isSelected])
+
+  useEffect(() => {
+    if(fortifications.length === 0){
+      setUnitProperty({
+        name: 'fortifications',
+        unit: ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'],
+        property: 'defenseArr',
+        childProperty: 'defense',
+        value: 0 });
+    } else {
+        let value = 0;
+        fortifications.forEach((fortification) => {
+          value = value + fortification.quantity * fortification.defense;
+        });
+        setUnitProperty({
+          name: 'fortifications',
+          unit: ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'],
+          property: 'defenseArr',
+          childProperty: 'defense',
+          value: value });
+    }
+  }, [fortifications, setUnitProperty]);
 
   return (
     <TowerSelectorBox>
@@ -165,7 +191,7 @@ export default function TowerSelector({role}) {
         </AddButton>
         <AddButton
           type="button"
-          onClick = { onremoveButtonClick }
+          onClick = { onRemoveButtonClick }
         >
           <ButtonImg
             background ={ removeIcon }

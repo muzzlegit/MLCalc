@@ -35,12 +35,10 @@ export const HeroWrap = styled.div(
     left: '10px',
     width: '82px',
     height: '99px',
-    backgroundColor: '#212425',
+    backgroundColor: '#8397a7',
     borderRadius: '2px',
-    boxShadow: '0px 0px 1px 1px rgba(255,255,255,.2)',
     '&:hover': {
-      cursor: 'pointer',
-      boxShadow: '0px 0px 4px 4px rgba(255,255,255,.4)',
+      cursor: 'pointer'
     },
   }
 );

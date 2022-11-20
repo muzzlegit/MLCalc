@@ -12,7 +12,7 @@ export const AppBox = styled.div(
       alignItems: 'center',
       gap: '12px',
       borderRadius: '4px',
-      backgroundColor: '#4a5153',
+      backgroundColor: '#111728',
 
     }
 );
@@ -25,17 +25,17 @@ export const PlayerBox = styled.div(
     alignItems: 'center',
     gap: '20px',
     borderRadius: '4px',
-    backgroundColor: '#212425',
+    backgroundColor: '#294b77',
   }
 );
 export const PlayerTitle = styled.p(
   { 
-    padding: '4px',
+    padding: '4px 6px',
     height: '24px',
     fontSize: '20px',
-    color: 'pink',
+    color: '#ddddbd',
     borderRadius: '4px',
-    boxShadow: '0px 0px 4px 4px rgba(255,255,255,.3)',
+    boxShadow: '0px 0px 8px 4px rgba(131, 151, 167, 0.7)',
   }
 );
 export const SelectorsBox = styled.div(

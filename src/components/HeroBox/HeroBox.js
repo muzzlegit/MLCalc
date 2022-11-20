@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 //DATA
 import commonAssets from '../../data/CommonAssets.json';
 //IMAGES
-import heroesImg from '../../img/common/Heroes.png';
+import heroesImg from '../../img/common/Heroes.webp';
 import commonImg from '../../img/common/CommonAssets.png';
 import UndeadСommonImg from '../../img/undead/UndeadCommon.png';
 import DemonСommonImg from '../../img/demon/DemonCommon.png';

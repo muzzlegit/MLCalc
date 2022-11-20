@@ -49,9 +49,11 @@ function App() {
           />
         </SelectorsBox>
         <SelectorsBox>
-          <TowerSelector/>
+          <TowerSelector
+            role={'mainDefender'}
+          />
           <TowersCard
-            role={'mainAttacker'}
+            role={'mainDefender'}
           />
         </SelectorsBox>
         <Squad

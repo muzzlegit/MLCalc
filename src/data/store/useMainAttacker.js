@@ -34,7 +34,7 @@ const useMainAttacker = create((set) => ({
       {
         id: '123',
         level: '5',
-        ancient: true,
+        ancient: false,
         perfect: false,
         name: 'Броня головореза',
         place: 'armor',
@@ -51,8 +51,28 @@ const useMainAttacker = create((set) => ({
         ],
         icon: '-187px -249px',
         battle: true,
+      },
+      {
+        id: '1234',
+        level: '5',
+        ancient: true,
+        perfect: false,
+        name: 'Броня головореза',
+        place: 'head',
+        set: '',
+        value: [
+          {
+            name: 'Броня головореза',
+            unit: ['swordsman', 'cavalier', 'flying', 'archer'],
+            property: 'healthArr',
+            childProperty: 'healthRate',
+            description: 'Здоровье воинов, всадников, летунов, стрелков своих +66%',
+            value: 0.66 
+          }
+        ],
+        icon: '-187px -249px',
+        battle: true,
       }
-
     ],
     attackRateIndex: 'Min',
     porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
@@ -65,7 +85,7 @@ const useMainAttacker = create((set) => ({
     mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
     towers: [],
     fortifications: []
-  },
+  }, 
   functions: {
     setRace: (race) => set((state) => (state.player.race = race)),
     setHomeLand: (land) => set((state) => (state.player.homeLand = land)),

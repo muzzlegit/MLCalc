@@ -30,7 +30,6 @@ export default function HeroesList({ toggleModal, role }){
       }
     }
     
-
     setHero({
       checker: true,
       id: hero.id,
