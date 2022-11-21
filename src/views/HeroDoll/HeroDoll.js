@@ -36,7 +36,7 @@ export default function HeroDall({ role, toggleModal }){
   //CONSTS
   const {
     hero,
-    artefacts
+    artefacts,
   } = playerData;
 
   //USE EFFECTS
@@ -47,7 +47,7 @@ export default function HeroDall({ role, toggleModal }){
       });
     setHeroArts(artsArr);
   }, [artefacts])
- 
+
 
   return (
     <Wrap>

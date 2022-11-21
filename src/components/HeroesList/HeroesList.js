@@ -19,9 +19,16 @@ export default function HeroesList({ toggleModal, role }){
     setHero,
     setUnitProperty
   } = playerFunctions;
+  //HELPERS
+  const setSkillsId = (skills, id) => {
+    for (const key in skills) {
+        skills[key].id =id;
+    }        
+    return skills;
+  };
 
   const onHeroClick = (e) => {
-    const hero = heroes.find(hero => hero.id === e.currentTarget.id);
+    const hero = heroes.find(hero => hero.name === e.currentTarget.id);
     if(currentHero.checker) {
       for (const key in currentHero.skillsBranch1) {
         if (currentHero.skillsBranch1[key].battle) {
@@ -29,7 +36,6 @@ export default function HeroesList({ toggleModal, role }){
         }
       }
     }
-    
     setHero({
       checker: true,
       id: hero.id,
@@ -41,7 +47,7 @@ export default function HeroesList({ toggleModal, role }){
       class: hero.class,
       name: hero.name,
       icon: hero[e.currentTarget.title],
-      skillsBranch1: hero.skills,
+      skillsBranch1: setSkillsId(hero.skills, hero.id),
       skillsBranch2: false,
       skillsBranch3: false
     });
@@ -50,20 +56,20 @@ export default function HeroesList({ toggleModal, role }){
 
   return (
     <ListBox
-      key={nanoid()}
+      key={ nanoid() }
     >
       { heroes.map((hero) => {
         return (
           <HeroesBox
-            key={nanoid()}>
+            key={ nanoid() }>
             <HeroBoxWrap
-              key={nanoid()}
+              key={ nanoid() }
             >
               <HeroBox 
-                id={hero.id}
-                title={'maleIcon'}
-                background={`url(${heroesImg}) ${hero.maleIcon}`}
-                onClick={onHeroClick}
+                id={ hero.name }
+                title={ 'maleIcon' }
+                background={ `url(${heroesImg}) ${hero.maleIcon}` }
+                onClick={ onHeroClick }
               > 
               </HeroBox>
 

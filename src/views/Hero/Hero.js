@@ -40,7 +40,6 @@ export default function Hero({ role }){
   //USE EFFECT
   useEffect(() => {
     if(!hero.checker) return
-  
     for (const key in hero.skillsBranch1) {
       if (hero.skillsBranch1[key].battle) {
         setUnitProperty(hero.skillsBranch1[key].value[hero.skillsBranch1[key].level - 1]);

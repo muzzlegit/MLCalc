@@ -23,15 +23,57 @@ const useMainDefender = create((set) => ({
     race: 'undead',
     ally: {
       flag: false,
-      
+
     },
     apostate: false,
     homeLand: 'cursedForest',
     hero: {
       checker: false,
-      icon: '-1px -1px'
     },
-    artefacts: [],
+    artefacts: [
+      {
+        id: '123',
+        level: '5',
+        ancient: false,
+        perfect: false,
+        name: 'Броня головореза',
+        place: 'armor',
+        set: '',
+        value: [
+          {
+            name: 'Броня головореза',
+            unit: ['swordsman', 'cavalier', 'flying', 'archer'],
+            property: 'healthArr',
+            childProperty: 'healthRate',
+            description: 'Здоровье воинов, всадников, летунов, стрелков своих +66%',
+            value: 0.66 
+          }
+        ],
+        icon: '-187px -249px',
+        battle: true,
+      },
+      {
+        id: '1234',
+        level: '5',
+        ancient: true,
+        perfect: false,
+        name: 'Броня головореза',
+        place: 'head',
+        set: '',
+        value: [
+          {
+            name: 'Броня головореза',
+            unit: ['swordsman', 'cavalier', 'flying', 'archer'],
+            property: 'healthArr',
+            childProperty: 'healthRate',
+            description: 'Здоровье воинов, всадников, летунов, стрелков своих +66%',
+            value: 0.66 
+          }
+        ],
+        icon: '-187px -249px',
+        battle: true,
+      }
+    ],
     attackRateIndex: 'Min',
     porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
     swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
@@ -42,13 +84,13 @@ const useMainDefender = create((set) => ({
     mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
     mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
     towers: [],
-    fortifications: []
-  },
+    fortifications: [],
+  }, 
   functions: {
     setRace: (race) => set((state) => (state.player.race = race)),
     setHomeLand: (land) => set((state) => (state.player.homeLand = land)),
     setApostateValue: () => set((state) => (state.player.apostate = !state.player.apostate)),
-    setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit } }) },
+    setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit }})},
     setRateAttack: (attackRate) => set((state) => (state.player.attackRateIndex = attackRate)),
     setUnitProperty: (item) => {
       item.unit.forEach( trooper => {
@@ -59,10 +101,12 @@ const useMainDefender = create((set) => ({
           : set(state => {
             state.player[trooper][item.property][findPropertyIndex(state.player[trooper][item.property], item)] = {name: item.name, value: item.value, unit: item.unit}
           })
-      });
+        })
       item.unit.forEach( trooper => {
-        set((state) => (state.player[trooper][item.childProperty] = state.player[trooper][item.property].reduce((acc, item) =>
-          acc += item.value, 0
+        set((state) => (state.player[trooper][item.childProperty] = state.player[trooper][item.property].reduce((acc, item) =>{
+          item.unit.includes(trooper) ? acc += item.value : acc += 0;
+          return acc
+        },0
         )))
       });
     },
@@ -97,8 +141,8 @@ const useMainDefender = create((set) => ({
     setHero: (hero) => set((state) => (state.player.hero = hero)),
     setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
     setHeroBranchesId: (branch, id) => set((state) => (state.player.hero.branchesId[branch] = id)),
-    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level)),
-    }
-}))
+    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level))
+  }
+}));
 
 export default useMainDefender;

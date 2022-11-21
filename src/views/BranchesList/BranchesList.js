@@ -26,6 +26,14 @@ export default function BranchesList({ role, branch, toggleModal }) {
   } = playerFunctions
   const skillNumbers = ['1','2','3','4','5','6','7'];
 
+  //HELPERS
+  const setSkillsId = (skills, id) => {
+    for (const key in skills) {
+        skills[key].id =id;
+    }        
+    return skills;
+  };
+
   //HANDLES FUNCTIONS
   const onAddButtonClick = (e) => {
     if(hero[branch]){
@@ -45,6 +53,7 @@ export default function BranchesList({ role, branch, toggleModal }) {
         setUnitProperty({ ...hero[branch][key].value[hero[branch][key].level - 1] });
       }
     }
+    setSkillsId(hero[branch], e.currentTarget.id )
     toggleModal();
   }
 

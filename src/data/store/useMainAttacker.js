@@ -16,7 +16,6 @@ const additionalProperties = {
   healthArr: [],
   healthRate: 0,
 }
-const troopsNamesArray = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage']
 //----------- STORE -----------
 const useMainAttacker = create((set) => ({
   player: {    
@@ -84,16 +83,15 @@ const useMainAttacker = create((set) => ({
     mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
     mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
     towers: [],
-    fortifications: []
+    fortifications: [],
   }, 
   functions: {
     setRace: (race) => set((state) => (state.player.race = race)),
     setHomeLand: (land) => set((state) => (state.player.homeLand = land)),
     setApostateValue: () => set((state) => (state.player.apostate = !state.player.apostate)),
-    setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit } }) },
+    setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit }})},
     setRateAttack: (attackRate) => set((state) => (state.player.attackRateIndex = attackRate)),
     setUnitProperty: (item) => {
-
       item.unit.forEach( trooper => {
           item.value === 0
           ? set(state => {
@@ -102,10 +100,12 @@ const useMainAttacker = create((set) => ({
           : set(state => {
             state.player[trooper][item.property][findPropertyIndex(state.player[trooper][item.property], item)] = {name: item.name, value: item.value, unit: item.unit}
           })
-      });
+        })
       item.unit.forEach( trooper => {
-        set((state) => (state.player[trooper][item.childProperty] = state.player[trooper][item.property].reduce((acc, item) =>
-          acc += item.value, 0
+        set((state) => (state.player[trooper][item.childProperty] = state.player[trooper][item.property].reduce((acc, item) =>{
+          item.unit.includes(trooper) ? acc += item.value : acc += 0;
+          return acc
+        },0
         )))
       });
     },
@@ -140,8 +140,8 @@ const useMainAttacker = create((set) => ({
     setHero: (hero) => set((state) => (state.player.hero = hero)),
     setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
     setHeroBranchesId: (branch, id) => set((state) => (state.player.hero.branchesId[branch] = id)),
-    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level)),
-    }})
-)
+    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level))
+  }
+}));
 
 export default useMainAttacker;

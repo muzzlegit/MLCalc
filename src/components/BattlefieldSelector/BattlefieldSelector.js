@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 //HOOKS
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 //HELPERS
@@ -19,40 +20,33 @@ export default function BattlefieldSelector() {
   }
   //USE EFFECTS
   useEffect(() => {
-    const allUnits = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'];
+    const buff = {
+      id: '2B0eBD4m',
+      name: 'homeLand',
+      unit: ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'],
+      property: 'defenseArr',
+      childProperty: 'defense',
+      value: 25 };
+
     if(isNativeLand(mainAttackerData.homeLand, battlefield) && !mainAttackerData.apostate){
-      mainAttackerFunctions.setUnitProperty({
-        name: 'homeLand',
-        unit: [...allUnits],
-        property: 'defenseArr',
-        childProperty: 'defense',
-        value: 25 });
+      mainAttackerFunctions.setUnitProperty(buff);
     } else {
-      mainAttackerFunctions.setUnitProperty({
-        name: 'homeLand',
-        unit: [...allUnits],
-        property: 'defenseArr',
-        childProperty: 'defense',
-        value: 0 });
+      mainAttackerFunctions.setUnitProperty({...buff, value: 0 });
     }
   }, [ battlefield, mainAttackerData, mainAttackerData.homeLand, mainAttackerData.apostate, mainAttackerFunctions]);
 
   useEffect(() => {
-    const allUnits = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'];
+    const buff = {
+      id: '2B0eBD4m',
+      name: 'homeLand',
+      unit: ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'],
+      property: 'defenseArr',
+      childProperty: 'defense',
+      value: 25 };
     if(isNativeLand(mainDefenderData.homeLand, battlefield) && !mainDefenderData.apostate){
-      mainDefenderFunctions.setUnitProperty({
-        name: 'homeLand',
-        unit: [...allUnits],
-        property: 'defenseArr',
-        childProperty: 'defense',
-        value: 25 });
+      mainDefenderFunctions.setUnitProperty(buff);
     } else {
-      mainDefenderFunctions.setUnitProperty({
-        name: 'homeLand',
-        unit: [...allUnits],
-        property: 'defenseArr',
-        childProperty: 'defense',
-        value: 0 });
+      mainDefenderFunctions.setUnitProperty({ ...buff, value: 0 });
     }
   }, [ battlefield, mainDefenderData, mainDefenderData.homeLand, mainDefenderData.apostate, mainDefenderFunctions]);
 

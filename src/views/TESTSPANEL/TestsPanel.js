@@ -18,9 +18,12 @@ export default function TestsPanel(){
   }
   const showMainFiles = () => {
     const allUnits = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'];
-    mainAttacker.functions.setUnitProperty({ name: 'homeLand', unit: [...allUnits], property: 'defenseArr', childProperty: 'defense', value: 25 });
-    mainAttacker.functions.setUnitProperty({ name: 'homeLand', unit: [...allUnits], property: 'attackArr', childProperty: 'attackRate', value: .1 });
-    mainAttacker.functions.setUnitProperty({ name: 'homeLand', unit: ['porter', 'mage'], property: 'healthArr', childProperty: 'healthRate', value: .2 });
+    mainAttacker.functions.setUnitProperty({
+      name: "Сила",
+      unit: [...allUnits], 
+      property: "attackArr", 
+      childProperty: "attackRate", 
+      value: 0.1 });
     console.log('mainAttacker', mainAttacker.player);
     console.log('mainDefender', mainDefender.player);
   }
