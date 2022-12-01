@@ -2,40 +2,22 @@ import { nanoid } from "nanoid";
 //DATA
 import heroes from '../../data/Heroes.json';
 //HOOKS
-import usePlayerStoreData from "../../hooks/usePlayerStoreData";
+import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
 //IMAGES
 import heroesImg from '../../img/common/Heroes.webp';
 //STYLES
 import { ListBox, HeroesBox, HeroBoxWrap, HeroBox } from "./HeroesList.styled"
 
-
-
-export default function HeroesList({ toggleModal, role }){
-  const [playerData, playerFunctions] = usePlayerStoreData(role);
+export default function HeroesList({ toggleModal, player }){
+  const playerFunctions = usePlayerStoreFunctions( player );
 
   //CONSTS
-  const currentHero= playerData.hero;
   const {
     setHero,
-    setUnitProperty
   } = playerFunctions;
-  //HELPERS
-  const setSkillsId = (skills, id) => {
-    for (const key in skills) {
-        skills[key].id =id;
-    }        
-    return skills;
-  };
 
-  const onHeroClick = (e) => {
-    const hero = heroes.find(hero => hero.name === e.currentTarget.id);
-    if(currentHero.checker) {
-      for (const key in currentHero.skillsBranch1) {
-        if (currentHero.skillsBranch1[key].battle) {
-          setUnitProperty({ ...currentHero.skillsBranch1[key].value[currentHero.skillsBranch1[key].level - 1], value: 0 });
-        }
-      }
-    }
+  const onHeroClick = ( e ) => {
+    const hero = heroes.find( hero => hero.name === e.currentTarget.id );
     setHero({
       checker: true,
       id: hero.id,
@@ -46,8 +28,8 @@ export default function HeroesList({ toggleModal, role }){
       },
       class: hero.class,
       name: hero.name,
-      icon: hero[e.currentTarget.title],
-      skillsBranch1: setSkillsId(hero.skills, hero.id),
+      icon: hero[ e.currentTarget.attributes.name.value ],
+      skillsBranch1: hero.skills,
       skillsBranch2: false,
       skillsBranch3: false
     });
@@ -56,38 +38,39 @@ export default function HeroesList({ toggleModal, role }){
 
   return (
     <ListBox
-      key={ nanoid() }
+      key = { nanoid() }
     >
-      { heroes.map((hero) => {
+      { heroes.map(( hero ) => {
         return (
           <HeroesBox
-            key={ nanoid() }>
+            key = { nanoid() }>
             <HeroBoxWrap
-              key={ nanoid() }
+              key = { nanoid() }
             >
               <HeroBox 
-                id={ hero.name }
-                title={ 'maleIcon' }
-                background={ `url(${heroesImg}) ${hero.maleIcon}` }
-                onClick={ onHeroClick }
+                id = { hero.name }
+                name = { 'maleIcon' }
+                background = { `url(${ heroesImg }) ${ hero.maleIcon }` }
+                onClick = { onHeroClick }
+                title = { hero.name }
               > 
               </HeroBox>
-
             </HeroBoxWrap>
             <HeroBoxWrap
             key={nanoid()}
             >
               <HeroBox 
-                id={hero.id}
-                title={'femaleIcon'}
-                background={`url(${heroesImg}) ${hero.femaleIcon}`}
-                onClick={onHeroClick}
+                id = { hero.name }
+                name = { 'femaleIcon' }
+                background = { `url(${ heroesImg }) ${ hero.femaleIcon }` }
+                onClick = { onHeroClick }
+                title = { hero.name }
               > 
               </HeroBox>
             </HeroBoxWrap>
           </HeroesBox>
         )
-    })}
+      })}
     </ListBox>
   )
 }

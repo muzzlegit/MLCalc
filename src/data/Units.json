@@ -1,18 +1,15 @@
 {
-  "commonProperties": {
-    "unitFrameIcon": "-1px -117px"
-  },
   "undead": {
-    "levelFrameIcon": "-102px -101px",
     "porter": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "94px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "94px"
+        },
+        "unitIcon": "-282px -1px",
+        "homeLand": "",
+        "alienLand": ""
       },
-      "unitIcon": "-282px -1px",
-      "homeLand": "",
-      "alienLand": "",
-
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -109,13 +106,15 @@
       }
     },
     "cavalier": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "242px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "242px"
+        },
+        "unitIcon": "-282px -49px",
+        "homeLand": "steppe",
+        "alienLand": "forest"
       },
-      "unitIcon": "-282px -49px",
-      "homeLand": "steppe",
-      "alienLand": "forest",
       "level1": {
         "unit": "cavalier",
         "level": 1,
@@ -157,13 +156,15 @@
       }
     },
     "flying": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "316px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "316px"
+        },
+        "unitIcon": "-282px -73px",
+        "homeLand": "mountain",
+        "alienLand": "desert"
       },
-      "unitIcon": "-282px -73px",
-      "homeLand": "mountain",
-      "alienLand": "desert",
       "level1": {
         "unit": "flying",
         "level": 1,
@@ -206,13 +207,15 @@
       }
     },
     "archer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "390px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "390px"
+        },
+        "unitIcon": "-282px -97px",
+        "homeLand": "forest",
+        "alienLand": "steppe"
       },
-      "unitIcon": "-282px -97px",
-      "homeLand": "forest",
-      "alienLand": "steppe",
       "level1": {
         "unit": "archer",
         "level": 1,
@@ -255,11 +258,13 @@
       }
     },
     "healer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "464px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "464px"
+        },
+        "unitIcon": "-282px -121px"
       },
-      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -309,12 +314,14 @@
       }
     },
     "mercenary": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "538px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "538px"
+        },
+        "unitIcon": "-282px -145px",
+        "alienLand": "mine"
       },
-      "unitIcon": "-282px -145px",
-      "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
         "level": 1,
@@ -361,11 +368,13 @@
       }
     },
     "mage": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "612px"
-      },
-      "unitIcon": "-282px -169px",
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "612px"
+        },
+        "unitIcon": "-282px -169px"
+      },                            
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -417,15 +426,16 @@
     }
   },
   "demon": {
-    "levelFrameIcon": "-185px -101px",
     "porter": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "94px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "94px"
+        },
+        "unitIcon": "-282px -1px",
+        "homeLand": "desert",
+        "alienLand": "mountain"
       },
-      "unitIcon": "-282px -1px",
-      "homeLand": "desert",
-      "alienLand": "mountain",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -477,11 +487,13 @@
       }
     },
     "swordsman": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "168px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "168px"
+        },
+        "unitIcon": "-282px -25px"
       },
-      "unitIcon": "-282px -25px",
       "level1": {
         "unit": "swordsman",
         "level": 1,
@@ -524,13 +536,15 @@
       }
     },
     "cavalier": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "242px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "242px"
+        },
+        "unitIcon": "-282px -49px",
+        "homeLand": "steppe",
+        "alienLand": "forest"
       },
-      "unitIcon": "-282px -49px",
-      "homeLand": "steppe",
-      "alienLand": "forest",
       "level1": {
         "unit": "cavalier",
         "level": 1,
@@ -573,13 +587,15 @@
       }
     },
     "flying": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "316px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "316px"
+        },
+        "unitIcon": "-282px -73px",
+        "homeLand": "mountain",
+        "alienLand": "desert"
       },
-      "unitIcon": "-282px -73px",
-      "homeLand": "mountain",
-      "alienLand": "desert",
       "level1": {
         "unit": "flying",
         "level": 1,
@@ -622,13 +638,15 @@
       }
     },
     "archer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "390px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "390px"
+        },
+        "unitIcon": "-282px -97px",
+        "homeLand": "forest",
+        "alienLand": "steppe"
       },
-      "unitIcon": "-282px -97px",
-      "homeLand": "forest",
-      "alienLand": "steppe",
       "level1": {
         "unit": "archer",
         "level": 1,
@@ -671,11 +689,13 @@
       }
     },
     "healer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "464px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "464px"
+        },
+        "unitIcon": "-282px -121px"
       },
-      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -726,12 +746,14 @@
       }
     },
     "mercenary": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "538px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "538px"
+        },
+        "unitIcon": "-282px -145px",
+        "alienLand": "mine"
       },
-      "unitIcon": "-282px -145px",
-      "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
         "level": 1,
@@ -778,11 +800,13 @@
       }
     },
     "mage": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "612px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "612px"
+        },
+        "unitIcon": "-282px -169px"
       },
-      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -834,13 +858,14 @@
     }
   },
   "drow": {
-    "levelFrameIcon": "-268px -101px",
     "porter": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "94px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "94px"
+        },
+        "unitIcon": "-282px -1px"
       },
-      "unitIcon": "-282px -1px",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -892,13 +917,15 @@
       }
     },
     "swordsman": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "168px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "168px"
+        },
+        "unitIcon": "-282px -25px",
+        "homeLand": "desert",
+        "alienLand": "mountain"
       },
-      "unitIcon": "-282px -25px",
-      "homeLand": "desert",
-      "alienLand": "mountain",
       "level1": {
         "unit": "swordsman",
         "level": 1,
@@ -941,13 +968,15 @@
       }
     },
     "cavalier": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "242px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "242px"
+        },
+        "unitIcon": "-282px -49px",
+        "homeLand": "steppe",
+        "alienLand": "forest"
       },
-      "unitIcon": "-282px -49px",
-      "homeLand": "steppe",
-      "alienLand": "forest",
       "level1": {
         "unit": "cavalier",
         "level": 1,
@@ -990,13 +1019,15 @@
       }
     },
     "flying": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "316px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "316px"
+        },
+        "unitIcon": "-282px -73px",
+        "homeLand": "mountain",
+        "alienLand": "desert"
       },
-      "unitIcon": "-282px -73px",
-      "homeLand": "mountain",
-      "alienLand": "desert",
       "level1": {
         "unit": "flying",
         "level": 1,
@@ -1039,13 +1070,15 @@
       }
     },
     "archer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "390px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "390px"
+        },
+        "unitIcon": "-282px -97px",
+        "homeLand": "forest",
+        "alienLand": "steppe"
       },
-      "unitIcon": "-282px -97px",
-      "homeLand": "forest",
-      "alienLand": "steppe",
       "level1": {
         "unit": "archer",
         "level": 1,
@@ -1088,11 +1121,13 @@
       }
     },
     "healer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "464px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "464px"
+        },
+        "unitIcon": "-282px -121px"
       },
-      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -1143,12 +1178,14 @@
       }
     },
     "mercenary": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "538px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "538px"
+        },
+        "unitIcon": "-282px -145px",
+        "alienLand": "mine"
       },
-      "unitIcon": "-282px -145px",
-      "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
         "level": 1,
@@ -1195,11 +1232,13 @@
       }
     },
     "mage": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "612px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "612px"
+        },
+        "unitIcon": "-282px -169px"
       },
-      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -1253,11 +1292,13 @@
   "human": {
     "levelFrameIcon": "-351px -101px",
     "porter": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "94px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "94px"
+        },
+        "unitIcon": "-282px -1px"
       },
-      "unitIcon": "-282px -1px",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -1309,13 +1350,15 @@
       }
     },
     "swordsman": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "168px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "168px"
+        },
+        "unitIcon": "-282px -25px",
+        "homeLand": "desert",
+        "alienLand": "mountain"
       },
-      "unitIcon": "-282px -25px",
-      "homeLand": "desert",
-      "alienLand": "mountain",
       "level1": {
         "unit": "swordsman",
         "level": 1,
@@ -1358,13 +1401,15 @@
       }
     },
     "cavalier": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "242px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "242px"
+        },
+        "unitIcon": "-282px -49px",
+        "homeLand": "steppe",
+        "alienLand": "forest"
       },
-      "unitIcon": "-282px -49px",
-      "homeLand": "steppe",
-      "alienLand": "forest",
       "level1": {
         "unit": "cavalier",
         "level": 1,
@@ -1407,13 +1452,15 @@
       }
     },
     "flying": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "316px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "316px"
+        },
+        "unitIcon": "-282px -73px",
+        "homeLand": "mountain",
+        "alienLand": "desert"
       },
-      "unitIcon": "-282px -73px",
-      "homeLand": "mountain",
-      "alienLand": "desert",
       "level1": {
         "unit": "flying",
         "level": 1,
@@ -1456,13 +1503,15 @@
       }
     },
     "archer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "390px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "390px"
+        },
+        "unitIcon": "-282px -97px",
+        "homeLand": "forest",
+        "alienLand": "steppe"
       },
-      "unitIcon": "-282px -97px",
-      "homeLand": "forest",
-      "alienLand": "steppe",
       "level1": {
         "unit": "archer",
         "level": 1,
@@ -1505,11 +1554,13 @@
       }
     },
     "healer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "464px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "464px"
+        },
+        "unitIcon": "-282px -121px"
       },
-      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -1560,12 +1611,14 @@
       }
     },
     "mercenary": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "538px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "538px"
+        },
+        "unitIcon": "-282px -145px",
+        "alienLand": "mine"
       },
-      "unitIcon": "-282px -145px",
-      "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
         "level": 1,
@@ -1612,11 +1665,13 @@
       }
     },
     "mage": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "612px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "612px"
+        },
+        "unitIcon": "-282px -169px"
       },
-      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,
@@ -1668,13 +1723,14 @@
     }
   },
   "elf": {
-    "levelFrameIcon": "-434px -101px",
     "porter": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "94px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "94px"
+        },
+        "unitIcon": "-282px -1px"
       },
-      "unitIcon": "-282px -1px",
       "level1": {
         "unit": "porter",
         "level": 1,
@@ -1726,13 +1782,15 @@
       }
     },
     "swordsman": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "168px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "168px"
+        },
+        "unitIcon": "-282px -25px",
+        "homeLand": "desert",
+        "alienLand": "mountain"
       },
-      "unitIcon": "-282px -25px",
-      "homeLand": "desert",
-      "alienLand": "mountain",
       "level1": {
         "unit": "swordsman",
         "level": 1,
@@ -1775,13 +1833,15 @@
       }
     },
     "cavalier": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "242px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "242px"
+        },
+        "unitIcon": "-282px -49px",
+        "homeLand": "steppe",
+        "alienLand": "forest"
       },
-      "unitIcon": "-282px -49px",
-      "homeLand": "steppe",
-      "alienLand": "forest",
       "level1": {
         "unit": "cavalier",
         "level": 1,
@@ -1824,13 +1884,15 @@
       }
     },
     "flying": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "316px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "316px"
+        },
+        "unitIcon": "-282px -73px",
+        "homeLand": "mountain",
+        "alienLand": "desert"
       },
-      "unitIcon": "-282px -73px",
-      "homeLand": "mountain",
-      "alienLand": "desert",
       "level1": {
         "unit": "flying",
         "level": 1,
@@ -1873,13 +1935,15 @@
       }
     },
     "archer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "390px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "390px"
+        },
+        "unitIcon": "-282px -97px",
+        "homeLand": "forest",
+        "alienLand": "steppe"
       },
-      "unitIcon": "-282px -97px",
-      "homeLand": "forest",
-      "alienLand": "steppe",
       "level1": {
         "unit": "archer",
         "level": 1,
@@ -1922,11 +1986,13 @@
       }
     },
     "healer": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "464px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "464px"
+        },
+        "unitIcon": "-282px -121px"
       },
-      "unitIcon": "-282px -121px",
       "level1": {
         "unit": "healer",
         "level": 1,
@@ -1977,12 +2043,14 @@
       }
     },
     "mercenary": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "538px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "538px"
+        },
+        "unitIcon": "-282px -145px",
+        "alienLand": "mine"
       },
-      "unitIcon": "-282px -145px",
-      "alienLand": "mine",
       "level1": {
         "unit": "mercenary",
         "level": 1,
@@ -2027,11 +2095,13 @@
       }
     },
     "mage": {
-      "squadPosition": {
-        "top": "17px",
-        "left": "612px"
+      "commonProperties": {
+        "squadPosition": {
+          "top": "17px",
+          "left": "612px"
+        },
+        "unitIcon": "-282px -169px"
       },
-      "unitIcon": "-282px -169px",
       "level1": {
         "unit": "mage",
         "level": 1,

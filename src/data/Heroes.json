@@ -7,21 +7,57 @@
       "femaleIcon": "-1px -1px",
       "skills": {
         "1":{
-          "id": "",
+          "id": "3WwE5CRM",
           "icon": "1px -1px",
           "unit": "all",
           "type": "passive",
           "effect": "player",
-          "property": "attackArr",
+          "property": "attackIndex",
           "name": "Сила войск",
           "description": "Атака всех войск",
           "level": 1,
           "value": [ 
-            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.05 },
-            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.1 },
-            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.15 },
-            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.2 },
-            { "name": "Сила войск", "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "attackArr", "childProperty": "attackRate", "value": 0.25 }
+            { 
+              "id": "3WwE5CRM",
+              "battle": true,
+              "name": "Сила войск",
+              "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "attackArr",
+              "childProperty": "attackRate",
+              "value": 0.05
+            },
+            { "id": "3WwE5CRM",
+              "battle": true,
+              "name": "Сила войск",
+              "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "attackArr",
+              "childProperty": "attackRate",
+              "value": 0.1 
+            },
+            { "id": "3WwE5CRM",
+              "battle": true,
+              "name": "Сила войск",
+              "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "attackArr",
+              "childProperty": "attackRate",
+              "value": 0.15 
+            },
+            { "id": "3WwE5CRM",
+              "battle": true,
+              "name": "Сила войск",
+              "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "attackArr",
+              "childProperty": "attackRate",
+              "value": 0.2 
+            },
+            { "id": "3WwE5CRM",
+              "battle": true,
+              "name": "Сила войск",
+              "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "attackArr",
+              "childProperty": "attackRate",
+              "value": 0.25 
+            }
           ],
           "battle": true
         },
@@ -31,7 +67,7 @@
           "unit": "all",
           "type": "passive",
           "effect": "ally",
-          "property": "attackArr",
+          "property": "attackIndex",
           "name": "Сила союзнику",
           "description": "Атака всех войск",
           "influenceDescription": "Действует на союзника",
@@ -174,7 +210,7 @@
       "femaleIcon": "-1px -201px",
       "skills": {
         "1":{
-          "id": "",
+          "id": "gVhi63YY",
           "icon": "-115px -1px",
           "unit": "all",
           "type": "passive",
@@ -188,7 +224,7 @@
           "battle": false
         },
         "2":{
-          "id": "",
+          "id": "gVhi63YY",
           "icon": "-115px -52px",
           "unit": "all",
           "type": "passive",
@@ -202,21 +238,56 @@
           "battle": false
         },
         "3":{
-          "id": "",
+          "id": "gVhi63YY",
           "icon": "-115px -104px",
           "unit": "all",
           "type": "passive",
           "effect": "player",
-          "property": "defenseArr",
+          "property": "defense",
           "name": "Защита",
           "description": "Защита всех войск",
           "level": 1,
           "value": [ 
-            { "name": "Защита", "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 5 },
-            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 10 },
-            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 15 },
-            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 20 },
-            { "name": "Защита", "unit": ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"], "property": "defenseArr", "childProperty": "defense", "value": 25 }
+            { "id": "gVhi63YY",
+              "battle": true,
+              "name": "Защита",
+              "unit": [ "porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "defenseArr",
+              "childProperty": "defense",
+              "value": 5
+            },
+            { "id": "gVhi63YY",
+              "battle": true,
+              "name": "Защита",
+              "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "defenseArr",
+              "childProperty": "defense",
+              "value": 10
+            },
+            { "id": "gVhi63YY",
+              "battle": true,
+              "name": "Защита",
+              "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "defenseArr",
+              "childProperty": "defense",
+              "value": 15
+            },
+            { "id": "gVhi63YY",
+              "battle": true,
+              "name": "Защита",
+              "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "defenseArr",
+              "childProperty": "defense",
+              "value": 20
+            },
+            { "id": "gVhi63YY",
+              "battle": true,
+              "name": "Защита",
+              "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+              "property": "defenseArr",
+              "childProperty": "defense",
+              "value": 25
+            }
           ],
           "battle": true
         },
@@ -226,7 +297,7 @@
           "unit": "all",
           "type": "passive",
           "effect": "ally",
-          "property": "",
+          "property": "defense",
           "name": "Охрана союника",
           "description": "Защита всех войск",
           "influenceDescription": "Действует на союзника",

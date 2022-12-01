@@ -1,3 +1,5 @@
+
+
 import styled from '@emotion/styled';
 
 export const Backdrop  = styled.div(
@@ -9,8 +11,9 @@ export const Backdrop  = styled.div(
     width: '100%',
     height: '100%',
     backgroundColor: 'rgba(41, 75, 119, 0.8)',
-    opacity: 1,
-    transition: 'opacity 3800ms cubic-bezier(0.4, 0, 0.2, 1)'
+    
+    transform: 'opacity: (1)',
+    transition: 'transform'
   },
   props => ({
     background: props.background,

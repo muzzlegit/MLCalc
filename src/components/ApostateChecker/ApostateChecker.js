@@ -1,13 +1,13 @@
 //HOOKS
-import usePlayerStoreData from "../../hooks/usePlayerStoreData";
+import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
 //STYLES
 import { CheckerBox, CheckerLabel } from "./ApostateChecker.styled";
 
-export default function ApostateChecker({role}) {
-  const [playerData, playerFunctions] = usePlayerStoreData(role);
+export default function ApostateChecker({ player }) {
+  const playerFunctions = usePlayerStoreFunctions( player );
 
   //HaNDLE FUNCTIONS
-  const onClick = (e) => {
+  const onClick = () => {
     playerFunctions.setApostateValue();
   }
 

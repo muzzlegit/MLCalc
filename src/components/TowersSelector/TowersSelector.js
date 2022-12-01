@@ -17,6 +17,7 @@ import { TowerSelectorBox,
   Level,
   ButtonsWrap,
   AddButton,
+  RemoveButton,
   ButtonImg,
   Input } from "./TowersSelector.styled";
 
@@ -73,10 +74,8 @@ export default function TowerSelector({role}) {
 
   }
   const onRemoveButtonClick = () => {
-    console.log(fortifications)
     setTowers([]);
     setFortification([]);
-    console.log(fortifications)
   }
   const handleInput = (e) => {
     if(e.target.value === ""){
@@ -158,6 +157,15 @@ export default function TowerSelector({role}) {
               onClick = { onTowerClick }
             >
             </Tower>
+            <Input
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="0"
+              value={ query }
+              onChange={ handleInput } 
+              disabled = { isSelected === 'fortification' ? false : true }       
+            />
           </TowerBox>
         </TowersBox>
         <LevelBox>
@@ -166,7 +174,7 @@ export default function TowerSelector({role}) {
                 <Level
                   id={ lev }
                   key={ lev }
-                  color={ lev ===  level ? '#61e7fd' : '#000000' }
+                  color={ lev ===  level ? '#ddddbd' : '#294b77' }
                   filter={  getFilter(lev, level) }
                   onClick={ onLevelClick }
                   background={ lev === 8 ? perfectIcon : null }
@@ -176,9 +184,7 @@ export default function TowerSelector({role}) {
               )
             })
           }
-        </LevelBox> 
-      </SelectorsWrap>
-      <ButtonsWrap>
+        </LevelBox>
         <AddButton
           type="button"
           disabled = { isButtonActive }
@@ -189,24 +195,15 @@ export default function TowerSelector({role}) {
             filter={ isButtonActive ? 'grayscale(100%) brightness(70%)': null }
           ></ButtonImg>
         </AddButton>
-        <AddButton
+        <RemoveButton
           type="button"
           onClick = { onRemoveButtonClick }
         >
           <ButtonImg
             background ={ removeIcon }
           ></ButtonImg>
-        </AddButton>
-        <Input
-          type="text"
-          autoComplete="off"
-          autoFocus
-          placeholder="0"
-          value={ query }
-          onChange={ handleInput } 
-          disabled = { isSelected === 'fortification' ? false : true }       
-        />
-      </ButtonsWrap>
+        </RemoveButton>
+      </SelectorsWrap>
     </TowerSelectorBox>
   )
 }

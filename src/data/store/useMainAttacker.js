@@ -1,17 +1,21 @@
 import create from 'zustand'
-import produce from 'immer';
 //DATA
 import units from '../../data/Units.json';
 //HELPERS
 import findPropertyIndex from '../../helpers/findPropertyIndex';
+import removeBranchSkillValue from '../../helpers/removeBranchSkillValue';
+import addBranchSkillValue from '../../helpers/addBranchSkillValue';
 //CONST
 const additionalProperties = {
   amount: 0,
   attackArr: [],
+  attack: 0,
+  attackIndex: 'Min',
   attackRate: 0,
   defenseArr: [],
   defense: 0,
-  defenseLevel: [],
+  defenseLevel: 0,
+  defenseLevelArr: [],
   defenseLevelLimit: 50,
   healthArr: [],
   healthRate: 0,
@@ -29,59 +33,19 @@ const useMainAttacker = create((set) => ({
     hero: {
       checker: false,
     },
-    artefacts: [
-      {
-        id: '123',
-        level: '5',
-        ancient: false,
-        perfect: false,
-        name: 'Броня головореза',
-        place: 'armor',
-        set: '',
-        value: [
-          {
-            name: 'Броня головореза',
-            unit: ['swordsman', 'cavalier', 'flying', 'archer'],
-            property: 'healthArr',
-            childProperty: 'healthRate',
-            description: 'Здоровье воинов, всадников, летунов, стрелков своих +66%',
-            value: 0.66 
-          }
-        ],
-        icon: '-187px -249px',
-        battle: true,
-      },
-      {
-        id: '1234',
-        level: '5',
-        ancient: true,
-        perfect: false,
-        name: 'Броня головореза',
-        place: 'head',
-        set: '',
-        value: [
-          {
-            name: 'Броня головореза',
-            unit: ['swordsman', 'cavalier', 'flying', 'archer'],
-            property: 'healthArr',
-            childProperty: 'healthRate',
-            description: 'Здоровье воинов, всадников, летунов, стрелков своих +66%',
-            value: 0.66 
-          }
-        ],
-        icon: '-187px -249px',
-        battle: true,
-      }
-    ],
+    artefacts: [],
     attackRateIndex: 'Min',
-    porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
-    swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
-    cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
-    flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
-    archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
-    healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties },
-    mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
-    mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties },
+    troops: {
+      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
+      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
+      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
+      flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
+      archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties },
+      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
+      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties }
+    },
+    
     towers: [],
     fortifications: [],
   }, 
@@ -89,24 +53,24 @@ const useMainAttacker = create((set) => ({
     setRace: (race) => set((state) => (state.player.race = race)),
     setHomeLand: (land) => set((state) => (state.player.homeLand = land)),
     setApostateValue: () => set((state) => (state.player.apostate = !state.player.apostate)),
-    setUnit: (unit) => {  set(state => { state.player[unit.unit] = { ...state.player[unit.unit], ...unit }})},
+    setUnit: (unit) => {  set(state => { state.player.troops[unit.unit] = { ...state.player.troops[unit.unit], ...unit }})},
     setRateAttack: (attackRate) => set((state) => (state.player.attackRateIndex = attackRate)),
-    setUnitProperty: (item) => {
+    setUnitProperty:  (item ) => {
       item.unit.forEach( trooper => {
           item.value === 0
-          ? set(state => {
-            state.player[trooper][item.property].splice(findPropertyIndex(state.player[trooper][item.property], item), 1)
+          ? set( state => {
+            state.player.troops[ trooper ][ item.property ].splice( findPropertyIndex( state.player.troops[ trooper ][ item.property ], item ), 1);
           })
           : set(state => {
-            state.player[trooper][item.property][findPropertyIndex(state.player[trooper][item.property], item)] = {name: item.name, value: item.value, unit: item.unit}
+            state.player.troops[ trooper ][ item.property ][ findPropertyIndex( state.player.troops[ trooper ][ item.property ], item )] = { name: item.name, value: item.value, unit: item.unit };
           })
         })
       item.unit.forEach( trooper => {
-        set((state) => (state.player[trooper][item.childProperty] = state.player[trooper][item.property].reduce((acc, item) =>{
-          item.unit.includes(trooper) ? acc += item.value : acc += 0;
+        set(( state ) => ( state.player.troops[ trooper ][ item.childProperty ] = state.player.troops[ trooper ][ item.property ].reduce(( acc, item ) =>{
+          item.unit.includes( trooper ) ? acc += item.value : acc += 0;
           return acc
-        },0
-        )))
+        },0)
+        ))
       });
     },
     setTowers:  (tower) =>set((state) => (state.player.towers = tower)),
@@ -137,10 +101,35 @@ const useMainAttacker = create((set) => ({
         }
       })
     },
-    setHero: (hero) => set((state) => (state.player.hero = hero)),
-    setHeroSkillsBranch: (branch, skills) => set((state) => (state.player.hero[branch] = skills)),
-    setHeroBranchesId: (branch, id) => set((state) => (state.player.hero.branchesId[branch] = id)),
-    setHeroSkillLevel: (branch, skill, level) => set(state => (state.player.hero[branch][skill].level = level))
+    setHero: ( hero ) => set(( state ) => {
+      const { checker, skillsBranch1, skillsBranch2, skillsBranch3 } = state.player.hero;
+      if( checker ) removeBranchSkillValue( skillsBranch1, state.functions.setUnitProperty );
+      if( skillsBranch2 ) removeBranchSkillValue( skillsBranch2, state.functions.setUnitProperty );
+      if( skillsBranch3 ) removeBranchSkillValue( skillsBranch3, state.functions.setUnitProperty );
+      const newHero = state.player.hero = hero;
+      addBranchSkillValue( newHero.skillsBranch1, state.functions.setUnitProperty );
+    }),
+    setHeroSkillsBranch: ( branch, skills ) => set((state) => {
+      const currentBranch = state.player.hero[ branch ];
+      if( currentBranch ) removeBranchSkillValue( currentBranch, state.functions.setUnitProperty );
+      const newBranch = state.player.hero[ branch ] = skills;
+      addBranchSkillValue( newBranch, state.functions.setUnitProperty );
+    }),
+    setHeroBranchesId: (branch, id) => set(( state ) => ( state.player.hero.branchesId[ branch ] = id)),
+    setHeroSkillLevel: ( branch, skillNumber, level ) => set( state => {
+      const skill = state.player.hero[ branch ][ skillNumber ];
+      skill.level = level;
+      state.functions.setUnitProperty( skill.value[ skill.level - 1 ])
+    }),
+    addArtefact: (artefact) => set((state) => {
+      const newArray = [];
+      state.player.artefacts.forEach(item => {
+        if(item.place !== artefact.place) newArray.push(item);
+        newArray.push(artefact);
+      });
+      
+      state.player.artefacts = newArray;
+    }),
   }
 }));
 

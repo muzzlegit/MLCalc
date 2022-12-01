@@ -2,18 +2,20 @@ import styled from '@emotion/styled'
 
 export const TowerSelectorBox = styled.div(
     { 
+      marginLeft: '8px',
       padding: '4px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       gap: '12px',
-      borderRadius: '2px',
+      borderRadius: '8px',
       border: '1px solid #383c3d',
+      backgroundColor: '#111728',
     }
 );
 export const SelectorsWrap = styled.div(
   {
-
+    position: 'relative',
   }
 );
 export const TowersBox = styled.div(
@@ -25,13 +27,16 @@ export const TowersBox = styled.div(
 );
 export const TowerBox = styled.div(
   {
+    position: 'relative',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     width: '50px',
     height: '50px',
     borderRadius: '50%',
-    cursor: 'pointer'
+    '&:hover': {
+      cursor: 'pointer',
+    }
   }
 );
 export const Tower = styled.div(
@@ -52,7 +57,7 @@ export const LevelBox = styled.ul(
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',    
-    color: 'white',
+  
   }
 );
 export const Level = styled.li(
@@ -72,18 +77,12 @@ export const Level = styled.li(
     background: props.background,
   })
 );
-export const ButtonsWrap = styled.div(
-  {
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '14px',
-  }
-);
 export const AddButton = styled.button(
   {
+    position: 'absolute',
+    top: '40%',
+    right: '0',
+    transform: 'translate(50%, -50%)',
     height: '30px',
     width: '30px',
     display: 'flex',
@@ -94,7 +93,28 @@ export const AddButton = styled.button(
     backgroundColor: '#212425',
     '&:hover': {
       cursor: 'pointer',
-      boxShadow: '0px 0px 4px 4px rgba(255,255,255,.4)',
+      boxShadow: '0px 0px 4px 4px rgba(0,255,0,.4)',
+      backgroundColor: '#4a5153',
+    }
+  }
+);
+export const RemoveButton = styled.button(
+  {
+    position: 'absolute',
+    top: '40%',
+    left: '0',
+    transform: 'translate(-50%, -50%)',
+    height: '30px',
+    width: '30px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '50%',
+    border: '1px solid #4a5153',
+    backgroundColor: '#212425',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '0px 0px 4px 4px rgba(187, 10, 1, .5)',
       backgroundColor: '#4a5153',
     }
   }
@@ -113,7 +133,7 @@ export const Input = styled.input(
   {    
     position: 'absolute',
     top: '50%',
-    right: '-100%',
+    left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '18px',
     height: '16px',

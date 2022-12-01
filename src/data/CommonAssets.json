@@ -39,6 +39,15 @@
     "unitFame": "-98px -1px",
     "artFrame": "-99px -96px",
 
+    "porterIcon": "-282px -1px",
+    "swordsmanIcon": "-282px -25px",
+    "cavalierIcon": "-282px -49px",
+    "flyingIcon": "-282px -73px",
+    "archerIcon": "-282px -97px",
+    "healerIcon": "-282px -121px",
+    "mercenaryIcon": "-282px -145px",
+    "mageIcon": "-282px -169px",
+
     "healthIcon": "-221px -34px",
     "defenseIcon": "-221px -1px",
     "attackIcon": "-221px -17px",

@@ -9,21 +9,25 @@ export const BranchesBox = styled.ul(
     gap: '30px',
     listStyle: 'none',
     borderRadius: '4px',
-    backgroundColor: '#212425',
+    backgroundColor: '#111728',
   }
 );
 export const BranchBox = styled.li(
   {
-    margin: 0,
     padding: '12px 4px ',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '12px',
-    color: '#5794d1',
+    color: 'rgba(221, 221, 189, 0.5)',
     borderRadius: '4px',
-    backgroundColor: '#404346',
+    border: '1px solid #294b77',
+    backgroundColor: '#294b77',
+    '&:hover': {
+      color: '#ddddbd',
+      border: '1px solid #ddddbd'
+    }
   }
 );
 export const SkillsBranch = styled.ul(
@@ -32,7 +36,7 @@ export const SkillsBranch = styled.ul(
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '12px'
+    gap: '12px',
   }
   );
 export const SkillBox = styled.li(
@@ -60,10 +64,16 @@ export const Skill = styled.div(
 );
 export const ButtonAdd = styled.button(
   {
-    color: 'green',
     padding: '4px',
+    borderRadius: '4px',
+    border: 'none',
+    backgroundColor: '#8397a7',
+    color: '#111728',
+    scale: '1',
     '&:hover': {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      backgroundColor: '#ddddbd',
+      scale: '1.1',
     }
   }
 );

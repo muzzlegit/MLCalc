@@ -17,14 +17,6 @@ export default function TestsPanel(){
     setToggle(!toggle);
   }
   const showMainFiles = () => {
-    const allUnits = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'];
-    mainAttacker.functions.setUnitProperty({
-      name: "Сила",
-      unit: [...allUnits], 
-      property: "attackArr", 
-      childProperty: "attackRate", 
-      value: 0.1 });
-    console.log('mainAttacker', mainAttacker.player);
     console.log('mainDefender', mainDefender.player);
   }
 

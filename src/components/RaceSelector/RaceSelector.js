@@ -1,18 +1,18 @@
 //HELPERS
 import raceLand from '../../helpers/raceLands';
 //HOOKS
-import usePlayerStoreData from '../../hooks/usePlayerStoreData';
+import usePlayerStoreFunctions from '../../hooks/usePlayerStoreFunctions';
 //STYLES
 import { SelectorBox, SelectorLabel, Select } from './RaceSelector.styled';
 
-export default function RaceSelector({role}) {
-    const [playerData, playerFunctions] = usePlayerStoreData(role);
+export default function RaceSelector({ player }) {
+    const playerFunctions = usePlayerStoreFunctions( player );
 
     //HaNDLE FUNCTIONS
-    const onSelect = (e) => {
+    const onSelect = ( e ) => {
         let race = e.target.value;
-        playerFunctions.setRace(race);
-        playerFunctions.setHomeLand(raceLand(race));
+        playerFunctions.setRace( race );
+        playerFunctions.setHomeLand(raceLand( race ));
     }
 
     return (

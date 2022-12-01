@@ -1,14 +1,7 @@
-import { useState, useEffect } from 'react';
-//DATA
-import commonAssets from '../../data/CommonAssets.json';
-//IMAGES
-import heroesImg from '../../img/common/Heroes.webp';
-import commonImg from '../../img/common/CommonAssets.png';
-import UndeadСommonImg from '../../img/undead/UndeadCommon.png';
-import DemonСommonImg from '../../img/demon/DemonCommon.png';
-import DrowСommonImg from '../../img/drow/DrowCommon.png';
-import HumanСommonImg from '../../img/human/HumanCommon.png';
-import ElfСommonImg from '../../img/elf/ElfCommon.png';
+//HOOKS
+import usePlayerStoreData from '../../hooks/usePlayerStoreData';
+import useHeroImg from '../../hooks/useHeroImg';
+import useCommonImg from '../../hooks/useCommonImg';
 //STYLES
 import { 
     HeroWrap,
@@ -16,49 +9,19 @@ import {
   } from "./HeroBox.styled"
 
 export default function HeroBox({ player }) {
-  const [heroImg, setHeroImg] = useState(`url(${UndeadСommonImg}) ${commonAssets.undead.heroBackground}`)
+  const playerData = usePlayerStoreData( player );
+  const [ heroImg, heroBackground ] = useHeroImg( player );
 
-  //CONST
-  const {
-    hero,
-    race,
-  } = player
-
-  //USE EFFECTS
-  useEffect(() => {
-    if(hero.checker) {
-      setHeroImg(`url(${ heroesImg }) ${ hero.icon }`)
-    } else {
-      switch (race) {
-        case 'undead':
-          setHeroImg(`url(${ UndeadСommonImg }) ${ commonAssets.undead.heroBackground }`)
-        break;
-        case 'demon':
-          setHeroImg(`url(${ DemonСommonImg }) ${ commonAssets.demon.heroBackground }`)
-        break;
-        case 'drow':
-          setHeroImg(`url(${ DrowСommonImg }) ${ commonAssets.drow.heroBackground }`)
-        break;
-        case 'human':
-          setHeroImg(`url(${ HumanСommonImg }) ${ commonAssets.human.heroBackground }`)
-        break;
-        case 'elf':
-          setHeroImg(`url(${ ElfСommonImg }) ${ commonAssets.elf.heroBackground }`)
-        break;
-        default:
-        break;
-      }
-    };
-  }, [hero, race]);
+  const { hero } = playerData;
+  const heroFrame = useCommonImg( 'heroFame' );
   
   return (
     <HeroWrap
-      background={ `url(${ commonImg }) ${ commonAssets.heroFame }` }
+      background = { heroFrame }
     >
       <HeroImg
-        background={ heroImg }
+        background = { hero.checker ? heroImg : heroBackground }
       >
-
       </HeroImg>
     </HeroWrap>
   )

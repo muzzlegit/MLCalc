@@ -1,30 +1,28 @@
 import { nanoid } from "nanoid";
 //COMPONENTS
-import HeroSkill from '../HeroSkill/HeroSkill';
+import HeroSkill from '../HeroSkill';
 //STYLES
 import { Branch } from "./SkillsBranch.styled"
-
 //CONST
-const skillNumbers = ['1','2','3','4','5','6','7'];
+const skillNumbers = [ '1','2','3','4','5','6','7' ];
 
-export default function SkillsBranch({ branch, role }){
+export default function SkillsBranch({ branch, player }){
 
   return (
     <Branch
-      key={ nanoid() }
+      key = { nanoid() }
     >
       {
-        skillNumbers.map(skillNumber => {
+        skillNumbers.map( skillNumber => {
           return (
             <HeroSkill
-              key={ nanoid() }
-              role={ role }
-              branch={ branch }
-              skillNumber={ skillNumber }
+              key = { nanoid() }
+              player = { player }
+              branch = { branch }
+              skillNumber = { skillNumber }
             >
             </HeroSkill>
           )
-          
         })
       }
     </Branch>

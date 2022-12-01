@@ -6,54 +6,34 @@ import heroesData from '../../data/Heroes.json';
 import commonAssets from '../../data/CommonAssets.json';
 //HOOKS
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
+import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
 //IMG
 import commonAssetsImg from '../../img/common/CommonAssets.png';
 import heroSkillsImg from '../../img/common/heroSkills.png';
 //STYLES
 import { BranchesBox, BranchBox, SkillsBranch, SkillBox, Skill, ButtonAdd } from "./BranchesList.styled";
 
-export default function BranchesList({ role, branch, toggleModal }) {
-    const [playerData, playerFunctions] = usePlayerStoreData(role);
 
+export default function BranchesList({ player, branch, toggleModal }) {
+    const playerData = usePlayerStoreData( player );
+    const playerFunctions = usePlayerStoreFunctions( player );
   //CONSTS
   const {
     hero
   } = playerData
   const {
-    setUnitProperty,
     setHeroBranchesId,
     setHeroSkillsBranch
   } = playerFunctions
   const skillNumbers = ['1','2','3','4','5','6','7'];
 
-  //HELPERS
-  const setSkillsId = (skills, id) => {
-    for (const key in skills) {
-        skills[key].id =id;
-    }        
-    return skills;
-  };
-
   //HANDLES FUNCTIONS
-  const onAddButtonClick = (e) => {
-    if(hero[branch]){
-      for (const key in hero[branch]) {
-        if (hero[branch][key].battle) {
-          setUnitProperty({ ...hero[branch][key].value[hero[branch][key].level - 1], value: 0 });
-        }
-      }
-    }
+  const onAddButtonClick = ( e ) => {
     setHeroSkillsBranch(
       branch,
       heroesData.find(hero =>hero.id === e.currentTarget.id).skills
     );
-    setHeroBranchesId(branch, e.currentTarget.id);
-    for (const key in hero[branch]) {
-      if (hero[branch][key].battle) {
-        setUnitProperty({ ...hero[branch][key].value[hero[branch][key].level - 1] });
-      }
-    }
-    setSkillsId(hero[branch], e.currentTarget.id )
+    setHeroBranchesId( branch, e.currentTarget.id );
     toggleModal();
   }
 
@@ -86,9 +66,10 @@ export default function BranchesList({ role, branch, toggleModal }) {
               }
             </SkillsBranch>
             <ButtonAdd
-              id={item.id}
+              id={ item.id }
+              title={ 'Добавить' }
               type='button'
-              onClick={onAddButtonClick}
+              onClick={ onAddButtonClick }
             >
               Добавить
             </ButtonAdd>
