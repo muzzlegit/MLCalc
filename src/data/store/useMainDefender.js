@@ -20,10 +20,10 @@ const additionalProperties = {
   healthArr: [],
   healthRate: 0,
 }
-const troopsNamesArray = ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage']
 
 const useMainDefender = create((set) => ({
   player: {    
+    def: "def",
     race: 'undead',
     ally: {
       flag: false,

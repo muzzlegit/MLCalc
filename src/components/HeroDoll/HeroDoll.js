@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-
 //COMPONENTS
 import Modal from "../Modal/Modal";
-import ArtCell from '../ArtCell/ArtCell';
+import ArtCell from '../ArtCell';
 import HeroesList from "../HeroesList";
 import HeroBranches from '../HeroBranches/HeroBranches';
 import ArtefactsSelector from "../ArtefactsSelector/ArtefactsSelector";
 //HOOKS
-import useHeroImg from "../../hooks/useHeroImg";
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
-//DATA
-import commonAssets from '../../data/CommonAssets.json';
-//IMAGES
-import commonImg from '../../img/common/CommonAssets.png';
+import useHeroImg from "../../hooks/useHeroImg";
+import useDallArtefacts from "../../hooks/useDallArtefacts";
 //STYLES
 import { Wrap, DollWrap, BranchesWrap, HeroWrap, HeroBox, ArttefactWrap} from "./HeroDoll.styled"
+import useCommonImg from "../../hooks/useCommonImg";
 
 //COSTS
-const arts = [
+const ARTS = [
   { place: 'head', top: '80px', left: '110px', art: false },
   { place: 'armor', top: '180px', left: '110px', art: false },
   { place: 'belt', top: '280px', left: '110px', art: false },
@@ -33,20 +30,21 @@ const arts = [
   { place: 'leftHand', top: '400px', left: '200px', art: false },
 ]
 
-export default function HeroDall({ player, toggleModal }){
+export default function HeroDall({ player }){
   const playerData = usePlayerStoreData( player );
-  const [ heroImg, heroBackground ] = useHeroImg( player )
-  const [heroArts, setHeroArts] = useState(arts);
-  const [heroesListModal, setHeroesListModal] = useState(false);
-  const [artefactstModal, setArtefactsModal] = useState(false);
-  const [currentArtefactId, setCurrentArtefactId] = useState(false);
-  const [currentArtefactPlace, setCurrentArtefactPlace] = useState(false);
-
+  const [ heroImg, heroBackground ] = useHeroImg( player );
+  const [ heroesListModal, setHeroesListModal ] = useState( false );
+  const [ artefactstModal, setArtefactsModal ] = useState( false );
+  const [ currentArtefactId, setCurrentArtefactId ] = useState( false );
+  const [ currentArtefactPlace, setCurrentArtefactPlace ] = useState( false );
+ 
   //CONSTS
   const {
     hero,
     artefacts,
   } = playerData;
+  const artFrameImg = useCommonImg( 'artFrame' );
+  const dallArts = useDallArtefacts( artefacts );
 
   //HANDLE FUNCTIONS
   const toggleHeroesListModal = () => {
@@ -54,24 +52,14 @@ export default function HeroDall({ player, toggleModal }){
   }
 
   const toggleArtefactstModal = () => {
-    setArtefactsModal(prev => !prev);
+    setArtefactsModal( prev => !prev );
   } 
 
-  const openArtefactsWindow = (e) => {
-    e.currentTarget.id === '' ? setCurrentArtefactId(false) : setCurrentArtefactId(e.currentTarget.id);
-    setCurrentArtefactPlace(e.currentTarget.attributes.name.value);
+  const openArtefactsWindow = ( e ) => {
+    e.currentTarget.id === '' ? setCurrentArtefactId( false ) : setCurrentArtefactId( e.currentTarget.id );
+    setCurrentArtefactPlace( e.currentTarget.attributes.name.value );
     toggleArtefactstModal();
   }
-
-  //USE EFFECTS
-  useEffect(() => {
-    const artsArr = arts.map(art => {
-      return  artefacts.find(item =>  item.place === art.place) ? 
-        { ...art, art: artefacts.find(item =>  item.place === art.place)} : art 
-      });
-    setHeroArts(artsArr);
-  }, [artefacts])
-
 
   return (
     <Wrap>
@@ -86,21 +74,21 @@ export default function HeroDall({ player, toggleModal }){
           </HeroBox>
         </HeroWrap>
         {
-          heroArts.map(art => {
+          dallArts.map(art => {
             return(
               <ArttefactWrap
-                key={ nanoid() }
-                id={ art.art.id }
-                title={ art.art.name ? art.art.name : art.place }
-                name={ art.art.place ? art.art.place : art.place }
-                onClick={ openArtefactsWindow }
-                top={ art.top }
-                left={ art.left }
-                background = {`url(${ commonImg }) ${ commonAssets.artFrame }`}
+                key = { nanoid() }
+                id = { art.art.id }
+                title = { art.art.name ? art.art.name : art.place }
+                name = { art.art.place ? art.art.place : art.place }
+                onClick = { openArtefactsWindow }
+                top = { art.top }
+                left = { art.left }
+                background = { artFrameImg }
               >
                 <ArtCell
-                  key={ nanoid() }
-                  artefact={ art.art }
+                  key = { nanoid() }
+                  artefact = { art.art }
                 />
               </ArttefactWrap>
             )
@@ -125,14 +113,14 @@ export default function HeroDall({ player, toggleModal }){
       }
       { artefactstModal &&
         <Modal
-          level={ 1 }
-          toggleModal={ toggleArtefactstModal }
+          level = { 1 }
+          toggleModal = { toggleArtefactstModal }
         >
           <ArtefactsSelector
-            role={ player }
-            place={ currentArtefactPlace }
-            artefactId={ currentArtefactId }
-            toggleModal={ toggleArtefactstModal }
+            player = { player }
+            place = { currentArtefactPlace }
+            artefactId = { currentArtefactId }
+            toggleModal = { toggleArtefactstModal }
           />
         </Modal>
       }

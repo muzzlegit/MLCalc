@@ -1,19 +1,18 @@
-
-//IMG
-import artefactsAssets from '../../img/common/ArtifactAssets.png';
+//HOOKS
+import useArtefactsImg from "../../hooks/useArtefactsImg";
 //STYLES
 import { ArtefactWrap, ArtefactImg  } from "./ArtCell.styled";
 
 export default function ArtCell({ artefact }) {
+  const artefactImg = useArtefactsImg( artefact.icon );
 
   return (
     <ArtefactWrap
       ancient={ artefact.ancient }
     >
       <ArtefactImg
-        background={ `url(${ artefactsAssets }) ${ artefact.icon }` }
+        background={ artefactImg }
       >
-
       </ArtefactImg>
     </ArtefactWrap>
   )

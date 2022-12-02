@@ -1,92 +1,66 @@
-import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid'
 //HOOKS
 import usePlayerStoreData from '../../hooks/usePlayerStoreData';
-//IMAGES
-import commonAssetsImg from '../../img/common/CommonAssets.png';
-import undeadTowersImg from '../../img/undead/UndeadCommon.png';
-import drowTowersImg from '../../img/drow/DrowCommon.png';
-import demonTowersImg from '../../img/demon/DemonCommon.png';
-import humanTowersImg from '../../img/human/HumanCommon.png';
-import elfTowersImg from '../..//img/elf/ElfCommon.png';
-//DATA
-import commonAssets from '../../data/CommonAssets.json';
-
-
+import usePlayerStoreFunctions from '../../hooks/usePlayerStoreFunctions';
+import useCommonImg from '../../hooks/useCommonImg';
+import useRaceCommonImg from '../../hooks/useRaceCommonImg';
 //STYLES
 import { TowerBox, ImgWrap, TowerImgBox, LevelLabel } from './TowersCard.styled';
 
-export default function TowersCard ({ role }) {
-    const [playerData, playerFunctions] = usePlayerStoreData(role);
-    const [towersImg, setTowersImg] = useState(undeadTowersImg);
-
+export default function TowersCard ({ player }) {
+    const playerData = usePlayerStoreData( player );
+    const playerFunctions = usePlayerStoreFunctions( player );
+    const towerImg = useRaceCommonImg( player, 'tower' );
+    const magicTowerImg = useRaceCommonImg( player, 'magicTower' );
+    const fortificationImg = useRaceCommonImg( player, 'fortification' );
+    
     //CONSTS
     const {
-        race,
         towers,
-        fortifications
+        fortifications 
     } = playerData
-    const perfectIcon = `url(${commonAssetsImg}) ${commonAssets.smallPerfectIcon}`;
-
-    //USE EFFECTS
-    useEffect(() => {
-        switch (race) {
-            case 'undead':
-                setTowersImg(undeadTowersImg);
-                break;
-            case 'demon':
-                setTowersImg(demonTowersImg);
-                break;
-            case 'drow':
-                setTowersImg(drowTowersImg);
-                break;
-            case 'human':
-                setTowersImg(humanTowersImg);
-                break;
-            case 'elf':
-                setTowersImg(elfTowersImg);
-                break;  
-            default:
-                break;
-        }
-    }, [race])
+    const {
+        setTowers,
+        setFortification
+    } = playerFunctions;
+    const perfectIcon = useCommonImg( 'smallPerfectIcon' );
 
     //HaNDLE FUNCTIONS    
-    const onTowerClick = (e) => {
-        playerFunctions.setTowers(towers.filter(tower => tower.id !== e.currentTarget.id));
-        playerFunctions.setFortification(fortifications.filter(fortification => fortification.id !== e.currentTarget.id));
+    const onTowerClick = ( e ) => {
+        setTowers( towers.filter( tower => tower.id !== e.currentTarget.id ));
+        setFortification( fortifications.filter( fortification => fortification.id !== e.currentTarget.id ));
     }
 
     return (
         <TowerBox>
-            { towers.map((tower) => {
+            { towers.map(( tower ) => {
                 return (
                     <ImgWrap
-                    key = { nanoid() }
+                        key = { nanoid() }
                     >
                         <TowerImgBox
                             key= { nanoid() }
                             id = { tower.id }
-                            background = { `url(${towersImg}) ${commonAssets[`${tower.type}PositionUnit`]}` }
+                            background = { tower.type === 'tower' ? towerImg : magicTowerImg }
                             onClick = { onTowerClick }
                         />
                         <LevelLabel
                             border = { tower.level }
-                            background = { tower.level === 8 ? perfectIcon : null}
+                            background = { tower.level === 8 ? perfectIcon : null }
                         >
-                            {tower.level === 8 ? null : tower.level }
+                            { tower.level === 8 ? null : tower.level }
                         </LevelLabel>
                     </ImgWrap>
                 )
             })}
-            { fortifications.map((fortification) => {
+            { fortifications.map(( fortification ) => {
                 return (
                     <ImgWrap
                         key = { nanoid() }
                     >
                         <TowerImgBox
                             id = { fortification.id }
-                            background = { `url(${towersImg}) ${commonAssets.fortificationPositionUnit}` }
+                            background = { fortificationImg }
                             onClick = { onTowerClick }
                         />
                         <div>
@@ -96,7 +70,7 @@ export default function TowersCard ({ role }) {
                             border = { fortification.level }
                             background = { fortification.level === 8 ? perfectIcon : null}
                         >
-                            {fortification.level === 8 ? null : fortification.level }
+                            { fortification.level === 8 ? null : fortification.level }
                         </LevelLabel>
                     </ImgWrap>
                 )

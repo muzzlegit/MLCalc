@@ -7,7 +7,7 @@ export default function usePlayerStoreFunctions( player ) {
   const mainAttacker =  useMainAttaker();
   const mainDefender =  useMainDefender();
 
-  const [ playerFunctions, setPlayerFunctions ] = useState( mainDefender.functions );
+  const [ playerFunctions, setPlayerFunctions ] = useState( mainAttacker.functions );
 
 
 

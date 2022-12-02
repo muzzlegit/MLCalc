@@ -3,16 +3,27 @@ import { useEffect, useState } from 'react';
 import artefatctsData from '../../data/Artefacts.json'
 //HOOKS
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
+import usePlayerStoreFunctions from '../../hooks/usePlayerStoreFunctions';
+//COMPONENTS
+import ArtefactsFilters from '../ArtefactsFilters';
 //IMG
 import artefactsAssets from '../../img/common/ArtifactAssets.png';
 //STYLES
 import { SelectorsBox, SelectedArtefact, ArtefactsList, ArtefactImg, SelectButton,  } from "./ArtefactsSelector.styled";
+//CONSTS
+const filter = {
+  level: false,
+  perfect: false,
+  ancient: true
+}
 
-export default function ArtefactsSelector({ role, artefactId, place, toggleModal }){
-  const [playerData, playerFunctions] = usePlayerStoreData(role);
+export default function ArtefactsSelector({ player, artefactId, place, toggleModal }){
+  const playerData = usePlayerStoreData( player );
+  const playerFunctions = usePlayerStoreFunctions( player );
   const [artefactsArr, setArtefactsArr] = useState(artefatctsData.filter(artefatc => artefatc.place === place));
   const [selectedArtefact, setSelectedArtefact] = useState({});
-  const [toggleList, setToggleList] = useState(false);
+  const [ toggleList, setToggleList ] = useState( false );
+  const [ artefactsFilter, setArtefactsFilter ] = useState( filter );
 
   //CONSTS
   const {
@@ -78,6 +89,10 @@ export default function ArtefactsSelector({ role, artefactId, place, toggleModal
       </ArtefactsList>
 
       : null}
+      <ArtefactsFilters
+        artefactsFilter = { artefactsFilter }
+        setArtefactsFilter = { setArtefactsFilter }
+      />
       <button
         type="button"
         onClick={ toggleModal }>close

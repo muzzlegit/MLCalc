@@ -7,8 +7,9 @@ export default function usePlayerStoreData( player ) {
   const mainAttacker =  useMainAttaker();
   const mainDefender =  useMainDefender();
 
-  const [ playerData, setPlayerData ] = useState( mainDefender.player );
+  const [ playerData, setPlayerData ] = useState( player === 'mainAttacker' ? mainAttacker.player : mainDefender.player );
 
+ 
   //USE EFFECTS
   useEffect(() => {
     switch ( player ) {

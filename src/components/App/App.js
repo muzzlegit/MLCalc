@@ -34,10 +34,10 @@ function App() {
           <AttackRateSelector player = { 'mainDefender' } />
           <ApostateChecker player = { 'mainDefender' } />
         </SelectorsBox>
-        {/* <SelectorsBox>
+        <SelectorsBox>
           <TowerSelector player = { 'mainDefender' } />
           <TowersCard player = { 'mainDefender' } />
-        </SelectorsBox> */}
+        </SelectorsBox>
         <Squad player = { 'mainDefender' } />
       </PlayerBox>
 

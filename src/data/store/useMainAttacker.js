@@ -23,6 +23,7 @@ const additionalProperties = {
 //----------- STORE -----------
 const useMainAttacker = create((set) => ({
   player: {    
+    attack: "attack",
     race: 'undead',
     ally: {
       flag: false,

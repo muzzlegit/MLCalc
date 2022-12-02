@@ -20,18 +20,18 @@ export default function BranchesList({ player, branch, toggleModal }) {
   //CONSTS
   const {
     hero
-  } = playerData
+  } = playerData;
   const {
     setHeroBranchesId,
     setHeroSkillsBranch
-  } = playerFunctions
+  } = playerFunctions;
   const skillNumbers = ['1','2','3','4','5','6','7'];
 
   //HANDLES FUNCTIONS
   const onAddButtonClick = ( e ) => {
     setHeroSkillsBranch(
       branch,
-      heroesData.find(hero =>hero.id === e.currentTarget.id).skills
+      heroesData.find( hero => hero.id === e.currentTarget.id ).skills
     );
     setHeroBranchesId( branch, e.currentTarget.id );
     toggleModal();
