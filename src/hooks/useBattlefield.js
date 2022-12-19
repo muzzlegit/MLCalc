@@ -3,48 +3,60 @@ import { useEffect, useState } from "react";
 import usePlayerStoreData from "./usePlayerStoreData";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
 
-export default function useBattlefield( battlefield ) {
-  const mainAttackerData = usePlayerStoreData( 'mainAttacker' );
-  const mainAttackerFunctions = usePlayerStoreFunctions( 'mainAttacker' );
-  const mainDefenderData = usePlayerStoreData( 'mainDefender' );
-  const mainDefenderFunctions = usePlayerStoreFunctions( 'mainDefender' );
+const BUFF = {
+  id: '2B0eBD4m',
+  battle: true,
+  name: 'homeLand',
+  unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
+  property: 'defenseArr',
+  childProperty: 'defense',
+  value: 25 
+};
+
+export default function useBattlefield( defaultValue) {
+  const mainAttackerData = usePlayerStoreData( "mainAttacker" );
+  const mainDefenderData = usePlayerStoreData( "mainDefender" );
+  const playerFunctions = usePlayerStoreFunctions( );
+  const [ battlefield, setBattlefield ] = useState( defaultValue );
+ 
+  //CONSTS
+  const { 
+    homeLand: mainAttackerHomeLand,
+    apostate: mainAttackerApostate
+   } = mainAttackerData;
+   const { 
+    homeLand: mainDefenderHomeLand,
+    apostate: mainDefenderApostate
+   } = mainDefenderData;
+  const { setUnitProperty } = playerFunctions;
+
+  //HANDLE FUNCTION
+  const onChange = ( e ) => {
+    setBattlefield( e.target.value )
+  };
 
   //USE EFFECTS
   useEffect(() => {
-    const buff = {
-      id: '2B0eBD4m',
-      battle: true,
-      name: 'homeLand',
-      unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
-      property: 'defenseArr',
-      childProperty: 'defense',
-      value: 25 
-    };
-
-    if( mainDefenderData.homeLand === battlefield && !mainDefenderData.apostate )
+    if( mainAttackerHomeLand === battlefield && !mainAttackerApostate )
       {
-        mainDefenderFunctions.setUnitProperty( buff );
+        setUnitProperty( "mainAttacker", BUFF );
       } 
       else 
       {
-        mainDefenderFunctions.setUnitProperty({ ...buff, value: 0 });
+        setUnitProperty( "mainAttacker", { ...BUFF, value: 0 });
       }
-  }, [ battlefield, mainDefenderData.homeLand, mainDefenderData.apostate, mainDefenderFunctions ]);
+  }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, setUnitProperty ]);
 
-  // useEffect(() => {
-  //   const buff = {
-  //     id: '2B0eBD4m',
-  //     name: 'homeLand',
-  //     unit: ['porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage'],
-  //     property: 'defenseArr',
-  //     childProperty: 'defense',
-  //     value: 25 };
-  //   if(mainDefenderData.homeLand === battlefield && !mainDefenderData.apostate){
-  //     mainDefenderFunctions.setUnitProperty(buff);
-  //   } else {
-  //     mainDefenderFunctions.setUnitProperty({ ...buff, value: 0 });
-  //   }
-  // }, [ battlefield, mainDefenderData, mainDefenderData.homeLand, mainDefenderData.apostate, mainDefenderFunctions]);
+  useEffect(() => {
+    if( mainDefenderHomeLand === battlefield && !mainDefenderApostate )
+      {
+        setUnitProperty( "mainDefender", BUFF );
+      } 
+      else 
+      {
+        setUnitProperty( "mainDefender", { ...BUFF, value: 0 });
+      }
+  }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, setUnitProperty ]);
 
-
-}
+  return onChange;
+};

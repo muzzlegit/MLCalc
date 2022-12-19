@@ -1,7 +1,9 @@
-import { useState } from 'react';
-
+import { useContext } from 'react';
+//CONTEXT
+import PlayerContext from '../../helpers/context';
 //HOOKS
 import useUnit from '../../hooks/useUnit';
+import useUnitLevel from '../../hooks/useUnitLevel';
 import useUnitImg from '../../hooks/useUnitImg';
 import useCommonImg from '../../hooks/useCommonImg';
 //STYLES
@@ -15,40 +17,34 @@ import {
     UnitProperty,
     AddValue
 } from './UnitCard.styled';
+import useUnitAmount from '../../hooks/useUnitAmount';
 
-export default function UnitCard ({ player, unitName }) {
-    const [ unitLevel, setUnitLevel ] = useState( 1 );
-    const [ amount, setAmount ] = useState( 0 );
-    const unit = useUnit( player, unitName, unitLevel, amount );
-    const [ unitImg, unitRaceFrame ] = useUnitImg( player, unit );
-
-    //CONSTS
+export default function UnitCard({ unitName }) {
+    const player = useContext( PlayerContext );
+    console.log('Render UnitCard', player);
+    const [ unitLevel, setUnitLevel ] = useUnitLevel( 1 );
+    const [ amount, setAmount ] = useUnitAmount( 0 );
+    const unit = useUnit( player, unitLevel, unitName, amount );
+    
     const {
-        level,
+        level, 
         attack,
         attackRate,
         defense,
         health,
         healthRate
-    } = unit
+    } = unit;
+
+    const [ unitImg, unitRaceFrame ] = useUnitImg( player, unit );
     const unitIcon = useCommonImg( `${ unit.unit }Icon` );
     const unitFrame = useCommonImg( 'unitFame' );
     const attackIcon = useCommonImg( 'attackIcon' );
     const defenseIcon = useCommonImg( 'defenseIcon' );
     const healthIcon = useCommonImg( 'healthIcon' );
 
-    //HANDLE FUNCTIONS
-    const handleInput = ( e ) => {
-        if( e.target.value === "" ) e.target.value = 0;
-        setAmount( Number.parseInt( e.target.value.replaceAll( /\D/g, '' ), 0 ));
-    }
-    const onUnitClick = () => {
-        unitLevel === 4 ? setUnitLevel( 1 ) : setUnitLevel( prev => prev += 1 );
-    }
-
     return (
         <UnitCardBox>
-            <UnitFrameWrap onClick = { onUnitClick }>
+            <UnitFrameWrap onClick = { setUnitLevel } >
                 <UnitFrame
                     background = { level === 4 ? unitRaceFrame : unitFrame }
                     height = { level }
@@ -66,7 +62,7 @@ export default function UnitCard ({ player, unitName }) {
                     autoFocus
                     placeholder = "0"
                     value = { amount }
-                    onChange = { handleInput }                    
+                    onChange = { setAmount }                    
                 />
                 <UnitProperty background = { unitIcon } >
                     { level }
@@ -89,4 +85,4 @@ export default function UnitCard ({ player, unitName }) {
             </PropertiesWrap>
         </UnitCardBox>
     )
-}
+};

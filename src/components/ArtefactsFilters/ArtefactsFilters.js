@@ -10,7 +10,6 @@ export default function ArtefactsFilters({ artefactsFilter, setArtefactsFilter }
   const onLevelFilterClick = ( e ) => {
     setArtLevel( e.currentTarget.value );
   }
-
   const onTypeClick = ( e ) => {
     setAncientArt(  e.currentTarget.value === "ancient" ? true : false );
   }

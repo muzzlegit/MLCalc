@@ -16,8 +16,6 @@ import DrowUnitsCard from '../img/drow/DrowCards.png';
 import ElfUnitsCard from '../img/elf/ElfCards.png';
 import HumanUnitsCard from '../img/human/HumanCards.png';
 
-
-
 export default function useUnitImg( player, unit ) {
   const playerData = usePlayerStoreData( player );
   const [ unitImg, setUnitImg ] = useState( `url(${ UndeadUnitsCard }) ${ unit.position }` );

@@ -1,7 +1,7 @@
 import { useState } from "react"
 //STORE
-import useMainAttaker from '../../data/store/useMainAttacker';
-import useMainDefender from '../../data/store/useMainDefender';
+import useStore from '../../data/store/useStore';
+
 //COMPONENTS
 import TestModal from './TestModal';
 //STYLES
@@ -10,14 +10,15 @@ import {ButtonsBox} from './TestsPanel.styled';
 export default function TestsPanel(){
   const [toggle, setToggle] = useState(false);
 
-  const mainAttacker =  useMainAttaker();
-  const mainDefender =  useMainDefender();
+  const mainAttacker = useStore( ( state ) => state.mainAttacker );
+  const mainDefender = useStore( ( state ) => state.mainDefender );
 
   const onTestWindowButtonClick = () => {
     setToggle(!toggle);
   }
   const showMainFiles = () => {
-    console.log('mainDefender', mainDefender.player);
+    console.log('mainAttacker', mainAttacker);
+    console.log('mainDefender', mainDefender);
   }
 
   return(

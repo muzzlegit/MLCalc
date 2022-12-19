@@ -10,11 +10,11 @@ import DrowСommonImg from '../img/drow/DrowCommon.png';
 import HumanСommonImg from '../img/human/HumanCommon.png';
 import ElfСommonImg from '../img/elf/ElfCommon.png';
 
-
 export default function useRaceCommonImg( player, index ) {
   const playerData = usePlayerStoreData( player );
   const [ img, setImg ] = useState( `url(${ UndeadСommonImg }) ${ commonImgData[ index ] }` );
   const { race } = playerData;
+
   //USE EFFECT
   useEffect(() => {
     switch ( race ) {

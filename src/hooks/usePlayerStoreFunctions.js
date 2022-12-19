@@ -1,29 +1,8 @@
 //STORE
-import { useEffect, useState } from 'react';
-import useMainAttaker from '../data/store/useMainAttacker';
-import useMainDefender from '../data/store/useMainDefender';
+import useStore from '../data/store/useStore';
 
-export default function usePlayerStoreFunctions( player ) {
-  const mainAttacker =  useMainAttaker();
-  const mainDefender =  useMainDefender();
-
-  const [ playerFunctions, setPlayerFunctions ] = useState( mainAttacker.functions );
-
-
-
-  //USE EFFECTS
-  useEffect(() => {
-    switch ( player ) {
-      case 'mainAttacker':
-        setPlayerFunctions( mainAttacker.functions );
-        break;
-      case 'mainDefender':
-        setPlayerFunctions( mainDefender.functions );
-      break;  
-      default:
-        break;
-    }
-  }, [ player, mainAttacker, mainDefender ]);
+export default function usePlayerStoreFunctions() {
+  const playerFunctions =  useStore( ( state ) => state.functions );
 
   return  playerFunctions;
-}
+};

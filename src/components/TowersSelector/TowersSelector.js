@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { nanoid } from 'nanoid'
-//DATA
-import towersData from '../../data/Towers.json';
+import { useContext } from "react";
+//CONTEXT
+import PlayerContext from '../../helpers/context';
 //HOOKS
-import usePlayerStoreData from "../../hooks/usePlayerStoreData";
-import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
+import useTowerSelect from "../../hooks/useTowerSelect";
+import useTowerLevel from "../../hooks/useTowerLevel";
+import useFortificationInput from "../../hooks/useFortificationInput";
+import useTowers from "../../hooks/useTowers";
 import useCommonImg from "../../hooks/useCommonImg";
 //STYLES
 import { 
@@ -21,28 +22,12 @@ import {
   Input
 } from "./TowersSelector.styled";
 
-
-export default function TowerSelector({ player }) {
-  const playerData = usePlayerStoreData( player );
-  const playerFunctions = usePlayerStoreFunctions( player );
-
-  //CONSTS
-  const {
-    towers,
-    fortifications,
-  } = playerData;
-  const {
-    setUnitProperty,
-    setTowers,
-    setFortification,
-    addTowers,
-    addFortification
-  } = playerFunctions;
-
-  const [ isSelected, setIsSelected ] = useState( 'magicTower' );
-  const [ level, setLevel ] = useState( 1 );
-  const [ isButtonActive, setIsButtonActive ] = useState( towers.length >= 2 || isSelected === 'fortification' ? true : false );
-  const [ query, setQuery ] = useState( 1 );
+export default function TowerSelector( ) {
+  const player = useContext( PlayerContext );
+  const [ isSelected, isButtonActive, onTowerClick ] = useTowerSelect( player, 'magicTower' );
+  const [ level, onLevelClick ] = useTowerLevel( 1 );
+  const [ value, onFortificationAmountChange ] = useFortificationInput( 1 );
+  const [ onAddButtonClick, onRemoveButtonClick ] = useTowers( player, isSelected, level, value );
 
   const levels = [ 1,2,3,4,5,6,7,8 ];
   const selectShadow = 'drop-shadow(#61e7fd 0px 0px 7px) drop-shadow(#61e7fd 0px 0px 7px)';
@@ -53,100 +38,11 @@ export default function TowerSelector({ player }) {
   const magicTowerImg = useCommonImg( 'magicTowerPosition' );
   const fortificationImg = useCommonImg( 'fortificationPosition' );
 
-  //HANDLE FUCTIONS
-  const onTowerClick = ( e ) => {
-    setIsSelected( e.target.id );
-    if( e.target.id === 'fortification' )
-    {
-      setIsButtonActive( false );
-    } 
-    else 
-    {
-      if( towers.length >= 2 ) {
-        setIsButtonActive( true );
-      } 
-      else 
-      {
-        setIsButtonActive( false );
-      }
-    }
-  }
-
-  const onLevelClick = ( e ) => {
-    setLevel( Number( e.currentTarget.id ));
-  }
-  const onAddButtonClick = () => {
-    if ( isSelected !== 'fortification' && towers.length < 2 )
-    {
-      addTowers({ ...towersData[ `${ isSelected }` ][ `level${ level }` ], type: `${ isSelected }`, id: nanoid() });
-    } 
-    else 
-    {
-      addFortification({ ...towersData[ `${ isSelected }` ][ `level${ level }` ], type: `${ isSelected }`, id: nanoid() }, query );
-    }
-  }
-  const onRemoveButtonClick = () => {
-    setTowers([]);
-    setFortification([]);
-  }
-  const handleInput = ( e ) => {
-    if( e.target.value === "" )
-    {
-        e.target.value = 1;
-    }
-    setQuery( Number.parseInt( e.target.value.replaceAll( /\D/g, '' ), 0 ));
-  }
   //HELPERS
   const getFilter = ( itemLevel, currentLevel ) => {
     if( itemLevel !== 8 && itemLevel === currentLevel ) { return selectShadow };
     if( itemLevel === 8 ) { return currentLevel !== 8 ? 'grayscale(100%) brightness(70%)': null };
   }
-
-  //USE EFFECTS
-  useEffect(() => {
-    if( isSelected === 'fortification' )
-    {
-      setIsButtonActive( false );
-    } 
-    else 
-    {
-      if( towers.length >= 2 ) 
-      {
-        setIsButtonActive( true );
-      } 
-      else 
-      {
-        setIsButtonActive( false );
-      }
-    }
-  }, [ towers, isSelected ])
-
-  useEffect(() => {
-    if( fortifications.length === 0 )
-    {
-      setUnitProperty({
-        name: 'fortifications',
-        unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
-        property: 'defenseArr',
-        childProperty: 'defense',
-        value: 0
-      });
-    }
-    else
-    {
-      let value = 0;
-      fortifications.forEach(( fortification ) => {
-        value = value + fortification.quantity * fortification.defense;
-      });
-      setUnitProperty({
-        name: 'fortifications',
-        unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
-        property: 'defenseArr',
-        childProperty: 'defense',
-        value: value
-      });
-    }
-  }, [ fortifications, setUnitProperty ]);
 
   return (
     <TowerSelectorBox>
@@ -186,8 +82,8 @@ export default function TowerSelector({ player }) {
               autoComplete = "off"
               autoFocus
               placeholder = "0"
-              value = { query }
-              onChange = { handleInput } 
+              value = { value }
+              onChange = { onFortificationAmountChange } 
               disabled = { isSelected === 'fortification' ? false : true }       
             />
           </TowerBox>

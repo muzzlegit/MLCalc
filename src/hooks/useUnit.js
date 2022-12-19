@@ -1,27 +1,35 @@
-import { useEffect, useState } from "react";
-//DATA
-import UNITS from '../data/Units.json';
+import { useEffect } from "react";
 //HOOKS
 import usePlayerStoreData from "./usePlayerStoreData";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
+//DATA
+import UNITS from '../data/Units.json';
 
-
-export default function useUnit( player, unitName, unitLevel, amount ) {
+export default function useUnit( player, unitLevel, unitName, amount ) {
   const playerData = usePlayerStoreData( player );
-  const playerFunctions = usePlayerStoreFunctions( player );
+  const playerFunctions = usePlayerStoreFunctions();
 
-  //CONSTS
-  const { race, attackRateIndex } = playerData;
-  const { setUnit } = playerFunctions;
-  const unit = playerData.troops[ unitName ];
+  const {
+    race,
+    attackRateIndex
+  } = playerData;
+
+  const {
+    setUnit
+  } = playerFunctions;
 
   //USE EFFECT
-  useEffect(() => {
-    setUnit({ 
+  useEffect( () => {
+    setUnit( 
+      player, 
+      { 
       ...UNITS[ race ][ unitName ][ `level${ unitLevel }` ],
       attack: UNITS[ race ][ unitName ][ `level${ unitLevel }` ][ `attack${ attackRateIndex }` ],
-      amount });
-  }, [ unitName, unitLevel, amount, race, attackRateIndex, setUnit ]);
+      amount
+      }
+    );
+  }, [ race, amount, player, unitName, unitLevel, attackRateIndex, setUnit ]);
 
-  return unit;
-}
+  const newPlayerData = usePlayerStoreData( player );
+  return newPlayerData.troops[unitName];
+};

@@ -1,25 +1,15 @@
-import { useState } from "react";
-
 //HOOKS
 import useBattlefield from "../../hooks/useBattlefield";
 //STYLES
 import { SelectorBox, SelectorLabel, Select } from "./BattlefieldSelector.styled";
 
-
 export default function BattlefieldSelector() {
-  const [ battlefield, setBattlefield ] = useState( "cursedForest" );
-
-  useBattlefield( battlefield );
-  
-  //HaNDLE FUNCTIONS
-  const onSelect = (e) => {
-    setBattlefield( e.target.value );
-  }
+  const setBattlefield = useBattlefield( "cursedForest" );
 
   return (
     <SelectorBox>
       <SelectorLabel>Поле битвы</SelectorLabel>
-      <Select id = "battlefield" onChange = { onSelect } >
+      <Select id = "battlefield" onChange = { setBattlefield } >
         <option value = "cursedForest" >Проклятые леса</option>
         <option value = "deadLand" >Мёртвая земля</option>
         <option value = "hollyLand" >Священная земля</option>

@@ -1,35 +1,26 @@
 import { nanoid } from 'nanoid'
+import { useContext } from 'react';
+//CONTEXT
+import PlayerContext from '../../helpers/context';
 //HOOKS
 import usePlayerStoreData from '../../hooks/usePlayerStoreData';
-import usePlayerStoreFunctions from '../../hooks/usePlayerStoreFunctions';
 import useCommonImg from '../../hooks/useCommonImg';
 import useRaceCommonImg from '../../hooks/useRaceCommonImg';
 //STYLES
 import { TowerBox, ImgWrap, TowerImgBox, LevelLabel } from './TowersCard.styled';
+import useTowersList from '../../hooks/useTowersList';
 
-export default function TowersCard ({ player }) {
-    const playerData = usePlayerStoreData( player );
-    const playerFunctions = usePlayerStoreFunctions( player );
+export default function TowersCard () {
+    const player = useContext( PlayerContext );
+    const playerData = usePlayerStoreData( player )
+    const [ onTowerClick, onFortificationClick  ] = useTowersList( player );
+
     const towerImg = useRaceCommonImg( player, 'tower' );
     const magicTowerImg = useRaceCommonImg( player, 'magicTower' );
     const fortificationImg = useRaceCommonImg( player, 'fortification' );
-    
-    //CONSTS
-    const {
-        towers,
-        fortifications 
-    } = playerData
-    const {
-        setTowers,
-        setFortification
-    } = playerFunctions;
     const perfectIcon = useCommonImg( 'smallPerfectIcon' );
 
-    //HaNDLE FUNCTIONS    
-    const onTowerClick = ( e ) => {
-        setTowers( towers.filter( tower => tower.id !== e.currentTarget.id ));
-        setFortification( fortifications.filter( fortification => fortification.id !== e.currentTarget.id ));
-    }
+    const { towers, fortifications } = playerData;
 
     return (
         <TowerBox>
@@ -61,7 +52,7 @@ export default function TowersCard ({ player }) {
                         <TowerImgBox
                             id = { fortification.id }
                             background = { fortificationImg }
-                            onClick = { onTowerClick }
+                            onClick = { onFortificationClick }
                         />
                         <div>
                             x{ fortification.quantity }
@@ -74,8 +65,7 @@ export default function TowersCard ({ player }) {
                         </LevelLabel>
                     </ImgWrap>
                 )
-            })}
-            
+            })}    
         </TowerBox>
     )
 }

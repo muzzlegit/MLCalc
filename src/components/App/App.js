@@ -1,3 +1,6 @@
+//CONTEXT
+import PlayerContext from '../../helpers/context'
+
 //COMPONENTS
 import BattlefieldSelector from '../../components/BattlefieldSelector/BattlefieldSelector';
 import RaceSelector from '../../components/RaceSelector';
@@ -19,26 +22,30 @@ function App() {
     <AppBox>
       <BattlefieldSelector/>
       <PlayerBox>
-        <PlayerTitle>Атакующий</PlayerTitle>
-        <SelectorsBox>
-          <RaceSelector player = { 'mainAttacker' } />
-          <AttackRateSelector player = { 'mainAttacker' } />
-          <ApostateChecker role = { 'mainAttacker' } />
-        </SelectorsBox>
-        <Squad player={ 'mainAttacker' } />
+        < PlayerContext.Provider value = "mainAttacker" >
+          <PlayerTitle>Атакующий</PlayerTitle>
+          <SelectorsBox>
+            <RaceSelector />
+            <AttackRateSelector />
+            <ApostateChecker />
+          </SelectorsBox>
+          <Squad />
+        </PlayerContext.Provider>
       </PlayerBox>
       <PlayerBox>
-        <PlayerTitle>Защитник</PlayerTitle>
-        <SelectorsBox>
-          <RaceSelector player = { 'mainDefender' } />
-          <AttackRateSelector player = { 'mainDefender' } />
-          <ApostateChecker player = { 'mainDefender' } />
-        </SelectorsBox>
-        <SelectorsBox>
-          <TowerSelector player = { 'mainDefender' } />
-          <TowersCard player = { 'mainDefender' } />
-        </SelectorsBox>
-        <Squad player = { 'mainDefender' } />
+        < PlayerContext.Provider value = "mainDefender" >
+          <PlayerTitle>Защитник</PlayerTitle>
+          <SelectorsBox>
+            <RaceSelector />
+            <AttackRateSelector />
+            <ApostateChecker />
+          </SelectorsBox>
+          <SelectorsBox>
+            <TowerSelector />
+            <TowersCard />
+          </SelectorsBox>
+          <Squad />
+        </PlayerContext.Provider>
       </PlayerBox>
 
     </AppBox>
