@@ -1,6 +1,6 @@
 import create from 'zustand'
 //DATA
-import units from '../../data/Units.json';
+import units from '../Units.json';
 //HELPERS
 import findPropertyIndex from '../../helpers/findPropertyIndex';
 import removeBranchSkillValue from '../../helpers/removeBranchSkillValue';
@@ -20,10 +20,10 @@ const additionalProperties = {
   healthArr: [],
   healthRate: 0,
 }
-
-const useMainDefender = create((set) => ({
+//----------- STORE -----------
+const useMainAttacker = create((set) => ({
   player: {    
-    def: "def",
+    attack: "attack",
     race: 'undead',
     ally: {
       flag: false,
@@ -134,4 +134,4 @@ const useMainDefender = create((set) => ({
   }
 }));
 
-export default useMainDefender;
+export default useMainAttacker;

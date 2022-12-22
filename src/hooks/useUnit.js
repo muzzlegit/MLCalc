@@ -11,7 +11,7 @@ export default function useUnit( player, unitLevel, unitName, amount ) {
 
   const {
     race,
-    attackRateIndex
+    attackRateIndex,
   } = playerData;
 
   const {
@@ -30,6 +30,4 @@ export default function useUnit( player, unitLevel, unitName, amount ) {
     );
   }, [ race, amount, player, unitName, unitLevel, attackRateIndex, setUnit ]);
 
-  const newPlayerData = usePlayerStoreData( player );
-  return newPlayerData.troops[unitName];
 };

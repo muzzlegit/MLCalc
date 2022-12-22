@@ -1,52 +1,21 @@
 import { nanoid } from "nanoid";
 //DATA
 import heroes from '../../data/Heroes.json';
-//HOOKS
-import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
+import useHeroSet from "../../hooks/useHeroSet";
 //IMAGES
 import heroesImg from '../../img/common/Heroes.webp';
 //STYLES
 import { ListBox, HeroesBox, HeroBoxWrap, HeroBox } from "./HeroesList.styled"
 
 export default function HeroesList({ toggleModal, player }){
-  const playerFunctions = usePlayerStoreFunctions( player );
-
-  //CONSTS
-  const {
-    setHero,
-  } = playerFunctions;
-
-  const onHeroClick = ( e ) => {
-    const hero = heroes.find( hero => hero.name === e.currentTarget.id );
-    setHero({
-      checker: true,
-      id: hero.id,
-      branchesId: {
-        skillsBranch1: hero.id,
-        skillsBranch2: false,
-        skillsBranch3: false,
-      },
-      class: hero.class,
-      name: hero.name,
-      icon: hero[ e.currentTarget.attributes.name.value ],
-      skillsBranch1: hero.skills,
-      skillsBranch2: false,
-      skillsBranch3: false
-    });
-    toggleModal();
-  }
+  const onHeroClick = useHeroSet( player, toggleModal );
 
   return (
-    <ListBox
-      key = { nanoid() }
-    >
+    <ListBox key = { nanoid() } >
       { heroes.map(( hero ) => {
         return (
-          <HeroesBox
-            key = { nanoid() }>
-            <HeroBoxWrap
-              key = { nanoid() }
-            >
+          <HeroesBox key = { nanoid() } >
+            <HeroBoxWrap key = { nanoid() } >
               <HeroBox 
                 id = { hero.name }
                 name = { 'maleIcon' }
@@ -56,9 +25,7 @@ export default function HeroesList({ toggleModal, player }){
               > 
               </HeroBox>
             </HeroBoxWrap>
-            <HeroBoxWrap
-            key={nanoid()}
-            >
+            <HeroBoxWrap key = { nanoid() } >
               <HeroBox 
                 id = { hero.name }
                 name = { 'femaleIcon' }
@@ -69,8 +36,8 @@ export default function HeroesList({ toggleModal, player }){
               </HeroBox>
             </HeroBoxWrap>
           </HeroesBox>
-        )
-      })}
+        )})
+      }
     </ListBox>
   )
 }

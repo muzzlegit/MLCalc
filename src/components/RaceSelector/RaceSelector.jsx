@@ -6,7 +6,7 @@ import useRace from '../../hooks/useRace';
 //STYLES
 import { SelectorBox, SelectorLabel, Select } from './RaceSelector.styled';
 
-const RaceSelector = () => {
+export default function RaceSelector () {
     const player = useContext( PlayerContext );
     const onRaceChange = useRace( player );
 
@@ -23,5 +23,3 @@ const RaceSelector = () => {
         </SelectorBox>
     )
 };
-
- export default RaceSelector;

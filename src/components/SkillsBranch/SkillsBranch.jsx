@@ -6,18 +6,15 @@ import { Branch } from "./SkillsBranch.styled"
 //CONST
 const skillNumbers = [ '1','2','3','4','5','6','7' ];
 
-export default function SkillsBranch({ branch, player }){
+export default function SkillsBranch({ branch }){
 
   return (
-    <Branch
-      key = { nanoid() }
-    >
+    <Branch key = { nanoid() } >
       {
         skillNumbers.map( skillNumber => {
           return (
             <HeroSkill
               key = { nanoid() }
-              player = { player }
               branch = { branch }
               skillNumber = { skillNumber }
             >

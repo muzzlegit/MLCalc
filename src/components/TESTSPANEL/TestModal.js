@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 //STORE
-import useMainAttacker from '../../data/store/useMainAttacker';
+// import useMainAttacker from '../../data/store/use1MainAttacker';
 
 //COMPONENTS
 import UnitCard from "../../components/UnitCard/UnitCard";
@@ -16,8 +16,8 @@ import { Backdrop, Center } from "./TestsPanel.styled";
 export default function Modal({setToggle}) {
   const modalRoot =document.querySelector(`#modal-root-test`)
 
-  const player = useMainAttacker(state => state.player);
-  const setunit = useMainAttacker(state => state.setUnit);
+  // const player = useMainAttacker(state => state.player);
+  // const setunit = useMainAttacker(state => state.setUnit);
   const onBackdropClick = (e) => {
     if(e.target.title === 'backdrop') setToggle(false);
   }
@@ -49,10 +49,10 @@ export default function Modal({setToggle}) {
         branch={'skillsBranch1'}
         skillNumber={1}
       /> */}
-      <SkillsBranch
+      {/* <SkillsBranch
         role={'mainAttacker'}
         branch={'skillsBranch1'}
-      />
+      /> */}
       </Center>
       </Backdrop>
     </>, modalRoot

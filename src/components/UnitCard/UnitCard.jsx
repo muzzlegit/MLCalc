@@ -2,7 +2,9 @@ import { useContext } from 'react';
 //CONTEXT
 import PlayerContext from '../../helpers/context';
 //HOOKS
+import usePlayerStoreData from '../../hooks/usePlayerStoreData';
 import useUnit from '../../hooks/useUnit';
+import useUnitAmount from '../../hooks/useUnitAmount';
 import useUnitLevel from '../../hooks/useUnitLevel';
 import useUnitImg from '../../hooks/useUnitImg';
 import useCommonImg from '../../hooks/useCommonImg';
@@ -17,15 +19,20 @@ import {
     UnitProperty,
     AddValue
 } from './UnitCard.styled';
-import useUnitAmount from '../../hooks/useUnitAmount';
+
 
 export default function UnitCard({ unitName }) {
     const player = useContext( PlayerContext );
-    console.log('Render UnitCard', player);
+    // console.log('Render UnitCard', player);
+    
+    
     const [ unitLevel, setUnitLevel ] = useUnitLevel( 1 );
     const [ amount, setAmount ] = useUnitAmount( 0 );
-    const unit = useUnit( player, unitLevel, unitName, amount );
-    
+    useUnit( player, unitLevel, unitName, amount );
+    const playerData = usePlayerStoreData( player );
+    const { troops } = playerData;
+    const unit = troops[ unitName ];
+    // if(unitName === 'mage')console.log(unit) ;
     const {
         level, 
         attack,
@@ -41,6 +48,8 @@ export default function UnitCard({ unitName }) {
     const attackIcon = useCommonImg( 'attackIcon' );
     const defenseIcon = useCommonImg( 'defenseIcon' );
     const healthIcon = useCommonImg( 'healthIcon' );
+
+    
 
     return (
         <UnitCardBox>

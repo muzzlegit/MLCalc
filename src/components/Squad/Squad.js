@@ -18,21 +18,17 @@ const troopsArray = [
     'mage' 
 ]
 
-export default function Squad ( ) {
+export default function Squad () {
     console.log('squad render')
     return (
         <SquadBox>
-            {/* <Hero 
-                player = { player }
-            /> */}
+            <Hero />
             <UnitsBox
             >
                 { troopsArray.map(( trooper ) => {
                         return (
-                            <li key = { trooper } >  
-                                <UnitCard
-                                    unitName = { trooper }
-                                />
+                            <li key = { nanoid() } >  
+                                <UnitCard unitName = { trooper } />
                             </li>
                         )
                     })

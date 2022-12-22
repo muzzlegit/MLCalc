@@ -1,6 +1,5 @@
 
 import { nanoid } from "nanoid";
-
 //DATA
 import heroesData from '../../data/Heroes.json';
 import commonAssets from '../../data/CommonAssets.json';
@@ -12,30 +11,18 @@ import commonAssetsImg from '../../img/common/CommonAssets.png';
 import heroSkillsImg from '../../img/common/heroSkills.png';
 //STYLES
 import { BranchesBox, BranchBox, SkillsBranch, SkillBox, Skill, ButtonAdd } from "./BranchesList.styled";
+import useAddHeroBranch from "../../hooks/useAddHeroBranch";
 
 
 export default function BranchesList({ player, branch, toggleModal }) {
     const playerData = usePlayerStoreData( player );
-    const playerFunctions = usePlayerStoreFunctions( player );
+    const addBranch = useAddHeroBranch( player, branch, toggleModal);
+
   //CONSTS
   const {
     hero
   } = playerData;
-  const {
-    setHeroBranchesId,
-    setHeroSkillsBranch
-  } = playerFunctions;
   const skillNumbers = ['1','2','3','4','5','6','7'];
-
-  //HANDLES FUNCTIONS
-  const onAddButtonClick = ( e ) => {
-    setHeroSkillsBranch(
-      branch,
-      heroesData.find( hero => hero.id === e.currentTarget.id ).skills
-    );
-    setHeroBranchesId( branch, e.currentTarget.id );
-    toggleModal();
-  }
 
   return (
     <BranchesBox>
@@ -69,7 +56,7 @@ export default function BranchesList({ player, branch, toggleModal }) {
               id={ item.id }
               title={ 'Добавить' }
               type='button'
-              onClick={ onAddButtonClick }
+              onClick={ ( e ) => { addBranch( e.currentTarget.id) } }
             >
               Добавить
             </ButtonAdd>

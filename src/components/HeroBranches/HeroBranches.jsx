@@ -1,51 +1,37 @@
-import { useState } from "react";
+import { useContext } from "react";
+//CONTEXT
+import PlayerContext from '../../helpers/context';
 //COMPONENTS
-import Modal from "../../components/Modal/Modal";
-import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
+import Modal from "../Modal/Modal";
+import SkillsBranch from "../SkillsBranch/SkillsBranch";
 import BranchesList from "../BranchesList";
 //HOOKS
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
-import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
-
+import useCommonImg from "../../hooks/useCommonImg";
+import useModalToggle from "../../hooks/useModalToggle";
+import useHeroBranchesList from "../../hooks/useHeroBranchesList";
 //STYLES
 import { BranchesBox, BranchWrap, ButtonsWrap, Button } from "./HeroBranches.tyled";
-import useCommonImg from "../../hooks/useCommonImg";
+import useRemoveHeroBranch from "../../hooks/useRemoveHeroBranch";
 
 
-export default function HeroBranches({ player }) {
+
+export default function HeroBranches() {
+  const player = useContext( PlayerContext );
   const playerData = usePlayerStoreData( player );
-  const playerFunctions = usePlayerStoreFunctions( player );
-  const [ showModal, setShowModal ] = useState( false );
-  const [ branch, setBranch ] = useState( '' );
+  const [ showModal, toggleModal ] = useModalToggle( false );
+  const [ currentBranch, openBranchesList ] = useHeroBranchesList( player, toggleModal )
+  const removeBranch = useRemoveHeroBranch( player );
 
   //CONSTS
   const {
     hero
   } = playerData;
   const { skillsBranch1, skillsBranch2, skillsBranch3 } = hero;
-  const {
-    setHeroSkillsBranch,
-    setHeroBranchesId,
-  } = playerFunctions;
+ 
   const addButtonImg = useCommonImg( 'addButton' );
   const removeButtonImg = useCommonImg( 'removeButton' );
   const choiceButtonImg = useCommonImg( 'choiceButton' );
-
-  //HANLE FICTIONS
-  const toggleModal = () => {
-    setShowModal( !showModal );
-  }
-
-  const addBranch = ( e ) => {
-    setBranch( e.currentTarget.name );
-    toggleModal();
-  }
-  
-  const removeBranch = ( e ) => {
-    const currentBranch = e.currentTarget.name;
-    setHeroSkillsBranch( currentBranch, false );
-    setHeroBranchesId( currentBranch, false );
-  }
 
   return(
     <>
@@ -54,10 +40,7 @@ export default function HeroBranches({ player }) {
           marginTop = { '28px' }
         >
         {
-          <SkillsBranch
-            player = { player }
-            branch = { 'skillsBranch1' }
-          />
+          <SkillsBranch branch = { 'skillsBranch1' } />
         }
         </BranchWrap>
         <BranchWrap>
@@ -66,7 +49,7 @@ export default function HeroBranches({ player }) {
               type = 'button'
               title = { !skillsBranch2 ? 'Добавить' : 'Изменить' }
               name = "skillsBranch2"
-              onClick = { addBranch }
+              onClick = { openBranchesList }
               background = { !skillsBranch2 ? addButtonImg : choiceButtonImg }
               filter = { !skillsBranch1 ? 'grayscale(100%) brightness(70%)': null }
               disabled = { skillsBranch1 ? false : true }
@@ -77,7 +60,7 @@ export default function HeroBranches({ player }) {
                 type = 'button'
                 title = 'Удалить'
                 name = "skillsBranch2"
-                onClick = { removeBranch }
+                onClick = { ( e ) => { removeBranch( e.currentTarget.name ) } }
                 background = { removeButtonImg }
               >
               </Button>
@@ -96,7 +79,7 @@ export default function HeroBranches({ player }) {
             type = 'button'
             title = { !skillsBranch2 ? 'Добавить' : 'Изменить' }
             name = "skillsBranch3"
-            onClick = { addBranch }
+            onClick = { openBranchesList }
             background = { !skillsBranch3 ? addButtonImg : choiceButtonImg }
             filter = { !skillsBranch2 ? 'grayscale(100%) brightness(70%)': null }
             disabled = { skillsBranch2 ? false : true }
@@ -107,7 +90,7 @@ export default function HeroBranches({ player }) {
                 type = 'button'
                 title = 'Удалить'
                 name = "skillsBranch3"
-                onClick = { removeBranch }
+                onClick = { ( e ) => { removeBranch( e.currentTarget.name ) }  }
                 background = { removeButtonImg }
               >
               </Button>
@@ -128,7 +111,7 @@ export default function HeroBranches({ player }) {
         >
           <BranchesList
             player = { player }
-            branch = { branch }
+            branch = { currentBranch }
             toggleModal = { toggleModal }
           />
         </Modal>
