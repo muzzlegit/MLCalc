@@ -10,8 +10,10 @@ import TowersSelector from "../../components/TowersSelector/TowersSelector";
 import HeroDall from "../HeroDoll/HeroDoll";
 import HeroSkill from "../../components/HeroSkill/HeroSkill";
 import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
+import CloseButton from "../CloseButton/CloseButton";
 //STYLES
 import { Backdrop, Center } from "./TestsPanel.styled";
+
 
 export default function Modal({setToggle}) {
   const modalRoot =document.querySelector(`#modal-root-test`)
@@ -53,6 +55,7 @@ export default function Modal({setToggle}) {
         role={'mainAttacker'}
         branch={'skillsBranch1'}
       /> */}
+      <CloseButton/>
       </Center>
       </Backdrop>
     </>, modalRoot

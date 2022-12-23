@@ -69,5 +69,6 @@
     "removeIcon": "-26px -157px",
     "addButton": "-173px -153px",
     "removeButton": "-173px -115px",
-    "choiceButton": "-173px -134px"
+    "choiceButton": "-173px -134px",
+    "closeWindowButton": "-173px -172px"
 }

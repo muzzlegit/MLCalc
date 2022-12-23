@@ -13,6 +13,7 @@ import useDallArtefacts from "../../hooks/useDallArtefacts";
 //STYLES
 import { Wrap, DollWrap, BranchesWrap, HeroWrap, HeroBox, ArttefactWrap} from "./HeroDoll.styled"
 import useCommonImg from "../../hooks/useCommonImg";
+import CloseButton from "../CloseButton/CloseButton";
 
 //COSTS
 const ARTS = [
@@ -30,7 +31,7 @@ const ARTS = [
   { place: 'leftHand', top: '400px', left: '200px', art: false },
 ]
 
-export default function HeroDall({ player }){
+export default function HeroDall({ player, toggleModal }){
   const playerData = usePlayerStoreData( player );
   const [ heroImg, heroBackground ] = useHeroImg( player );
   const [ heroesListModal, setHeroesListModal ] = useState( false );
@@ -63,6 +64,11 @@ export default function HeroDall({ player }){
 
   return (
     <Wrap>
+      <CloseButton
+        closeButtonFn = { toggleModal }
+        top = { 0 }
+        right = { 0 }
+      />
       <DollWrap>
         <HeroWrap
           onClick = { toggleHeroesListModal }

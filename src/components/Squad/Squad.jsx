@@ -19,7 +19,6 @@ const troopsArray = [
 ]
 
 export default function Squad () {
-    console.log('squad render')
     return (
         <SquadBox>
             <Hero />

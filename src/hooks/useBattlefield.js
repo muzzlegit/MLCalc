@@ -32,7 +32,7 @@ export default function useBattlefield( defaultValue) {
 
   //HANDLE FUNCTION
   const onChange = ( e ) => {
-    setBattlefield( e.target.value )
+    setBattlefield( e.target.value );
   };
 
   //USE EFFECTS
@@ -43,7 +43,7 @@ export default function useBattlefield( defaultValue) {
       } 
       else 
       {
-        setUnitProperty( "mainAttacker", { ...BUFF, value: 0 });
+        setUnitProperty( "mainAttacker", { ...BUFF, value: 0 } );
       }
   }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, setUnitProperty ]);
 
@@ -54,7 +54,7 @@ export default function useBattlefield( defaultValue) {
       } 
       else 
       {
-        setUnitProperty( "mainDefender", { ...BUFF, value: 0 });
+        setUnitProperty( "mainDefender", { ...BUFF, value: 0 } );
       }
   }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, setUnitProperty ]);
 

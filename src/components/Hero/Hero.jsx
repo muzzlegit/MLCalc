@@ -2,8 +2,8 @@ import { useContext } from "react";
 //CONTEXT
 import PlayerContext from '../../helpers/context';
 //COMPONENTS
-import Modal from "../../components/Modal/Modal";
-import HeroBox from "../../components/HeroBox/HeroBox";
+import Modal from "../Modal/Modal";
+import HeroBox from "../HeroBox/HeroBox";
 import HeroDoll from "../HeroDoll/HeroDoll";
 //HOOKS
 import useModalToggle from "../../hooks/useModalToggle";
@@ -25,7 +25,7 @@ export default function Hero () {
           level = { 1 }
           toggleModal= { toggleModal }
         >
-          <HeroDoll player = { player } />
+          <HeroDoll player = { player } toggleModal= { toggleModal } />
         </Modal>
       }
     </>

@@ -5,7 +5,6 @@ import heroesData from '../../data/Heroes.json';
 import commonAssets from '../../data/CommonAssets.json';
 //HOOKS
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
-import usePlayerStoreFunctions from "../../hooks/usePlayerStoreFunctions";
 //IMG
 import commonAssetsImg from '../../img/common/CommonAssets.png';
 import heroSkillsImg from '../../img/common/heroSkills.png';
@@ -26,37 +25,36 @@ export default function BranchesList({ player, branch, toggleModal }) {
 
   return (
     <BranchesBox>
-      { heroesData.map(item => {
+      { heroesData.map( item => {
         if((item.id === hero.branchesId.skillsBranch1 
           || item.id === hero.branchesId.skillsBranch2
           || item.id === hero.branchesId.skillsBranch3 )) return  null;
         return (
-          <BranchBox key={item.id}>
+          <BranchBox key={ item.id }>
             <p>{item.name}</p>
             <SkillsBranch>
-              {skillNumbers.map(number => {
+              { skillNumbers.map(number => {
                 return (
                   <SkillBox 
-                    background={ `url(${ commonAssetsImg }) ${ item.skills[number].type=== 'spell' ? commonAssets.heroSpellIcon : commonAssets.heroSkillIcon }` }
+                    background={ `url(${ commonAssetsImg }) ${ item.skills[ number ].type=== 'spell' ? commonAssets.heroSpellIcon : commonAssets.heroSkillIcon }` }
                     key={ nanoid() }
                   >
                   { hero.checker ?
                     <Skill
-                      background={ `url(${ heroSkillsImg }) ${ item.skills[number].icon }` }
-                      filter = { item.skills[number].battle ? 'none' : 'grayscale(100%) brightness(70%)' }
+                      background = { `url(${ heroSkillsImg }) ${ item.skills[ number ].icon }` }
+                      filter = { item.skills[ number ].battle ? 'none' : 'grayscale(100%) brightness(70%)' }
                     >
                     </Skill>
                   : null }
                   </SkillBox> 
-                )
-              })
+                )})
               }
             </SkillsBranch>
             <ButtonAdd
-              id={ item.id }
-              title={ 'Добавить' }
-              type='button'
-              onClick={ ( e ) => { addBranch( e.currentTarget.id) } }
+              id = { item.id }
+              title = { 'Добавить' }
+              type = 'button'
+              onClick = { ( e ) => { addBranch( e.currentTarget.id) } }
             >
               Добавить
             </ButtonAdd>
