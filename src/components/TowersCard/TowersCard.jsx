@@ -12,7 +12,7 @@ import useTowersList from '../../hooks/useTowersList';
 
 export default function TowersCard () {
     const player = useContext( PlayerContext );
-    const playerData = usePlayerStoreData( player )
+    const playerData = usePlayerStoreData( player );
     const [ onTowerClick, onFortificationClick  ] = useTowersList( player );
 
     const towerImg = useRaceCommonImg( player, 'tower' );

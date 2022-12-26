@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import usePlayerStoreData from "./usePlayerStoreData";
 
 //COSTS
 const ARTS = [
@@ -16,17 +17,19 @@ const ARTS = [
   { place: 'leftHand', top: '400px', left: '200px', art: false },
 ]
 
-export default function useDallArtefacts( artefacts ) {
+export default function useDallArtefacts( player ) {
   const [ dallArts, setDallArts ] = useState( ARTS );
+  const playerData = usePlayerStoreData( player );
+  const { artefacts: heroArtefacts } = playerData;
 
   //USE EFFECTS
   useEffect(() => {
     const artsArr = ARTS.map( art => {
-      return  artefacts.find( item =>  item.place === art.place ) ? 
-        { ...art, art: artefacts.find( item =>  item.place === art.place )} : art 
+      return  heroArtefacts.find( item =>  item.place === art.place ) ? 
+        { ...art, art: heroArtefacts.find( item =>  item.place === art.place )} : art 
       });
       setDallArts( artsArr );
-  }, [ artefacts ])
+  }, [ heroArtefacts ])
 
   return dallArts;
 }

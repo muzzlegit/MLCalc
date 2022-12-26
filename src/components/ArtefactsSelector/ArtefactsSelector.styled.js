@@ -2,66 +2,114 @@ import styled from '@emotion/styled';
 
 export const SelectorsBox = styled.div(
   {
+    position: 'relative',
+    padding: '8px 20px',
     height: '600px',
     width: '500px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'start',
+    gap: '40px',
     borderRadius: '4px',
     backgroundColor: '#111728',
   }
 );
-export const SelectedArtefact = styled.div(
-  { 
-    position: 'relative',
-    height: '62px',
-    width: '62px',
-    backgroundColor: '#8397a7',
-    outline: '1px solid tomato'
-  },
-  props => ({
-    background: props.background,
-  }),
-);
-export const SelectButton = styled.button(
+export const SelectedArtefactWrap = styled.div(
   { 
     position: 'absolute',
-    bottom: '0',
-    rigth: '0',
-    transform: 'translate(100%, 50%)',
-    height: '20px',
-    width: '20px',
-    border: '1px solid #ddddbd',
-    borderRadius: '50%',
-    backgroundColor: '#8397a7'
+    transform: 'translate( 50%, -50% )',
+    height: '135px',
+    width: '135px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '2px',
   },
   props => ({
     background: props.background,
+    top: props.top,
+    right: props.right,
   }),
+);
+export const SelectedArtefact = styled.div(
+  { 
+    position: 'absolute',
+    top: '55%',
+    right: '52%',
+    transform: 'translate(50%, -50%)',
+    height: '62px',
+    width: '62px',
+  },
+  props => ({
+    background: props.background,
+  })
+);
+export const PerfectIcon = styled.div(
+  {
+    position: 'absolute',
+    top: '28px',
+    right: '16px',
+    transform: 'translate(50%, -50%)',
+    height: '26px',
+    width: '25px',
+  },
+  props => ({
+    background: props.background,
+    filter: props.filter ? null : 'grayscale(100%) brightness(70%)',
+
+  })
+);
+export const ArtefactsListWrap = styled.div(
+  { 
+    position: 'absolute',
+    transform: 'translate( 50%, -50% )',
+    padding: '4px',
+    height: '320px',
+    width: '140px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '8px',
+    borderRadius: '4px',
+    backgroundColor: '#294b77'
+  },
+  props => ({
+    top: props.top,
+    right: props.right,
+  })
 );
 export const ArtefactsList = styled.ul(
   { 
     padding: '4px',
-    // height: '240px',
-    width: '72px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: '282px',
+    width: '80px',
     overflow: 'scroll',
-    border: '1px solid #ddddbd',
     borderRadius: '4px',
-    backgroundColor: '#8397a7'
+
   }
 );
-export const ArtefactImg = styled.li(
+export const ArtefactBackgraund = styled.li(
+  { 
+    marginBottom: '6px',
+    height: '62px',
+    width: '62px',
+    borderRadius: '6px',
+    backgroundColor: '#294b77',
+    boxShadow: '0px 0px 2px 2px rgba(221, 221, 189, .5)',
+    '&:hover': {
+      cursor: 'pointer',
+      backgroundColor: '#111728',
+    }
+  }
+);
+export const ArtefactImg = styled.div(
   { 
     height: '62px',
     width: '62px',
-    border: '1px solid #ddddbd',
-    backgroundColor: '#8397a7',
-    '&:hover': {
-      cursor: 'pointer',
-    }
+    borderRadius: '6px',
+    backgroundColor: '#111728',
   },
   props => ({
     background: props.background,
-  }),
+  })
 );

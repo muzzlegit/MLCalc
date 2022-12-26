@@ -1,2 +1,4 @@
-import ArtefactsFilters from './ArtefactsFilters';
-export default ArtefactsFilters;
+import ArtefactTypeFilter from './ArtefactTypeFilter';
+import ArtefactsLevelFilter from './ArtefactsLevelFilter';
+
+export { ArtefactTypeFilter, ArtefactsLevelFilter };

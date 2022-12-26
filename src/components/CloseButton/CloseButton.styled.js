@@ -5,7 +5,7 @@ export const ButtonBox = styled.div(
     position: 'absolute',
     top: '0',
     right: '0',
-    transform: 'translate(100%, -100%)',
+    transform: 'translate(50%, -50%)',
     // transform: 'translate(50%, -50%)',
     width: '26px',
     height: '26px',

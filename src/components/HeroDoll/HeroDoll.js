@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { nanoid } from "nanoid";
+//CONTEXT
+import PlayerContext from '../../helpers/context';
 //COMPONENTS
 import Modal from "../Modal/Modal";
 import ArtCell from '../ArtCell';
@@ -14,47 +16,26 @@ import useDallArtefacts from "../../hooks/useDallArtefacts";
 import { Wrap, DollWrap, BranchesWrap, HeroWrap, HeroBox, ArttefactWrap} from "./HeroDoll.styled"
 import useCommonImg from "../../hooks/useCommonImg";
 import CloseButton from "../CloseButton/CloseButton";
+import useModalToggle from "../../hooks/useModalToggle";
 
-//COSTS
-const ARTS = [
-  { place: 'head', top: '80px', left: '110px', art: false },
-  { place: 'armor', top: '180px', left: '110px', art: false },
-  { place: 'belt', top: '280px', left: '110px', art: false },
-  { place: 'pants', top: '380px', left: '110px', art: false },
-  { place: 'boots', top: '480px', left: '110px', art: false },
-  { place: 'neck', top: '130px', left: '20px', art: false },
-  { place: 'bracers', top: '230px', left: '20px', art: false },
-  { place: 'ring', top: '330px', left: '20px', art: false },
-  { place: 'rightHand', top: '430px', left: '20px', art: false },
-  { place: 'bag', top: '200px', left: '200px', art: false },
-  { place: 'back', top: '300px', left: '200px', art: false },
-  { place: 'leftHand', top: '400px', left: '200px', art: false },
-]
 
-export default function HeroDall({ player, toggleModal }){
+export default function HeroDall({ toggleModal }){
+  const player = useContext( PlayerContext );
+  const dallArts = useDallArtefacts( player );
   const playerData = usePlayerStoreData( player );
+  const [ heroesListModal, toggleHeroesListModal ] = useModalToggle( false );
+  const [ artefactstModal, toggleArtefactstModal ] = useModalToggle( false );
   const [ heroImg, heroBackground ] = useHeroImg( player );
-  const [ heroesListModal, setHeroesListModal ] = useState( false );
-  const [ artefactstModal, setArtefactsModal ] = useState( false );
+
   const [ currentArtefactId, setCurrentArtefactId ] = useState( false );
   const [ currentArtefactPlace, setCurrentArtefactPlace ] = useState( false );
- 
+
   //CONSTS
   const {
-    hero,
-    artefacts,
+    hero
   } = playerData;
   const artFrameImg = useCommonImg( 'artFrame' );
-  const dallArts = useDallArtefacts( artefacts );
-
-  //HANDLE FUNCTIONS
-  const toggleHeroesListModal = () => {
-    setHeroesListModal( prev => !prev );
-  }
-
-  const toggleArtefactstModal = () => {
-    setArtefactsModal( prev => !prev );
-  } 
+  
 
   const openArtefactsWindow = ( e ) => {
     e.currentTarget.id === '' ? setCurrentArtefactId( false ) : setCurrentArtefactId( e.currentTarget.id );
@@ -66,13 +47,11 @@ export default function HeroDall({ player, toggleModal }){
     <Wrap>
       <CloseButton
         closeButtonFn = { toggleModal }
-        top = { 0 }
-        right = { 0 }
+        top = { '-12px' }
+        right = { '24px' }
       />
       <DollWrap>
-        <HeroWrap
-          onClick = { toggleHeroesListModal }
-        >
+        <HeroWrap onClick = { toggleHeroesListModal } >
           <HeroBox
             background = { hero.checker ? heroImg : heroBackground }
             title = { hero.name }
@@ -86,7 +65,7 @@ export default function HeroDall({ player, toggleModal }){
                 key = { nanoid() }
                 id = { art.art.id }
                 title = { art.art.name ? art.art.name : art.place }
-                name = { art.art.place ? art.art.place : art.place }
+                name = { art.place }
                 onClick = { openArtefactsWindow }
                 top = { art.top }
                 left = { art.left }
@@ -102,19 +81,14 @@ export default function HeroDall({ player, toggleModal }){
         }
       </DollWrap>
       <BranchesWrap>
-        <HeroBranches
-          player = { player }
-        />
+        <HeroBranches />
       </BranchesWrap>
       { heroesListModal &&
         <Modal
           level = { 1 }
           toggleModal = { toggleHeroesListModal }
         >
-          <HeroesList
-            player = { player }
-            toggleModal = { toggleHeroesListModal }
-          />
+          <HeroesList toggleModal = { toggleHeroesListModal } />
         </Modal>
       }
       { artefactstModal &&

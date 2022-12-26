@@ -4,21 +4,13 @@ export const FilterBox = styled.div(
   {
     padding: '8px',
     display: 'inline-flex',
-    // flexDirection: 'column',
+    flexDirection: 'column',
     justifyItems: 'center',
     alignItems: 'center',
     gap: '6px',
     borderRadius: '4px',
     backgroundColor: '#294b77',
     color: '#ddddbd',
-  }
-);
-export const ButtonsBox = styled.div(
-  {
-    display: 'flex',
-    justifyItems: 'center',
-    alignItems: 'center',
-    gap: '6px',
   }
 );
 export const ButtonItem = styled.button(

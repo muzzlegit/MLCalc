@@ -35,7 +35,68 @@ const useState = create( devtools(immer( (set, get) => ({
     hero: {
       checker: false,
     },
-    artefacts: [],
+    artefacts: [ {
+      "id": "lpGc5K4F",
+      "level": 4,
+      "ancient": true,
+      "perfect": false,
+      "name": "Броня стрелков",
+      "place": "armor",
+      "set": "Мастер-исследователь",
+      "value": {
+        "common": [
+          {
+            "id": "lpGc5K4F",
+            "name": "Броня стрелков",
+            "effect": "player",
+            "unit": ["archer"],
+            "property": "healthArr",
+            "childProperty": "healthRate",
+            "description": "Здоровье Стрелков +45%",
+            "value": 0.45
+          }
+        ],
+        "ancient": [
+          {
+            "id": "lpGc5K4F",
+            "name": "Броня стрелков",
+            "effect": "player",
+            "unit": ["archer"],
+            "property": "healthArr",
+            "childProperty": "healthRate",
+            "description": "Здоровье Стрелков +54%",
+            "value": 0.54
+          }
+        ],
+        "perfect": [
+          {
+            "id": "lpGc5K4F",
+            "name": "Броня стрелков",
+            "effect": "player",
+            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+            "property": "",
+            "childProperty": "",
+            "description": "Эффективность уничтожения войск на укреплениях +200%",
+            "value": 2
+          },
+          {
+            "id": "lpGc5K4F",
+            "name": "Броня стрелков",
+            "effect": "player",
+            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+            "property": "healthArr",
+            "childProperty": "healthRate",
+            "description": "Здоровье всех войск +12%",
+            "value": 0.12
+          }
+        ]
+      },
+      "icon": "-931px -249px",
+      "battle": true,
+      "homeLand": "all",
+      "runes": [],
+      "sharpening": []
+    }],
     attackRateIndex: 'Min',
     troops: {
       porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
@@ -61,7 +122,128 @@ const useState = create( devtools(immer( (set, get) => ({
     hero: {
       checker: false,
     },
-    artefacts: [],
+    artefacts: [  {
+      "id": "0nUpNrRL",
+      "level": 5,
+      "ancient": false,
+      "perfect": false,
+      "name": "Кольчуга Головореза",
+      "place": "armor",
+      "set": "Головорез",
+      "value": {
+        "common": [
+          {
+            "id": "0nUpNrRL",
+            "name": "Кольчуга Головореза",
+            "effect": "player",
+            "unit": ["swordsman", "cavalier", "flying", "archer"],
+            "property": "healthArr",
+            "childProperty": "healthRate",
+            "description": "Здоровье воинов, всадников, летунов, стрелков своих +55%",
+            "value": 0.55 
+          }
+        ],
+        "ancient": [
+          {
+            "id": "0nUpNrRL",
+            "name": "Кольчуга Головореза",
+            "effect": "player",
+            "unit": ["swordsman", "cavalier", "flying", "archer"],
+            "property": "healthArr",
+            "childProperty": "healthRate",
+            "description": "Здоровье воинов, всадников, летунов, стрелков своих +66%",
+            "value": 0.66 
+          }
+        ],
+        "perfect": [
+          {
+            "id": "0nUpNrRL",
+            "name": "Кольчуга Головореза",
+            "effect": "player",
+            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+            "property": "",
+            "childProperty": "",
+            "description": "Эффективность уничтожения войск на укреплениях +300%",
+            "value": 3 
+          },
+          {
+            "id": "0nUpNrRL",
+            "name": "Кольчуга Головореза",
+            "effect": "player",
+            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+            "property": "healthArr",
+            "childProperty": "healthRate",
+            "description": "Здоровье всех войск +15%",
+            "value": 0.15
+          }
+        ]
+      },
+      "icon": "-187px -249px",
+      "battle": true,
+      "homeLand": "all",
+      "runes": [],
+      "sharpening": []
+    },  
+    {
+      "id": "TfpRJXSq",
+      "level": 5,
+      "ancient": "none",
+      "perfect": false,
+      "name": "Пояс Головореза",
+      "place": "belt",
+      "set": "Головорез",
+      "value": {
+        "common": [
+          {
+            "id": "TfpRJXSq",
+            "name": "Пояс Головореза",
+            "effect": "player",
+            "unit": [],
+            "property": "",
+            "childProperty": "",
+            "description": "",
+            "value": 0
+          },
+          {
+            "id": "TfpRJXSq",
+            "name": "Пояс Головореза",
+            "effect": "enemy",
+            "unit": [],
+            "property": "",
+            "childProperty": "",
+            "description": "",
+            "value": 0
+          }
+        ],
+        "perfect": [
+          {
+            "id": "TfpRJXSq",
+            "name": "Пояс Головореза",
+            "effect": "player",
+            "unit": [],
+            "property": "",
+            "childProperty": "",
+            "description": "",
+            "value": 0
+          },
+          {
+            "id": "TfpRJXSq",
+            "name": "Пояс Головореза",
+            "effect": "player",
+            "unit": [],
+            "property": "",
+            "childProperty": "",
+            "description": "",
+            "value": 0
+          }
+        ]
+      },
+      "icon": "-187px -435px",
+      "battle": false,
+      "homeLand": "all",
+      "runes": [],
+      "sharpening": []
+    },],
     attackRateIndex: 'Min',
     troops: {
       porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
