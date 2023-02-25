@@ -6,27 +6,25 @@ import usePlayerStoreData from './usePlayerStoreData';
 //HELPERS
 import isArtefact from '../helpers/isArtefact';
 
-export default function useCurrentArtefact( player, place, filter ) {
+export default function useCurrentArtefact( player, place, filter, onTypeClick ) {
   const playerData = usePlayerStoreData( player );
   const { artefacts } = playerData;
   const [ currentArtefact, setCurrentArtefact ] = useState( isArtefact( place, artefacts ) );
-
+ 
   const getCurrentArtefact = ( id, filter ) => {
-    const [ newArtefact ] = artefatctsData.filter( artefatct => artefatct.id === id);
-    const newValue = ( !filter.ancient || filter.ancient === 'none' ? newArtefact.value.common : newArtefact.value.ancient );
+    const [ newArtefact ] = artefatctsData.filter( artefatct => artefatct.id === id );
+    const newValue = ( !filter.ancient || newArtefact.ancient === "none" ? newArtefact.value.common : newArtefact.value.ancient );
+    if( filter.perfect ) newValue.push( ...newArtefact.value.perfect );
     const artefact = { 
       ...newArtefact,
       perfect: filter.perfect,
-      ancient: filter.ancient,
+      ancient: newArtefact.ancient === "none" ? "none" : filter.ancient,
       value: newValue
     };
+    if( artefact.ancient === "none" ) onTypeClick( "none", artefact );
     setCurrentArtefact( artefact );
+    
   };
-
-  //USE EFFECT
-  useEffect( () => {
-    setCurrentArtefact( prev => ({ ...prev, ancient: filter.ancient , perfect: filter.perfect}) );
-   }, [ filter.ancient, filter.perfect ]);
 
   return [ currentArtefact, getCurrentArtefact ];
 };

@@ -1,10 +1,10 @@
 //STYLES
+import { useEffect } from "react";
 import { FilterBox, ButtonsBox, ButtonItem } from "./ArtefactsFilters.styled";
 
 
 
-export default function ArtefactTypeFilter({ filter, onTypeClick, onPerfectClick }) {
-
+export default function ArtefactTypeFilter({ filter, onTypeClick, onPerfectClick, currentArtefact }) {
   const { ancient, perfect } = filter;
 
   return (
@@ -13,14 +13,14 @@ export default function ArtefactTypeFilter({ filter, onTypeClick, onPerfectClick
         <ButtonsBox>
           <ButtonItem
             id = "common"
-            onClick = { onTypeClick }
+            onClick = { ( e ) => { onTypeClick( e.target.id, currentArtefact ) } }
             checked = { !ancient }
           >
             Обычный
           </ButtonItem>
           <ButtonItem 
             id = "ancient"
-            onClick = { onTypeClick }
+            onClick = { ( e ) => { onTypeClick( e.target.id, currentArtefact ) } }
             checked = { ancient }
           >
             Древний

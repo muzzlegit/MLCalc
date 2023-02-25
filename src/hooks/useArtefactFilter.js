@@ -17,9 +17,12 @@ export default function useArtefactFilter( player, place ) {
   const onLevelClick = ( e ) => {
     setArtLevel( e.currentTarget.value );
   }
-  const onTypeClick =() => {
-    setAncientArt( prev => !prev );
+  const onTypeClick = ( value, artefact ) => {
+    if( value === "common" && ancientArt && artefact.ancient !== "none"   ) { setAncientArt( false ) };
+    if( value === "ancient" && !ancientArt && artefact.ancient !== "none" ) {  setAncientArt( true ) };
+    if( value === "none" && artefact.ancient === "none" )setAncientArt( false );
   }
+
   const onPerfectClick = () => {
     setPerfectArt( prev => !prev );
   }

@@ -12,12 +12,12 @@ body {
 }
 .l {
     width: 100%;
-    color: 	#111728;
+    color: 	#111728; /*rgba(17, 23, 40, 1)*/
     color: 	#294b77; /*rgba(41, 75, 119, 1)*/
 
     color: 	#8397a7; /*rgba(131, 151, 167, 1)*/
 
-    color: 	#89abad; /* text */
+    color: 	#89abad; /* text rgba(137, 171, 173, 1) */
     color: 	#ddddbd; /* text rgba(221, 221, 189, 1)*/
     color:  #bb0a01; /*rgba(187, 10, 1, .8)*/
 

@@ -38,8 +38,8 @@ export default function ArtefactsSelector({ place, toggleModal }){
   const player = useContext( PlayerContext );
   const playerData = usePlayerStoreData( player );
   const playerFunctions = usePlayerStoreFunctions();
-  const [ filter, onLevelClick, onTypeClick, onPerfectClick ] = useArtefactFilter( player, place );
-  const [ currentArtefact, getCurrentArtefact ] = useCurrentArtefact( player, place, filter );
+  const [ filter, onLevelClick, onTypeClick, onPerfectClick] = useArtefactFilter( player, place );
+  const [ currentArtefact, getCurrentArtefact ] = useCurrentArtefact( player, place, filter, onTypeClick );
 
 
   const [ isArtefactsListOpen, setIsArtefactsListOpen ] = useModalToggle( false );
@@ -78,7 +78,10 @@ export default function ArtefactsSelector({ place, toggleModal }){
       <SelectedArtefactWrap
         top = { '50%' }
         right = { '50%' }
-        background = { `${ artefactWindowImg } ${ filter.ancient ? ',radial-gradient(circle at center, orange 20% , #111728 60% )': '' }` }
+        background = { 
+          `${ filter.ancient ? 
+          'radial-gradient(circle at center, orange 20% , #111728 50% )' :
+          'radial-gradient(circle at center, #89abad 20% , #111728 50% )' }` }
       >
         <SelectedArtefact
             background={ currentArtefact ? getArtefactImg( currentArtefact.icon ) : null }
@@ -119,7 +122,8 @@ export default function ArtefactsSelector({ place, toggleModal }){
       <ArtefactTypeFilter
         filter = { filter }
         onTypeClick = { onTypeClick }
-        onPerfectClick = { onPerfectClick }      
+        onPerfectClick = { onPerfectClick }
+        currentArtefact = { currentArtefact }    
       />
       <CloseButton
         closeButtonFn = { toggleModal }

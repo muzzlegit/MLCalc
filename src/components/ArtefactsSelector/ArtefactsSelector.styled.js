@@ -23,7 +23,8 @@ export const SelectedArtefactWrap = styled.div(
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: '2px',
+    borderRadius: '6px',
+    boxShadow: '0px 0px 4px 4px rgba(221, 221, 189, .5)',
   },
   props => ({
     background: props.background,
@@ -33,10 +34,6 @@ export const SelectedArtefactWrap = styled.div(
 );
 export const SelectedArtefact = styled.div(
   { 
-    position: 'absolute',
-    top: '55%',
-    right: '52%',
-    transform: 'translate(50%, -50%)',
     height: '62px',
     width: '62px',
   },
@@ -64,14 +61,14 @@ export const ArtefactsListWrap = styled.div(
     position: 'absolute',
     transform: 'translate( 50%, -50% )',
     padding: '4px',
-    height: '320px',
-    width: '140px',
+    height: '360px',
+    width: '150px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '8px',
     borderRadius: '4px',
-    backgroundColor: '#294b77'
+    backgroundColor: '#294b77',
   },
   props => ({
     top: props.top,
@@ -81,9 +78,9 @@ export const ArtefactsListWrap = styled.div(
 export const ArtefactsList = styled.ul(
   { 
     padding: '4px',
-    height: '282px',
-    width: '80px',
-    overflow: 'scroll',
+    height: '340px',
+    width: '90px',
+    overflowY: 'scroll',
     borderRadius: '4px',
 
   }
@@ -94,11 +91,11 @@ export const ArtefactBackgraund = styled.li(
     height: '62px',
     width: '62px',
     borderRadius: '6px',
-    backgroundColor: '#294b77',
-    boxShadow: '0px 0px 2px 2px rgba(221, 221, 189, .5)',
+    backgroundColor: '#89abad',
+    // border: '1px solid #89abad',
     '&:hover': {
       cursor: 'pointer',
-      backgroundColor: '#111728',
+      boxShadow: '0px 0px 2px 2px rgba(131, 151, 167, 1)',
     }
   }
 );
