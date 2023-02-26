@@ -9,7 +9,6 @@ import usePlayerStoreFunctions from '../../hooks/usePlayerStoreFunctions';
 import useModalToggle from '../../hooks/useModalToggle';
 import useCommonImg from '../../hooks/useCommonImg';
 import useArtefactsImg from '../../hooks/useArtefactsImg';
-import useSetArtefact from '../../hooks/useCurrentArtefact';
 import useCurrentArtefact from '../../hooks/useCurrentArtefact';
 import useArtefactFilter from '../../hooks/useArtefactFilter';
 //COMPONENTS
@@ -39,12 +38,12 @@ export default function ArtefactsSelector({ place, toggleModal }){
   const playerData = usePlayerStoreData( player );
   const playerFunctions = usePlayerStoreFunctions();
   const [ filter, onLevelClick, onTypeClick, onPerfectClick] = useArtefactFilter( player, place );
-  const [ currentArtefact, getCurrentArtefact ] = useCurrentArtefact( player, place, filter, onTypeClick );
+  const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
 
 
   const [ isArtefactsListOpen, setIsArtefactsListOpen ] = useModalToggle( false );
 
-  const [selectedArtefact, setSelectedArtefact] = useState({});
+
   
   const [ artefactImg, getArtefactImg ] = useArtefactsImg( '' );
 
@@ -88,8 +87,21 @@ export default function ArtefactsSelector({ place, toggleModal }){
         ></SelectedArtefact>
         <PerfectIcon
           background = { perfectIcon }
-          filter = { filter.perfect }
+          filter = { `${ filter.perfect }` }
         ></PerfectIcon>
+
+        <button 
+          type = 'button'
+          onClick = { ( ) => { addCurrentArtefact( filter )  }}
+        >
+          Выбрать
+        </button>
+        <button 
+          type = 'button'
+          onClick = { ( ) => { removeCurrentArtefact() }}
+        >
+          Удалить
+        </button>
       </SelectedArtefactWrap>
 
       <ArtefactsListWrap
@@ -100,12 +112,13 @@ export default function ArtefactsSelector({ place, toggleModal }){
         {
           artefactsArr.map(artefact => {
             return(
-              <ArtefactBackgraund>
+              <ArtefactBackgraund
+                key={ artefact.id }
+              >
                 <ArtefactImg
-                  key={ artefact.id }
                   id={ artefact.id }
                   background={ getArtefactImg( artefact.icon ) }
-                  onClick={ ( e ) => { getCurrentArtefact( e.currentTarget.id, filter ) } }
+                  onClick={ ( e ) => { getCurrentArtefact( e.currentTarget.id ) } }
                 ></ArtefactImg>
               </ArtefactBackgraund>
             )
@@ -117,7 +130,6 @@ export default function ArtefactsSelector({ place, toggleModal }){
           onLevelClick = { onLevelClick }  
         />
       </ArtefactsListWrap>
-
 
       <ArtefactTypeFilter
         filter = { filter }

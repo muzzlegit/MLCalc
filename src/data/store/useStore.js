@@ -326,15 +326,14 @@ const useState = create( devtools(immer( (set, get) => ({
     setHeroSkillLevel: ( player, branch, skillNumber, level ) => set( state => {
       state[ player ].hero[ branch ][ skillNumber ].level = level;
     }),
-    addArtefact: (artefact) => set((state) => {
-      const newArray = [];
-      state.player.artefacts.forEach(item => {
-        if(item.place !== artefact.place) newArray.push(item);
-        newArray.push(artefact);
-      });
-      
-      state.player.artefacts = newArray;
-    })
+    addArtefact: ( artefact, player ) => set(( state ) => {
+      let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
+      state[ player ].artefacts = [ ...artefacts, artefact ]
+    }),
+    removeArtefact:  ( artefact, player ) => set(( state ) => {
+      let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
+      state[ player ].artefacts = artefacts;
+    }),
   }
 })
 )));

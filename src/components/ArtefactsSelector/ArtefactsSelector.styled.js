@@ -52,7 +52,7 @@ export const PerfectIcon = styled.div(
   },
   props => ({
     background: props.background,
-    filter: props.filter ? null : 'grayscale(100%) brightness(70%)',
+    filter: props.filter === 'true' ? null : 'grayscale(100%) brightness(70%)',
 
   })
 );

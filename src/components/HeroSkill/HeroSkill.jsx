@@ -32,7 +32,7 @@ export default function HeroSkill({ branch, skillNumber }) {
       { heroChecker && skill.battle ?
         <LevelButton
           type = "button"
-          background = { skill.level === 5 ? 'grey' : 'green' }
+          background = { skill.level === 5 ? 'wheat' : 'green' }
           onClick = { onLevelButtonClick }
         >
           { `${ skill.level }` }/5

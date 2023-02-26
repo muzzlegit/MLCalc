@@ -1,20 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 //DATA
 import artefatctsData from '../data/Artefacts.json';
 //HOOKS
 import usePlayerStoreData from './usePlayerStoreData';
+import usePlayerStoreFunctions from './usePlayerStoreFunctions';
 //HELPERS
 import isArtefact from '../helpers/isArtefact';
 
-export default function useCurrentArtefact( player, place, filter, onTypeClick ) {
+export default function useCurrentArtefact( player, place, onTypeClick ) {
   const playerData = usePlayerStoreData( player );
+  const playerFunctions = usePlayerStoreFunctions();
   const { artefacts } = playerData;
+  const { addArtefact, removeArtefact } = playerFunctions;
   const [ currentArtefact, setCurrentArtefact ] = useState( isArtefact( place, artefacts ) );
- 
-  const getCurrentArtefact = ( id, filter ) => {
-    const [ newArtefact ] = artefatctsData.filter( artefatct => artefatct.id === id );
-    const newValue = ( !filter.ancient || newArtefact.ancient === "none" ? newArtefact.value.common : newArtefact.value.ancient );
-    if( filter.perfect ) newValue.push( ...newArtefact.value.perfect );
+
+  const getCurrentArtefact = ( id ) => {
+    const [ newArtefact ] = artefatctsData.filter( artefact => artefact.id === id );
+    if( newArtefact.ancient === "none" ) onTypeClick( "none", newArtefact );
+    setCurrentArtefact( newArtefact );
+  };
+  
+  const addCurrentArtefact = ( filter ) => {
+    if( Object.keys( currentArtefact ).length === 0 ) return;
+    const [ newArtefact ] = artefatctsData.filter( artefact => artefact.id === currentArtefact.id );
+    let newValue = ( !filter.ancient || newArtefact.ancient === "none" ? newArtefact.value.common : newArtefact.value.ancient );
+    if( filter.perfect ) newValue = [ ...newValue,  ...newArtefact.value.perfect ];
     const artefact = { 
       ...newArtefact,
       perfect: filter.perfect,
@@ -23,8 +33,12 @@ export default function useCurrentArtefact( player, place, filter, onTypeClick )
     };
     if( artefact.ancient === "none" ) onTypeClick( "none", artefact );
     setCurrentArtefact( artefact );
-    
+    addArtefact( artefact, player );
   };
-
-  return [ currentArtefact, getCurrentArtefact ];
+  const removeCurrentArtefact = () => {
+    const [ newArtefact ] = artefacts.filter( artefact => artefact.place === currentArtefact.place );
+    setCurrentArtefact( {} );
+    removeArtefact( newArtefact, player );
+  };
+  return [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact ];
 };
