@@ -1,12 +1,8 @@
-import { useEffect, useState, useContext } from 'react';
+import { useContext } from 'react';
 //CONTEXT
 import PlayerContext from '../../helpers/context';
-//DATA
-import artefatctsData from '../../data/Artefacts.json'
 //HOOKS
-import usePlayerStoreData from "../../hooks/usePlayerStoreData";
-import usePlayerStoreFunctions from '../../hooks/usePlayerStoreFunctions';
-import useModalToggle from '../../hooks/useModalToggle';
+import usePlaceArtefacts from '../../hooks/usePlaceArtefacts';
 import useCommonImg from '../../hooks/useCommonImg';
 import useArtefactsImg from '../../hooks/useArtefactsImg';
 import useCurrentArtefact from '../../hooks/useCurrentArtefact';
@@ -14,8 +10,6 @@ import useArtefactFilter from '../../hooks/useArtefactFilter';
 //COMPONENTS
 import { ArtefactTypeFilter, ArtefactsLevelFilter } from '../ArtefactsFilters';
 import CloseButton from '../CloseButton/CloseButton';
-//HELPERS
-import isArtefact from '../../helpers/isArtefact';
 //STYLES
 import { 
   SelectorsBox,
@@ -28,49 +22,13 @@ import {
   PerfectIcon
 } from "./ArtefactsSelector.styled";
 
-
-
-
-
-
 export default function ArtefactsSelector({ place, toggleModal }){
   const player = useContext( PlayerContext );
-  const playerData = usePlayerStoreData( player );
-  const playerFunctions = usePlayerStoreFunctions();
   const [ filter, onLevelClick, onTypeClick, onPerfectClick] = useArtefactFilter( player, place );
   const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
-
-
-  const [ isArtefactsListOpen, setIsArtefactsListOpen ] = useModalToggle( false );
-
-
-  
+  const [ placeArtefacts ] = usePlaceArtefacts( place, currentArtefact, filter.level );
   const [ artefactImg, getArtefactImg ] = useArtefactsImg( '' );
-
   const perfectIcon = useCommonImg( 'perfectIcon' );
-
-  const artefactWindowImg = useCommonImg( 'artefactWindow' );
-
-  //CONSTS
-
-  const {
-    setUnitProperty,
-    addArtefact
-  } = playerFunctions;
-  let artefactsArr = false;
-  if( !isArtefact( place, artefatctsData ))
-  {
-    artefactsArr = artefatctsData.filter( artefatc => artefatc.place === place );
-
-  }
-    else
-  {
-    artefactsArr = artefatctsData.filter( artefatc => 
-      artefatc.place === place
-      && ( filter.level !== 'all' ? artefatc.level === Number(filter.level) : true )
-      &&  artefatc.id !==  currentArtefact.id );
-  }
-
 
   return(
     <SelectorsBox>
@@ -92,16 +50,13 @@ export default function ArtefactsSelector({ place, toggleModal }){
 
         <button 
           type = 'button'
-          onClick = { ( ) => { addCurrentArtefact( filter )  }}
-        >
-          Выбрать
-        </button>
+          onClick = { ( ) => { addCurrentArtefact( filter ) }}
+        > Выбрать </button>
         <button 
           type = 'button'
           onClick = { ( ) => { removeCurrentArtefact() }}
-        >
-          Удалить
-        </button>
+        > Удалить </button>
+
       </SelectedArtefactWrap>
 
       <ArtefactsListWrap
@@ -110,15 +65,15 @@ export default function ArtefactsSelector({ place, toggleModal }){
       >
         <ArtefactsList>
         {
-          artefactsArr.map(artefact => {
+          placeArtefacts.map( artefact => {
             return(
               <ArtefactBackgraund
-                key={ artefact.id }
+                key = { artefact.id }
               >
                 <ArtefactImg
-                  id={ artefact.id }
-                  background={ getArtefactImg( artefact.icon ) }
-                  onClick={ ( e ) => { getCurrentArtefact( e.currentTarget.id ) } }
+                  id = { artefact.id }
+                  background = { getArtefactImg( artefact.icon ) }
+                  onClick = { ( e ) => { getCurrentArtefact( e.currentTarget.id ) } }
                 ></ArtefactImg>
               </ArtefactBackgraund>
             )

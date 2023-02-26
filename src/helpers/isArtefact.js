@@ -1,10 +1,11 @@
 export default function isArtefact( place, artefacts ) {
-  if( artefacts.filter( artefatct => artefatct.place === place ).length === 0 )
+  
+  if( artefacts.filter( artefact => artefact.place === place ).length === 0 )
   {
-    return false;
+    return {};
   } else
   {
-    const [ artefact ] = artefacts.filter( artefatct => artefatct.place === place );
+    const [ artefact ] = artefacts.filter( artefact => artefact.place === place );
     return artefact;
   };
 }

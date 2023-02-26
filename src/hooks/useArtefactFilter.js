@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 //HOOKS
 import usePlayerStoreData from "./usePlayerStoreData";
 //HELPERS
