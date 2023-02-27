@@ -23,7 +23,7 @@ const additionalProperties = {
   healthRate: 0,
 }
 //----------- STORE -----------
-const useState = create( devtools(immer( (set, get) => ({
+const useState = create(immer((set, get) => ({
   //MAIN ATTACKER --------------------------------
   mainAttacker: {
     race: 'undead',
@@ -35,68 +35,7 @@ const useState = create( devtools(immer( (set, get) => ({
     hero: {
       checker: false,
     },
-    artefacts: [ {
-      "id": "lpGc5K4F",
-      "level": 4,
-      "ancient": true,
-      "perfect": false,
-      "name": "Броня стрелков",
-      "place": "armor",
-      "set": "Мастер-исследователь",
-      "value": {
-        "common": [
-          {
-            "id": "lpGc5K4F",
-            "name": "Броня стрелков",
-            "effect": "player",
-            "unit": ["archer"],
-            "property": "healthArr",
-            "childProperty": "healthRate",
-            "description": "Здоровье Стрелков +45%",
-            "value": 0.45
-          }
-        ],
-        "ancient": [
-          {
-            "id": "lpGc5K4F",
-            "name": "Броня стрелков",
-            "effect": "player",
-            "unit": ["archer"],
-            "property": "healthArr",
-            "childProperty": "healthRate",
-            "description": "Здоровье Стрелков +54%",
-            "value": 0.54
-          }
-        ],
-        "perfect": [
-          {
-            "id": "lpGc5K4F",
-            "name": "Броня стрелков",
-            "effect": "player",
-            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-            "property": "",
-            "childProperty": "",
-            "description": "Эффективность уничтожения войск на укреплениях +200%",
-            "value": 2
-          },
-          {
-            "id": "lpGc5K4F",
-            "name": "Броня стрелков",
-            "effect": "player",
-            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-            "property": "healthArr",
-            "childProperty": "healthRate",
-            "description": "Здоровье всех войск +12%",
-            "value": 0.12
-          }
-        ]
-      },
-      "icon": "-931px -249px",
-      "battle": true,
-      "homeLand": "all",
-      "runes": [],
-      "sharpening": []
-    }],
+    artefacts: [],
     attackRateIndex: 'Min',
     troops: {
       porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
@@ -110,6 +49,7 @@ const useState = create( devtools(immer( (set, get) => ({
     },
     towers: [],
     fortifications: [],
+    bufs: [],
   },
   //MAIN DEFENDER --------------------------------
   mainDefender: {
@@ -130,54 +70,18 @@ const useState = create( devtools(immer( (set, get) => ({
       "name": "Кольчуга Головореза",
       "place": "armor",
       "set": "Головорез",
-      "value": {
-        "common": [
-          {
-            "id": "0nUpNrRL",
-            "name": "Кольчуга Головореза",
-            "effect": "player",
-            "unit": ["swordsman", "cavalier", "flying", "archer"],
-            "property": "healthArr",
-            "childProperty": "healthRate",
-            "description": "Здоровье воинов, всадников, летунов, стрелков своих +55%",
-            "value": 0.55 
-          }
-        ],
-        "ancient": [
-          {
-            "id": "0nUpNrRL",
-            "name": "Кольчуга Головореза",
-            "effect": "player",
-            "unit": ["swordsman", "cavalier", "flying", "archer"],
-            "property": "healthArr",
-            "childProperty": "healthRate",
-            "description": "Здоровье воинов, всадников, летунов, стрелков своих +66%",
-            "value": 0.66 
-          }
-        ],
-        "perfect": [
-          {
-            "id": "0nUpNrRL",
-            "name": "Кольчуга Головореза",
-            "effect": "player",
-            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-            "property": "",
-            "childProperty": "",
-            "description": "Эффективность уничтожения войск на укреплениях +300%",
-            "value": 3 
-          },
-          {
-            "id": "0nUpNrRL",
-            "name": "Кольчуга Головореза",
-            "effect": "player",
-            "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-            "property": "healthArr",
-            "childProperty": "healthRate",
-            "description": "Здоровье всех войск +15%",
-            "value": 0.15
-          }
-        ]
-      },
+      "value": [
+        {
+          "id": "0nUpNrRL",
+          "name": "Кольчуга Головореза",
+          "effect": "player",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "healthArr",
+          "childProperty": "healthRate",
+          "description": "Здоровье воинов, всадников, летунов, стрелков своих +66%",
+          "value": 0.66 
+        }
+      ],
       "icon": "-187px -249px",
       "battle": true,
       "homeLand": "all",
@@ -257,15 +161,18 @@ const useState = create( devtools(immer( (set, get) => ({
     },
     towers: [],
     fortifications: [],
+    bufs: [],
   },
   //FUNCTIONS --------------------------------
   functions: {
     setRace: ( player, race ) => set(( state ) => { state[ player ].race = race }),
     setHomeLand: ( player, land ) => set((state) => { state[ player ].homeLand = land }),
     setApostateValue: ( player ) => set(( state ) => { state[ player ].apostate = !state[ player ].apostate }),
-    setUnit: ( player, unit ) => {  set( state => { state[ player ].troops[ unit.unit ] = { ...state[ player ].troops[ unit.unit ], ...unit }}, false, 'setUnit')},
+    setUnit: ( player, unit ) =>  set( state => { state[ player ].troops[ unit.unit ] = { ...state[ player ].troops[ unit.unit ], ...unit }}),
     setRateAttack: ( player, attackRate ) => set(( state ) => { state[ player ].attackRateIndex = attackRate }),
     setUnitProperty:  ( player, item ) => {
+      if( item.unit === "none" ) return;
+      if( item.unit === "fotification" ) return;
       // console.log(item)
       item.unit.forEach( trooper => {
           item.value === 0
@@ -273,7 +180,7 @@ const useState = create( devtools(immer( (set, get) => ({
             state[ player ].troops[ trooper ][ item.property ].splice( findPropertyIndex( state[ player ].troops[ trooper ][ item.property ], item ), 1);
           }, false, `setPropertyToZero_${trooper}_&&_${player}`)
           : set( state => {
-            state[ player].troops[ trooper ][ item.property ][ findPropertyIndex( state[ player ].troops[ trooper ][ item.property ], item )] = { name: item.name, value: item.value, unit: item.unit };
+            state[ player].troops[ trooper ][ item.property ][ findPropertyIndex( state[ player ].troops[ trooper ][ item.property ], item )] = { id: item.id, name: item.name, value: item.value, unit: item.unit };
           }, false, `setProperty_${trooper}_&&_${player}`)
         })
       item.unit.forEach( trooper => {
@@ -327,15 +234,17 @@ const useState = create( devtools(immer( (set, get) => ({
       state[ player ].hero[ branch ][ skillNumber ].level = level;
     }),
     addArtefact: ( artefact, player ) => set(( state ) => {
-      let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
-      state[ player ].artefacts = [ ...artefacts, artefact ]
+      const previosArtefacts  = state[ player ].artefacts.filter( art => art.place !== artefact.place );
+      console.log(previosArtefacts)
+      previosArtefacts.push( artefact );
+      state[ player ].artefacts = [ ...previosArtefacts ];
     }),
     removeArtefact:  ( artefact, player ) => set(( state ) => {
       let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
       state[ player ].artefacts = artefacts;
     }),
   }
-})
+}
 )));
 
 export default useState;

@@ -4,7 +4,6 @@ export default function removeBranchSkillValue( skillsObj, setUnitProperty, play
     if ( skillsObj[ key ].battle )
     {
       setUnitProperty( player, { ...skillsObj[ key ].value[ skillsObj[ key ].level - 1 ], value: 0 });
-      console.log('remove')
     }
   }
 }

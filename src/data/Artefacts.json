@@ -1,6 +1,6 @@
 [
   {
-    "id": "0nUpNrRL",
+    "id": "ryUZ_I7QkUu_QmEi1jURPw",
     "level": 5,
     "ancient": false,
     "perfect": false,
@@ -10,7 +10,7 @@
     "value": {
       "common": [
         {
-          "id": "0nUpNrRL",
+          "id": "FP5Q69jSOkOdOhM9wmjpMA",
           "name": "Кольчуга Головореза",
           "effect": "player",
           "unit": ["swordsman", "cavalier", "flying", "archer"],
@@ -22,7 +22,7 @@
       ],
       "ancient": [
         {
-          "id": "0nUpNrRL",
+          "id": "ebfDo44L20KhkMSp449B5g",
           "name": "Кольчуга Головореза",
           "effect": "player",
           "unit": ["swordsman", "cavalier", "flying", "archer"],
@@ -34,17 +34,17 @@
       ],
       "perfect": [
         {
-          "id": "0nUpNrRL",
+          "id": "KrTSAzmbTUKJQ-KGY24DxA",
           "name": "Кольчуга Головореза",
           "effect": "player",
-          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "unit": "fotification",
           "property": "",
           "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
         {
-          "id": "0nUpNrRL",
+          "id": "5JBIaBoaY0-SxLgIyFAnsw",
           "name": "Кольчуга Головореза",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -62,7 +62,7 @@
     "sharpening": []
   },  
   {
-    "id": "TfpRJXSq",
+    "id": "xeVGcIdJx02id-x_RPC4TQ",
     "level": 5,
     "ancient": false,
     "perfect": false,
@@ -72,7 +72,7 @@
     "value": {
       "common": [
         {
-          "id": "TfpRJXSq",
+          "id": "Y3k22UyM2UympBrYrJpKJg",
           "name": "Пояс Головореза",
           "effect": "player",
           "unit": [],
@@ -82,7 +82,7 @@
           "value": 0
         },
         {
-          "id": "TfpRJXSq",
+          "id": "rPjRFu_K806G3kbX9ZfivA",
           "name": "Пояс Головореза",
           "effect": "enemy",
           "unit": [],
@@ -94,20 +94,10 @@
       ],
       "perfect": [
         {
-          "id": "TfpRJXSq",
+          "id": "d8rbrygAe0yzuvy6ESrQsQ",
           "name": "Пояс Головореза",
           "effect": "player",
-          "unit": [],
-          "property": "",
-          "childProperty": "",
-          "description": "",
-          "value": 0
-        },
-        {
-          "id": "TfpRJXSq",
-          "name": "Пояс Головореза",
-          "effect": "player",
-          "unit": [],
+          "unit": "none",
           "property": "",
           "childProperty": "",
           "description": "",
@@ -122,7 +112,7 @@
     "sharpening": []
   },
   {
-    "id": "QL51CePt",
+    "id": "d8rbrygAe0yzuvy6ESrQsQ",
     "level": 5,
     "ancient": false,
     "perfect": false,
@@ -132,7 +122,7 @@
     "value": {
       "common": [
         {
-          "id": "QL51CePt",
+          "id": "bTB3NXvWaU6paYCPZnVW2A",
           "name": "Броня Властелина мира",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -144,7 +134,7 @@
       ],
       "ancient": [
         {
-          "id": "QL51CePt",
+          "id": "9AO-1rS9ok6SpvqSf4jfIA",
           "name": "Броня Властелина мира",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -156,17 +146,17 @@
       ],
       "perfect": [
         {
-          "id": "QL51CePt",
+          "id": "5mBqsS0jikG71AzlMIpOrQ",
           "name": "Броня Властелина мира",
           "effect": "player",
-          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "unit": "fotification",
           "property": "",
           "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
         {
-          "id": "QL51CePt",
+          "id": "JThLsYhnoEG1U738HCfMEw",
           "name": "Броня Властелина мира",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -184,7 +174,7 @@
     "sharpening": []
   },
   {
-    "id": "z8d-8q_Q",
+    "id": "JS3VM7quVEiXK_BiUpXfkQ",
     "level": 5,
     "ancient": "none",
     "perfect": false,
@@ -194,7 +184,7 @@
     "value": {
       "common": [
         {
-          "id": "z8d-8q_Q",
+          "id": "Nsrw06axckiWNtlzCgSC8g",
           "name": "Броня королевской стойкости",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -204,7 +194,7 @@
           "value": 0.5
         },
         {
-          "id": "z8d-8q_Q",
+          "id": "rmUvCNlzEkCHO7yeNJn_Nw",
           "name": "Броня королевской стойкости",
           "effect": "enemy",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -216,17 +206,17 @@
       ],
       "perfect": [
         {
-          "id": "z8d-8q_Q",
+          "id": "tMzAbyORPkmfJFkxpVSjcA",
           "name": "Броня королевской стойкости",
           "effect": "player",
-          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "unit": "fotification",
           "property": "",
           "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
         {
-          "id": "z8d-8q_Q",
+          "id": "aO7pPhpwAEe3-tMO06xvGA",
           "name": "Броня королевской стойкости",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -244,7 +234,7 @@
     "sharpening": []
   },
   {
-    "id": "pvdi8kVp",
+    "id": "waSToI7kiUOiX525pSCTZw",
     "level": 5,
     "ancient": false,
     "perfect": false,
@@ -254,7 +244,7 @@
     "value": {
       "common": [
         {
-          "id": "pvdi8kVp",
+          "id": "EpsIsHB1K06QLWlBlpuYQw",
           "name": "Кольчуга магического здоровья",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -264,7 +254,7 @@
           "value": 20
         },
         {
-          "id": "pvdi8kVp",
+          "id": "H1bBLP5S60-Y4Yjw183NDQ",
           "name": "Кольчуга магического здоровья",
           "effect": "player",
           "unit": ["mage"],
@@ -276,7 +266,7 @@
       ],
       "ancient": [
         {
-          "id": "pvdi8kVp",
+          "id": "KeY-iqWiiki5wuof0joGIA",
           "name": "Кольчуга магического здоровья",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -286,7 +276,7 @@
           "value": 24 
         },
         {
-          "id": "pvdi8kVp",
+          "id": "wLmiQLlzd0WOfCq39Kf9lQ",
           "name": "Кольчуга магического здоровья",
           "effect": "player",
           "unit": ["mage"],
@@ -298,17 +288,17 @@
       ],
       "perfect": [
         {
-          "id": "pvdi8kVp",
+          "id": "QsHrMqAAI0KODkwpf_-QTg",
           "name": "Кольчуга магического здоровья",
           "effect": "player",
-          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "unit": "fotification",
           "property": "",
           "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
         {
-          "id": "pvdi8kVp",
+          "id": "HVygN2nODUSN8-HFvUfFXw",
           "name": "Кольчуга магического здоровья",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -326,7 +316,7 @@
     "sharpening": []
   },
   {
-    "id": "CgG29TT0",
+    "id": "AYixcYZzdU2XTiqfEdELcg",
     "level": 5,
     "ancient": false,
     "perfect": false,
@@ -336,7 +326,7 @@
     "value": {
       "common": [
         {
-          "id": "CgG29TT0",
+          "id": "tAXfS1evgkqRBpwcWkzB-g",
           "name": "Кольчуга Бога",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -346,7 +336,7 @@
           "value": 20
         },
         {
-          "id": "CgG29TT0",
+          "id": "Rn352DmExUiPUoEiVdyp6w",
           "name": "Кольчуга Бога",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -358,7 +348,7 @@
       ],
       "ancient": [
         {
-          "id": "CgG29TT0",
+          "id": "Z9HUR2Vpw0qGcsrUyT5wKA",
           "name": "Кольчуга Бога",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -368,7 +358,7 @@
           "value": 24 
         },
         {
-          "id": "CgG29TT0",
+          "id": "fEENfBcEnkO9_dgDiomW6g",
           "name": "Кольчуга Бога",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -380,17 +370,17 @@
       ],
       "perfect": [
         {
-          "id": "CgG29TT0",
+          "id": "lXrUAtv6-U-RrdKpUqIPxA",
           "name": "Кольчуга Бога",
           "effect": "player",
-          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "unit": "fotification",
           "property": "",
           "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
         {
-          "id": "CgG29TT0",
+          "id": "Msc1ELqXLkmo44QEtWgFpw",
           "name": "Кольчуга Бога",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
@@ -408,7 +398,7 @@
     "sharpening": []
   },
   {
-    "id": "lpGc5K4F",
+    "id": "jk9c7fx1c0mqIWBERQ4Erg",
     "level": 4,
     "ancient": false,
     "perfect": false,
@@ -418,7 +408,7 @@
     "value": {
       "common": [
         {
-          "id": "lpGc5K4F",
+          "id": "pzBJVmwVb0eH-1Z5-Qdbew",
           "name": "Броня стрелков",
           "effect": "player",
           "unit": ["archer"],
@@ -430,7 +420,7 @@
       ],
       "ancient": [
         {
-          "id": "lpGc5K4F",
+          "id": "IyLgqG-bpk-3UVHdkhp0XA",
           "name": "Броня стрелков",
           "effect": "player",
           "unit": ["archer"],
@@ -442,17 +432,17 @@
       ],
       "perfect": [
         {
-          "id": "lpGc5K4F",
+          "id": "KWVazODtPECzuThy-0RKnw",
           "name": "Броня стрелков",
           "effect": "player",
-          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "unit": "fotification",
           "property": "",
           "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +200%",
           "value": 2
         },
         {
-          "id": "lpGc5K4F",
+          "id": "g82edQ3OR0q4ZvWwypfRvA",
           "name": "Броня стрелков",
           "effect": "player",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],

@@ -8,6 +8,7 @@ export default function useRemoveUnitProperty() {
   const { setUnitProperty } = playerFunctions;
 
   const removeUnitProperty= ( player, buff ) => {
+    if( buff.effect === "enemy" ) return;
     setUnitProperty( player, { ...buff, value: 0 } );
   };
 

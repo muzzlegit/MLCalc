@@ -8,6 +8,7 @@ export default function useAddUnitProperty() {
   const { setUnitProperty } = playerFunctions;
 
   const addUnitProperty= ( player, buff ) => {
+    if( buff.effect === "enemy" ) return;
     setUnitProperty( player, buff );
   }
 

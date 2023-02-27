@@ -1,5 +1,5 @@
 export default function findPropertyIndex( array, property ){
-  return array.findIndex( item => item.name === property.name ) === -1 ? array.length : array.findIndex( item => item.name === property.name );
+  return array.findIndex( item => item.id === property.id ) === -1 ? array.length : array.findIndex( item => item.id === property.id );
 }
 
 

@@ -18,7 +18,7 @@
           "level": 1,
           "value": [ 
             { 
-              "id": "3WwE5CRM",
+              "id": "1QtkNhcb70u4gYtgOahv_A",
               "battle": true,
               "name": "Сила войск",
               "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -26,7 +26,7 @@
               "childProperty": "attackRate",
               "value": 0.05
             },
-            { "id": "3WwE5CRM",
+            { "id": "Kf6OC1sXskGS9uDmCWbpXQ",
               "battle": true,
               "name": "Сила войск",
               "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -34,7 +34,7 @@
               "childProperty": "attackRate",
               "value": 0.1 
             },
-            { "id": "3WwE5CRM",
+            { "id": "P-aiOlHuBE6D6rF73ZfTGg",
               "battle": true,
               "name": "Сила войск",
               "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -42,7 +42,7 @@
               "childProperty": "attackRate",
               "value": 0.15 
             },
-            { "id": "3WwE5CRM",
+            { "id": "W5g_qwPcm0-G00eXtnEcBA",
               "battle": true,
               "name": "Сила войск",
               "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -50,7 +50,7 @@
               "childProperty": "attackRate",
               "value": 0.2 
             },
-            { "id": "3WwE5CRM",
+            { "id": "UaaXKKyDMkq09GOLQjaSfA",
               "battle": true,
               "name": "Сила войск",
               "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -210,9 +210,9 @@
       "femaleIcon": "-1px -201px",
       "skills": {
         "1":{
-          "id": "gVhi63YY",
+          "id": "chFdZhf4WEKAVxLiIe-5dA",
           "icon": "-115px -1px",
-          "unit": "all",
+          "unit": "fortification",
           "type": "passive",
           "effect": "player",
           "property": "",
@@ -224,7 +224,7 @@
           "battle": false
         },
         "2":{
-          "id": "gVhi63YY",
+          "id": "",
           "icon": "-115px -52px",
           "unit": "all",
           "type": "passive",
@@ -248,7 +248,7 @@
           "description": "Защита всех войск",
           "level": 1,
           "value": [ 
-            { "id": "gVhi63YY",
+            { "id": "5kIVjg_u2kO6Vs3JjItTTQ",
               "battle": true,
               "name": "Защита",
               "unit": [ "porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -256,7 +256,7 @@
               "childProperty": "defense",
               "value": 5
             },
-            { "id": "gVhi63YY",
+            { "id": "82I1YlSrLUWT1E_ucZneyg",
               "battle": true,
               "name": "Защита",
               "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -264,7 +264,7 @@
               "childProperty": "defense",
               "value": 10
             },
-            { "id": "gVhi63YY",
+            { "id": "NYcaZDOMLkuj9PKowHreLA",
               "battle": true,
               "name": "Защита",
               "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -272,7 +272,7 @@
               "childProperty": "defense",
               "value": 15
             },
-            { "id": "gVhi63YY",
+            { "id": "VkAFSVyfpEmpD9mvT0u-dw",
               "battle": true,
               "name": "Защита",
               "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
@@ -280,7 +280,7 @@
               "childProperty": "defense",
               "value": 20
             },
-            { "id": "gVhi63YY",
+            { "id": "oRSJOItvz0qbDSjDURfjzQ",
               "battle": true,
               "name": "Защита",
               "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
