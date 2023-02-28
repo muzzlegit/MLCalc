@@ -10,7 +10,7 @@ export default function useArtefactFilter( player, place ) {
   const currentArtefact  = isArtefact( place, artefacts );
 
   const [ artLevel, setArtLevel ] = useState( 'all' );
-  const [ ancientArt, setAncientArt ] = useState( currentArtefact ? currentArtefact.ancient : false );
+  const [ ancientArt, setAncientArt ] = useState( currentArtefact ? ( currentArtefact.ancient === "none" ? false : currentArtefact.ancient )  : false );
   const [ perfectArt, setPerfectArt ] = useState( currentArtefact ? currentArtefact.perfect : false );
 
   //HANDLE FUNCTIONS
