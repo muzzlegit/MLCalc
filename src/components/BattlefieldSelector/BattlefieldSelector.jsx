@@ -4,7 +4,7 @@ import useBattlefield from "../../hooks/useBattlefield";
 import { SelectorBox, SelectorLabel, Select } from "./BattlefieldSelector.styled";
 
 export default function BattlefieldSelector() {
-  const setBattlefield = useBattlefield( "cursedForest" );
+  const setBattlefield = useBattlefield();
 
   return (
     <SelectorBox>

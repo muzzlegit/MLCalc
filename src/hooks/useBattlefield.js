@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useUpdateBuffsStorage from "./useUpdateBuffsStorage";
 //HOOKS
 import usePlayerStoreData from "./usePlayerStoreData";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
@@ -13,14 +14,16 @@ const BUFF = {
   value: 25 
 };
 
-export default function useBattlefield( defaultValue) {
+export default function useBattlefield() {
   const mainAttackerData = usePlayerStoreData( "mainAttacker" );
   const mainDefenderData = usePlayerStoreData( "mainDefender" );
   const playerFunctions = usePlayerStoreFunctions( );
-  const [ battlefield, setBattlefield ] = useState( defaultValue );
- 
+  
+  useUpdateBuffsStorage( "mainAttacker" );
+  useUpdateBuffsStorage( "mainDefender" );
   //CONSTS
-  const { 
+  const {
+    battlefield,
     homeLand: mainAttackerHomeLand,
     apostate: mainAttackerApostate
    } = mainAttackerData;
@@ -28,7 +31,7 @@ export default function useBattlefield( defaultValue) {
     homeLand: mainDefenderHomeLand,
     apostate: mainDefenderApostate
    } = mainDefenderData;
-  const { setUnitProperty } = playerFunctions;
+  const { setBattlefield, setUnitProperty } = playerFunctions;
 
   //HANDLE FUNCTION
   const onChange = ( e ) => {

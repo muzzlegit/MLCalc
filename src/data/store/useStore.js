@@ -26,6 +26,7 @@ const additionalProperties = {
 const useState = create(immer((set, get) => ({
   //MAIN ATTACKER --------------------------------
   mainAttacker: {
+    battlefield: "cursedForest",
     race: 'undead',
     ally: {
       flag: false,
@@ -38,18 +39,18 @@ const useState = create(immer((set, get) => ({
     artefacts: [],
     attackRateIndex: 'Min',
     troops: {
-      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
+      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties, capacityRate: 0 },
       swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
       cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
       flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
       archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
-      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties, resurrectionRate: 0 },
       mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
-      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties }
+      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties, suppressionRate: 0 }
     },
     towers: [],
     fortifications: [],
-    bufs: [],
+    buffs: [],
   },
   //MAIN DEFENDER --------------------------------
   mainDefender: {
@@ -161,10 +162,13 @@ const useState = create(immer((set, get) => ({
     },
     towers: [],
     fortifications: [],
-    bufs: [],
+    buffs: [
+
+    ],
   },
   //FUNCTIONS --------------------------------
   functions: {
+    setBattlefield: ( battlefield ) => set(( state ) => { state.mainAttacker.battlefield = battlefield }),
     setRace: ( player, race ) => set(( state ) => { state[ player ].race = race }),
     setHomeLand: ( player, land ) => set((state) => { state[ player ].homeLand = land }),
     setApostateValue: ( player ) => set(( state ) => { state[ player ].apostate = !state[ player ].apostate }),
@@ -192,6 +196,7 @@ const useState = create(immer((set, get) => ({
       });
       
     },
+    setUnitsP: ( player, unit,  property, value ) => set(( state ) => { state[ player ].troops[ unit ][ property ] = value }),
     setTowers:  ( player, tower ) =>set(( state ) => { state[ player ].towers = tower }, false, 'setTowers'),
     setFortification:  ( player, fortification ) => set(( state ) => { state[ player ].fortifications = fortification }),
     addTowers:  ( player, tower ) =>set(( state ) => { state[ player ].towers = [ ...state[ player ].towers, tower ] }),
@@ -235,13 +240,18 @@ const useState = create(immer((set, get) => ({
     }),
     addArtefact: ( artefact, player ) => set(( state ) => {
       const previosArtefacts  = state[ player ].artefacts.filter( art => art.place !== artefact.place );
-      console.log(previosArtefacts)
       previosArtefacts.push( artefact );
       state[ player ].artefacts = [ ...previosArtefacts ];
     }),
     removeArtefact:  ( artefact, player ) => set(( state ) => {
       let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
       state[ player ].artefacts = artefacts;
+    }),
+    addBuff:( player, buff ) => set(( state ) => { 
+      state[ player ].buffs = [ ...state[ player ].buffs, buff ];
+    }),
+    removeBuff:( player, buff ) => set(( state ) => { 
+      state[ player ].buffs = state[ player ].buffs.filter( item => item.id !== buff.id );
     }),
   }
 }
