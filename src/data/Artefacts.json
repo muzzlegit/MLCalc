@@ -1,5 +1,57 @@
 [
   {
+    "id": "gLBdaLmJYUO0GMRaJj3h-A",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Наручни испепеления",
+    "place": "bracers",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "6uDbjahJukij2TxJNM46-w",
+          "name": "Наручни испепеления",
+          "effect": "player",
+          "homeLand": "fraction",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск +55% В бою против вражеской фракции",
+          "value": 0.55 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "Js8mBEMHiE6KJAfczSdXXg",
+          "name": "Наручни испепеления",
+          "effect": "player",
+          "homeLand": "fraction",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск +66% В бою против вражеской фракции",
+          "value": 0.66 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "A40dzmQRzEW2cQCiSstmng",
+          "name": "Наручни испепеления",
+          "effect": "enemy",
+          "homeLand": "all",
+          "unit": "magicTower",
+          "propert": "",
+          "property": "",
+          "description": "Атака магических башен -15%",
+          "value": -0.15 
+        }
+      ]
+    },
+    "icon": "-187px -187px",
+    "battle": true,
+    "runes": [],
+    "sharpening": []
+  }, 
+  {
     "id": "ryUZ_I7QkUu_QmEi1jURPw",
     "level": 5,
     "ancient": false,
@@ -15,8 +67,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["swordsman", "cavalier", "flying", "archer"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье воинов, всадников, летунов, стрелков своих +55%",
           "value": 0.55 
         }
@@ -28,8 +79,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["swordsman", "cavalier", "flying", "archer"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье воинов, всадников, летунов, стрелков своих +66%",
           "value": 0.66 
         }
@@ -40,9 +90,8 @@
           "name": "Кольчуга Головореза",
           "effect": "player",
           "homeLand": "all",
-          "unit": "fotification",
+          "unit": "fortification",
           "property": "",
-          "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
@@ -52,8 +101,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +15%",
           "value": 0.15
         }
@@ -81,7 +129,6 @@
           "homeLand": "all",
           "unit": [],
           "property": "",
-          "childProperty": "",
           "description": "",
           "value": 0
         },
@@ -92,7 +139,6 @@
           "homeLand": "all",
           "unit": [],
           "property": "",
-          "childProperty": "",
           "description": "",
           "value": 0
         }
@@ -105,7 +151,6 @@
           "unit": "none",
           "homeLand": "all",
           "property": "",
-          "childProperty": "",
           "description": "",
           "value": 0
         }
@@ -132,8 +177,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +50%",
           "value": 0.5
         }
@@ -145,8 +189,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +60%",
           "value": 0.6
         }
@@ -157,9 +200,8 @@
           "name": "Броня Властелина мира",
           "effect": "player",
           "homeLand": "all",
-          "unit": "fotification",
+          "unit": "fortification",
           "property": "",
-          "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
@@ -169,8 +211,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +15%",
           "value": 0.15
         }
@@ -197,8 +238,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +50%",
           "value": 0.5
         },
@@ -208,8 +248,7 @@
           "effect": "enemy",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск -50%",
           "value": -0.5
         }
@@ -220,9 +259,8 @@
           "name": "Броня королевской стойкости",
           "effect": "player",
           "homeLand": "all",
-          "unit": "fotification",
+          "unit": "fortification",
           "property": "",
-          "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
@@ -232,8 +270,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +15%",
           "value": 0.15
         }
@@ -260,8 +297,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "defenseLevelArr",
-          "childProperty": "defenseLevel",
+          "property": "defenseLevel",
           "description": "Предел максимальной защиты +20",
           "value": 20
         },
@@ -271,8 +307,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье Магов +55%",
           "value": 0.55
         }
@@ -284,8 +319,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "defenseLevelArr",
-          "childProperty": "defenseLevel",
+          "property": "defenseLevel",
           "description": "Предел максимальной защиты +24",
           "value": 24 
         },
@@ -295,8 +329,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье Магов +66%",
           "value": 0.66
         }
@@ -307,9 +340,8 @@
           "name": "Кольчуга магического здоровья",
           "effect": "player",
           "homeLand": "all",
-          "unit": "fotification",
+          "unit": "fortification",
           "property": "",
-          "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
@@ -319,8 +351,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +15%",
           "value": 0.15
         }
@@ -347,8 +378,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "defenseLevelArr",
-          "childProperty": "defenseLevel",
+          "property": "defenseLevel",
           "description": "Предел максимальной защиты +20",
           "value": 20
         },
@@ -358,8 +388,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +25%",
           "value": 0.25
         }
@@ -371,8 +400,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "defenseLevelArr",
-          "childProperty": "defenseLevel",
+          "property": "defenseLevel",
           "description": "Предел максимальной защиты +24",
           "value": 24 
         },
@@ -382,8 +410,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +30%",
           "value": 0.3
         }
@@ -394,9 +421,8 @@
           "name": "Кольчуга Бога",
           "effect": "player",
           "homeLand": "all",
-          "unit": "fotification",
+          "unit": "fortification",
           "property": "",
-          "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +300%",
           "value": 3 
         },
@@ -406,8 +432,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +15%",
           "value": 0.15
         }
@@ -434,8 +459,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["archer"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье Стрелков +45%",
           "value": 0.45
         }
@@ -447,8 +471,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["archer"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье Стрелков +54%",
           "value": 0.54
         }
@@ -459,9 +482,8 @@
           "name": "Броня стрелков",
           "effect": "player",
           "homeLand": "all",
-          "unit": "fotification",
+          "unit": "fortification",
           "property": "",
-          "childProperty": "",
           "description": "Эффективность уничтожения войск на укреплениях +200%",
           "value": 2
         },
@@ -471,8 +493,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
+          "property": "healthRate",
           "description": "Здоровье всех войск +12%",
           "value": 0.12
         }
@@ -499,8 +520,7 @@
           "effect": "player",
           "homeLand": "steppe",
           "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "attackArr",
-          "childProperty": "attackRate",
+          "property": "attackRate",
           "description": "Атака всех войск +15% на земле Степь",
           "value": 0.15
         }
@@ -512,8 +532,7 @@
           "effect": "player",
           "homeLand": "steppe",
           "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "attackArr",
-          "childProperty": "attackRate",
+          "property": "attackRate",
           "description": "Атака всех войск +18% на земле Степь",
           "value": 0.18
         }
@@ -525,8 +544,7 @@
           "effect": "enemy",
           "homeLand": "all",
           "unit": ["mercenary"],
-          "property": "attackArr",
-          "childProperty": "attackRate",
+          "property": "attackRate",
           "description": "Атака наемников -3%",
           "value": -0.03
         },
@@ -536,8 +554,7 @@
           "effect": "player",
           "homeLand": "all",
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "defenseLevelArr",
-          "childProperty": "defenseLevel",
+          "property": "defenseLevel",
           "description": "Предел максимальной защиты +1",
           "value": 1
         }

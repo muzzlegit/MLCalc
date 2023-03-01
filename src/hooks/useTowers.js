@@ -5,13 +5,23 @@ import towersData from '../data/Towers.json';
 //HOOKS
 import usePlayerStoreData from "./usePlayerStoreData";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
+ 
+  //CONST
+  const BUFF = {
+    id: "wRPzU5K430O0kKMkKYbaXA",
+    name: 'fortifications',
+    homeLand: "all",
+    unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
+    property: 'defenseArr',
+    childProperty: 'defense'
+  }
 
 export default function useTowers ( player, isSelected, level, value ) {
   const playerData = usePlayerStoreData( player );
   const playerFunctions = usePlayerStoreFunctions();
-
   const { towers, fortifications } = playerData;
-  const { addTowers, addFortification, setTowers, setFortification, setUnitProperty } = playerFunctions;
+  const { addTowers, addFortification, setTowers, setFortification, addBuff, removeBuff } = playerFunctions;
+
 
   //HANDLES
   const onAddButtonClick = () => {
@@ -34,16 +44,7 @@ export default function useTowers ( player, isSelected, level, value ) {
   useEffect(() => {
     if( fortifications.length === 0 )
     {
-      setUnitProperty(
-        player,
-        {
-          name: 'fortifications',
-          unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
-          property: 'defenseArr',
-          childProperty: 'defense',
-          value: 0
-        }
-      );
+      removeBuff( player, BUFF );
     }
     else
     {
@@ -51,18 +52,9 @@ export default function useTowers ( player, isSelected, level, value ) {
       fortifications.forEach(( fortification ) => {
         value = value + fortification.quantity * fortification.defense;
       });
-      setUnitProperty(
-        player,
-        {
-          name: 'fortifications',
-          unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
-          property: 'defenseArr',
-          childProperty: 'defense',
-          value: value
-        }
-      );
+      addBuff( player, {  ...BUFF, value: value } );
     }
-  }, [ fortifications, setUnitProperty, player]);
+  }, [ fortifications, addBuff, removeBuff, player ]);
 
   return [ onAddButtonClick, onRemoveButtonClick ];
 }

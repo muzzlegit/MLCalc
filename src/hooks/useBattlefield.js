@@ -7,23 +7,29 @@ import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
 const BUFF = {
   id: '2B0eBD4m',
   battle: true,
+  homeLand: "all",
   name: 'homeLand',
   unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
-  property: 'defenseArr',
-  childProperty: 'defense',
+  property: 'defense',
   value: 25 
 };
-
+const homeLandAttack = {
+  battle: true,
+  homeLand: "all",
+  name: 'homeLandAttack',
+  property: 'attackRate'
+};
 export default function useBattlefield() {
   const mainAttackerData = usePlayerStoreData( "mainAttacker" );
   const mainDefenderData = usePlayerStoreData( "mainDefender" );
   const playerFunctions = usePlayerStoreFunctions( );
-  
+
   useUpdateBuffsStorage( "mainAttacker" );
   useUpdateBuffsStorage( "mainDefender" );
   //CONSTS
   const {
     battlefield,
+    troops,
     homeLand: mainAttackerHomeLand,
     apostate: mainAttackerApostate
    } = mainAttackerData;
@@ -31,7 +37,7 @@ export default function useBattlefield() {
     homeLand: mainDefenderHomeLand,
     apostate: mainDefenderApostate
    } = mainDefenderData;
-  const { setBattlefield, setUnitProperty } = playerFunctions;
+  const { addBuff, removeBuff, setBattlefield } = playerFunctions;
 
   //HANDLE FUNCTION
   const onChange = ( e ) => {
@@ -42,24 +48,60 @@ export default function useBattlefield() {
   useEffect(() => {
     if( mainAttackerHomeLand === battlefield && !mainAttackerApostate )
       {
-        setUnitProperty( "mainAttacker", BUFF );
+        addBuff( "mainAttacker", BUFF );
       } 
       else 
       {
-        setUnitProperty( "mainAttacker", { ...BUFF, value: 0 } );
+        removeBuff( "mainAttacker", BUFF );
+      };
+    for ( const unit in troops ) {
+      if( troops[ unit ].homeLand  === battlefield )
+      {
+        addBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 } );
       }
-  }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, setUnitProperty ]);
+      if( troops[ unit ].alienLand === battlefield )
+      {
+        addBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 } );
+      }
+      if( troops[ unit ].alienLand !== battlefield )
+      {
+        removeBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].alienLand } );
+      }
+      if( troops[ unit ].homeLand  !== battlefield )
+      {
+        removeBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].homeLand } );
+      }
+    };
+  }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, addBuff, removeBuff ]);
 
   useEffect(() => {
     if( mainDefenderHomeLand === battlefield && !mainDefenderApostate )
       {
-        setUnitProperty( "mainDefender", BUFF );
+        addBuff( "mainDefender", BUFF );
       } 
       else 
       {
-        setUnitProperty( "mainDefender", { ...BUFF, value: 0 } );
-      }
-  }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, setUnitProperty ]);
+        removeBuff( "mainDefender", BUFF );
+      };
+      for ( const unit in troops ) {
+        if( troops[ unit ].homeLand  === battlefield )
+        {
+          addBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 } );
+        }
+        if( troops[ unit ].alienLand === battlefield )
+        {
+          addBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 } );
+        }
+        if( troops[ unit ].alienLand !== battlefield )
+        {
+          removeBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].alienLand } );
+        }
+        if( troops[ unit ].homeLand  !== battlefield )
+        {
+          removeBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].homeLand } );
+        }
+      };
+  }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, addBuff, removeBuff ]);
 
   return onChange;
 };

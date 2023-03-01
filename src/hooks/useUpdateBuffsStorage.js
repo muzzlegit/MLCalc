@@ -5,6 +5,7 @@ import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
 
 export default function useUpdateBuffsStorage( player ) {
   const mainAttackerData = usePlayerStoreData( "mainAttacker" );
+  const mainDefenderData = usePlayerStoreData( "mainDefender" );
   const playerData = usePlayerStoreData( player );
   const playerFunctions = usePlayerStoreFunctions();
 
@@ -12,87 +13,86 @@ export default function useUpdateBuffsStorage( player ) {
     buffs
   } = playerData;
   const {
-    setUnitsP
+    setUnitProperty
   } = playerFunctions;
   const {
-    battlefield
+    battlefield,
+    fraction: mainAttackerFraction
   } = mainAttackerData;
-
+  const {
+    apostate: mainDefenderApostate,
+    fraction: mainDefenderFraction
+  } = mainDefenderData;
 
   //USE EFFECT
   useEffect(() => {
+    const properties = {
+      attackRate: 0,
+      defense: 0,
+      defenseLevel: 0,
+      healthRate: 0,
+      amountRate: 0
+    }
     let unitsProperties = {
       porter: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0,
+        ...properties,
         capacityRate: 0
       },
-      swordsman: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0
-      },
-      cavalier: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0
-      },
-      flying: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0
-      },
-      archer: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0
-      },
-      healer: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0,
+      swordsman: { ...properties },
+      cavalier: { ...properties },
+      flying: { ...properties },
+      archer: { ...properties },
+      healer: {
+        ...properties,
         resurrectionRate: 0
       },
-      mercenary: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0,
-        resurrectionRate: 0
-      },
+      mercenary: { ...properties },
       mage: {   
-        attackRate: 0,
-        defense: 0,
-        defenseLevel: 0,
-        healthRate: 0,
+        ...properties,
         suppressionRate: 0
       },
     }
+
     buffs.forEach( buff => {
       if( buff.homeLand === "all" )
       {
-        buff.unit.forEach( unit => {
-          unitsProperties[ unit ][ buff.childProperty ] += buff.value;
-        })
+        if( buff.unit === "fortification" ) { console.log("fortification")};
+        if( buff.unit === "tower" ) { console.log("tower")};
+        if( buff.unit === "magicTower" ) { console.log("magicTower")}
+        else {
+          buff.unit.forEach( unit => {
+            unitsProperties[ unit ][ buff.property ] += buff.value;
+          });
+        }
       };
       if( buff.homeLand === battlefield )
       {
-        buff.unit.forEach( unit => {
-          unitsProperties[ unit ][ buff.childProperty ] += buff.value;
-        })
+        if( buff.unit === "fortification" ) { console.log("fortification")};
+        if( buff.unit === "tower" ) { console.log("tower")};
+        if( buff.unit === "magicTower" ) { console.log("magicTower")}
+        else {
+          buff.unit.forEach( unit => {
+            unitsProperties[ unit ][ buff.property ] += buff.value;
+          });
+        }
+      };
+      if( buff.homeLand === "fraction" && ( mainAttackerFraction !== mainDefenderFraction || mainDefenderApostate ) )
+      {
+        if( buff.unit === "fortification" ) { console.log("fortification")};
+        if( buff.unit === "tower" ) { console.log("tower")};
+        if( buff.unit === "magicTower" ) { console.log("magicTower")}
+        else {
+          buff.unit.forEach( unit => {
+            unitsProperties[ unit ][ buff.property ] += buff.value;
+          });
+        }
       };
     });
+
     for (const unit in unitsProperties) {
       for (const property in unitsProperties[ unit ]) {
-        setUnitsP( player, unit, property, unitsProperties[ unit ][property] )
+        setUnitProperty( player, unit, property, unitsProperties[ unit ][property] )
         }
       }
-  }, [ buffs, battlefield, setUnitsP, player ]);
+  }, [ buffs, battlefield, setUnitProperty, player, mainAttackerFraction, mainDefenderFraction, mainDefenderApostate ]);
 }

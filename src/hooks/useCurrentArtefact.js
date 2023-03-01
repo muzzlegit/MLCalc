@@ -28,7 +28,7 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
     const [ prevArtefact ] = artefacts.filter( artefact => artefact.place === currentArtefact.place );
     if( prevArtefact )
     {
-      removeValues( prevArtefact.value );
+      removeValues( player, prevArtefact.value );
     }
     const [ newArtefact ] = artefatctsData.filter( artefact => artefact.id === currentArtefact.id );
     let newValue = ( !filter.ancient || newArtefact.ancient === "none" ? newArtefact.value.common : newArtefact.value.ancient );
@@ -40,8 +40,7 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
       value: newValue
     };
     if( artefact.ancient === "none" ) onTypeClick( "none", artefact );
-    console.log('добавляемій арт',artefact.value )
-    addValues( artefact.value );
+    addValues( player, artefact.value );
     setCurrentArtefact( artefact );
     addArtefact( artefact, player );
   };
@@ -51,7 +50,7 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
     setCurrentArtefact( {} );
     if( newArtefact )
     {
-      removeValues( newArtefact.value );
+      removeValues( player, newArtefact.value );
       removeArtefact( newArtefact, player );
     }
   };

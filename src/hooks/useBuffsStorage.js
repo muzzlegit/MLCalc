@@ -1,8 +1,8 @@
 //HOOKS
+import { useCallback } from "react";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
-import useUpdateBuffsStorage from "./useUpdateBuffsStorage";
 
-export default function useBuffsStorage( player ) {
+export default function useBuffsStorage( ) {
   const playerFunctions = usePlayerStoreFunctions();
 
   const {
@@ -10,19 +10,17 @@ export default function useBuffsStorage( player ) {
     removeBuff
   } = playerFunctions;
 
-  const addValues = ( valuesArr ) => {
+  const addValues = ( player, valuesArr ) => {
     valuesArr.forEach( value => {
-      if( value.effect !== "enemy" ) addBuff( player, value );
+      if( value.effect === "player" ) addBuff( player, value );
     });
-  };
+  }
 
-  const removeValues = ( valuesArr ) => {
+  const removeValues = ( player, valuesArr ) => {
     valuesArr.forEach( value => {
       removeBuff( player, value );
     });
   };
-
-  useUpdateBuffsStorage( player );
 
   return [ addValues, removeValues ];
 }

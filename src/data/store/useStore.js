@@ -14,13 +14,12 @@ const additionalProperties = {
   attack: 0,
   attackIndex: 'Min',
   attackRate: 0,
-  defenseArr: [],
   defense: 0,
   defenseLevel: 0,
-  defenseLevelArr: [],
   defenseLevelLimit: 50,
-  healthArr: [],
   healthRate: 0,
+  amountRate: 0,
+  restitution: 0
 }
 //----------- STORE -----------
 const useState = create(immer((set, get) => ({
@@ -28,6 +27,7 @@ const useState = create(immer((set, get) => ({
   mainAttacker: {
     battlefield: "cursedForest",
     race: 'undead',
+    fraction: 'dark',
     ally: {
       flag: false,
     },
@@ -55,6 +55,7 @@ const useState = create(immer((set, get) => ({
   //MAIN DEFENDER --------------------------------
   mainDefender: {
     race: 'undead',
+    fraction: 'dark',
     ally: {
       flag: false,
     },
@@ -63,92 +64,7 @@ const useState = create(immer((set, get) => ({
     hero: {
       checker: false,
     },
-    artefacts: [  {
-      "id": "0nUpNrRL",
-      "level": 5,
-      "ancient": false,
-      "perfect": false,
-      "name": "Кольчуга Головореза",
-      "place": "armor",
-      "set": "Головорез",
-      "value": [
-        {
-          "id": "0nUpNrRL",
-          "name": "Кольчуга Головореза",
-          "effect": "player",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
-          "property": "healthArr",
-          "childProperty": "healthRate",
-          "description": "Здоровье воинов, всадников, летунов, стрелков своих +66%",
-          "value": 0.66 
-        }
-      ],
-      "icon": "-187px -249px",
-      "battle": true,
-      "homeLand": "all",
-      "runes": [],
-      "sharpening": []
-    },  
-    {
-      "id": "TfpRJXSq",
-      "level": 5,
-      "ancient": "none",
-      "perfect": false,
-      "name": "Пояс Головореза",
-      "place": "belt",
-      "set": "Головорез",
-      "value": {
-        "common": [
-          {
-            "id": "TfpRJXSq",
-            "name": "Пояс Головореза",
-            "effect": "player",
-            "unit": [],
-            "property": "",
-            "childProperty": "",
-            "description": "",
-            "value": 0
-          },
-          {
-            "id": "TfpRJXSq",
-            "name": "Пояс Головореза",
-            "effect": "enemy",
-            "unit": [],
-            "property": "",
-            "childProperty": "",
-            "description": "",
-            "value": 0
-          }
-        ],
-        "perfect": [
-          {
-            "id": "TfpRJXSq",
-            "name": "Пояс Головореза",
-            "effect": "player",
-            "unit": [],
-            "property": "",
-            "childProperty": "",
-            "description": "",
-            "value": 0
-          },
-          {
-            "id": "TfpRJXSq",
-            "name": "Пояс Головореза",
-            "effect": "player",
-            "unit": [],
-            "property": "",
-            "childProperty": "",
-            "description": "",
-            "value": 0
-          }
-        ]
-      },
-      "icon": "-187px -435px",
-      "battle": false,
-      "homeLand": "all",
-      "runes": [],
-      "sharpening": []
-    },],
+    artefacts: [],
     attackRateIndex: 'Min',
     troops: {
       porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
@@ -169,14 +85,14 @@ const useState = create(immer((set, get) => ({
   //FUNCTIONS --------------------------------
   functions: {
     setBattlefield: ( battlefield ) => set(( state ) => { state.mainAttacker.battlefield = battlefield }),
+    setFraction: ( player, fraction ) => set(( state ) => { state[ player ].fraction = fraction }),
     setRace: ( player, race ) => set(( state ) => { state[ player ].race = race }),
     setHomeLand: ( player, land ) => set((state) => { state[ player ].homeLand = land }),
     setApostateValue: ( player ) => set(( state ) => { state[ player ].apostate = !state[ player ].apostate }),
     setUnit: ( player, unit ) =>  set( state => { state[ player ].troops[ unit.unit ] = { ...state[ player ].troops[ unit.unit ], ...unit }}),
     setRateAttack: ( player, attackRate ) => set(( state ) => { state[ player ].attackRateIndex = attackRate }),
-    setUnitProperty:  ( player, item ) => {
+    setUnitPropert:  ( player, item ) => {
       if( item.unit === "none" ) return;
-      if( item.unit === "fotification" ) return;
       // console.log(item)
       item.unit.forEach( trooper => {
           item.value === 0
@@ -196,7 +112,7 @@ const useState = create(immer((set, get) => ({
       });
       
     },
-    setUnitsP: ( player, unit,  property, value ) => set(( state ) => { state[ player ].troops[ unit ][ property ] = value }),
+    setUnitProperty: ( player, unit,  property, value ) => set(( state ) => { state[ player ].troops[ unit ][ property ] = value }),
     setTowers:  ( player, tower ) =>set(( state ) => { state[ player ].towers = tower }, false, 'setTowers'),
     setFortification:  ( player, fortification ) => set(( state ) => { state[ player ].fortifications = fortification }),
     addTowers:  ( player, tower ) =>set(( state ) => { state[ player ].towers = [ ...state[ player ].towers, tower ] }),
@@ -248,8 +164,9 @@ const useState = create(immer((set, get) => ({
       state[ player ].artefacts = artefacts;
     }),
     addBuff:( player, buff ) => set(( state ) => { 
-      state[ player ].buffs = [ ...state[ player ].buffs, buff ];
-    }),
+      if( !state[ player ].buffs.filter( item => item.id === buff.id ).length ) state[ player ].buffs = [ ...state[ player ].buffs, buff ];
+    }),      
+
     removeBuff:( player, buff ) => set(( state ) => { 
       state[ player ].buffs = state[ player ].buffs.filter( item => item.id !== buff.id );
     }),

@@ -78,8 +78,8 @@ export default function UnitCard({ unitName }) {
                 </UnitProperty>
                 <UnitProperty background = { attackIcon } >
                     { attack }
-                    <AddValue color = {'#08f169'} >
-                        { attackRate === 0 ? null : '+' + Math.floor( attackRate * 100 ) + '%' }
+                    <AddValue color = { attackRate > 0 ? '#08f169' : '#bb0a01' } >
+                        { attackRate > 0 ? '+' + Math.floor( attackRate * 100 ) + '%' :  attackRate < 0 ? Math.floor( attackRate * 100 ) + '%' : null }
                     </AddValue>
                 </UnitProperty>
                 <UnitProperty background = { defenseIcon } >
