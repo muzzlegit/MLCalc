@@ -32,6 +32,7 @@ export default function useArtefactsSet( player ) {
         const [ currentKit ] = artefactsData.filter( item => item.setName === artefact.set );
         setKit( currentKit );
         currentKit.value.forEach( value => {
+          if( value.effect === "player" ) addBuff( player, value );
           if( value.effect === "enemy" )
           {
             getEnemy( player ).forEach( player => addBuff( player, value ) );
@@ -45,8 +46,9 @@ export default function useArtefactsSet( player ) {
           currentKit.value.forEach( value => {
             getEnemy( player ).forEach( player => removeBuff( player, value ) );
           });
+          setKit({});
         }
-        setKit({});
+
       }
     });
 
