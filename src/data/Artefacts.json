@@ -587,7 +587,7 @@
           "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
           "property": "defense",
           "description": "Защита всех войск -60 Действует на противника",
-          "value": 60
+          "value": -60
         }
       ],
       "perfect": [
@@ -1007,6 +1007,284 @@
     "sharpening": []
   },
 
+
+  {
+    "id": "a397eBeH3kW7bmvzxmgYUg",
+    "level": 1,
+    "setName": "Кочевник",
+    "value": [
+        {
+          "id": "qaEDCPhfI0SSaW5qq14ceA",
+          "name": "Комплект Кочевник",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск +15%",
+          "value": 0.15
+        }
+      ]
+  },
+  {
+    "id": "T5rk1ItYJUirO0-UuEaWIg",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Плащ бескрайних степей",
+    "place": "back",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "79OFt9jXQ0CtgdVUxZSM2Q",
+          "name": "Плащ бескрайних степей",
+          "effect": "enemy",
+          "homeLand": "steppe",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск -10% на земле Степь Действует на противника",
+          "value": -0.1
+        }
+      ],
+      "ancient": [
+        {
+          "id": "nsfFjqgYaEWMMY9tQnmUpg",
+          "name": "Плащ бескрайних степей",
+          "effect": "enemy",
+          "homeLand": "steppe",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск -12% на земле Степь Действует на противника",
+          "value": -0.12
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Плащ бескрайних степей",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ]
+    },
+    "icon": "-993px -1055px",
+    "runes": [],
+    "sharpening": []
+  }, 
+  {
+    "id": "Tf5RGP1kw0CV0eXWmXFzsQ",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Кожаный доспех Кочевника",
+    "place": "armor",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "eItm1U-aTUqUwBcNYFAKpA",
+          "name": "Кожаный доспех Кочевника",
+          "effect": "player",
+          "homeLand": "steppe",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "healthRate",
+          "description": "Здоровье всех войск +15% на земле Степь",
+          "value": 0.15 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "Y0IlQUJDOUyD3MfBnC-foA",
+          "name": "Кожаный доспех Кочевника",
+          "effect": "player",
+          "homeLand": "steppe",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "healthRate",
+          "description": "Здоровье всех войск +18% на земле Степь",
+          "value": 0.18 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "hdFeeZR28EamzL_4oxJB2w",
+          "name": "Кожаный доспех Кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": "fortification",
+          "property": "",
+          "description": "Эффективность уничтожения войск на укреплениях +50%",
+          "value": 0.5
+        },
+        {
+          "id": "dl7mzw0AU0ukTblXHzQBRg",
+          "name": "Кожаный доспех Кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "healthRate",
+          "description": "Здоровье всех войск +3%",
+          "value": 0.03
+        }
+      ]
+    },
+    "icon": "-993px -993px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "RNrjqfgvI0GX905AScmLSg",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Кольцо кочевника",
+    "place": "ring",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Кольцо кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Кольцо кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "qgnogeQxlUm8XVN2q7FF6g",
+          "name": "Кольцо кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": "magicTower",
+          "property": "",
+          "description": "Атака магических башен +5%",
+          "value": 0.05 
+        }
+      ]
+    },
+    "icon": "-993px -1117px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "MuI06gaIc0uZkYc-0j35AA",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Шапка кочевника",
+    "place": "head",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "HwPUnQ95XUerVh-X-UusCw",
+          "name": "Шапка кочевника",
+          "effect": "player",
+          "homeLand": "steppe",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defenseLevel",
+          "description": "Предел максимальной защиты +10 на земле Степь",
+          "value": 10
+        }
+      ],
+      "ancient": [
+        {
+          "id": "R3aZ_PI8skGAzRdtQ8hiTw",
+          "name": "Шапка кочевника",
+          "effect": "player",
+          "homeLand": "steppe",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defenseLevel",
+          "description": "Предел максимальной защиты +12 на земле Степь",
+          "value": 12
+        }
+      ],
+      "perfect": [
+        {
+          "id": "M4p3PlbK40-vo2ZZKCwr_A",
+          "name": "Шапка кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": "tower",
+          "property": "",
+          "description": "Атака башен +25%",
+          "value": 0.25 
+        }
+      ]
+    },
+    "icon": "-993px -807px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "5v1M6_0lQEqm2HLWc6JzsQ",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Узел кочевника",
+    "place": "bag",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "S9wyKGdF2k-smlfNLqtcjA",
+          "name": "Узел кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["porter"],
+          "property": "capacityRate",
+          "description": "Носильщики вмещают +100% ресурсов",
+          "value": 1 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "vn57I8zdnUSMZbdf_IC_MQ",
+          "name": "Узел кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["porter"],
+          "property": "capacityRate",
+          "description": "Носильщики вмещают +120% ресурсов",
+          "value": 1.2
+        }
+      ],
+      "perfect": [
+        {
+          "id": "du7uhJx2WEu0dNs6mj7KSw",
+          "name": "Узел кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ]
+    },
+    "icon": "-993px -869px",
+    "runes": [],
+    "sharpening": []
+  },
   {
     "id": "hFIzwk2Aykmv9QrMXGPXAQ",
     "level": 1,
@@ -1064,7 +1342,307 @@
       ]
     },
     "icon": "-993px -1241px",
-    "battle": true,
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "6fZFEUUKRkCQ7ZhHhBN1vg",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Сапоги кочевника",
+    "place": "boots",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Сапоги кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": [],
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Сапоги кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Сапоги кочевника",
+          "effect": "",
+          "unit": "",
+          "homeLand": "",
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ]
+    },
+    "icon": "-993px -1427px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Талисман кочевника",
+    "place": "neck",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Талисман кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": [],
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Талисман кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Талисман кочевника",
+          "effect": "",
+          "unit": "",
+          "homeLand": "",
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ]
+    },
+    "icon": "-993px -745px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "dH-DpRBQQkejkzu-NpSJKw",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Легкий щит кочевника",
+    "place": "leftHand",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "IB3IA7-JfUWIf3s2IwbUow",
+          "name": "Легкий щит кочевника",
+          "effect": "player_ally",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defense",
+          "description": "Защита всех войск +5",
+          "value": 5
+        }
+      ],
+      "ancient": [
+        {
+          "id": "g6wrAfCSpEKDWGV-CeMQBQ",
+          "name": "Легкий щит кочевника",
+          "effect": "player_ally",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defense",
+          "description": "Защита всех войск +5",
+          "value": 6
+        }
+      ],
+      "perfect": [
+        {
+          "id": "OuF2FjN3HEutV1O66IHnGw",
+          "name": "Легкий щит кочевника",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск +3%",
+          "value": 0.03
+        }
+      ]
+    },
+    "icon": "-993px -1365px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "h3vZ4i5wIUWPP_1b-4U4Ow",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Штаны степных кочевников",
+    "place": "pants",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "3JxUUTYQr0WSt-Z_3oMiQg",
+          "name": "Штаны степных кочевников",
+          "effect": "player_ally",
+          "homeLand": "steppe",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defenseLevel",
+          "description": "Предел максимальной защиты +5 на земле степь",
+          "value": 5
+        }
+      ],
+      "ancient": [
+        {
+          "id": "52c5jE21nEatPM1-BTqNFw",
+          "name": "Штаны степных кочевников",
+          "effect": "player_ally",
+          "homeLand": "steppe",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defenseLevel",
+          "description": "Предел максимальной защиты +6 на земле степь",
+          "value": 6
+        }
+      ],
+      "perfect": [
+        {
+          "id": "c-y66tmtx0SNCy71R_WP3g",
+          "name": "Штаны степных кочевников",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defense",
+          "description": "Защита всех войск +3",
+          "value": 3
+        }
+      ]
+    },
+    "icon": "-993px -1303px",
+    "runes": [],
+    "sharpening": []
+  },  
+  {
+    "id": "NwueTYRM-E24b-3YxYyG3Q",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Пояс кочевника",
+    "place": "belt",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Пояс кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": [],
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Пояс кочевника",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Пояс кочевника",
+          "effect": "",
+          "unit": "",
+          "homeLand": "",
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ]
+    },
+    "icon": "-993px -1177px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "ITtUyV1lwUCHMfr3_XWuTg",
+    "level": 1,
+    "ancient": false,
+    "perfect": false,
+    "name": "Наручни степного кочевника",
+    "place": "bracers",
+    "set": "Кочевник",
+    "value": {
+      "common": [
+        {
+          "id": "wA0D5YJW40qyiZFOrcvaLw",
+          "name": "Наручни степного кочевника",
+          "effect": "player",
+          "homeLand": "steppe",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "persecutionRate",
+          "description": "Атака всех преследователей +15% на земле Степь",
+          "value": 0.15
+        }
+      ],
+      "ancient": [
+        {
+          "id": "FTfhjiz6dUaPgAEA4WQF5w",
+          "name": "Наручни степного кочевника",
+          "effect": "player",
+          "homeLand": "steppe",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "persecutionRate",
+          "description": "Атака всех преследователей +18% на земле Степь",
+          "value": 0.18
+        }
+      ],
+      "perfect": [
+        {
+          "id": "fH8U0ORl20OHcPLEA3TVAw",
+          "name": "Наручни степного кочевника",
+          "effect": "enemy",
+          "homeLand": "all",
+          "unit": "magicTower",
+          "propert": "",
+          "property": "",
+          "description": "Атака магических башен -3%",
+          "value": -0.03 
+        }
+      ]
+    },
+    "icon": "-993px -931px",
     "runes": [],
     "sharpening": []
   }

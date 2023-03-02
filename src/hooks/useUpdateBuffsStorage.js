@@ -56,8 +56,8 @@ export default function useUpdateBuffsStorage( player ) {
     buffs.forEach( buff => {
       if( buff.homeLand === "all" )
       {
-        if( buff.unit === "fortification" ) { console.log("fortification")};
-        if( buff.unit === "tower" ) { console.log("tower")};
+        if( buff.unit === "fortification" ) return;
+        if( buff.unit === "tower" ) return;
         if( buff.unit === "magicTower" ) { console.log("magicTower")}
         else {
           buff.unit.forEach( unit => {
@@ -67,8 +67,8 @@ export default function useUpdateBuffsStorage( player ) {
       };
       if( buff.homeLand === battlefield )
       {
-        if( buff.unit === "fortification" ) { console.log("fortification")};
-        if( buff.unit === "tower" ) { console.log("tower")};
+        if( buff.unit === "fortification" ) return;
+        if( buff.unit === "tower" ) return;
         if( buff.unit === "magicTower" ) { console.log("magicTower")}
         else {
           buff.unit.forEach( unit => {
@@ -78,8 +78,8 @@ export default function useUpdateBuffsStorage( player ) {
       };
       if( buff.homeLand === "fraction" && ( mainAttackerFraction !== mainDefenderFraction || mainDefenderApostate ) )
       {
-        if( buff.unit === "fortification" ) { console.log("fortification")};
-        if( buff.unit === "tower" ) { console.log("tower")};
+        if( buff.unit === "fortification" ) return;
+        if( buff.unit === "tower" ) return;
         if( buff.unit === "magicTower" ) { console.log("magicTower")}
         else {
           buff.unit.forEach( unit => {
