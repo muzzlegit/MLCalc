@@ -39,7 +39,8 @@ export default function UnitCard({ unitName }) {
         attackRate,
         defense,
         health,
-        healthRate
+        healthRate,
+        persecutionRate
     } = unit;
 
     const [ unitImg, unitRaceFrame ] = useUnitImg( player, unit );
@@ -48,8 +49,7 @@ export default function UnitCard({ unitName }) {
     const attackIcon = useCommonImg( 'attackIcon' );
     const defenseIcon = useCommonImg( 'defenseIcon' );
     const healthIcon = useCommonImg( 'healthIcon' );
-
-    
+    const persecutorIcon = useCommonImg( 'swordRight' );
 
     return (
         <UnitCardBox>
@@ -83,12 +83,19 @@ export default function UnitCard({ unitName }) {
                     </AddValue>
                 </UnitProperty>
                 <UnitProperty background = { defenseIcon } >
-                    { defense }
+                    <AddValue color = { defense < 0 ? '#f7ad0e' : '#ddddbd' } >
+                        { defense < 0 ? 0 : defense }
+                    </AddValue>
                 </UnitProperty>
                 <UnitProperty background = { healthIcon } >
                     { health }
+                    <AddValue color = { healthRate > 0 ? '#08f169' : healthRate < 0 && healthRate > -0.75 ? '#bb0a01' : '#f7ad0e' } > 
+                        { healthRate > 0 ? '+' + Math.floor( healthRate * 100 ) + '%' :  healthRate < 0 ? Math.floor( healthRate * 100 ) + '%' : null }
+                    </AddValue>
+                </UnitProperty>
+                <UnitProperty background = { persecutorIcon } >
                     <AddValue color = { '#08f169' } >
-                        { healthRate === 0 ? null : '+' + Math.floor( healthRate * 100) + '%' }
+                        { persecutionRate > 0 ? '+' + Math.floor( persecutionRate * 100 ) + '%' :  persecutionRate < 0 ? Math.floor( persecutionRate * 100 ) + '%' : null }
                     </AddValue>
                 </UnitProperty>
             </PropertiesWrap>

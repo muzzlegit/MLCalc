@@ -10,7 +10,6 @@ import addBranchSkillValue from '../../helpers/addBranchSkillValue';
 //CONST
 const additionalProperties = {
   amount: 0,
-  attackArr: [],
   attack: 0,
   attackIndex: 'Min',
   attackRate: 0,
@@ -19,7 +18,8 @@ const additionalProperties = {
   defenseLevelLimit: 50,
   healthRate: 0,
   amountRate: 0,
-  restitution: 0
+  restitutionRate: 0,
+  persecutionRate: 0
 }
 //----------- STORE -----------
 const useState = create(immer((set, get) => ({
@@ -67,14 +67,14 @@ const useState = create(immer((set, get) => ({
     artefacts: [],
     attackRateIndex: 'Min',
     troops: {
-      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties },
+      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties, capacityRate: 0 },
       swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
       cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
       flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
       archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
-      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties, resurrectionRate: 0  },
       mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
-      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties }
+      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties, suppressionRate: 0 }
     },
     towers: [],
     fortifications: [],

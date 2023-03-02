@@ -12,6 +12,7 @@ import ArtefactsSelector from "../ArtefactsSelector/ArtefactsSelector";
 import usePlayerStoreData from "../../hooks/usePlayerStoreData";
 import useHeroImg from "../../hooks/useHeroImg";
 import useDallArtefacts from "../../hooks/useDallArtefacts";
+import useArtefactsSet from "../../hooks/useArtefactsSet";
 //STYLES
 import { Wrap, DollWrap, BranchesWrap, HeroWrap, HeroBox, ArttefactWrap} from "./HeroDoll.styled"
 import useCommonImg from "../../hooks/useCommonImg";
@@ -26,7 +27,7 @@ export default function HeroDall({ toggleModal }){
   const [ heroesListModal, toggleHeroesListModal ] = useModalToggle( false );
   const [ artefactstModal, toggleArtefactstModal ] = useModalToggle( false );
   const [ heroImg, heroBackground ] = useHeroImg( player );
-
+  const kit = useArtefactsSet( player );
   const [ currentArtefactId, setCurrentArtefactId ] = useState( false );
   const [ currentArtefactPlace, setCurrentArtefactPlace ] = useState( false );
 
@@ -35,6 +36,7 @@ export default function HeroDall({ toggleModal }){
     hero
   } = playerData;
   const artFrameImg = useCommonImg( 'artFrame' );
+  
   
 
   const openArtefactsWindow = ( e ) => {
@@ -59,7 +61,7 @@ export default function HeroDall({ toggleModal }){
           </HeroBox>
         </HeroWrap>
         {
-          dallArts.map(art => {
+          dallArts.map( art => {
             return(
               <ArttefactWrap
                 key = { nanoid() }
@@ -70,6 +72,7 @@ export default function HeroDall({ toggleModal }){
                 top = { art.top }
                 left = { art.left }
                 background = { artFrameImg }
+                shadow = { kit.setName ? true : false }
               >
                 <ArtCell
                   key = { nanoid() }
@@ -79,6 +82,19 @@ export default function HeroDall({ toggleModal }){
             )
           })
         }
+          { kit.setName &&
+            <p>{ kit.setName }</p>
+          }
+          { kit.value &&
+            kit.value.map( item => {
+              return(
+                <p
+                  key = { item.id }
+                >{ item.description }</p>
+              )
+            })
+          }
+          
       </DollWrap>
       <BranchesWrap>
         <HeroBranches />

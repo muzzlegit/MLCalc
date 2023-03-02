@@ -38,10 +38,10 @@ export default function useUpdateBuffsStorage( player ) {
         ...properties,
         capacityRate: 0
       },
-      swordsman: { ...properties },
-      cavalier: { ...properties },
-      flying: { ...properties },
-      archer: { ...properties },
+      swordsman: { ...properties, persecutionRate: 0 },
+      cavalier: { ...properties, persecutionRate: 0 },
+      flying: { ...properties, persecutionRate: 0 },
+      archer: { ...properties, persecutionRate: 0 },
       healer: {
         ...properties,
         resurrectionRate: 0

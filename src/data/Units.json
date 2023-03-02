@@ -64,7 +64,9 @@
         },
         "unitIcon": "-282px -25px",
         "homeLand": "desert",
-        "alienLand": "mountain"
+        "alienLand": "mountain",
+        "persecutor": "cavalier",
+        "prey": "archer"
       },
       "level1": {
         "unit": "swordsman",
@@ -100,7 +102,6 @@
         "name": "Бессмертный пехотинец",
         "attackMin": 10,
         "attackMax": 12,
-        
         "health": 30,
         "position": "-70px -167px"
       }
@@ -113,7 +114,9 @@
         },
         "unitIcon": "-282px -49px",
         "homeLand": "steppe",
-        "alienLand": "forest"
+        "alienLand": "forest",
+        "persecutor": "flying",
+        "prey": "swordsman"
       },
       "level1": {
         "unit": "cavalier",
@@ -163,7 +166,9 @@
         },
         "unitIcon": "-282px -73px",
         "homeLand": "mountain",
-        "alienLand": "desert"
+        "alienLand": "desert",
+        "persecutor": "archer",
+        "prey": "cavalier"
       },
       "level1": {
         "unit": "flying",
@@ -214,7 +219,9 @@
         },
         "unitIcon": "-282px -97px",
         "homeLand": "forest",
-        "alienLand": "steppe"
+        "alienLand": "steppe",
+        "persecutor": "swordsman",
+        "prey": "flying"
       },
       "level1": {
         "unit": "archer",
@@ -492,7 +499,11 @@
           "top": "17px",
           "left": "168px"
         },
-        "unitIcon": "-282px -25px"
+        "unitIcon": "-282px -25px",
+        "homeLand": "desert",
+        "alienLand": "mountain",
+        "persecutor": "cavalier",
+        "prey": "archer"
       },
       "level1": {
         "unit": "swordsman",
@@ -543,7 +554,9 @@
         },
         "unitIcon": "-282px -49px",
         "homeLand": "steppe",
-        "alienLand": "forest"
+        "alienLand": "forest",
+        "persecutor": "flying",
+        "prey": "swordsman"
       },
       "level1": {
         "unit": "cavalier",
@@ -594,7 +607,9 @@
         },
         "unitIcon": "-282px -73px",
         "homeLand": "mountain",
-        "alienLand": "desert"
+        "alienLand": "desert",
+        "persecutor": "archer",
+        "prey": "cavalier"
       },
       "level1": {
         "unit": "flying",
@@ -645,7 +660,9 @@
         },
         "unitIcon": "-282px -97px",
         "homeLand": "forest",
-        "alienLand": "steppe"
+        "alienLand": "steppe",
+        "persecutor": "swordsman",
+        "prey": "flying"
       },
       "level1": {
         "unit": "archer",
@@ -924,7 +941,9 @@
         },
         "unitIcon": "-282px -25px",
         "homeLand": "desert",
-        "alienLand": "mountain"
+        "alienLand": "mountain",
+        "persecutor": "cavalier",
+        "prey": "archer"
       },
       "level1": {
         "unit": "swordsman",
@@ -975,7 +994,9 @@
         },
         "unitIcon": "-282px -49px",
         "homeLand": "steppe",
-        "alienLand": "forest"
+        "alienLand": "forest",
+        "persecutor": "flying",
+        "prey": "swordsman"
       },
       "level1": {
         "unit": "cavalier",
@@ -1026,7 +1047,9 @@
         },
         "unitIcon": "-282px -73px",
         "homeLand": "mountain",
-        "alienLand": "desert"
+        "alienLand": "desert",
+        "persecutor": "archer",
+        "prey": "cavalier"
       },
       "level1": {
         "unit": "flying",
@@ -1077,7 +1100,9 @@
         },
         "unitIcon": "-282px -97px",
         "homeLand": "forest",
-        "alienLand": "steppe"
+        "alienLand": "steppe",
+        "persecutor": "swordsman",
+        "prey": "flying"
       },
       "level1": {
         "unit": "archer",
@@ -1357,7 +1382,9 @@
         },
         "unitIcon": "-282px -25px",
         "homeLand": "desert",
-        "alienLand": "mountain"
+        "alienLand": "mountain",
+        "persecutor": "cavalier",
+        "prey": "archer"
       },
       "level1": {
         "unit": "swordsman",
@@ -1408,7 +1435,9 @@
         },
         "unitIcon": "-282px -49px",
         "homeLand": "steppe",
-        "alienLand": "forest"
+        "alienLand": "forest",
+        "persecutor": "flying",
+        "prey": "swordsman"
       },
       "level1": {
         "unit": "cavalier",
@@ -1459,7 +1488,9 @@
         },
         "unitIcon": "-282px -73px",
         "homeLand": "mountain",
-        "alienLand": "desert"
+        "alienLand": "desert",
+        "persecutor": "archer",
+        "prey": "cavalier"
       },
       "level1": {
         "unit": "flying",
@@ -1510,7 +1541,9 @@
         },
         "unitIcon": "-282px -97px",
         "homeLand": "forest",
-        "alienLand": "steppe"
+        "alienLand": "steppe",
+        "persecutor": "swordsman",
+        "prey": "flying"
       },
       "level1": {
         "unit": "archer",
@@ -1789,7 +1822,9 @@
         },
         "unitIcon": "-282px -25px",
         "homeLand": "desert",
-        "alienLand": "mountain"
+        "alienLand": "mountain",
+        "persecutor": "cavalier",
+        "prey": "archer"
       },
       "level1": {
         "unit": "swordsman",
@@ -1840,7 +1875,9 @@
         },
         "unitIcon": "-282px -49px",
         "homeLand": "steppe",
-        "alienLand": "forest"
+        "alienLand": "forest",
+        "persecutor": "flying",
+        "prey": "swordsman"
       },
       "level1": {
         "unit": "cavalier",
@@ -1891,7 +1928,9 @@
         },
         "unitIcon": "-282px -73px",
         "homeLand": "mountain",
-        "alienLand": "desert"
+        "alienLand": "desert",
+        "persecutor": "archer",
+        "prey": "cavalier"
       },
       "level1": {
         "unit": "flying",
@@ -1942,7 +1981,9 @@
         },
         "unitIcon": "-282px -97px",
         "homeLand": "forest",
-        "alienLand": "steppe"
+        "alienLand": "steppe",
+        "persecutor": "swordsman",
+        "prey": "flying"
       },
       "level1": {
         "unit": "archer",

@@ -1,6 +1,283 @@
 [
   {
-    "id": "gLBdaLmJYUO0GMRaJj3h-A",
+    "id": "id2Yj4L8vkeIhzfZnhZloA",
+    "level": 5,
+    "setName": "Головорез",
+    "value": [
+        {
+          "id": "z4Zy3iE9Zk2EKJs9AhzwSg",
+          "name": "Комплект Головорез",
+          "effect": "enemy",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "healthRate",
+          "description": "Здоровье всех войск -50% Действует на противника",
+          "value": -0.5
+        }
+      ]
+  },
+  {
+    "id": "IOTd100__UStXBNzxPQkRQ",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Накидка жертвоприношения",
+    "place": "back",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "hunZ4K6d0E618__mqDbDMg",
+          "name": "Накидка жертвоприношения",
+          "effect": "enemy",
+          "homeLand": "fraction",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "",
+          "description": "Вероятность минимальной атаки всех войск +55%",
+          "value": 0.55
+        }
+      ],
+      "ancient": [
+        {
+          "id": "Al2gzkdjkE-hZhKgxl-Q0Q",
+          "name": "Накидка жертвоприношения",
+          "effect": "enemy",
+          "homeLand": "fraction",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "",
+          "description": "Вероятность минимальной атаки всех войск +66%",
+          "value": 0.66
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Накидка жертвоприношения",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ]
+    },
+    "icon": "-187px -311px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "3h0Uua6r40OX7Ei3mZP1Tw",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Кольцо банды головорезов",
+    "place": "ring",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Кольцо банды головорезов",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Кольцо банды головорезов",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "EgtOtghzEUKYG4SVf7iVGQ",
+          "name": "Кольцо банды головорезов",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": "magicTower",
+          "property": "",
+          "description": "Атака магических башен +25%",
+          "value": 0.25 
+        }
+      ]
+    },
+    "icon": "-187px -373px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "VMQGwOIDZkO8qvLrF6w0dA",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Шлем дезинформации",
+    "place": "head",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Шлем дезинформации",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Шлем дезинформации",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "2JqfTeBwF0uOjViz5UE2fg",
+          "name": "Шлем дезинформации",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": "tower",
+          "property": "",
+          "description": "Атака башен +200%",
+          "value": 2 
+        }
+      ]
+    },
+    "icon": "-187px -63px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "LIHhBbSkt02Nml67psTORg",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Лампа великого шпионажа",
+    "place": "bag",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Лампа великого шпионажа",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Лампа великого шпионажа",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Лампа великого шпионажа",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ]
+    },
+    "icon": "-187px -125px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "zL2CInuh4EaNKUD_BLM7CQ",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Топор Головореза",
+    "place": "rightHand",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "5bIteEpwOUC4uFF_cVdL9g",
+          "name": "Топор Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "persecutionRate",
+          "description": "Атака всех преследователей +50%",
+          "value": 0.50
+        }
+      ],
+      "ancient": [
+        {
+          "id": "hJn9sAUsQUqY7mNooVOWIQ",
+          "name": "Топор Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "persecutionRate",
+          "description": "Атака всех преследователей +60%",
+          "value": 0.60
+        }
+      ],
+      "perfect": [
+        {
+          "id": "LN3KG4xiRUK8NDy0p4PTYg",
+          "name": "Топор Головореза",
+          "effect": "enemy",
+          "homeLand": "all",
+          "unit": ["mercenary"],
+          "property": "attackRate",
+          "description": "Атака наемников -15%",
+          "value": -0.15
+        },
+        {
+          "id": "6w9ghJ3LUk2wO0y0O392Iw",
+          "name": "Топор Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defenseLevel",
+          "description": "Предел максимальной защиты +5",
+          "value": 5
+        }
+      ]
+    },
+    "icon": "-187px -497px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "4g9QyfyOd0qzZalvydefIg",
     "level": 5,
     "ancient": false,
     "perfect": false,
@@ -10,31 +287,31 @@
     "value": {
       "common": [
         {
-          "id": "6uDbjahJukij2TxJNM46-w",
+          "id": "M9KvwVW7n0GMHhwFWbDq8g",
           "name": "Наручни испепеления",
           "effect": "player",
           "homeLand": "fraction",
           "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
           "property": "attackRate",
           "description": "Атака всех войск +55% В бою против вражеской фракции",
-          "value": 0.55 
+          "value": 0.55
         }
       ],
       "ancient": [
         {
-          "id": "Js8mBEMHiE6KJAfczSdXXg",
+          "id": "m8wBHiUVWUe3N_Y2LHH1xw",
           "name": "Наручни испепеления",
           "effect": "player",
           "homeLand": "fraction",
           "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
           "property": "attackRate",
           "description": "Атака всех войск +66% В бою против вражеской фракции",
-          "value": 0.66 
+          "value": 0.66
         }
       ],
       "perfect": [
         {
-          "id": "A40dzmQRzEW2cQCiSstmng",
+          "id": "JvO2lVn5A0mFhkUHTG1x6w",
           "name": "Наручни испепеления",
           "effect": "enemy",
           "homeLand": "all",
@@ -47,7 +324,6 @@
       ]
     },
     "icon": "-187px -187px",
-    "battle": true,
     "runes": [],
     "sharpening": []
   }, 
@@ -108,7 +384,6 @@
       ]
     },
     "icon": "-187px -249px",
-    "battle": true,
     "runes": [],
     "sharpening": []
   },  
@@ -125,31 +400,33 @@
         {
           "id": "Y3k22UyM2UympBrYrJpKJg",
           "name": "Пояс Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [],
-          "property": "",
-          "description": "",
-          "value": 0
-        },
-        {
-          "id": "rPjRFu_K806G3kbX9ZfivA",
-          "name": "Пояс Головореза",
-          "effect": "enemy",
-          "homeLand": "all",
+          "effect": "",
+          "homeLand": "",
           "unit": [],
           "property": "",
           "description": "",
           "value": 0
         }
       ],
+      "ancient": [
+        {
+          "id": "rPjRFu_K806G3kbX9ZfivA",
+          "name": "Пояс Головореза",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
       "perfect": [
         {
           "id": "d8rbrygAe0yzuvy6ESrQsQ",
           "name": "Пояс Головореза",
-          "effect": "player",
-          "unit": "none",
-          "homeLand": "all",
+          "effect": "",
+          "unit": "",
+          "homeLand": "",
           "property": "",
           "description": "",
           "value": 0
@@ -157,10 +434,231 @@
       ]
     },
     "icon": "-187px -435px",
-    "battle": false,
     "runes": [],
     "sharpening": []
   },
+  {
+    "id": "J9ajWi8mvEKXvdbo2ikJ3g",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Сапоги экспансии",
+    "place": "boots",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Сапоги экспансии",
+          "effect": "",
+          "homeLand": "",
+          "unit": [],
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Сапоги экспансии",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Сапоги экспансии",
+          "effect": "",
+          "unit": "",
+          "homeLand": "",
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ]
+    },
+    "icon": "-187px -683px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "5kHSQcCkuUiGIjd9vfdDkA",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Магический скорпион",
+    "place": "neck",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "",
+          "name": "Магический скорпион",
+          "effect": "",
+          "homeLand": "",
+          "unit": [],
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ],
+      "ancient": [
+        {
+          "id": "",
+          "name": "Магический скорпион",
+          "effect": "",
+          "homeLand": "",
+          "unit": "",
+          "property": "",
+          "description": "",
+          "value": 0 
+        }
+      ],
+      "perfect": [
+        {
+          "id": "",
+          "name": "Магический скорпион",
+          "effect": "",
+          "unit": "",
+          "homeLand": "",
+          "property": "",
+          "description": "",
+          "value": 0
+        }
+      ]
+    },
+    "icon": "-187px -1px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "nPW39zTntkCdLJDOVy8pvQ",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Щит Головореза",
+    "place": "leftHand",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "eoX-C3nfdkWJjmySKrl-7A",
+          "name": "Щит Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "defense",
+          "description": "Защита Воинов +50 Всадников +50 Летающих +50 Стрелков +50",
+          "value": 50
+        },
+        {
+          "id": "AiRBkWXE-UKOifG2X6ny-Q",
+          "name": "Щит Головореза",
+          "effect": "enemy",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defense",
+          "description": "Защита всех войск -50 Действует на противника",
+          "value": -50
+        }
+      ],
+      "ancient": [
+        {
+          "id": "9_KKRa0Nx02ZyX9ulR0lDw",
+          "name": "Щит Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "property": "defense",
+          "description": "Защита Воинов +60 Всадников +60 Летающих +60 Стрелков +60",
+          "value": 60
+        },
+        {
+          "id": "t9Rt-hR_AUmDkS06xVfaSA",
+          "name": "Щит Головореза",
+          "effect": "enemy",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defense",
+          "description": "Защита всех войск -60 Действует на противника",
+          "value": 60
+        }
+      ],
+      "perfect": [
+        {
+          "id": "QF3L7fdT6k6opPEBiZdOng",
+          "name": "Щит Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "attackRate",
+          "description": "Атака всех войск +15%",
+          "value": 0.15
+        }
+      ]
+    },
+    "icon": "-187px -621px",
+    "runes": [],
+    "sharpening": []
+  },
+  {
+    "id": "W9-Z5-J2yEGWZuZCjWzcRQ",
+    "level": 5,
+    "ancient": false,
+    "perfect": false,
+    "name": "Кольчужные штаны Головореза",
+    "place": "pants",
+    "set": "Головорез",
+    "value": {
+      "common": [
+        {
+          "id": "FiIZVuzuCkGLP26H3GneZg",
+          "name": "Кольчужные штаны Головореза",
+          "effect": "enemy",
+          "homeLand": "fraction",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "healthRate",
+          "description": "Здоровье всех войск -45% Действует на противника В бою против вражеской фракции",
+          "value": -0.45
+        }
+      ],
+      "ancient": [
+        {
+          "id": "LeG6CS9ROUy4Ihl6FoR6nA",
+          "name": "Кольчужные штаны Головореза",
+          "effect": "enemy",
+          "homeLand": "fraction",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "healthRate",
+          "description": "Здоровье всех войск -54% Действует на противника В бою против вражеской фракции",
+          "value": -0.54
+        }
+      ],
+      "perfect": [
+        {
+          "id": "2jM_jxo9AkSGbMWb2NwuxA",
+          "name": "Кольчужные штаны Головореза",
+          "effect": "player",
+          "homeLand": "all",
+          "unit": ["porter","swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "property": "defense",
+          "description": "Защита всех войск +15",
+          "value": 15
+        }
+      ]
+    },
+    "icon": "-187px -559px",
+    "runes": [],
+    "sharpening": []
+  },
+
+
   {
     "id": "d8rbrygAe0yzuvy6ESrQsQ",
     "level": 5,
@@ -222,6 +720,7 @@
     "runes": [],
     "sharpening": []
   },
+
   {
     "id": "JS3VM7quVEiXK_BiUpXfkQ",
     "level": 5,
@@ -281,6 +780,7 @@
     "runes": [],
     "sharpening": []
   },
+
   {
     "id": "waSToI7kiUOiX525pSCTZw",
     "level": 5,
@@ -362,6 +862,7 @@
     "runes": [],
     "sharpening": []
   },
+
   {
     "id": "AYixcYZzdU2XTiqfEdELcg",
     "level": 5,
@@ -443,6 +944,7 @@
     "runes": [],
     "sharpening": []
   },
+
   {
     "id": "jk9c7fx1c0mqIWBERQ4Erg",
     "level": 4,
@@ -504,6 +1006,7 @@
     "runes": [],
     "sharpening": []
   },
+
   {
     "id": "hFIzwk2Aykmv9QrMXGPXAQ",
     "level": 1,
@@ -527,7 +1030,7 @@
       ],
       "ancient": [
         {
-          "id": "",
+          "id": "3KM_1Hz3K0eSxrIlOXEPaQ",
           "name": "Дубина кочевника",
           "effect": "player",
           "homeLand": "steppe",

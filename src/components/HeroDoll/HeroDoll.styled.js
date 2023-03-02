@@ -69,5 +69,6 @@ export const ArttefactWrap = styled.div(
     top: props.top,
     left: props.left,
     background: props.background,
+    boxShadow: props.shadow ? '0px 0px 4px 4px rgba(255,255,255,.4)' : null,
   }),
 );

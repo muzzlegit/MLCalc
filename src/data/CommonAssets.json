@@ -51,6 +51,8 @@
     "healthIcon": "-221px -34px",
     "defenseIcon": "-221px -1px",
     "attackIcon": "-221px -17px",
+    "swordLeft": "-244px -12px",
+    "swordRight": "-244px -2px",
 
     "heroSkillIcon": "-304px -1px",
     "heroSpellIcon": "-304px -65px",
