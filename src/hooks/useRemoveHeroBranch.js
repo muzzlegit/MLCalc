@@ -2,7 +2,7 @@
 import usePlayerStoreData from './usePlayerStoreData';
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
 //HELPERS
-import removeBranchSkillValue from '../helpers/removeBranchSkillValue';
+import { removeBranchSkillValue } from '../helpers/helpers.js';
 
 export default function useRemoveHeroBranch ( player, callBack ) {
   const playerData = usePlayerStoreData( player );
@@ -13,14 +13,14 @@ export default function useRemoveHeroBranch ( player, callBack ) {
     hero
   } = playerData;
   const {
-    setUnitProperty,
+    removeBuff,
     setHeroBranchesId,
     setHeroSkillsBranch
   } = playerFunctions;
 
   const removeBranch = ( branch ) => {
     const currentSkills = hero[ branch ];
-    if( currentSkills ) removeBranchSkillValue( currentSkills, setUnitProperty, player );
+    if( currentSkills ) removeBranchSkillValue( player, currentSkills, removeBuff );
     setHeroSkillsBranch( player, branch, false );
     setHeroBranchesId( player, branch, false );
     if( callBack ) callBack();

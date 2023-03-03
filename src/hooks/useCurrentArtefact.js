@@ -4,17 +4,16 @@ import artefatctsData from '../data/Artefacts.json';
 //HOOKS
 import usePlayerStoreData from './usePlayerStoreData';
 import usePlayerStoreFunctions from './usePlayerStoreFunctions';
-import useBuffsStorage from './useBuffsStorage';
 //HELPERS
 import isArtefact from '../helpers/isArtefact';
+import { addBuffValues, removeBuffValues } from '../helpers/helpers.js';
 
 export default function useCurrentArtefact( player, place, onTypeClick ) {
   const playerData = usePlayerStoreData( player );
   const playerFunctions = usePlayerStoreFunctions();
-  const [ addValues, removeValues ] = useBuffsStorage( player );
 
   const { artefacts } = playerData;
-  const { addArtefact, removeArtefact } = playerFunctions;
+  const { addArtefact, removeArtefact, addBuff, removeBuff  } = playerFunctions;
   const [ currentArtefact, setCurrentArtefact ] = useState( isArtefact( place, artefacts ) );
 
   const getCurrentArtefact = ( id ) => {
@@ -28,7 +27,7 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
     const [ prevArtefact ] = artefacts.filter( artefact => artefact.place === currentArtefact.place );
     if( prevArtefact )
     {
-      removeValues( player, prevArtefact.value );
+      removeBuffValues( player, prevArtefact.value, removeBuff );
     }
     const [ newArtefact ] = artefatctsData.filter( artefact => artefact.id === currentArtefact.id );
     let newValue = ( !filter.ancient || newArtefact.ancient === "none" ? newArtefact.value.common : newArtefact.value.ancient );
@@ -40,7 +39,7 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
       value: newValue
     };
     if( artefact.ancient === "none" ) onTypeClick( "none", artefact );
-    addValues( player, artefact.value );
+    addBuffValues( player, artefact.value, addBuff );
     setCurrentArtefact( artefact );
     addArtefact( artefact, player );
   };
@@ -50,7 +49,7 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
     setCurrentArtefact( {} );
     if( newArtefact )
     {
-      removeValues( player, newArtefact.value );
+      removeBuffValues( player, newArtefact.value, removeBuff );
       removeArtefact( newArtefact, player );
     }
   };

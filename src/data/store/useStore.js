@@ -1,12 +1,11 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
-import { immer, Immer } from 'zustand/middleware/immer';
+import { immer } from 'zustand/middleware/immer';
 //DATA
 import units from '../Units.json';
 //HELPERS
 import findPropertyIndex from '../../helpers/findPropertyIndex';
-import removeBranchSkillValue from '../../helpers/removeBranchSkillValue';
-import addBranchSkillValue from '../../helpers/addBranchSkillValue';
+import { addBranchSkillValue, removeBranchSkillValue } from '../../helpers/helpers.js';
 //CONST
 const additionalProperties = {
   amount: 0,
@@ -22,15 +21,13 @@ const additionalProperties = {
   persecutionRate: 0
 }
 //----------- STORE -----------
-const useState = create(immer((set, get) => ({
+const useState = create( immer((set, get) => ({
   //MAIN ATTACKER --------------------------------
   mainAttacker: {
+    checker: true,
     battlefield: "cursedForest",
     race: 'undead',
     fraction: 'dark',
-    ally: {
-      flag: false,
-    },
     apostate: false,
     homeLand: 'cursedForest',
     hero: {
@@ -52,8 +49,13 @@ const useState = create(immer((set, get) => ({
     fortifications: [],
     buffs: [],
   },
+  //MAIN ATTACKER ALLY --------------------------
+  attackerAlly: {
+    checker: false,
+  },
   //MAIN DEFENDER --------------------------------
   mainDefender: {
+    checker: true,
     race: 'undead',
     fraction: 'dark',
     ally: {
@@ -81,6 +83,14 @@ const useState = create(immer((set, get) => ({
     buffs: [
 
     ],
+  },
+  //firstDefenderAlly --------------------------
+  firstDefenderAlly: {
+    checker: false,
+  },
+  //secondDefenderAlly --------------------------
+  secondDefenderAlly: {
+    checker: false,
   },
   //FUNCTIONS --------------------------------
   functions: {
@@ -146,9 +156,9 @@ const useState = create(immer((set, get) => ({
     }, false, `setHero_&&_${player}`),
     setHeroSkillsBranch: ( player, branch, skills ) => set(( state ) => {
       const currentBranch = state[ player ].hero[ branch ];
-      if( currentBranch ) removeBranchSkillValue( currentBranch, state.functions.setUnitProperty, player );
+      if( currentBranch ) removeBranchSkillValue( player, currentBranch, state.functions.removeBuff );
       const newBranch = state[ player ].hero[ branch ] = skills;
-      addBranchSkillValue( newBranch, state.functions.setUnitProperty, player );
+      addBranchSkillValue( player, newBranch, state.functions.addBuff );
     }),
     setHeroBranchesId: ( player, branch, id) => set(( state ) => { state[ player ].hero.branchesId[ branch ] = id }),
     setHeroSkillLevel: ( player, branch, skillNumber, level ) => set( state => {
@@ -163,12 +173,19 @@ const useState = create(immer((set, get) => ({
       let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
       state[ player ].artefacts = artefacts;
     }),
-    addBuff:( player, buff ) => set(( state ) => { 
-      if( !state[ player ].buffs.filter( item => item.id === buff.id ).length ) state[ player ].buffs = [ ...state[ player ].buffs, buff ];
+    addBuff:( player, buff ) => set(( state ) => {
+      if( !state[ player ].checker ) return;
+      if( !state[ player ].buffs.filter( item => item.id === buff.id ).length )
+      {
+        state[ player ].buffs = [ ...state[ player ].buffs, buff ];
+      }
     }),      
 
-    removeBuff:( player, buff ) => set(( state ) => { 
-      state[ player ].buffs = state[ player ].buffs.filter( item => item.id !== buff.id );
+    removeBuff:( player, buff ) => set(( state ) => {
+      if( state[ player ].checker )
+      {
+        state[ player ].buffs = state[ player ].buffs.filter( item => item.id !== buff.id );
+      }
     }),
   }
 }

@@ -1,24 +1,26 @@
 import { useEffect } from "react";
-import useUpdateBuffsStorage from "./useUpdateBuffsStorage";
 //HOOKS
 import usePlayerStoreData from "./usePlayerStoreData";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
+import useUpdateBuffsStorage from "./useUpdateBuffsStorage";
+//HELPERS
+import { addBuffValues, removeBuffValues } from '../helpers/helpers.js'
 
-const BUFF = {
+const BUFF = [{
   id: '2B0eBD4m',
-  battle: true,
+  effect: "player",
   homeLand: "all",
   name: 'homeLand',
   unit: [ 'porter', 'swordsman', 'cavalier', 'flying', 'archer', 'healer', 'mercenary', 'mage' ],
   property: 'defense',
   value: 25 
-};
-const homeLandAttack = {
-  battle: true,
+}];
+const homeLandAttack = [{
+  effect: "player",
   homeLand: "all",
   name: 'homeLandAttack',
   property: 'attackRate'
-};
+}];
 export default function useBattlefield() {
   const mainAttackerData = usePlayerStoreData( "mainAttacker" );
   const mainDefenderData = usePlayerStoreData( "mainDefender" );
@@ -48,60 +50,60 @@ export default function useBattlefield() {
   useEffect(() => {
     if( mainAttackerHomeLand === battlefield && !mainAttackerApostate )
       {
-        addBuff( "mainAttacker", BUFF );
+        addBuffValues( "mainAttacker", BUFF, addBuff );
       } 
       else 
       {
-        removeBuff( "mainAttacker", BUFF );
+        removeBuffValues( "mainAttacker", BUFF, removeBuff );
       };
     for ( const unit in troops ) {
       if( troops[ unit ].homeLand  === battlefield )
       {
-        addBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 } );
+        addBuffValues( "mainAttacker", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 }], addBuff );
       }
       if( troops[ unit ].alienLand === battlefield )
       {
-        addBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 } );
+        addBuffValues( "mainAttacker", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 }], addBuff );
       }
       if( troops[ unit ].alienLand !== battlefield )
       {
-        removeBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].alienLand } );
+        removeBuffValues( "mainAttacker", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand }], removeBuff );
       }
       if( troops[ unit ].homeLand  !== battlefield )
       {
-        removeBuff( "mainAttacker", { ...homeLandAttack, id: unit + troops[ unit ].homeLand } );
+        removeBuffValues( "mainAttacker", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand }], removeBuff );
       }
     };
-  }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, addBuff, removeBuff ]);
+  }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, addBuff, removeBuff, troops ]);
 
   useEffect(() => {
     if( mainDefenderHomeLand === battlefield && !mainDefenderApostate )
       {
-        addBuff( "mainDefender", BUFF );
+        addBuffValues( "mainDefender", BUFF, addBuff );
       } 
       else 
       {
-        removeBuff( "mainDefender", BUFF );
+        removeBuffValues( "mainDefender", BUFF, removeBuff );
       };
       for ( const unit in troops ) {
         if( troops[ unit ].homeLand  === battlefield )
         {
-          addBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 } );
+          addBuffValues( "mainDefender", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 }], addBuff );
         }
         if( troops[ unit ].alienLand === battlefield )
         {
-          addBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 } );
+          addBuffValues( "mainDefender", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 }], addBuff );
         }
         if( troops[ unit ].alienLand !== battlefield )
         {
-          removeBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].alienLand } );
+          removeBuffValues( "mainDefender", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand }], removeBuff );
         }
         if( troops[ unit ].homeLand  !== battlefield )
         {
-          removeBuff( "mainDefender", { ...homeLandAttack, id: unit + troops[ unit ].homeLand } );
+          removeBuffValues( "mainDefender", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand }], removeBuff );
         }
       };
-  }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, addBuff, removeBuff ]);
+  }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, addBuff, removeBuff, troops ]);
 
   return onChange;
 };

@@ -4,8 +4,7 @@ import heroesData from '../data/Heroes.json';
 import usePlayerStoreData from './usePlayerStoreData';
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
 //HELPERS
-import removeBranchSkillValue from '../helpers/removeBranchSkillValue';
-import addBranchSkillValue from '../helpers/addBranchSkillValue';
+import { addBranchSkillValue, removeBranchSkillValue } from '../helpers/helpers.js';
 
 export default function useAddHeroBranch ( player, branch, callBack ) {
   const playerData = usePlayerStoreData( player );
@@ -16,7 +15,8 @@ export default function useAddHeroBranch ( player, branch, callBack ) {
     hero
   } = playerData;
   const {
-    setUnitProperty,
+    addBuff,
+    removeBuff,
     setHeroBranchesId,
     setHeroSkillsBranch
   } = playerFunctions;
@@ -24,14 +24,10 @@ export default function useAddHeroBranch ( player, branch, callBack ) {
   const addBranch = ( id ) => {
     const currentSkills = hero[ branch ];
     const newSkills = heroesData.find( hero => hero.id === id ).skills;
-    if( currentSkills ) removeBranchSkillValue( currentSkills, setUnitProperty, player );
-    setHeroSkillsBranch(
-      player,
-      branch,
-      newSkills
-    );
+    if( currentSkills ) removeBranchSkillValue( player, currentSkills, removeBuff );
+    setHeroSkillsBranch( player, branch, newSkills );
     setHeroBranchesId( player, branch, id );
-    addBranchSkillValue( newSkills, setUnitProperty, player );
+    addBranchSkillValue( player, newSkills, addBuff );
     if( callBack ) callBack();
   };
 
