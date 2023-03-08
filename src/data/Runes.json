@@ -1,0 +1,146 @@
+[
+  {
+    "id": "pGOAzTslc0qbG_wH3_K6DQ",
+    "name": "Фео",
+    "value":[
+      {
+        "id": "qaMxJBUMvUGvjCA6T84trQ",
+        "name": "Фео",
+        "effect": "player",
+        "homeLand": "monsters",
+        "unit": "player",
+        "property": "experience",
+        "description": "+25% получаемый героем опыт в бою против расы Монстров",
+        "value": 0.25
+      }
+    ]
+  },
+  {
+    "id": "lArKSGmymUqR5ps9a_d3HA",
+    "name": "Ур",
+    "value":[
+      {
+        "id": "13Z0RnieZUeQaZkoo5iGQA",
+        "name": "Ур",
+        "effect": "player",
+        "homeLand": "all",
+        "unit": "player",
+        "property": "experience",
+        "description": "+10% получаемый героем опыт в бою",
+        "value": 0.1
+      }
+    ]
+  },
+  {
+    "id": "tw2hkCl0ekGTHKP91LwLWA",
+    "name": "Торн",
+    "value":[
+      {
+        "id": "9BInC89hKEiR5wiDWkHWcg",
+        "name": "Торн",
+        "effect": "player",
+        "homeLand": "monsters",
+        "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+        "property": "defense",
+        "description": "+5 защиты в бою против расы Монстры",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "id": "AXd9TqgjDkOX2WsW6RNAoA",
+    "name": "Ио",
+    "value":[
+      {
+        "id": "UPoZ7O46FUiHYtqqeVI5Zg",
+        "name": "Ио",
+        "effect": "player",
+        "homeLand": "all",
+        "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+        "property": "defense",
+        "description": "+3 защиты всех войск",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "dynTDrhjxUW-s3xkSwZ41A",
+    "name": "Рад",
+    "value":[
+      {
+        "id": "sIBH7NUvB0WSawju51t4TQ",
+        "name": "Рад",
+        "effect": "player",
+        "homeLand": "all",
+        "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+        "property": "healthRate",
+        "description": "+5% здоровье всех войск",
+        "value": 0.05
+      }
+    ]
+  },
+  {
+    "id": "xLcqVsXlu0yeukRQFAzyHw",
+    "name": "Тир",
+    "value":[
+      {
+        "id": "_Eyd0k_Zs0aokTRFz6rtuw",
+        "name": "Тир",
+        "effect": "enemy",
+        "homeLand": "monsters",
+        "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+        "property": "attackRate",
+        "description": "-5% атаки, действует на противника против расы Монстров",
+        "value": -0.05
+      }
+    ]
+  },
+  {
+    "id": "DSWwwPuHXUyg0krroP2SYw",
+    "name": "Гифу",
+    "value":[
+      {
+        "id": "ExbJmdzogEStYF2YDzpWAw",
+        "name": "Гифу",
+        "effect": "player",
+        "homeLand": "all",
+        "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+        "property": "attackRate",
+        "description": "+3% атака всех войск",
+        "value": 0.03
+      }
+    ]
+  },
+  {
+    "id": "",
+    "name": "Йар",
+    "value":[
+      {
+        "id": "",
+        "name": "Йар",
+        "effect": "",
+        "homeLand": "",
+        "unit": "",
+        "property": "",
+        "description": "-2% длительность миссии отряда с героем",
+        "value": -0.02
+      }
+    ]
+  },
+  {
+    "id": "uCagFryHB0-N8JACpQNDFw",
+    "name": "Хегль",
+    "value":[
+      {
+        "id": "DGfUF2HDpkaFkYvJifSzpA",
+        "name": "Хегль",
+        "effect": "enemy",
+        "homeLand": "all",
+        "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+        "property": "attackRate",
+        "description": "-3% атаки, действует на противника",
+        "value": -0.03
+      }
+    ]
+  }
+]

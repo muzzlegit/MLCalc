@@ -4,7 +4,6 @@ import { immer } from 'zustand/middleware/immer';
 //DATA
 import units from '../Units.json';
 //HELPERS
-import findPropertyIndex from '../../helpers/findPropertyIndex';
 import { addBranchSkillValue, removeBranchSkillValue } from '../../helpers/helpers.js';
 //CONST
 const additionalProperties = {
@@ -101,27 +100,6 @@ const useState = create( immer((set, get) => ({
     setApostateValue: ( player ) => set(( state ) => { state[ player ].apostate = !state[ player ].apostate }),
     setUnit: ( player, unit ) =>  set( state => { state[ player ].troops[ unit.unit ] = { ...state[ player ].troops[ unit.unit ], ...unit }}),
     setRateAttack: ( player, attackRate ) => set(( state ) => { state[ player ].attackRateIndex = attackRate }),
-    setUnitPropert:  ( player, item ) => {
-      if( item.unit === "none" ) return;
-      // console.log(item)
-      item.unit.forEach( trooper => {
-          item.value === 0
-          ? set( state => {
-            state[ player ].troops[ trooper ][ item.property ].splice( findPropertyIndex( state[ player ].troops[ trooper ][ item.property ], item ), 1);
-          }, false, `setPropertyToZero_${trooper}_&&_${player}`)
-          : set( state => {
-            state[ player].troops[ trooper ][ item.property ][ findPropertyIndex( state[ player ].troops[ trooper ][ item.property ], item )] = { id: item.id, name: item.name, value: item.value, unit: item.unit };
-          }, false, `setProperty_${trooper}_&&_${player}`)
-        })
-      item.unit.forEach( trooper => {
-        set(( state ) => { state[ player ].troops[ trooper ][ item.childProperty ] = state[ player ].troops[ trooper ][ item.property ].reduce(( acc, item ) =>{
-          item.unit.includes( trooper ) ? acc += item.value : acc += 0;
-          return acc
-          },0);
-        }, false, `setChildProperty_${trooper}_&&_${player}`);
-      });
-      
-    },
     setUnitProperty: ( player, unit,  property, value ) => set(( state ) => { state[ player ].troops[ unit ][ property ] = value }),
     setTowers:  ( player, tower ) =>set(( state ) => { state[ player ].towers = tower }, false, 'setTowers'),
     setFortification:  ( player, fortification ) => set(( state ) => { state[ player ].fortifications = fortification }),
@@ -164,12 +142,14 @@ const useState = create( immer((set, get) => ({
     setHeroSkillLevel: ( player, branch, skillNumber, level ) => set( state => {
       state[ player ].hero[ branch ][ skillNumber ].level = level;
     }),
-    addArtefact: ( artefact, player ) => set(( state ) => {
+    addArtefact: ( player, artefact ) => set(( state ) => {
+      if( !artefact ) return;
       const previosArtefacts  = state[ player ].artefacts.filter( art => art.place !== artefact.place );
       previosArtefacts.push( artefact );
       state[ player ].artefacts = [ ...previosArtefacts ];
     }),
-    removeArtefact:  ( artefact, player ) => set(( state ) => {
+    removeArtefact:  ( player, artefact ) => set(( state ) => {
+      if( !artefact ) return;
       let artefacts = state[ player ].artefacts.filter( art => art.place !== artefact.place );
       state[ player ].artefacts = artefacts;
     }),

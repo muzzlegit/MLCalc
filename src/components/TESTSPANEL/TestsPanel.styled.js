@@ -33,5 +33,6 @@ export const Center  = styled.div(
     transform: 'translate(-50%, -50%)',
     margin: 0,
     padding: '8px',
+    zIndex: '9'
   }
 );

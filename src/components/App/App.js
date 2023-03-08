@@ -1,14 +1,14 @@
 //CONTEXT
-import PlayerContext from '../../helpers/context'
+import PlayerContext from '../../helpers/context.js'
 
 //COMPONENTS
-import BattlefieldSelector from '../../components/BattlefieldSelector/BattlefieldSelector';
-import RaceSelector from '../../components/RaceSelector';
-import AttackRateSelector from '../../components/AttackRateSelector';
-import ApostateChecker from '../../components/ApostateChecker';
-import TowerSelector from '../../components/TowersSelector/TowersSelector';
-import TowersCard from '../../components/TowersCard/TowersCard';
-import Squad from '../Squad/Squad';
+import BattlefieldSelector from '../MAINSELECTORS/BattlefieldSelector';
+import RaceSelector from '../MAINSELECTORS/RaceSelector';
+import AttackRateSelector from '../MAINSELECTORS/AttackRateSelector';
+import ApostateChecker from '../MAINSELECTORS/ApostateChecker';
+import TowerSelector from '../TOWERSSELECTOR/TowersSelector';
+import TowersCard from '../TOWERSSELECTOR/TowersCard';
+import Squad from '../SQUAD';
 import TestsPanel from '../TESTSPANEL/TestsPanel';
 
 //STYLES
@@ -26,7 +26,7 @@ function App() {
           <PlayerTitle>Атакующий</PlayerTitle>
           <SelectorsBox>
             <RaceSelector />
-            <AttackRateSelector />
+            <AttackRateSelector /> 
             <ApostateChecker />
           </SelectorsBox>
           <Squad />

@@ -1,15 +1,16 @@
 import { useContext } from 'react';
 //CONTEXT
-import PlayerContext from '../../helpers/context';
+import PlayerContext from '../../../helpers/context';
 //HOOKS
-import usePlaceArtefacts from '../../hooks/usePlaceArtefacts';
-import useCommonImg from '../../hooks/useCommonImg';
-import useArtefactsImg from '../../hooks/useArtefactsImg';
-import useCurrentArtefact from '../../hooks/useCurrentArtefact';
-import useArtefactFilter from '../../hooks/useArtefactFilter';
+import usePlaceArtefacts from '../../../hooks/usePlaceArtefacts';
+import useCommonImg from '../../../hooks/useCommonImg';
+import useArtefactsImg from '../../../hooks/useArtefactsImg';
+import useCurrentArtefact from '../../../hooks/useCurrentArtefact';
+import useArtefactFilter from '../../../hooks/useArtefactFilter';
 //COMPONENTS
-import { ArtefactTypeFilter, ArtefactsLevelFilter } from '../ArtefactsFilters';
-import CloseButton from '../CloseButton/CloseButton';
+import { ArtefactTypeFilter, ArtefactsLevelFilter } from '../../ArtefactsFilters';
+import CloseButton from '../../CloseButton/CloseButton';
+import Runes from '../../RUNES/runes'
 //STYLES
 import { 
   SelectorsBox,
@@ -25,7 +26,7 @@ import {
 export default function ArtefactsSelector({ place, toggleModal }){
   const player = useContext( PlayerContext );
   const [ filter, onLevelClick, onTypeClick, onPerfectClick] = useArtefactFilter( player, place );
-  const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
+  const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact, setCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
   const [ placeArtefacts ] = usePlaceArtefacts( place, currentArtefact, filter.level );
   const [ artefactImg, getArtefactImg ] = useArtefactsImg( '' );
   const perfectIcon = useCommonImg( 'perfectIcon' );
@@ -91,6 +92,11 @@ export default function ArtefactsSelector({ place, toggleModal }){
         onTypeClick = { onTypeClick }
         onPerfectClick = { onPerfectClick }
         currentArtefact = { currentArtefact }    
+      />
+      <Runes 
+        player = { player }
+        artefact = { currentArtefact }
+        setArtefact = { setCurrentArtefact }
       />
       <CloseButton
         closeButtonFn = { toggleModal }

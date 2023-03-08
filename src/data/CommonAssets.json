@@ -48,6 +48,17 @@
     "mercenaryIcon": "-282px -145px",
     "mageIcon": "-282px -169px",
 
+    "Фео": "-1px -202px",
+    "Ур": "-38px -202px",
+    "Торн": "-75px -202px",
+    "Рад": "-112px -202px",
+    "Ио": "-149px -202px",
+    "Тир": "-186px -202px",
+    "Гифу": "-223px -202px",
+    "Йар": "-260px -202px",
+    "Хегль": "-297px -202px",
+
+
     "healthIcon": "-221px -34px",
     "defenseIcon": "-221px -1px",
     "attackIcon": "-221px -17px",

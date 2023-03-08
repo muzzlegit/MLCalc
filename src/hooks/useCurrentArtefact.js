@@ -54,5 +54,5 @@ export default function useCurrentArtefact( player, place, onTypeClick ) {
     }
   };
   
-  return [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact ];
+  return [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact, setCurrentArtefact ];
 };

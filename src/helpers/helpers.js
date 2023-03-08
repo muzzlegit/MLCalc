@@ -73,6 +73,34 @@ export function removeBuffValues( player, valuesArr, removeValue ) {
   });
 };
 
+//getArtefactByPlace
+export function getArtefactByPlace( artefactsData, place ){
+  const [ artefact ]  = artefactsData.filter( artefact => artefact.place === place );
+  return artefact ?? {};
+};
+
+//getArtefactById
+export function getArtefactById( artefactsData, id ){
+  const [ artefact ]  = artefactsData.filter( artefact => artefact.id === id );
+  return artefact ?? {};
+};
+
+//getArtefactsArrayByPlace
+export function getArtefactsArrayByPlace( artefactsData, place ){
+  const artefacts  = artefactsData.filter( artefact => artefact.place === place );
+  return artefacts;
+};
+//getArtefactValue
+export function getArtefactValue( artefactId, ancient, perfect, artefactsData ){
+  console.log('g',artefactsData)
+  const [ artefact ]  = artefactsData.filter( artefact => artefact.id === artefactId );
+  console.log('g',artefact)
+  if( !artefact ) return [];
+  let value = [];
+  ancient ? value = [ ...artefact.value.ancient ] : value = [ ...artefact.value.common ];
+  if( perfect )  value = [ ...value, ...artefact.value.perfect ];
+  return value;
+};
 
 //get enemy
 export function getEnemy( player ){
@@ -96,3 +124,37 @@ export function getAlly( player ){
       break;
   };
 };
+//getRaceLand
+export function getRaceLand( race ) {
+  switch ( race ) {
+    case 'undead':
+      return 'cursedForest';
+    case 'demon':
+      return 'deadLand';
+    case 'drow':
+      return 'cursedForest';
+    case 'human':
+      return 'hollyLand';
+    case 'elf':
+      return 'magicForest';
+    default:
+      break;
+  }
+};
+//getFraction
+export function getFraction( race ) {
+  switch ( race ) {
+    case 'undead':
+      return 'dark';
+    case 'demon':
+      return 'dark';
+    case 'drow':
+      return 'dark';
+    case 'human':
+      return 'light';
+    case 'elf':
+      return 'light';
+    default:
+      break;
+  }
+}

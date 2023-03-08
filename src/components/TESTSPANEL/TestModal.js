@@ -3,14 +3,16 @@ import { createPortal } from "react-dom";
 // import useMainAttacker from '../../data/store/use1MainAttacker';
 
 //COMPONENTS
-import UnitCard from "../../components/UnitCard/UnitCard";
-import HeroBox from "../../components/HeroBox/HeroBox";
-import TowersCard from "../../components/TowersCard/TowersCard";
-import TowersSelector from "../../components/TowersSelector/TowersSelector";
-import HeroDall from "../HeroDoll/HeroDoll";
-import HeroSkill from "../../components/HeroSkill/HeroSkill";
-import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
-import CloseButton from "../CloseButton/CloseButton";
+// import UnitCard from "../../components/UnitCard/UnitCard";
+// import HeroBox from "../../components/HeroBox/HeroBox";
+// import TowersCard from "../../components/TowersCard/TowersCard";
+// import TowersSelector from "../../components/TowersSelector/TowersSelector";
+// import HeroDall from "../HeroDoll/HeroDoll";
+// import HeroSkill from "../../components/HeroSkill/HeroSkill";
+// import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
+// import CloseButton from "../CloseButton/CloseButton";
+// import Runes from "../RUNES/runes/Runes";
+// import ArtefactSelector from "../ARTEFACTS/elements/ArtefactSelector/ArtefactSelector";
 //STYLES
 import { Backdrop, Center } from "./TestsPanel.styled";
 
@@ -31,31 +33,7 @@ export default function Modal({setToggle}) {
         onClick={onBackdropClick}
       >
       <Center>
-        {/* <UnitCard
-          player={player}
-          unit={'mage'}
-          setUnit={setunit}
-        /> */}
-      {/* <Hero
-        player={player}
-      /> */}
-      {/* <TowersCard
-        role={'mainAttacker'}
-      /> */}
-      {/* <TowersSelector
-        role={'mainAttacker'}
-      /> */}
-      {/* <HeroDall/> */}
-      {/* <HeroSkill
-        role={'mainAttacker'}
-        branch={'skillsBranch1'}
-        skillNumber={1}
-      /> */}
-      {/* <SkillsBranch
-        role={'mainAttacker'}
-        branch={'skillsBranch1'}
-      /> */}
-      <CloseButton/>
+      {/* <CloseButton/> */}
       </Center>
       </Backdrop>
     </>, modalRoot

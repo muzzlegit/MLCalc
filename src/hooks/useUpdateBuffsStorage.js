@@ -87,6 +87,15 @@ export default function useUpdateBuffsStorage( player ) {
           });
         }
       };
+      if( buff.homeLand === "monsters" && ( mainAttackerFraction !== mainDefenderFraction || mainDefenderApostate ) )
+      {
+        if( buff.unit === "player" ) { console.log("player")}
+        else {
+          buff.unit.forEach( unit => {
+            unitsProperties[ unit ][ buff.property ] += buff.value;
+          });
+        }
+      };
     });
 
     for (const unit in unitsProperties) {
