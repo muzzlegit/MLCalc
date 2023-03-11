@@ -2,7 +2,7 @@ import { useEffect } from "react";
 //HOOKS
 import usePlayerStoreData from "../../../../hooks/usePlayerStoreData";
 import usePlayerStoreFunctions from "../../../../hooks/usePlayerStoreFunctions";
-import useUpdateBuffsStorage from "../../../../hooks/useUpdateBuffsStorage";
+import useBuffsStorage from "../../../../hooks/useBuffsStorage";
 //HELPERS
 import { addBuffValues, removeBuffValues } from '../../../../helpers/helpers.js'
 //CONSTS
@@ -27,8 +27,8 @@ export default function useBattlefield() {
   const mainDefenderData = usePlayerStoreData( "mainDefender" );
   const playerFunctions = usePlayerStoreFunctions( );
 
-  useUpdateBuffsStorage( "mainAttacker" );
-  useUpdateBuffsStorage( "mainDefender" );
+  useBuffsStorage( "mainAttacker" );
+  useBuffsStorage( "mainDefender" );
   //CONSTS
   const {
     battlefield,

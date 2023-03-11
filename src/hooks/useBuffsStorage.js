@@ -2,8 +2,10 @@ import { useEffect } from "react";
 //HOOKS
 import usePlayerStoreData from "./usePlayerStoreData";
 import usePlayerStoreFunctions from "./usePlayerStoreFunctions";
+//HELPERS
+import { getAlly, getEnemy } from '../helpers/helpers.js';
 
-export default function useUpdateBuffsStorage( player ) {
+export default function useBuffsStorage( player ) {
   const mainAttackerData = usePlayerStoreData( "mainAttacker" );
   const mainDefenderData = usePlayerStoreData( "mainDefender" );
   const playerData = usePlayerStoreData( player );
@@ -13,6 +15,8 @@ export default function useUpdateBuffsStorage( player ) {
     buffs
   } = playerData;
   const {
+    addBuff,
+    removeBuff,
     setUnitProperty
   } = playerFunctions;
   const {
@@ -23,6 +27,52 @@ export default function useUpdateBuffsStorage( player ) {
     apostate: mainDefenderApostate,
     fraction: mainDefenderFraction
   } = mainDefenderData;
+
+  const addBuffValues = ( player, valuesArr ) => {
+    valuesArr.forEach( value => {
+      switch ( value.effect ) {
+        case "player":
+          addBuff( player, value );
+          break;
+        case "player_ally":
+          addBuff( player, value );
+          console.log('player_ally')
+          // getAlly( player ).forEach( ally => { addValue( ally, value ) });
+          break;
+        case "ally":
+          getAlly( player ).forEach( ally => { addBuff( ally, value ) });
+          break;
+        case "enemy":
+          getEnemy( player ).forEach( anemy => { addBuff( anemy, value ) });
+          break;
+        default:
+          break;
+      };
+    });
+  };
+
+  const removeBuffValues = ( player, valuesArr) => {
+    valuesArr.forEach( value => {
+      switch ( value.effect ) {
+        case "player":
+          removeBuff( player, value );
+          break;
+        case "player_ally":
+          removeBuff( player, value );
+          console.log('player_ally')
+          // getAlly( player ).forEach( ally => { removeValue( ally, value ) });
+          break;
+        case "ally":
+          getAlly( player ).forEach( ally => { removeBuff( ally, value ) });
+          break;
+       case "enemy":
+          getEnemy( player ).forEach( anemy => { removeBuff( anemy, value ) });
+          break;
+        default:
+          break;
+      };
+    });
+  };
 
   //USE EFFECT
   useEffect(() => {
@@ -104,4 +154,6 @@ export default function useUpdateBuffsStorage( player ) {
         }
       }
   }, [ buffs, battlefield, setUnitProperty, player, mainAttackerFraction, mainDefenderFraction, mainDefenderApostate ]);
+
+  return { addBuffValues, removeBuffValues };
 }

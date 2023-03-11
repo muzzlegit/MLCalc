@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 //DATA
-import artefactsData from '../../../../data/Artefacts.json';
+import artefactsData from '../../../data/Artefacts.json';
 //HELPERS
-import { getArtefactByPlace, getArtefactById, getArtefactsArrayByPlace, getArtefactValue } from '../../../../helpers/helpers.js';
+import { getArtefactByPlace, getArtefactById, getArtefactsArrayByPlace, getArtefactValue } from '../../../helpers/helpers.js';
 //COMPONENTS
-import usePlayerStoreData from "../../../../hooks/usePlayerStoreData";
+import usePlayerStoreData from "../../../hooks/usePlayerStoreData";
 import useTypeFilter from "../TypeFilter/useTypeFilter";
 
 export default function useSelectedArtefact( player, place ) {

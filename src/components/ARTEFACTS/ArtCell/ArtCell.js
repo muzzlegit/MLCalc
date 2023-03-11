@@ -1,7 +1,7 @@
 //HOOKS
-import useArtefactsImg from "../../hooks/useArtefactsImg";
+import useArtefactsImg from "../hooks/useArtefactsImg.js";
 //STYLES
-import { ArtefactWrap, ArtefactImg  } from "./ArtCell.styled";
+import { ArtefactWrap, ArtefactImg  } from "./styles/ArtCell.styled";
 
 export default function ArtCell({ artefact }) {
   const artefactImg = useArtefactsImg( artefact.icon );

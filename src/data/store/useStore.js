@@ -131,14 +131,11 @@ const useState = create( immer((set, get) => ({
     },
     setHero: ( player, hero ) => set(( state ) => {
       state[ player ].hero = hero;
-    }, false, `setHero_&&_${player}`),
-    setHeroSkillsBranch: ( player, branch, skills ) => set(( state ) => {
-      const currentBranch = state[ player ].hero[ branch ];
-      if( currentBranch ) removeBranchSkillValue( player, currentBranch, state.functions.removeBuff );
-      const newBranch = state[ player ].hero[ branch ] = skills;
-      addBranchSkillValue( player, newBranch, state.functions.addBuff );
     }),
-    setHeroBranchesId: ( player, branch, id) => set(( state ) => { state[ player ].hero.branchesId[ branch ] = id }),
+    setHeroBranch: ( player, branch, branchId, skills ) => set(( state ) => {
+      state[ player ].hero[ branch ] = skills;
+      state[ player ].hero.branchesId[ branch ] = branchId;
+    }),
     setHeroSkillLevel: ( player, branch, skillNumber, level ) => set( state => {
       state[ player ].hero[ branch ][ skillNumber ].level = level;
     }),

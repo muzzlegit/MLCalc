@@ -1,31 +1,23 @@
 
 import { nanoid } from "nanoid";
 //DATA
-import heroesData from '../../data/Heroes.json';
-import commonAssets from '../../data/CommonAssets.json';
+import commonAssets from '../../../data/CommonAssets.json';
 //HOOKS
-import usePlayerStoreData from "../../hooks/usePlayerStoreData";
+import useHero from "../hooks/useHero.js";
 //IMG
-import commonAssetsImg from '../../img/common/CommonAssets.png';
-import heroSkillsImg from '../../img/common/heroSkills.png';
+import commonAssetsImg from '../../../img/common/CommonAssets.png';
+import heroSkillsImg from '../../../img/common/heroSkills.png';
 //STYLES
-import { BranchesBox, BranchBox, SkillsBranch, SkillBox, Skill, ButtonAdd } from "./BranchesList.styled";
-import useAddHeroBranch from "../../hooks/useAddHeroBranch";
-
+import { BranchesBox, BranchBox, SkillsBranch, SkillBox, Skill, ButtonAdd } from "./styles/BranchesList.styled";
 
 export default function BranchesList({ player, branch, toggleModal }) {
-    const playerData = usePlayerStoreData( player );
-    const addBranch = useAddHeroBranch( player, branch, toggleModal);
+  const { hero, heroesList, addHeroBranch } = useHero( player );
 
-  //CONSTS
-  const {
-    hero
-  } = playerData;
   const skillNumbers = ['1','2','3','4','5','6','7'];
 
   return (
     <BranchesBox>
-      { heroesData.map( item => {
+      { heroesList.map( item => {
         if((item.id === hero.branchesId.skillsBranch1 
           || item.id === hero.branchesId.skillsBranch2
           || item.id === hero.branchesId.skillsBranch3 )) return  null;
@@ -54,7 +46,7 @@ export default function BranchesList({ player, branch, toggleModal }) {
               id = { item.id }
               title = { 'Добавить' }
               type = 'button'
-              onClick = { ( e ) => { addBranch( e.currentTarget.id) } }
+              onClick = { ( e ) => { addHeroBranch( branch, e.currentTarget.id); toggleModal() } }
             >
               Добавить
             </ButtonAdd>

@@ -22,7 +22,6 @@ export function removeBranchSkillValue( player, skillsObj, removeValue ) {
   };
 };
 
-
 //add buff in buffsArray
 //depends [ getAlly, getEnemy ]
 export function addBuffValues( player, valuesArr, addValue ) {

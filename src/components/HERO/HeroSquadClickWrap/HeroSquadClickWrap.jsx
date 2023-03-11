@@ -1,7 +1,7 @@
 //COMPONENTS
 import HeroPicture from '../HeroPicture';
-// import Modal from "../../Modal/Modal";
-// import HeroDoll from "../../HeroDoll/HeroDoll";
+import Modal from "../../Modal/Modal";
+import HeroDoll from "../HeroDoll/HeroDoll";
 //HOOKS
 import usePlayerStoreData from '../../../hooks/usePlayerStoreData';
 import useModalToggle from "../../../hooks/useModalToggle";
@@ -19,17 +19,18 @@ export default function HeroSquadClickWrap({ player }) {
         <HeroPicture
           player = { player }
           hero = { hero }
+          frame = { true }
         />
       </ClickWrap>
 
-      {/* { showModal &&
+      { showModal &&
         <Modal
           level = { 1 }
           toggleModal= { toggleModal }
         >
           <HeroDoll player = { player } toggleModal= { toggleModal } />
         </Modal>
-      } */}
+      }
     </>
   )
 }

@@ -21,7 +21,7 @@ export default function HeroesList({ toggleModal }){
           <HeroesBox key = { nanoid() } >
             <HeroBoxWrap key = { nanoid() } >
               <HeroBox 
-                id = { hero.name }
+                id = { hero.id }
                 name = { 'maleIcon' }
                 background = { `url(${ heroesImg }) ${ hero.maleIcon }` }
                 onClick = { onHeroClick }

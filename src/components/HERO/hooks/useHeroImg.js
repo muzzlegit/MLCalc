@@ -15,7 +15,6 @@ export default function useHeroImg( player ) {
   const playerData = usePlayerStoreData( player );
   const [ heroImg, setHeroImg ] = useState( `url(${ heroesImg }) ${ 0 }` );
   const [ heroBackground, setHeroBackground ] = useState( `url(${ UndeadСommonImg }) ${ commonImgData.undead.heroBackground }` );
-  
   //CONSTS
   const { race, hero } = playerData;
 
@@ -41,7 +40,7 @@ export default function useHeroImg( player ) {
         default:
         break;
     }
-}, [ race, hero.icon ]);
+  }, [ race, hero.icon ]);
 
   return [ heroImg, heroBackground ];
 }
