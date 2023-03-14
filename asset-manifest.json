@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mlcalc/static/css/main.dbad1703.css",
-    "main.js": "/mlcalc/static/js/main.8efc5200.js",
+    "main.js": "/mlcalc/static/js/main.685820fd.js",
     "static/media/ArtifactAssets.webp": "/mlcalc/static/media/ArtifactAssets.e4afc920af5669a94fef.webp",
     "static/media/ElfCards.png": "/mlcalc/static/media/ElfCards.e681101376acfadae69f.png",
     "static/media/DrowCards.png": "/mlcalc/static/media/DrowCards.e5bdbd9da504579229df.png",
@@ -10,7 +10,7 @@
     "static/media/Heroes.webp": "/mlcalc/static/media/Heroes.7461495c219443d335d2.webp",
     "static/media/HumanCards.png": "/mlcalc/static/media/HumanCards.8e0811296c98385dee30.png",
     "static/media/heroSkills.png": "/mlcalc/static/media/heroSkills.c0520043680531aedd29.png",
-    "static/media/CommonAssets.png": "/mlcalc/static/media/CommonAssets.275d0d1d0157ce4bfc51.png",
+    "static/media/CommonAssets.png": "/mlcalc/static/media/CommonAssets.06742c3a28ce085f6fc8.png",
     "static/media/UndeadCommon.png": "/mlcalc/static/media/UndeadCommon.def7b40f85c4060c4d0d.png",
     "static/media/DrowCommon.png": "/mlcalc/static/media/DrowCommon.0cfe0160c284556ae113.png",
     "static/media/DemonCommon.png": "/mlcalc/static/media/DemonCommon.5deb85aba0ad0ae1e1b6.png",
@@ -18,10 +18,10 @@
     "static/media/HumanCommon.png": "/mlcalc/static/media/HumanCommon.9359080a384d50708206.png",
     "index.html": "/mlcalc/index.html",
     "main.dbad1703.css.map": "/mlcalc/static/css/main.dbad1703.css.map",
-    "main.8efc5200.js.map": "/mlcalc/static/js/main.8efc5200.js.map"
+    "main.685820fd.js.map": "/mlcalc/static/js/main.685820fd.js.map"
   },
   "entrypoints": [
     "static/css/main.dbad1703.css",
-    "static/js/main.8efc5200.js"
+    "static/js/main.685820fd.js"
   ]
 }
