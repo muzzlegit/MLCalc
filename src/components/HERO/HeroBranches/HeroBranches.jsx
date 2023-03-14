@@ -3,6 +3,7 @@ import Modal from "../../Modal/Modal";
 import SkillsBranch from "../SkillsBranch";
 import BranchesList from "../BranchesList";
 //HOOKS
+import usePlayerContext from "../../../hooks/usePlayerContext";
 import useHero from "../hooks/useHero";
 import useCommonImg from "../../../hooks/useCommonImg";
 import useModalToggle from "../../../hooks/useModalToggle";
@@ -10,9 +11,8 @@ import useHeroBranches from "./hooks/useHeroBranches.js";
 //STYLES
 import { BranchesBox, BranchWrap, ButtonsWrap, Button } from "./styles/HeroBranches.tyled";
 
-
-
-export default function HeroBranches({ player }) {
+export default function HeroBranches() {
+  const player = usePlayerContext();
   const { hero, removeHeroBranch } = useHero( player );
   const [ showModal, toggleModal ] = useModalToggle( false );
   const [ currentBranch, openBranchesList ] = useHeroBranches( toggleModal );
@@ -30,8 +30,7 @@ export default function HeroBranches({ player }) {
           marginTop = { '28px' }
         >
         {
-          <SkillsBranch 
-            player = { player }
+          <SkillsBranch
             branch = { 'skillsBranch1' } />
         }
         </BranchWrap>
@@ -60,7 +59,6 @@ export default function HeroBranches({ player }) {
           </ButtonsWrap>
           { skillsBranch2 ?
             <SkillsBranch
-              player = { player }
               branch = { 'skillsBranch2' }
             />
           : null }
@@ -90,7 +88,6 @@ export default function HeroBranches({ player }) {
           </ButtonsWrap>
           { skillsBranch3 ?
             <SkillsBranch
-              player = { player }
               branch = { 'skillsBranch3' }
             />
           : null }
@@ -103,7 +100,6 @@ export default function HeroBranches({ player }) {
           toggleModal = { toggleModal }
         >
           <BranchesList
-            player = { player }
             branch = { currentBranch }
             toggleModal = { toggleModal }
           />

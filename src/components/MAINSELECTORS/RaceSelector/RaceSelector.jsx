@@ -1,13 +1,11 @@
 //HOOKS
-import { useContext } from 'react';
+import usePlayerContext from '../../../hooks/usePlayerContext.js';
 import useRace from './hooks/useRace.js';
-//CONTEXT
-import PlayerContext from '../../../helpers/context.js';
 //STYLES
 import { SelectorBox, SelectorLabel, Select } from './styles/RaceSelector.styled';
 
 export default function RaceSelector() {
-    const player = useContext( PlayerContext );
+    const player = usePlayerContext();
     const onRaceChange = useRace( player );
 
     return (

@@ -1,4 +1,5 @@
 //HOOKS
+import usePlayerContext from '../../../hooks/usePlayerContext.js';
 import useUnit from './hooks/useUnit.js';
 import useUnitImg from './hooks/useUnitImg.js';
 import useCommonImg from '../../../hooks/useCommonImg.js';
@@ -14,8 +15,8 @@ import {
     AddValue
 } from './styles/UnitCard.styled';
 
-
-export default function UnitCard({ player, unitName }) {
+export default function UnitCard({ unitName }) {
+    const player = usePlayerContext();
     const { amount, troops, onLevelClick, onAmountChange } = useUnit( player, unitName );
     const unit = troops[ unitName ];
 

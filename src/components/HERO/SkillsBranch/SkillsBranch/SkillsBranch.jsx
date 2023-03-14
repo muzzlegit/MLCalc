@@ -6,7 +6,7 @@ import { Branch } from "./styles/SkillsBranch.styled"
 //CONST
 const skillNumbers = [ '1','2','3','4','5','6','7' ];
 
-export default function SkillsBranch({ player, branch }){
+export default function SkillsBranch({ branch }){
 
   return (
     <Branch key = { nanoid() } >
@@ -17,7 +17,6 @@ export default function SkillsBranch({ player, branch }){
               key = { nanoid() }
               branch = { branch }
               skillNumber = { skillNumber }
-              player = { player }
             >
             </HeroSkill>
           )

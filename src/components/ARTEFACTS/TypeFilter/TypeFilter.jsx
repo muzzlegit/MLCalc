@@ -1,10 +1,8 @@
 //STYLES
-import { FilterBox, ButtonsBox, ButtonItem } from "./TypeFilter.styled";
-
-
+import { FilterBox, ButtonsBox, ButtonItem } from "./styles/TypeFilter.styled";
 
 export default function ArtefactTypeFilter({ filter, onTypeClick, onPerfectClick }) {
-  const { ancient, perfect } = filter;
+  const  { ancient, perfect } = filter;
 
   return (
     <>

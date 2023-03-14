@@ -3,12 +3,15 @@ import HeroPicture from '../HeroPicture';
 import Modal from "../../Modal/Modal";
 import HeroDoll from "../HeroDoll/HeroDoll";
 //HOOKS
+import usePlayerContext from '../../../hooks/usePlayerContext';
 import usePlayerStoreData from '../../../hooks/usePlayerStoreData';
 import useModalToggle from "../../../hooks/useModalToggle";
 //STYLES
 import { ClickWrap } from "./styles/HeroSquadClickWrap.styled";
 
-export default function HeroSquadClickWrap({ player }) {
+
+export default function HeroSquadClickWrap() {
+  const player = usePlayerContext();
   const playerData = usePlayerStoreData( player );
   const [ showModal, toggleModal ] = useModalToggle( false );
 
@@ -17,7 +20,6 @@ export default function HeroSquadClickWrap({ player }) {
     <>
       <ClickWrap onClick = { toggleModal } >
         <HeroPicture
-          player = { player }
           hero = { hero }
           frame = { true }
         />
@@ -28,7 +30,7 @@ export default function HeroSquadClickWrap({ player }) {
           level = { 1 }
           toggleModal= { toggleModal }
         >
-          <HeroDoll player = { player } toggleModal= { toggleModal } />
+          <HeroDoll toggleModal= { toggleModal } />
         </Modal>
       }
     </>

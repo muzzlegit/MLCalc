@@ -10,7 +10,7 @@ import SkillsBranch from '../SkillsBranch';
 import HeroPicture from "../HeroPicture";
 import HeroBranches from "../HeroBranches";
 // import HeroBranches from '../HeroBranches/HeroBranches';
-// import ArtefactsSelector from "../ArtefactsSelector/ArtefactsSelector";
+import ArtefactsSelector from "../../ARTEFACTS/ArtefactSelector";
 //HOOKS
 import usePlayerStoreData from "../../../hooks/usePlayerStoreData";
 import useHeroImg from "../hooks/useHeroImg";
@@ -18,6 +18,8 @@ import useArtefacts from "../../ARTEFACTS/hooks/useArtefacts.js";
 import useArtefactsSet from "../../../hooks/useArtefactsSet";
 import useCommonImg from "../../../hooks/useCommonImg.js";
 import useHero from "../hooks/useHero.js";
+import useModalToggle from "../../../hooks/useModalToggle";
+import useArtefactSelector from "../../ARTEFACTS/ArtefactSelector/hooks/useArtefactSelector.js";
 //STYLES
 import { Wrap, DollWrap, BranchesWrap, HeroWrap, HeroBox, ArttefactWrap,
   BranchesBox,
@@ -27,20 +29,21 @@ import { Wrap, DollWrap, BranchesWrap, HeroWrap, HeroBox, ArttefactWrap,
 } from "./styles/HeroDoll.styled"
 
 import CloseButton from "../../CloseButton/CloseButton";
-import useModalToggle from "../../../hooks/useModalToggle";
+import useTypeFilter from "../../ARTEFACTS/TypeFilter/hooks/useTypeFilter.js";
+import useDallCell from "../../ARTEFACTS/hooks/useDallCell.js";
+
 
 
 
 export default function HeroDall({ toggleModal }){
   const player = useContext( PlayerContext );
   const { dallArts } = useArtefacts( player );
+  const { place, onArtCellClick } = useDallCell();
   const playerData = usePlayerStoreData( player );
   const [ heroesListModal, toggleHeroesListModal ] = useModalToggle( false );
   const [ artefactstModal, toggleArtefactstModal ] = useModalToggle( false );
   const [ heroImg, heroBackground ] = useHeroImg( player );
   const kit = useArtefactsSet( player );
-  const [ currentArtefactId, setCurrentArtefactId ] = useState( false );
-  const [ currentArtefactPlace, setCurrentArtefactPlace ] = useState( false );
 
   const { hero } = useHero( player );
 
@@ -50,14 +53,8 @@ export default function HeroDall({ toggleModal }){
   //CONSTS
   const { skillsBranch1, skillsBranch2, skillsBranch3 } = hero;
   const artFrameImg = useCommonImg( 'artFrame' );
-  
-  
 
-  const openArtefactsWindow = ( e ) => {
-    e.currentTarget.id === '' ? setCurrentArtefactId( false ) : setCurrentArtefactId( e.currentTarget.id );
-    setCurrentArtefactPlace( e.currentTarget.attributes.name.value );
-    toggleArtefactstModal();
-  }
+ 
 
   return (
     <Wrap>
@@ -68,8 +65,7 @@ export default function HeroDall({ toggleModal }){
       />
       <DollWrap>
         <HeroWrap onClick = { toggleHeroesListModal } >
-          <HeroPicture 
-            player = { player }
+          <HeroPicture
             hero = { hero }
             frame = { false }
           />
@@ -82,7 +78,7 @@ export default function HeroDall({ toggleModal }){
                 id = { art.art.id }
                 title = { art.art.name ? art.art.name : art.place }
                 name = { art.place }
-                onClick = { openArtefactsWindow }
+                onClick = { ( e ) => { onArtCellClick( e.currentTarget.attributes.name.value ); toggleArtefactstModal() } }
                 top = { art.top }
                 left = { art.left }
                 background = { artFrameImg }
@@ -125,19 +121,16 @@ export default function HeroDall({ toggleModal }){
             toggleModal = { toggleHeroesListModal } />
         </Modal>
       }
-      {/* { artefactstModal &&
+      { artefactstModal &&
         <Modal
           level = { 1 }
           toggleModal = { toggleArtefactstModal }
         >
           <ArtefactsSelector
-            player = { player }
-            place = { currentArtefactPlace }
-            artefactId = { currentArtefactId }
-            toggleModal = { toggleArtefactstModal }
+            place = { place }
           />
         </Modal>
-      } */}
+      }
     </Wrap>
 
   )

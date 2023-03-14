@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 //HOOKS
 import usePlayerStoreData from "../../../hooks/usePlayerStoreData.js";
+import usePlayerStoreFunctions from "../../../hooks/usePlayerStoreFunctions.js";
+//HELPERS
+import { addBuffValues, removeBuffValues } from '../../../helpers/helpers.js';
 
 //COSTS
 const ARTS = [
@@ -21,7 +24,35 @@ const ARTS = [
 export default function useArtefacts( player ) {
   const [ dallArts, setDallArts ] = useState( ARTS );
   const playerData = usePlayerStoreData( player );
+  const playerFunctions = usePlayerStoreFunctions();
   const { artefacts: heroArtefacts } = playerData;
+  const { addArtefact, removeArtefact, addBuff, removeBuff } = playerFunctions;
+
+  const setArtefact = ( artefact ) => {
+    if( !artefact.place ) return;
+    const [ prevArtefact ] = heroArtefacts.filter( item => item.place === artefact.place );
+    if( prevArtefact ) 
+    {
+      removeArtefact( player, prevArtefact );
+      removeBuffValues( player, prevArtefact.value, removeBuff );
+      removeBuffValues( player, prevArtefact.runes, removeBuff );
+    }
+    console.log(artefact.runes)
+    addArtefact( player, artefact );
+    addBuffValues( player, artefact.value, addBuff );
+    addBuffValues( player, artefact.runes, addBuff );
+  };
+
+  const deleteArtefact = ( artefact ) => {
+    if( !artefact.id ) return;
+    const [ newArtefact ] = heroArtefacts.filter( item => item.id === artefact.id );
+    if( newArtefact )
+    {
+      removeArtefact( player, newArtefact );
+      removeBuffValues( player, newArtefact.value, removeBuff );
+      removeBuffValues( player, newArtefact.runes, removeBuff );
+    };
+  };
 
   //USE EFFECTS
   useEffect(() => {
@@ -30,7 +61,9 @@ export default function useArtefacts( player ) {
         { ...art, art: heroArtefacts.find( item =>  item.place === art.place )} : art 
       });
       setDallArts( artsArr );
-  }, [ heroArtefacts ])
+  }, [ heroArtefacts ]);
 
-  return { dallArts };
+  return { dallArts, heroArtefacts, setArtefact, deleteArtefact };
 }
+
+

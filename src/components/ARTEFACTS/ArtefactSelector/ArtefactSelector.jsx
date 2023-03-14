@@ -1,16 +1,17 @@
-import { useContext } from 'react';
-
 // //HOOKS
-// import usePlaceArtefacts from '../../hooks/usePlaceArtefacts';
-import useCommonImg from '../../../../hooks/useCommonImg';
-import useArtefactsImg from '../../../../hooks/useArtefactsImg';
+import usePlayerContext from '../../../hooks/usePlayerContext.js';
+import useArtefact from '../hooks/useArtefacts.js';
+
+import useCommonImg from '../../../hooks/useCommonImg.js';
+import useArtefactsImg from '../hooks/useArtefactsImg';
 // import useCurrentArtefact from '../../hooks/useCurrentArtefact';
-import useTypeFilter from '../TypeFilter/useTypeFilter';
+import useTypeFilter from '../TypeFilter/hooks/useTypeFilter.js';
+import useArtefactSelector from './hooks/useArtefactSelector.js';
 // //COMPONENTS
-import TypeFilter from '../TypeFilter/TypeFilter';
+import TypeFilter from '../TypeFilter';
+import ArtefactsLevelFilter from '../ArtefactsLevelFilter';
 // import CloseButton from '../CloseButton/CloseButton';
-// import Runes from '../RUNES/runes/'
-import useSelectedArtefact from './useSelectedArtefact.js';
+import Runes from '../../RUNES/Runes'
 //STYLES
 import { 
   SelectorsBox,
@@ -21,44 +22,47 @@ import {
   ArtefactImg,
   SelectedArtefactWrap,
   PerfectIcon
-} from "./ArtefactsSelector.styled";
-import useArtefact from './useArtefact';
+} from "./styles/ArtefactsSelector.styled";
+import useArtefactsLevelFilter from '../ArtefactsLevelFilter/hooks/useArtefactsLevelFilter.js';
 
-
-export default function ArtefactSelector({ player, place, toggleModal }){
+export default function ArtefactSelector({ place }){
+  const player = usePlayerContext();
   const { setArtefact, deleteArtefact } = useArtefact( player );
-  const { selectedArtefact, artefactsArrayByPlace, onArtefactClick } = useSelectedArtefact( player, place );
+  const { artLevel, onLevelClick } = useArtefactsLevelFilter();
+  const { selectedArtefact, artefactsArrayByPlace, setSelectedArtefact, onArtefactClick, removeSelectedArtefact, addArtefact } = useArtefactSelector( place, artLevel );
   const [ filter, onTypeClick, onPerfectClick ] = useTypeFilter( selectedArtefact );
+ 
+
   // const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact, setCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
   // const [ placeArtefacts ] = usePlaceArtefacts( place, currentArtefact, filter.level );
   const [ artefactImg, getArtefactImg ] = useArtefactsImg( '' );
   const perfectIcon = useCommonImg( 'perfectIcon' );
-  console.log('selectedArtefact', selectedArtefact)
+
   return(
     <SelectorsBox>
       <SelectedArtefactWrap
         top = { '50%' }
         right = { '50%' }
-        // background = { 
-        //   `${ filter.ancient ? 
-        //   'radial-gradient(circle at center, orange 20% , #111728 50% )' :
-        //   'radial-gradient(circle at center, #89abad 20% , #111728 50% )' }` }
+        background = { 
+          `${ filter.ancient ? 
+          'radial-gradient(circle at center, orange 20% , #111728 50% )' :
+          'radial-gradient(circle at center, #89abad 20% , #111728 50% )' }` }
       >
         <SelectedArtefact
             background={ selectedArtefact.icon ? getArtefactImg( selectedArtefact.icon ) : null }
         ></SelectedArtefact>
         <PerfectIcon
           background = { perfectIcon }
-          // filter = { `${ filter.perfect }` }
+          filter = { `${ filter.perfect }` }
         ></PerfectIcon>
 
         <button 
           type = 'button'
-          // onClick = { () => { setArtefact( selectedArtefact ) }}
+          onClick = { () => { addArtefact( selectedArtefact, filter, setArtefact ) }}
         > Выбрать </button>
         <button 
           type = 'button'
-          onClick = { () => { deleteArtefact( selectedArtefact ) }}
+          onClick = { () => { deleteArtefact( selectedArtefact ); removeSelectedArtefact(); }}
         > Удалить </button>
 
       </SelectedArtefactWrap>
@@ -84,10 +88,10 @@ export default function ArtefactSelector({ player, place, toggleModal }){
           })
         }
         </ArtefactsList>
-        {/* <ArtefactsLevelFilter
-          filter = { filter }
+        <ArtefactsLevelFilter
+          artLevel = { artLevel }
           onLevelClick = { onLevelClick }  
-        /> */}
+        />
       </ArtefactsListWrap>
 
       <TypeFilter
@@ -95,11 +99,10 @@ export default function ArtefactSelector({ player, place, toggleModal }){
         onTypeClick = { onTypeClick }
         onPerfectClick = { onPerfectClick }
       />
-      {/* <Runes 
-        player = { player }
-        artefact = { currentArtefact }
-        setArtefact = { setCurrentArtefact }
-      /> */}
+      <Runes 
+        place = { place }
+        setArtefact = { setArtefact }
+      />
       {/* <CloseButton
         closeButtonFn = { toggleModal }
         top = { 0 }

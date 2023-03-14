@@ -1,13 +1,11 @@
 //HOOKS
-import { useContext } from 'react';
-import useAttackRateIndex from './hooks/useAttackRateIndex';
-//CONTEXT
-import PlayerContext from '../../../helpers/context.js';
+import usePlayerContext from '../../../hooks/usePlayerContext.js';
+import useAttackRateIndex from './hooks/useAttackRateIndex.js';
 //STyLES
 import { SelectorBox, SelectorLabel, Select } from "./styles/AttackRateSelector.styled";
 
 export default function AttackRateSelector() {
-  const player = useContext( PlayerContext );
+  const player = usePlayerContext();
   const setRateAttack = useAttackRateIndex( player );
 
   return (

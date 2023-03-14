@@ -1,8 +1,8 @@
-
 import { nanoid } from "nanoid";
 //DATA
 import commonAssets from '../../../data/CommonAssets.json';
 //HOOKS
+import usePlayerContext from "../../../hooks/usePlayerContext.js";
 import useHero from "../hooks/useHero.js";
 //IMG
 import commonAssetsImg from '../../../img/common/CommonAssets.png';
@@ -10,7 +10,9 @@ import heroSkillsImg from '../../../img/common/heroSkills.png';
 //STYLES
 import { BranchesBox, BranchBox, SkillsBranch, SkillBox, Skill, ButtonAdd } from "./styles/BranchesList.styled";
 
-export default function BranchesList({ player, branch, toggleModal }) {
+
+export default function BranchesList({ branch, toggleModal }) {
+  const player = usePlayerContext();
   const { hero, heroesList, addHeroBranch } = useHero( player );
 
   const skillNumbers = ['1','2','3','4','5','6','7'];

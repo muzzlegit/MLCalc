@@ -22,19 +22,15 @@ const troopsArray = [
 ]
 
 export default function Squad () {
-    const player = useContext( PlayerContext );
     return (
         <SquadBox>
-            <HeroSquadClickWrap player = { player } />
+            <HeroSquadClickWrap />
             <UnitsBox
             >
                 { troopsArray.map(( trooper ) => {
                         return (
                             <li key = { nanoid() } >  
-                                <UnitCard 
-                                    unitName = { trooper }
-                                    player = { player }
-                                />
+                                <UnitCard unitName = { trooper } />
                             </li>
                         )
                     })

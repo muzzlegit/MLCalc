@@ -11,7 +11,9 @@
         "unit": "player",
         "property": "experience",
         "description": "+25% получаемый героем опыт в бою против расы Монстров",
-        "value": 0.25
+        "singleValue": 0.25,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -27,7 +29,9 @@
         "unit": "player",
         "property": "experience",
         "description": "+10% получаемый героем опыт в бою",
-        "value": 0.1
+        "singleValue": 0.1,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -43,7 +47,9 @@
         "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
         "property": "defense",
         "description": "+5 защиты в бою против расы Монстры",
-        "value": 5
+        "singleValue": 5,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -59,7 +65,9 @@
         "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
         "property": "defense",
         "description": "+3 защиты всех войск",
-        "value": 3
+        "singleValue": 3,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -75,7 +83,9 @@
         "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
         "property": "healthRate",
         "description": "+5% здоровье всех войск",
-        "value": 0.05
+        "singleValue": 0.05,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -91,7 +101,9 @@
         "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
         "property": "attackRate",
         "description": "-5% атаки, действует на противника против расы Монстров",
-        "value": -0.05
+        "singleValue": -0.05,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -107,7 +119,9 @@
         "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
         "property": "attackRate",
         "description": "+3% атака всех войск",
-        "value": 0.03
+        "singleValue": 0.03,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -123,7 +137,9 @@
         "unit": "",
         "property": "",
         "description": "-2% длительность миссии отряда с героем",
-        "value": -0.02
+        "singleValue": -0.02,
+        "value": 0,
+        "amount": 0
       }
     ]
   },
@@ -139,7 +155,9 @@
         "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
         "property": "attackRate",
         "description": "-3% атаки, действует на противника",
-        "value": -0.03
+        "singleValue": -0.03,
+        "value": 0,
+        "amount": 0
       }
     ]
   }

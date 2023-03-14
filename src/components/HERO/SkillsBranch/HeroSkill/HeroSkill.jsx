@@ -1,13 +1,14 @@
 import { nanoid } from "nanoid";
 //HOOKS
+import usePlayerContext from "../../../../hooks/usePlayerContext.js";
 import useHero from "../../../HERO/hooks/useHero.js";
 import useCommonImg from "../../../../hooks/useCommonImg.js";
 import useHeroSkillsImg from "../../hooks/useHeroSkillsImg.js";
 //STYLES
 import { SkillBox, Skill, LevelButton } from './styles/HeroSkill.styled';
 
-
-export default function HeroSkill({ player, branch, skillNumber }) {
+export default function HeroSkill({ branch, skillNumber }) {
+  const player = usePlayerContext();
   const { hero, setSkillLevel } = useHero( player );
   const skill = hero.checker ? hero[ branch ][ skillNumber ] : {};
 

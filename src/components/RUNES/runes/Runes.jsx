@@ -1,11 +1,11 @@
 //DATA
-import useRunes from "./useRunes";
+import useRunes from "./hooks/useRunes.js";
 //STYLES
-import { Wrap, RuneWrap, RuneImg, RuneInput } from "./Runes.styled";
+import { Wrap, RuneWrap, RuneImg, RuneInput } from "./styles/Runes.styled";
 
 
-export default function Runes({ player, artefact, setArtefact }) {
-  const { runes, runesImages, input, onChange, addRunesToArtefact } = useRunes( player, artefact.runes );
+export default function Runes({ place, setArtefact }) {
+  const { runes, runesImages, input, artefactChecker, onChange, addRunesToArtefact, clearRunes } = useRunes( place );
 
   return (
     <Wrap>
@@ -16,7 +16,11 @@ export default function Runes({ player, artefact, setArtefact }) {
             key = { rune.id }
           >
             <RuneImg
-              background = { runesImages[ rune.name ] }
+              background = {
+                input[ rune.name ] ?
+                runesImages[ rune.name ].active :
+                runesImages[ rune.name ].disabled
+              }
             >
             </RuneImg>
             <RuneInput
@@ -30,8 +34,14 @@ export default function Runes({ player, artefact, setArtefact }) {
       }
       <button
         type = 'button'
-        onClick = { () => addRunesToArtefact( artefact, setArtefact ) }
+        onClick = { () => addRunesToArtefact( place, setArtefact ) }
+        disabled = { artefactChecker }
       >Жмак</button>
+      <button
+        type = 'button'
+        onClick = { () => clearRunes( place, setArtefact ) }
+        disabled = { artefactChecker }
+      >Удалить</button>      
     </Wrap>
   )
 }

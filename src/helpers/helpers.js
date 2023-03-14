@@ -39,6 +39,7 @@ export function addBuffValues( player, valuesArr, addValue ) {
         getAlly( player ).forEach( ally => { addValue( ally, value ) });
         break;
       case "enemy":
+        console.log('enemy')
         getEnemy( player ).forEach( anemy => { addValue( anemy, value ) });
         break;
       default:
@@ -90,10 +91,8 @@ export function getArtefactsArrayByPlace( artefactsData, place ){
   return artefacts;
 };
 //getArtefactValue
-export function getArtefactValue( artefactId, ancient, perfect, artefactsData ){
-  console.log('g',artefactsData)
-  const [ artefact ]  = artefactsData.filter( artefact => artefact.id === artefactId );
-  console.log('g',artefact)
+export function getArtefactValue( artefactId, ancient, perfect, artefactsData ) {
+  const [ artefact ]  = artefactsData.filter( artefact => artefact.id === artefactId )
   if( !artefact ) return [];
   let value = [];
   ancient ? value = [ ...artefact.value.ancient ] : value = [ ...artefact.value.common ];

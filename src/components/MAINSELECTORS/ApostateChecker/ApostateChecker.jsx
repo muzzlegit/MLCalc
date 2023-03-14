@@ -1,13 +1,11 @@
 //HOOKS
-import { useContext } from 'react';
+import usePlayerContext from '../../../hooks/usePlayerContext.js';
 import useApostateChecker from './hooks/useApostateChecker.js';
-//CONTEXT
-import PlayerContext from '../../../helpers/context';
 //STYLES
 import { CheckerBox, CheckerLabel } from "./styles/ApostateChecker.styled";
 
 export default function ApostateChecker() {
-  const player = useContext( PlayerContext );
+  const player = usePlayerContext();
   const setApostateValue = useApostateChecker( player );
 
   return (
