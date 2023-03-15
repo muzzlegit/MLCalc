@@ -2,22 +2,32 @@ import styled from '@emotion/styled';
 
 export const SelectorsBox = styled.div(
   {
-    position: 'relative',
     padding: '8px 20px',
     height: '600px',
-    width: '500px',
+    // width: '2000px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'start',
-    gap: '40px',
+    gap: '16px',
     borderRadius: '4px',
     backgroundColor: '#111728',
   }
 );
 export const SelectedArtefactWrap = styled.div(
   { 
-    position: 'absolute',
-    transform: 'translate( 50%, -50% )',
+    padding: '8px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '16px',
+    borderRadius: '4px',
+    backgroundColor: '#294b77',
+  }
+);
+export const ArtefactTypeWrap = styled.div(
+  {     
+    position: 'relative',
     height: '135px',
     width: '135px',
     display: 'flex',
@@ -28,8 +38,6 @@ export const SelectedArtefactWrap = styled.div(
   },
   props => ({
     background: props.background,
-    top: props.top,
-    right: props.right,
   }),
 );
 export const SelectedArtefact = styled.div(
@@ -44,9 +52,9 @@ export const SelectedArtefact = styled.div(
 export const PerfectIcon = styled.div(
   {
     position: 'absolute',
-    top: '28px',
-    right: '16px',
-    transform: 'translate(50%, -50%)',
+    top: '15%',
+    left: '85%',
+    transform: 'translate(-50%, -50%)',
     height: '26px',
     width: '25px',
   },
@@ -56,11 +64,35 @@ export const PerfectIcon = styled.div(
 
   })
 );
+export const ButtonsBox = styled.div(
+  {
+    display: 'flex',
+    justifyItems: 'center',
+    alignItems: 'center',
+    gap: '16px',
+  }
+);
+export const ButtonItem = styled.button(
+  {
+    minWidth: '20px',
+    height: '20px',
+    padding: '2px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '4px',
+    color: '#ddddbd',
+    borderColor: '#294b77',
+    backgroundColor: '#294b77',
+    boxShadow: '0px 0px 1px 1px rgba(131, 151, 167, 1)',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '0px 0px 3px 3px rgba(131, 151, 167, 1)',
+    }
+  }
+);
 export const ArtefactsListWrap = styled.div(
   { 
-    position: 'absolute',
-    transform: 'translate( 50%, -50% )',
-    padding: '4px',
     height: '360px',
     width: '150px',
     display: 'flex',
@@ -69,11 +101,7 @@ export const ArtefactsListWrap = styled.div(
     gap: '8px',
     borderRadius: '4px',
     backgroundColor: '#294b77',
-  },
-  props => ({
-    top: props.top,
-    right: props.right,
-  })
+  }
 );
 export const ArtefactsList = styled.ul(
   { 
@@ -91,7 +119,7 @@ export const ArtefactBackgraund = styled.li(
     height: '62px',
     width: '62px',
     borderRadius: '6px',
-    backgroundColor: '#89abad',
+    // backgroundColor: '#89abad',
     // border: '1px solid #89abad',
     '&:hover': {
       cursor: 'pointer',
@@ -109,4 +137,14 @@ export const ArtefactImg = styled.div(
   props => ({
     background: props.background,
   })
+);
+export const BuffsWrap = styled.div(
+  { 
+    width: '500px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '16px',
+  }
 );

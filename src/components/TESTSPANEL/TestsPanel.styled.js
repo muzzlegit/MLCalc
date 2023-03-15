@@ -33,6 +33,8 @@ export const Center  = styled.div(
     transform: 'translate(-50%, -50%)',
     margin: 0,
     padding: '8px',
-    zIndex: '9'
+    zIndex: '9',
+    backgroundColor: 'wheat',
+    outline: '1px solid tomato'
   }
 );

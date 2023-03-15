@@ -1,55 +1,54 @@
 import styled from '@emotion/styled';
 
 export const Wrap = styled.div(
-  {
-    width: '100%',
+  {    
     padding: '8px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '16px',
-    borderRadius: '4px',
-    backgroundColor: '#294b77',
-  }
-);
-export const RunesBox = styled.div(
-  {
-    padding: '8px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '12px',
-    borderRadius: '4px',
-    backgroundColor: '#294b77',
-  }
-);
-export const RuneWrap = styled.div(
-  {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'start',
     alignItems: 'center',
-    gap: '16px'
+    gap: '8px',
+    borderRadius: '4px',
+    backgroundColor: '#294b77',
+    color: '#ddddbd'
   }
 );
-export const RuneImg = styled.div(
+export const SelectorBox = styled.div(
+  {    
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '8px',
+  }
+);
+export const SelectorLabel = styled.label(
+  {  
+    marginRight: '8px', 
+    color: '#ddddbdd'
+  }
+);
+export const Select = styled.select(
+  {  
+    padding: '0 4px',
+    border: '1px solid #ddddbd',
+    borderRadius: '4px',
+    color: '#111728',
+    backgroundColor: '#ddddbd'
+  }
+);
+export const SharpeningInput = styled.input(
   {
     width: '36px',
-    height: '52px', 
-    backgroundColor: 'grey'
-  },
-  props => ({
-    background: props.background,
-  }),
-);
-export const RuneInput = styled.input(
-  {
-    width: '40px',
-    height: '20px',
+    height: '16px',
     textAlign: 'center',
     borderRadius: '4px',
-    backgroundColor: '#ddddbd',
+    backgroundColor: '#ddddbd'
+  }
+);
+export const SharpeningSpan = styled.span(
+  {
+    width: '18px',
   }
 );
 export const ButtonsBox = styled.div(

@@ -10,9 +10,10 @@ import { createPortal } from "react-dom";
 // import HeroDall from "../HeroDoll/HeroDoll";
 // import HeroSkill from "../../components/HeroSkill/HeroSkill";
 // import SkillsBranch from "../../components/SkillsBranch/SkillsBranch";
-// import CloseButton from "../CloseButton/CloseButton";
+// import CloseButton from "../CloseButton";
 // import Runes from "../RUNES/runes/Runes";
 // import ArtefactSelector from "../ARTEFACTS/elements/ArtefactSelector/ArtefactSelector";
+import Sharpening from "../SHARPENING";
 //STYLES
 import { Backdrop, Center } from "./TestsPanel.styled";
 
@@ -33,7 +34,7 @@ export default function Modal({setToggle}) {
         onClick={onBackdropClick}
       >
       <Center>
-      {/* <CloseButton/> */}
+        <Sharpening />
       </Center>
       </Backdrop>
     </>, modalRoot

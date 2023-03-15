@@ -128,6 +128,7 @@ export default function HeroDall({ toggleModal }){
         >
           <ArtefactsSelector
             place = { place }
+            toggleModal = { toggleArtefactstModal }
           />
         </Modal>
       }

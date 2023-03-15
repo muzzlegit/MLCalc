@@ -37,7 +37,6 @@ export default function useArtefacts( player ) {
       removeBuffValues( player, prevArtefact.value, removeBuff );
       removeBuffValues( player, prevArtefact.runes, removeBuff );
     }
-    console.log(artefact.runes)
     addArtefact( player, artefact );
     addBuffValues( player, artefact.value, addBuff );
     addBuffValues( player, artefact.runes, addBuff );
