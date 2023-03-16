@@ -29,20 +29,22 @@ import {
   ButtonItem
 } from "./styles/ArtefactsSelector.styled";
 import useArtefactsLevelFilter from '../ArtefactsLevelFilter/hooks/useArtefactsLevelFilter.js';
+import useSharpeningsList from '../../SHARPENING/SharpeningsList/hooks/useSharpeningsList.js';
+import usePlayerStoreData from '../../../hooks/usePlayerStoreData.js';
 
 export default function ArtefactSelector({ place, toggleModal }){
   const player = usePlayerContext();
+  const { artefacts } = usePlayerStoreData( player );
   const { setArtefact, deleteArtefact } = useArtefact( player );
   const { artLevel, onLevelClick } = useArtefactsLevelFilter();
   const { selectedArtefact, artefactsArrayByPlace, setSelectedArtefact, onArtefactClick, removeSelectedArtefact, addArtefact } = useArtefactSelector( place, artLevel );
   const [ filter, onTypeClick, onPerfectClick ] = useTypeFilter( selectedArtefact );
- 
 
   // const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact, setCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
   // const [ placeArtefacts ] = usePlaceArtefacts( place, currentArtefact, filter.level );
   const [ artefactImg, getArtefactImg ] = useArtefactsImg( '' );
   const perfectIcon = useCommonImg( 'perfectIcon' );
-
+  const [ currentArtefact ] = artefacts.filter( item => item.place === place );
   return(
     <SelectorsBox>
       <ArtefactsListWrap>
@@ -103,10 +105,15 @@ export default function ArtefactSelector({ place, toggleModal }){
       </SelectedArtefactWrap>
       <BuffsWrap>
         <Runes 
+          checker = { currentArtefact ? currentArtefact.runes.length : false }
           place = { place }
           setArtefact = { setArtefact }
         />
-        <Sharpening/>
+        <Sharpening
+          checker = { currentArtefact ? currentArtefact.sharpening.length : false }
+          currentSharpenings = { currentArtefact  ? currentArtefact.sharpening : [] }
+          place = { place }
+        />
       </BuffsWrap>
       <CloseButton
         closeButtonFn = { toggleModal }

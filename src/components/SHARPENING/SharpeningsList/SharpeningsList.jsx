@@ -7,7 +7,7 @@ import { SharpeningImg, SharpeningBox, SharpeningItem, SharpeningButton } from '
 
 
 export default function SharpeningsList({ sharpeningsList, removeFromSharpeningsList }) {
-
+  
   return(
     <SharpeningBox>
       {
@@ -15,12 +15,15 @@ export default function SharpeningsList({ sharpeningsList, removeFromSharpenings
           return(
             <SharpeningItem
               key = { sharpening.id }
-              title = { sharpening.description }
+              
             >
               <SharpeningImg
+                title = { sharpening.description }
                 background = { `url(${ commonImg }) ${ commonAssets[ sharpening.name ] }` }
               ></SharpeningImg>
-              <p>{ sharpening.name }</p>
+              <p
+                title = { sharpening.description }
+              >{ sharpening.name }</p>
               <p>
                 { sharpening.value > 0 && <span>+</span> }
                 { sharpening.measure === "%" ? sharpening.value * 100 : sharpening.value }
@@ -30,6 +33,7 @@ export default function SharpeningsList({ sharpeningsList, removeFromSharpenings
                 type = "button"
                 id = { sharpening.id }
                 onClick = { removeFromSharpeningsList }
+                title = "Удаляет заточку ТОЛЬКО из списка, не из артефакта!"
               >Удалить</SharpeningButton>
             </SharpeningItem>
           )

@@ -11,7 +11,10 @@ export const Wrap = styled.div(
     gap: '16px',
     borderRadius: '4px',
     backgroundColor: '#294b77',
-  }
+  },
+  props => ({
+    boxShadow: props.boxShadow ? '0px 0px 3px 3px #0641f3' : null,
+})
 );
 export const RunesBox = styled.div(
   {

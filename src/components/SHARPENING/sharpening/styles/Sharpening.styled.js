@@ -11,7 +11,10 @@ export const Wrap = styled.div(
     borderRadius: '4px',
     backgroundColor: '#294b77',
     color: '#ddddbd'
-  }
+  },
+  props => ({
+    boxShadow: props.boxShadow ? '0px 0px 3px 3px #0641f3' : null,
+})
 );
 export const SelectorBox = styled.div(
   {    

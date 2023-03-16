@@ -12,11 +12,13 @@ import {
 } from "./styles/Runes.styled";
 
 
-export default function Runes({ place, setArtefact }) {
+export default function Runes({ checker, place, setArtefact }) {
   const { runes, runesImages, input, artefactChecker, onChange, addRunesToArtefact, clearRunes } = useRunes( place );
 
   return (
-    <Wrap>
+    <Wrap
+      boxShadow = { checker }
+    >
       <RunesBox>
         {
           runes.map( rune => {

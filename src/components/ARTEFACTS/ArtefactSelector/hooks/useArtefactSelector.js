@@ -23,6 +23,7 @@ export default function useArtefactSelector( place, artLevel ) {
     let artefact = getArtefactById( artefactsData, e.currentTarget.id );
     const currentArtefact = getArtefactByPlace( artefacts, artefact.place );
     if( currentArtefact.runes ) artefact.runes = [ ...currentArtefact.runes ];
+    if( currentArtefact.sharpening ) artefact.sharpening = [ ...currentArtefact.sharpening ];
     setSelectedArtefact( artefact );
   };
   const removeSelectedArtefact = () => {

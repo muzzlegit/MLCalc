@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 //DATA
 import SHARPENINGS from '../../../../data/Sharpening.json'
+import usePlayerContext from "../../../../hooks/usePlayerContext";
+import usePlayerStoreData from "../../../../hooks/usePlayerStoreData";
 
 export default function useSharpening() {
+  const player = usePlayerContext();
+  const playerData = usePlayerStoreData( player );
+  const { artefacts } = playerData;
   const [ currentSharpening, setCurrentSharpening ] = useState( SHARPENINGS[ 0 ] );
   const [ value, setValue ] = useState("");
 
@@ -17,20 +22,22 @@ export default function useSharpening() {
     setValue("");
   };
 
-  const addSharpeningToArtefact = ( addToSharpeningsList ) => {
-    let sharpening = currentSharpening;
-    sharpening.value = value;
-    if( currentSharpening.maxValue < 0 ) sharpening.value = - sharpening.value;
-    if( currentSharpening.measure === "%" ) sharpening.value = sharpening.value / 100;
-    addToSharpeningsList( sharpening );
+  const addSharpeningsToArtefact = ( place, setArtefact, sharpeningsList  ) => {
+    const  [ artefact ] = artefacts.filter( item => item.place === place )
+    if( !artefact ) return;
+    setArtefact( { ...artefact, sharpening: [ ...sharpeningsList ] } );
   };
+
   //useEFFECT
   useEffect(() => {
     let sharpening = currentSharpening;
-    sharpening.value = value;
+    let currentValue = 0;
+    value === "" ? currentValue = 0 : currentValue = value;
+    sharpening = {...sharpening, value: currentValue };
     if( currentSharpening.maxValue < 0 ) sharpening.value = - sharpening.value;
     if( currentSharpening.measure === "%" ) sharpening.value = sharpening.value / 100;
+    setCurrentSharpening( sharpening )
   }, [ currentSharpening, value ]);
 
-  return { SHARPENINGS, currentSharpening, value, onSharpening, onValueChange, addSharpeningToArtefact };
+  return { SHARPENINGS, currentSharpening, value, onSharpening, onValueChange, addSharpeningsToArtefact };
 }

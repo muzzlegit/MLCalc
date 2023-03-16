@@ -36,10 +36,12 @@ export default function useArtefacts( player ) {
       removeArtefact( player, prevArtefact );
       removeBuffValues( player, prevArtefact.value, removeBuff );
       removeBuffValues( player, prevArtefact.runes, removeBuff );
+      removeBuffValues( player, prevArtefact.sharpening, removeBuff );
     }
     addArtefact( player, artefact );
     addBuffValues( player, artefact.value, addBuff );
     addBuffValues( player, artefact.runes, addBuff );
+    addBuffValues( player, artefact.sharpening, addBuff );
   };
 
   const deleteArtefact = ( artefact ) => {
@@ -50,8 +52,24 @@ export default function useArtefacts( player ) {
       removeArtefact( player, newArtefact );
       removeBuffValues( player, newArtefact.value, removeBuff );
       removeBuffValues( player, newArtefact.runes, removeBuff );
+      removeBuffValues( player, newArtefact.sharpening, removeBuff );
     };
   };
+  const addBuffsToArtefact = ( place, buffName, buffs ) => {
+    let [ artefact ] = heroArtefacts.filter( item => item.place === place );
+    if( !artefact ) return;
+    removeBuffValues( player, artefact[ buffName ], removeBuff );
+    artefact = { ...artefact, [ buffName ]: buffs }
+    addArtefact( player, artefact );
+    addBuffValues( player, buffs, addBuff );
+  }
+  const removeBuffsFromArtefact = ( place, buffName ) => {
+    let [ artefact ] = heroArtefacts.filter( item => item.place === place );
+    if( !artefact ) return;
+    removeBuffValues( player, artefact[ buffName ], removeBuff );
+    artefact = { ...artefact, [ buffName ]: [] }
+    addArtefact( player, artefact );
+  }
 
   //USE EFFECTS
   useEffect(() => {
@@ -62,7 +80,7 @@ export default function useArtefacts( player ) {
       setDallArts( artsArr );
   }, [ heroArtefacts ]);
 
-  return { dallArts, heroArtefacts, setArtefact, deleteArtefact };
+  return { dallArts, heroArtefacts, setArtefact, deleteArtefact, addBuffsToArtefact, removeBuffsFromArtefact };
 }
 
 

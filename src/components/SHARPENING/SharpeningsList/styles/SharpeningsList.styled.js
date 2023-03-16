@@ -33,6 +33,20 @@ export const SharpeningImg = styled.div(
 );
 export const SharpeningButton = styled.button(
   {
-    padding: '2px 6px',
+    minWidth: '20px',
+    height: '20px',
+    padding: '2px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '4px',
+    color: '#bb0a01',
+    borderColor: '#294b77',
+    backgroundColor: '#294b77',
+    boxShadow: '0px 0px 1px 1px rgba(131, 151, 167, 1)',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '0px 0px 3px 3px rgba(131, 151, 167, 1)',
+    }
   }
 );
