@@ -14,15 +14,15 @@ export default function useRunes( place ) {
   const artefactChecker = getArtefactChecker( place, artefacts );
 
   const runesImages = {
-    'Фео': { active: useCommonImg( "Фео" ), disabled: useCommonImg( "Фео_gs" ) },
-    'Ур': { active: useCommonImg( "Ур" ), disabled: useCommonImg( "Ур_gs" ) },
-    'Торн': { active: useCommonImg( "Торн" ), disabled: useCommonImg( "Торн_gs" ) },
-    'Ио': { active: useCommonImg( "Ио" ), disabled: useCommonImg( "Ио_gs" ) },
-    'Рад': { active: useCommonImg( "Рад" ), disabled: useCommonImg( "Рад_gs" ) },
-    'Тир': { active: useCommonImg( "Тир" ), disabled: useCommonImg( "Тир_gs" ) },
-    'Гифу': { active: useCommonImg( "Гифу" ), disabled: useCommonImg( "Гифу_gs" ) },
-    'Йар': { active: useCommonImg( "Йар" ), disabled: useCommonImg( "Йар_gs" ) },
-    'Хегль': { active: useCommonImg( "Хегль" ), disabled: useCommonImg( "Хегль_gs" ) }
+    'Фео': useCommonImg( "Фео" ),
+    'Ур': useCommonImg( "Ур" ),
+    'Торн': useCommonImg( "Торн" ),
+    'Ио': useCommonImg( "Ио" ),
+    'Рад': useCommonImg( "Рад" ),
+    'Тир': useCommonImg( "Тир" ),
+    'Гифу': useCommonImg( "Гифу" ),
+    'Йар': useCommonImg( "Йар" ),
+    'Хегль': useCommonImg( "Хегль" )
   };
 
   const onChange = ( e ) => {
@@ -41,7 +41,8 @@ export default function useRunes( place ) {
     .map( rune => ({
         ...rune.value[ 0 ],
         value: rune.value[ 0 ].singleValue * input[ rune.name ],
-        amount: input[ rune.name ]
+        amount: input[ rune.name ],
+        source: player
     }));
     setArtefact( { ...artefact, runes: [ ...filteredRunes ] } );
   };

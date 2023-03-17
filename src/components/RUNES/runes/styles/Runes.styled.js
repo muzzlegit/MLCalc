@@ -44,6 +44,7 @@ export const RuneImg = styled.div(
   },
   props => ({
     background: props.background,
+    filter: props.filter === 'true' ? null : 'grayscale(100%) brightness(70%)',
   }),
 );
 export const RuneInput = styled.input(

@@ -77,8 +77,6 @@
     "heroSkillIcon": "-304px -1px",
     "heroSpellIcon": "-304px -65px",
 
-    "artefactWindow": "-387px 0",
-
     "towerPosition": "-27px -117px", 
     "magicTowerPosition": "-1px -117px",
     "fortificationPosition": "-56px -117px",
@@ -87,6 +85,8 @@
     "magicTowerPositionUnit": "-1px -43px",
     "fortificationPositionUnit": "-1px -85px" ,
 
+    "runeIcon": "-201px -120px",
+    "sharpeningIcon": "-201px -144px",
     "perfectIcon": "-1px -157px",
     "smallPerfectIcon": "-40px -157px",
     "addIcon": "-26px -171px",

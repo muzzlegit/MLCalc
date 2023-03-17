@@ -28,10 +28,9 @@ export default function Runes({ checker, place, setArtefact }) {
             >
               <RuneImg
                 background = {
-                  input[ rune.name ] ?
-                  runesImages[ rune.name ].active :
-                  runesImages[ rune.name ].disabled
+                  runesImages[ rune.name ]
                 }
+                filter = { `${ input[ rune.name ] ? true: null }` }
               >
               </RuneImg>
               <RuneInput

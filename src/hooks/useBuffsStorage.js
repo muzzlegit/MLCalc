@@ -37,7 +37,7 @@ export default function useBuffsStorage( player ) {
         case "player_ally":
           addBuff( player, value );
           console.log('player_ally')
-          // getAlly( player ).forEach( ally => { addValue( ally, value ) });
+          getAlly( player ).forEach( ally => { addBuff( ally, value ) });
           break;
         case "ally":
           getAlly( player ).forEach( ally => { addBuff( ally, value ) });
@@ -60,7 +60,7 @@ export default function useBuffsStorage( player ) {
         case "player_ally":
           removeBuff( player, value );
           console.log('player_ally')
-          // getAlly( player ).forEach( ally => { removeValue( ally, value ) });
+          getAlly( player ).forEach( ally => { removeBuff( ally, value ) });
           break;
         case "ally":
           getAlly( player ).forEach( ally => { removeBuff( ally, value ) });
@@ -104,6 +104,10 @@ export default function useBuffsStorage( player ) {
     }
 
     buffs.forEach( buff => {
+      console.log(player)
+      if(player === "attackerAlly"){
+        console.log(buff)
+      }
       if( buff.homeLand === "all" )
       {
         if( buff.unit === "fortification" ) return;

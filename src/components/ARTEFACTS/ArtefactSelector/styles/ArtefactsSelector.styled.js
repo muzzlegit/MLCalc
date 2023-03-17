@@ -47,19 +47,20 @@ export const SelectedArtefact = styled.div(
   },
   props => ({
     background: props.background,
+    filter: props.filters ? null : 'grayscale(60%) brightness(70%)'
   })
 );
-export const PerfectIcon = styled.div(
+export const BuffIcon = styled.div(
   {
     position: 'absolute',
-    top: '15%',
-    left: '85%',
-    transform: 'translate(-50%, -50%)',
-    height: '26px',
-    width: '25px',
+    transform: 'translate(-50%, -50%)'
   },
   props => ({
     background: props.background,
+    top: props.top,
+    left: props.left,
+    height: props.height,
+    width: props.width,
     filter: props.filter === 'true' ? null : 'grayscale(100%) brightness(70%)',
 
   })

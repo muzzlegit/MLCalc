@@ -50,7 +50,29 @@ const useState = create( immer((set, get) => ({
   },
   //MAIN ATTACKER ALLY --------------------------
   attackerAlly: {
-    checker: false,
+    checker: true,    
+    race: 'undead',
+    fraction: 'dark',
+    apostate: false,
+    homeLand: 'cursedForest',
+    hero: {
+      checker: false,
+    },
+    artefacts: [],
+    attackRateIndex: 'Min',
+    troops: {
+      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties, capacityRate: 0 },
+      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
+      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
+      flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
+      archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties, resurrectionRate: 0 },
+      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
+      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties, suppressionRate: 0 }
+    },
+    towers: [],
+    fortifications: [],
+    buffs: [],
   },
   //MAIN DEFENDER --------------------------------
   mainDefender: {
@@ -85,11 +107,55 @@ const useState = create( immer((set, get) => ({
   },
   //firstDefenderAlly --------------------------
   firstDefenderAlly: {
-    checker: false,
+    checker: true,    
+    race: 'undead',
+    fraction: 'dark',
+    apostate: false,
+    homeLand: 'cursedForest',
+    hero: {
+      checker: false,
+    },
+    artefacts: [],
+    attackRateIndex: 'Min',
+    troops: {
+      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties, capacityRate: 0 },
+      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
+      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
+      flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
+      archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties, resurrectionRate: 0 },
+      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
+      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties, suppressionRate: 0 }
+    },
+    towers: [],
+    fortifications: [],
+    buffs: [],
   },
   //secondDefenderAlly --------------------------
   secondDefenderAlly: {
-    checker: false,
+    checker: true,    
+    race: 'undead',
+    fraction: 'dark',
+    apostate: false,
+    homeLand: 'cursedForest',
+    hero: {
+      checker: false,
+    },
+    artefacts: [],
+    attackRateIndex: 'Min',
+    troops: {
+      porter: { ...units.undead.porter.level1, ...additionalProperties, ...units.undead.porter.commonProperties, capacityRate: 0 },
+      swordsman: { ...units.undead.swordsman.level1, ...additionalProperties, ...units.undead.swordsman.commonProperties },
+      cavalier: { ...units.undead.cavalier.level1, ...additionalProperties, ...units.undead.cavalier.commonProperties },
+      flying: { ...units.undead.flying.level1, ...additionalProperties, ...units.undead.flying.commonProperties },
+      archer: { ...units.undead.archer.level1, ...additionalProperties, ...units.undead.archer.commonProperties },
+      healer: { ...units.undead.healer.level1, ...additionalProperties, ...units.undead.healer.commonProperties, resurrectionRate: 0 },
+      mercenary: { ...units.undead.mercenary.level1, ...additionalProperties, ...units.undead.mercenary.commonProperties },
+      mage: { ...units.undead.mage.level1, ...additionalProperties, ...units.undead.mage.commonProperties, suppressionRate: 0 }
+    },
+    towers: [],
+    fortifications: [],
+    buffs: [],
   },
   //FUNCTIONS --------------------------------
   functions: {
@@ -152,7 +218,7 @@ const useState = create( immer((set, get) => ({
     }),
     addBuff:( player, buff ) => set(( state ) => {
       if( !state[ player ].checker ) return;
-      if( !state[ player ].buffs.filter( item => item.id === buff.id ).length )
+      if( !state[ player ].buffs.filter( item => item.id === buff.id && item.source === buff.source ).length )
       {
         state[ player ].buffs = [ ...state[ player ].buffs, buff ];
       }

@@ -23,7 +23,7 @@ import {
   ArtefactBackgraund,
   ArtefactImg,
   SelectedArtefactWrap,
-  PerfectIcon,
+  BuffIcon,
   BuffsWrap,
   ButtonsBox,
   ButtonItem
@@ -43,7 +43,7 @@ export default function ArtefactSelector({ place, toggleModal }){
   // const [ currentArtefact, getCurrentArtefact, addCurrentArtefact, removeCurrentArtefact, setCurrentArtefact ] = useCurrentArtefact( player, place, onTypeClick );
   // const [ placeArtefacts ] = usePlaceArtefacts( place, currentArtefact, filter.level );
   const [ artefactImg, getArtefactImg ] = useArtefactsImg( '' );
-  const perfectIcon = useCommonImg( 'perfectIcon' );
+
   const [ currentArtefact ] = artefacts.filter( item => item.place === place );
   return(
     <SelectorsBox>
@@ -83,18 +83,45 @@ export default function ArtefactSelector({ place, toggleModal }){
             'radial-gradient(circle at center, #89abad 20% , #111728 50% )' }`}        
           >
           <SelectedArtefact
-              background={ selectedArtefact.icon ? getArtefactImg( selectedArtefact.icon ) : null }
+            filters = { currentArtefact && (selectedArtefact.id === currentArtefact.id) }
+            background={ selectedArtefact.icon ? getArtefactImg( selectedArtefact.icon ) : null }
           >
           </SelectedArtefact>
-          <PerfectIcon
-              background = { perfectIcon }
+          <BuffIcon  
+              background = { useCommonImg( 'perfectIcon' ) }
               filter = { `${ filter.perfect }` }
-            ></PerfectIcon>
+              top = '15%'
+              left = '85%'
+              height = '26px'
+              width = '25px'
+            ></BuffIcon>
+          <BuffIcon  
+              background = { useCommonImg( 'runeIcon' ) }
+              filter = { `${ currentArtefact && currentArtefact.runes.length !== 0 }` }
+              top = '85%'
+              left = '85%'
+              height = '22px'
+              width = '16px'
+            ></BuffIcon>
+          <BuffIcon  
+              background = { useCommonImg( 'sharpeningIcon' ) }
+              filter = { `${ currentArtefact && currentArtefact.sharpening.length !== 0 }` }
+              top = '85%'
+              left = '15%'
+              height = '24px'
+              width = '22px'
+            ></BuffIcon>
         </ArtefactTypeWrap>
         <ButtonsBox>
           <ButtonItem 
             type = 'button'
             onClick = { () => { addArtefact( selectedArtefact, filter, setArtefact ) }}
+            disabled = { 
+              currentArtefact && 
+              selectedArtefact.id === currentArtefact.id && 
+              currentArtefact.ancient === filter.ancient && 
+              currentArtefact.perfect === filter.perfect
+            }
           > Применить </ButtonItem>
           <ButtonItem 
             type = 'button'

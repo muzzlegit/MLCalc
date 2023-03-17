@@ -25,6 +25,9 @@ export function removeBranchSkillValue( player, skillsObj, removeValue ) {
 //add buff in buffsArray
 //depends [ getAlly, getEnemy ]
 export function addBuffValues( player, valuesArr, addValue ) {
+  // console.log(player)
+  // console.log(valuesArr)
+
   valuesArr.forEach( value => {
     switch ( value.effect ) {
       case "player":
@@ -33,7 +36,7 @@ export function addBuffValues( player, valuesArr, addValue ) {
       case "player_ally":
         addValue( player, value );
         console.log('player_ally')
-        // getAlly( player ).forEach( ally => { addValue( ally, value ) });
+        getAlly( player ).forEach( ally => { addValue( ally, value ) });
         break;
       case "ally":
         getAlly( player ).forEach( ally => { addValue( ally, value ) });
@@ -82,7 +85,7 @@ export function getArtefactByPlace( artefactsData, place ){
 //getArtefactById
 export function getArtefactById( artefactsData, id ){
   const [ artefact ]  = artefactsData.filter( artefact => artefact.id === id );
-  return artefact ?? {};
+  return artefact ?? { };
 };
 
 //getArtefactsArrayByPlace
@@ -91,13 +94,13 @@ export function getArtefactsArrayByPlace( artefactsData, place ){
   return artefacts;
 };
 //getArtefactValue
-export function getArtefactValue( artefactId, ancient, perfect, artefactsData ) {
+export function getArtefactValue( player, artefactId, ancient, perfect, artefactsData ) {
   const [ artefact ]  = artefactsData.filter( artefact => artefact.id === artefactId )
   if( !artefact ) return [];
   let value = [];
   ancient ? value = [ ...artefact.value.ancient ] : value = [ ...artefact.value.common ];
   if( perfect )  value = [ ...value, ...artefact.value.perfect ];
-  return value;
+  return value.map( element => ({ ...element, source: player }));;
 };
 
 //get enemy
@@ -105,7 +108,13 @@ export function getEnemy( player ){
   switch ( player ) {
     case "mainAttacker":
       return [ "mainDefender", "firstDefenderAlly", "secondDefenderAlly" ];
+    case "attackerAlly":
+      return [ "mainDefender", "firstDefenderAlly", "secondDefenderAlly" ];    
     case "mainDefender":
+      return [ "mainAttacker", "attackerAlly" ];
+    case "firstDefenderAlly":
+      return [ "mainAttacker", "attackerAlly" ];
+    case "secondDefenderAlly":
       return [ "mainAttacker", "attackerAlly" ];
     default:
       break;
@@ -116,8 +125,14 @@ export function getAlly( player ){
   switch ( player ) {
     case "mainAttacker":
       return [ "attackerAlly" ];
+    case "attackerAlly":
+      return [ "mainAttacker" ];
     case "mainDefender":
       return [ "firstDefenderAlly", "secondDefenderAlly" ];
+    case "firstDefenderAlly":
+      return [ "mainDefender", "secondDefenderAlly" ];
+    case "secondDefenderAlly":
+      return [ "firstDefenderAlly", "mainDefender" ];
     default:
       break;
   };

@@ -13,12 +13,12 @@ export default function useSharpening() {
 
   const onValueChange = ( e ) => {
     if( isNaN( Number( e.currentTarget.value ) ) ) return;
-    let currentValue = Number( e.currentTarget.value ) > Math.abs(currentSharpening.maxValue) ? Math.abs(currentSharpening.maxValue) : Number( e.currentTarget.value );
+    let currentValue = Number( e.currentTarget.value ) > Math.abs( currentSharpening.maxValue ) ? Math.abs( currentSharpening.maxValue ) : Number( e.currentTarget.value );
     setValue( currentValue );
   };
   const onSharpening = ( e ) => {
     const [ sharpening ] = SHARPENINGS.filter( item => item.id === e.currentTarget.value );
-    setCurrentSharpening( sharpening );
+    setCurrentSharpening( { ...sharpening, source: player } );
     setValue("");
   };
 

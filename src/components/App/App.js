@@ -33,6 +33,16 @@ function App() {
         </PlayerContext.Provider>
       </PlayerBox>
       <PlayerBox>
+        < PlayerContext.Provider value = "attackerAlly" >
+          <SelectorsBox>
+            <RaceSelector />
+            <AttackRateSelector /> 
+            <ApostateChecker />
+          </SelectorsBox>
+          <Squad />
+        </PlayerContext.Provider>
+      </PlayerBox>
+      <PlayerBox>
         < PlayerContext.Provider value = "mainDefender" >
           <PlayerTitle>Защитник</PlayerTitle>
           <SelectorsBox>
@@ -47,7 +57,26 @@ function App() {
           <Squad />
         </PlayerContext.Provider>
       </PlayerBox>
-
+      <PlayerBox>
+        < PlayerContext.Provider value = "firstDefenderAlly" >
+          <SelectorsBox>
+            <RaceSelector />
+            <AttackRateSelector /> 
+            <ApostateChecker />
+          </SelectorsBox>
+          <Squad />
+        </PlayerContext.Provider>
+      </PlayerBox>
+      <PlayerBox>
+        < PlayerContext.Provider value = "secondDefenderAlly" >
+          <SelectorsBox>
+            <RaceSelector />
+            <AttackRateSelector /> 
+            <ApostateChecker />
+          </SelectorsBox>
+          <Squad />
+        </PlayerContext.Provider>
+      </PlayerBox>
     </AppBox>
     <TestsPanel/>
   </>  

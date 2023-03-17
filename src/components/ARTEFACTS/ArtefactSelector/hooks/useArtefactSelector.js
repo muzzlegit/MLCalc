@@ -34,7 +34,7 @@ export default function useArtefactSelector( place, artLevel ) {
       ...artefact,
       ancient: artefact.ancient === "none" ? false : filter.ancient,
       perfect: filter.perfect,
-      value: [ ...getArtefactValue( artefact.id, artefact.ancient === "none" ? false : filter.ancient, filter.perfect, artefactsData ) ]
+      value: [ ...getArtefactValue( player, artefact.id, artefact.ancient === "none" ? false : filter.ancient, filter.perfect, artefactsData ) ]
     };
     setArtefact( newArtefact );
   };
