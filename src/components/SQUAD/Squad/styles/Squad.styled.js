@@ -2,8 +2,7 @@ import styled from '@emotion/styled'
 
 export const SquadBox = styled.div(
     {  
-        // width: '100px',
-        // height: '100px',
+        position: 'relative',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'start',

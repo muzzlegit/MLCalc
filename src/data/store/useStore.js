@@ -50,7 +50,7 @@ const useState = create( immer((set, get) => ({
   },
   //MAIN ATTACKER ALLY --------------------------
   attackerAlly: {
-    checker: true,    
+    checker: false,    
     race: 'undead',
     fraction: 'dark',
     apostate: false,
@@ -107,7 +107,7 @@ const useState = create( immer((set, get) => ({
   },
   //firstDefenderAlly --------------------------
   firstDefenderAlly: {
-    checker: true,    
+    checker: false,    
     race: 'undead',
     fraction: 'dark',
     apostate: false,
@@ -133,7 +133,7 @@ const useState = create( immer((set, get) => ({
   },
   //secondDefenderAlly --------------------------
   secondDefenderAlly: {
-    checker: true,    
+    checker: false,    
     race: 'undead',
     fraction: 'dark',
     apostate: false,
@@ -195,6 +195,7 @@ const useState = create( immer((set, get) => ({
         }
       })
     },
+    setAlliesChecker: ( player ) => set(( state ) => { state[ player ].checker = !state[ player ].checker }),
     setHero: ( player, hero ) => set(( state ) => {
       state[ player ].hero = hero;
     }),

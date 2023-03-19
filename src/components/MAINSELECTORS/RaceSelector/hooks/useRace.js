@@ -28,6 +28,7 @@ const FRACTION_DEBUFF = {
 export default function useRace( player ) {
   const mainAttackerData = usePlayerStoreData( "mainAttacker" );
   const mainDefenderData = usePlayerStoreData( "mainDefender" );
+  const attackerAllyData = usePlayerStoreData( "attackerAlly" );
   const playerFunctions = usePlayerStoreFunctions();
 
   //CONSTS
@@ -40,6 +41,10 @@ export default function useRace( player ) {
     apostate: mainDefenderApostate,
     fraction: mainDefenderFraction
    } = mainDefenderData;
+   const {
+    race: attackerAllyRace,
+    fraction: attackerAllyFraction
+   } = attackerAllyData;
   const { setRace, setHomeLand, setFraction, addBuff, removeBuff } = playerFunctions;
 
    //HaNDLE FUNCTIONS
@@ -52,6 +57,7 @@ export default function useRace( player ) {
   useEffect(() => {
     if( mainAttackerFraction === mainDefenderFraction && !mainDefenderApostate &&  mainAttackerRace !== mainDefenderRace )
     {
+      removeBuff( "mainAttacker", RACE_DEBUFF );
       addBuff( "mainAttacker", FRACTION_DEBUFF );
     };
     if( mainAttackerFraction !== mainDefenderFraction || mainDefenderApostate )
@@ -60,13 +66,35 @@ export default function useRace( player ) {
     };
     if( mainAttackerRace === mainDefenderRace && !mainDefenderApostate )
     {
+      removeBuff( "mainAttacker", FRACTION_DEBUFF );
       addBuff( "mainAttacker", RACE_DEBUFF );
     };
     if( mainAttackerRace !== mainDefenderRace || mainDefenderApostate )
     {
       removeBuff( "mainAttacker", RACE_DEBUFF );
     };
-  }, [ mainAttackerFraction, mainDefenderFraction, mainDefenderApostate, addBuff, removeBuff, mainAttackerRace, mainDefenderRace  ]);
+
+    if( attackerAllyFraction === mainDefenderFraction && !mainDefenderApostate &&  attackerAllyRace !== mainDefenderRace )
+    {
+      removeBuff( "attackerAlly", RACE_DEBUFF );
+      addBuff( "attackerAlly", FRACTION_DEBUFF );
+    };
+    if( attackerAllyFraction !== mainDefenderFraction || mainDefenderApostate )
+    {
+      removeBuff( "attackerAlly", FRACTION_DEBUFF );
+    };
+    if( attackerAllyRace === mainDefenderRace && !mainDefenderApostate )
+    {
+      removeBuff( "attackerAlly", FRACTION_DEBUFF );
+      addBuff( "attackerAlly", RACE_DEBUFF );
+    };
+    if( attackerAllyRace !== mainDefenderRace || mainDefenderApostate )
+    {
+      removeBuff( "attackerAlly", RACE_DEBUFF );
+    };
+
+
+  }, [ mainAttackerFraction, mainAttackerRace, attackerAllyFraction, mainDefenderFraction, mainDefenderApostate, addBuff, removeBuff, attackerAllyRace, mainDefenderRace  ]);
 
   return onChange;
 };

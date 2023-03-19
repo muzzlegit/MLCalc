@@ -70,8 +70,9 @@ export default function useBattlefield() {
   };
 
   //USE EFFECTS
+  //mainAttacker
   useEffect(() => {
-    if( mainAttackerHomeLand === battlefield && !mainAttackerApostate )
+    if( mainAttackerHomeLand === battlefield && !mainAttackerApostate && ( mainAttackerHomeLand !== mainDefenderHomeLand ))
       {
         addBuffValues( "mainAttacker", BUFF, addBuff );
       } 
@@ -79,6 +80,10 @@ export default function useBattlefield() {
       {
         removeBuffValues( "mainAttacker", BUFF, removeBuff );
       };
+      if( mainAttackerHomeLand === battlefield && mainDefenderApostate )
+      {
+        addBuffValues( "mainAttacker", BUFF, addBuff );
+      }
     for ( const unit in troops ) {
       if( troops[ unit ].homeLand  === battlefield )
       {
@@ -97,8 +102,8 @@ export default function useBattlefield() {
         removeBuffValues( "mainAttacker", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand }], removeBuff );
       }
     };
-  }, [ battlefield, mainAttackerHomeLand, mainAttackerApostate, addBuff, removeBuff, troops ]);
-
+  }, [ battlefield, mainAttackerHomeLand, mainDefenderHomeLand, mainDefenderApostate, mainAttackerApostate, addBuff, removeBuff, troops ]);
+  //mainDefender
   useEffect(() => {
     if( mainDefenderHomeLand === battlefield && !mainDefenderApostate )
       {
@@ -127,9 +132,9 @@ export default function useBattlefield() {
         }
       };
   }, [ battlefield, mainDefenderHomeLand, mainDefenderApostate, addBuff, removeBuff, troops ]);
-
+  //attackerAlly
   useEffect(() => {
-    if( attackerAllyHomeLand === battlefield && !attackerAllyApostate )
+    if( attackerAllyHomeLand === battlefield && !attackerAllyApostate && ( attackerAllyHomeLand !== mainDefenderHomeLand ) )
       {
         addBuffValues( "attackerAlly", BUFF, addBuff );
       } 
@@ -137,6 +142,10 @@ export default function useBattlefield() {
       {
         removeBuffValues( "attackerAlly", BUFF, removeBuff );
       };
+      if( attackerAllyHomeLand === battlefield && mainDefenderApostate )
+      {
+        addBuffValues( "attackerAlly", BUFF, addBuff );
+      }
       for ( const unit in troops ) {
         if( troops[ unit ].homeLand  === battlefield )
         {
@@ -155,7 +164,65 @@ export default function useBattlefield() {
           removeBuffValues( "attackerAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand }], removeBuff );
         }
       };
-  }, [ battlefield, attackerAllyHomeLand, attackerAllyApostate, addBuff, removeBuff, troops ]);
+  }, [ battlefield, attackerAllyHomeLand, mainDefenderHomeLand,mainDefenderApostate, attackerAllyApostate, addBuff, removeBuff, troops ]);
+  //firstDefenderAlly
+  useEffect(() => {
+    if( firstDefenderAllyHomeLand === battlefield && !firstDefenderAllyApostate )
+      {
+        addBuffValues( "firstDefenderAlly", BUFF, addBuff );
+      } 
+      else 
+      {
+        removeBuffValues( "firstDefenderAlly", BUFF, removeBuff );
+      };
+      for ( const unit in troops ) {
+        if( troops[ unit ].homeLand  === battlefield )
+        {
+          addBuffValues( "firstDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 }], addBuff );
+        }
+        if( troops[ unit ].alienLand === battlefield )
+        {
+          addBuffValues( "firstDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 }], addBuff );
+        }
+        if( troops[ unit ].alienLand !== battlefield )
+        {
+          removeBuffValues( "firstDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand }], removeBuff );
+        }
+        if( troops[ unit ].homeLand  !== battlefield )
+        {
+          removeBuffValues( "firstDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand }], removeBuff );
+        }
+      };
+  }, [ battlefield, firstDefenderAllyHomeLand, firstDefenderAllyApostate, addBuff, removeBuff, troops ]);
+  //secondDefenderAlly
+  useEffect(() => {
+    if( secondDefenderAllyHomeLand === battlefield && !secondDefenderAllyApostate )
+      {
+        addBuffValues( "secondDefenderAlly", BUFF, addBuff );
+      } 
+      else 
+      {
+        removeBuffValues( "secondDefenderAlly", BUFF, removeBuff );
+      };
+      for ( const unit in troops ) {
+        if( troops[ unit ].homeLand  === battlefield )
+        {
+          addBuffValues( "secondDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand, unit: [ unit ], value: 0.5 }], addBuff );
+        }
+        if( troops[ unit ].alienLand === battlefield )
+        {
+          addBuffValues( "secondDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand,  unit: [ unit ], value: -0.5 }], addBuff );
+        }
+        if( troops[ unit ].alienLand !== battlefield )
+        {
+          removeBuffValues( "secondDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].alienLand }], removeBuff );
+        }
+        if( troops[ unit ].homeLand  !== battlefield )
+        {
+          removeBuffValues( "secondDefenderAlly", [{ ...homeLandAttack, id: unit + troops[ unit ].homeLand }], removeBuff );
+        }
+      };
+  }, [ battlefield, secondDefenderAllyHomeLand, secondDefenderAllyApostate, addBuff, removeBuff, troops ]);
 
   return onChange;
 };

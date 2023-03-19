@@ -1,14 +1,13 @@
 import { nanoid } from "nanoid";
 //HOOKS
-import { useContext } from 'react';
-//CONTEXT
-import PlayerContext from '../../../helpers/context.js';
+import usePlayerContext from "../../../hooks/usePlayerContext.js";
 //COMPONENTS
 import HeroSquadClickWrap from '../../HERO/HeroSquadClickWrap';
 import UnitCard from '../UnitCard';
-
+import AlliesButton from "../AlliesButton/AlliesButton.jsx";
 //STYLES
 import { SquadBox, UnitsBox } from './styles/Squad.styled';
+
 //CONST
 const troopsArray = [
     'porter',
@@ -21,7 +20,8 @@ const troopsArray = [
     'mage' 
 ]
 
-export default function Squad () {
+export default function Squad ({ buttonChecker, setChecker }) {
+    const player = usePlayerContext()
     return (
         <SquadBox>
             <HeroSquadClickWrap />
@@ -36,6 +36,13 @@ export default function Squad () {
                     })
                 }
             </UnitsBox>
+            {
+                buttonChecker &&
+                <AlliesButton
+                    player = { player }
+                    setChecker = { setChecker }
+                />                
+            }
         </SquadBox>
     )
 }
