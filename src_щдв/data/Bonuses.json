@@ -1,0 +1,928 @@
+[
+  { 
+    "id": "tO79jJwNSEyyY69pDxI6yw",
+    "name": "Атака всех войск",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака всех войск",
+    "value": 0
+  },
+  { 
+    "id": "1ViirWYw5kutKUpAEBBzTw",
+    "name": "Защита всех войск",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита всех войск",
+    "value": 0
+  },
+  { 
+    "id": "XPb8wraMiUajONico2VuKg",
+    "name": "Здоровье всех войск",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье всех войск",
+    "value": 0
+  },
+  { 
+    "id": "TVUL8EiL_UyOY1zg09oI8A",
+    "name": "Предел максимальной защиты всех войск",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "defenseLevel",
+    "measure": "number",
+    "description": "Предел максимальной защиты всех войск",
+    "value": 0
+  },
+  { 
+    "id": "0op3K2_KVE-JHAf1JtTFjw",
+    "name": "Атака всех преследователей",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака всех преследователей",
+    "value": 0
+  },
+
+  { 
+    "id": "sMf_YY4sq0GyV98Wqu5M4g",
+    "name": "Защита Носильщиков",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "porter" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Носильщиков",
+    "value": 0
+  },
+  { 
+    "id": "fQfwIib7i0GkJ8W7t-r0jg",
+    "name": "Здоровье Носильщиков",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "porter" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Носильщиков",
+    "value": 0
+  },
+
+
+  { 
+    "id": "Bfk7U5_ODU2Cs4YBkPoEow",
+    "name": "Атака Воинов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Воинов",
+    "value": 0
+  },
+  { 
+    "id": "voZAtZJQtkuqicmHJ20_sA",
+    "name": "Защита Воинов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Воинов",
+    "value": 0
+  },
+  { 
+    "id": "HiM7RfD6HEySkyZ5EXXtaQ",
+    "name": "Здоровье Воинов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Воинов",
+    "value": 0
+  },
+  { 
+    "id": "_fYPoqLUa06b5LuRP9z1wQ",
+    "name": "Атака преследователей для Воинов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Воинов",
+    "value": 0
+  },
+
+
+  { 
+    "id": "eGSYkfqlAEeCJZi7UC6tJg",
+    "name": "Атака Всадников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Всадников",
+    "value": 0
+  },
+  { 
+    "id": "RFGaZSFww0ucdN4Rrh2Q_g",
+    "name": "Защита Всадников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Всадников",
+    "value": 0
+  },
+  { 
+    "id": "njuLElgF7UuFn-feD_ADwQ",
+    "name": "Здоровье Всадников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Воинов",
+    "value": 0
+  },
+  { 
+    "id": "p-EBmuLCX0yP84b3cgE9Eg",
+    "name": "Атака преследователей для Всадников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Всадников",
+    "value": 0
+  },
+
+  { 
+    "id": "iF5N7sTKp0CtwT-9wsHfXw",
+    "name": "Атака Летающих",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Летающих",
+    "value": 0
+  },
+  { 
+    "id": "dztWYzR3VEa-rZBC_8D49Q",
+    "name": "Защита Летающих",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Летающих",
+    "value": 0
+  },
+  { 
+    "id": "-pvgaWU-TU29Hc9UxdHVoA",
+    "name": "Здоровье Летающих",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Летающих",
+    "value": 0
+  },
+  { 
+    "id": "ye3QKe-rXk-E10Snym3-wg",
+    "name": "Атака преследователей для Летающих",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Летающих",
+    "value": 0
+  },
+
+  { 
+    "id": "PBo-XTaGj0SoYBBPalA7jQ",
+    "name": "Атака Лучников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Лучников",
+    "value": 0
+  },
+  { 
+    "id": "4VoXAqhiIUKeR0TrAnSHSA",
+    "name": "Защита Лучников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Лучников",
+    "value": 0
+  },
+  { 
+    "id": "0m909fohZki8sLB2Wl8CiA",
+    "name": "Здоровье Лучников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Лучников",
+    "value": 0
+  },
+  { 
+    "id": "pTtmedD8yk6Rtf6IYL9GTA",
+    "name": "Атака преследователей для Лучников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Лучников",
+    "value": 0
+  },
+
+  { 
+    "id": "0FNXLxol3Uqv67yPAJ2wFA",
+    "name": "Атака Целителей",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Целителей",
+    "value": 0
+  },
+  { 
+    "id": "dyvhcFLnh0CzwwdSG3hYmA",
+    "name": "Защита Целителей",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Целителей",
+    "value": 0
+  },
+  { 
+    "id": "W4pXfMC810ypYnbVkqABUw",
+    "name": "Здоровье Целителей",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Целителей",
+    "value": 0
+  },
+  { 
+    "id": "S_NMV1Hr6068rrZFEYlU4A",
+    "name": "Воскрешение целителями",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "resurrectionRate",
+    "measure": "%",
+    "description": "Целители воскрешают",
+    "value": 0
+  },
+
+  { 
+    "id": "zzsLlnUkrE-aDOdUp7wzRw",
+    "name": "Атака Наемников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "mercenary" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Наемников",
+    "value": 0
+  },
+  { 
+    "id": "Ge9vwgz23Ui1-ubv1yjpZQ",
+    "name": "Защита Наемников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "mercenary" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Наемников",
+    "value": 0
+  },
+  { 
+    "id": "MZjNHSbPkUepY18mqzSPYA",
+    "name": "Здоровье Наемников",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "mercenary" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Наемников",
+    "value": 0
+  },
+
+
+  { 
+    "id": "-HG4lAuCf0-8-AFR8Y6Y7w",
+    "name": "Атака Магов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Магов",
+    "value": 0
+  },
+  { 
+    "id": "e3ayfNYTiEOzDYHZp5e1AQ",
+    "name": "Защита Магов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Магов",
+    "value": 0
+  },
+  { 
+    "id": "g3dtOzMoZEaBetH3126MCA",
+    "name": "Здоровье Магов",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Магов",
+    "value": 0
+  },
+  { 
+    "id": "VQpBWxCjRUOy54bWFAodtg",
+    "name": "Подавление урона магами",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "suppressionRate",
+    "measure": "mage",
+    "description": "Каждый маг в бою подавляет",
+    "value": 0
+  },
+
+  { 
+    "id": "_9Ym3vFEkUiDRn3MJ9jqTg",
+    "name": "Атака всех войск и войск союзника",
+    "effect": "player_ally",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака всех войск и войск союзника",
+    "value": 0
+  },
+  { 
+    "id": "I8n8IrrheEKpIAAn9zLieQ",
+    "name": "Здоровье всех войск и войск союзника",
+    "effect": "player_ally",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье всех войск и войск союзника",
+    "value": 0
+  },
+
+  { 
+    "id": "1hhIOzPlzU2m2ZwQajddlA",
+    "name": "Атака всех войск союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака всех войск союзника",
+    "value": 0
+  },
+  { 
+    "id": "YnyQFjpmyEysPHlJZNwgYg",
+    "name": "Защита всех войск союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита всех войск союзника",
+    "value": 0
+  },
+  { 
+    "id": "HhmAgfQHXUeiiQ08Gu_UCQ",
+    "name": "Здоровье всех войск союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье всех войск союзника",
+    "value": 0
+  },
+  { 
+    "id": "V4x_hjEaAEqyZg4cj03rWg",
+    "name": "Предел максимальной защиты всех войск союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "defenseLevel",
+    "measure": "number",
+    "description": "Предел максимальной защиты всех войск союзника",
+    "value": 0
+  },
+  { 
+    "id": "lqVOCcP7HEaxFSi12XALmA",
+    "name": "Атака всех преследователей союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака всех преследователей союзника",
+    "value": 0
+  },
+
+  { 
+    "id": "mktFUBOpb0CzHUGe41ZzCA",
+    "name": "Защита Носильщиков союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "porter" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Носильщиков союзника",
+    "value": 0
+  },
+  { 
+    "id": "CM9CE29ISkuQQsodp6ywlg",
+    "name": "Здоровье Носильщиков союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "porter" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Носильщиков союзника",
+    "value": 0
+  },
+
+
+  { 
+    "id": "FPi_TFxvukK8cONlq1AlFQ",
+    "name": "Атака Воинов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Воинов союзника",
+    "value": 0
+  },
+  { 
+    "id": "vS8ZXt_oBE2XsP7NAxq-nQ",
+    "name": "Защита Воинов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Воинов союзника",
+    "value": 0
+  },
+  { 
+    "id": "jItJKhKJbEyhMOx4u5Wodg",
+    "name": "Здоровье Воинов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Воинов союзника",
+    "value": 0
+  },
+  { 
+    "id": "gAFaQW0g306I8B7dbB54qg",
+    "name": "Атака преследователей для Воинов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "swordsman" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Воинов союзника",
+    "value": 0
+  },
+
+
+  { 
+    "id": "4z4OiuzXEEK0ilH7UNU22Q",
+    "name": "Атака Всадников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Всадников союзника",
+    "value": 0
+  },
+  { 
+    "id": "9BN_UsjqJ06LIenDaFLbew",
+    "name": "Защита Всадников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Всадников союзника",
+    "value": 0
+  },
+  { 
+    "id": "Z29c5A7E7EKCEKHlZnWVPg",
+    "name": "Здоровье Всадников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Воинов союзника",
+    "value": 0
+  },
+  { 
+    "id": "okmv9vBsEkyhW7G3zA_5yA",
+    "name": "Атака преследователей для Всадников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "cavalier" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Всадников союзника",
+    "value": 0
+  },
+
+  { 
+    "id": "Ny2VabOO-0SJCuGGquijSA",
+    "name": "Атака Летающих союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Летающих союзника",
+    "value": 0
+  },
+  { 
+    "id": "8P4bvEYhDkeuOYjH3xXskg",
+    "name": "Защита Летающих союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Летающих союзника",
+    "value": 0
+  },
+  { 
+    "id": "ZC-jxCv0zEessrkRXNZ-vg",
+    "name": "Здоровье Летающих союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Летающих союзника",
+    "value": 0
+  },
+  { 
+    "id": "39AOsKebOkiq0x4WYvCIEQ",
+    "name": "Атака преследователей для Летающих союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "flying" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Летающих союзника",
+    "value": 0
+  },
+
+  { 
+    "id": "qw5i0tIeX0W8EXj5hnWsmg",
+    "name": "Атака Лучников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Лучников союзника",
+    "value": 0
+  },
+  { 
+    "id": "ocqvwd4RtUG0GZhOrGXhIA",
+    "name": "Защита Лучников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Лучников союзника",
+    "value": 0
+  },
+  { 
+    "id": "_RcEogJvQE-4zhHR-585EQ",
+    "name": "Здоровье Лучников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Лучников союзника",
+    "value": 0
+  },
+  { 
+    "id": "IgGMm_fkiEOZu-h1-BNhZg",
+    "name": "Атака преследователей для Лучников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "archer" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака преследователей для Лучников союзника",
+    "value": 0
+  },
+
+  { 
+    "id": "2o6QIAGJQEW_xNdL_3Mwmg",
+    "name": "Атака Целителей союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Целителей союзника",
+    "value": 0
+  },
+  { 
+    "id": "XqLaRL4nu0mkno_y9soYlQ",
+    "name": "Защита Целителей союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Целителей союзника",
+    "value": 0
+  },
+  { 
+    "id": "zt-r3JwI4kif_P-g8JXGhw",
+    "name": "Здоровье Целителей союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Целителей союзника",
+    "value": 0
+  },
+  { 
+    "id": "RbI4GauXMEeFoSXrokzwEQ",
+    "name": "Воскрешение целителями союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "healer" ],
+    "property": "resurrectionRate",
+    "measure": "%",
+    "description": "Целители союзника воскрешают",
+    "value": 0
+  },
+
+  { 
+    "id": "xpx050RJ50-zpijnJGBlqA",
+    "name": "Атака Наемников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mercenary" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Наемников союзника",
+    "value": 0
+  },
+  { 
+    "id": "aogBB8wAYU6hHzCTuRE0yA",
+    "name": "Защита Наемников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mercenary" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Наемников союзника",
+    "value": 0
+  },
+  { 
+    "id": "njuss_u6SUSkjsWKqyuDAA",
+    "name": "Здоровье Наемников союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mercenary" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Наемников союзника",
+    "value": 0
+  },
+
+
+  { 
+    "id": "jtaSek7uZEeBN_X7nhuDJg",
+    "name": "Атака Магов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака Магов союзника",
+    "value": 0
+  },
+  { 
+    "id": "AldPtmOKlUC0kp4QW3TeVQ",
+    "name": "Защита Магов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита Магов союзника",
+    "value": 0
+  },
+  { 
+    "id": "hsMwVA6V6Umk5QfiHMpmAQ",
+    "name": "Здоровье Магов союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье Магов союзника",
+    "value": 0
+  },
+  { 
+    "id": "tzjS62zN-kSGWjsoc4LB8A",
+    "name": "Подавление урона магами союзника",
+    "effect": "ally",
+    "homeLand": "all",
+    "unit": [ "mage" ],
+    "property": "suppressionRate",
+    "measure": "number",
+    "description": "Каждый маг союзника в бою подавляет",
+    "value": 0
+  },
+  { 
+    "id": "61wwqZofaUeBjgGOxBce-Q",
+    "name": "Ужас",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "amountRate",
+    "measure": "%",
+    "description": "войск не учавствует в бою",
+    "value": 0
+  },
+  { 
+    "id": "mdMxeHWv-Uuhi6yuUwZ3Sw",
+    "name": "Атака всех войск противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "attackRate",
+    "measure": "%",
+    "description": "Атака всех войск противника",
+    "value": 0
+  },
+  { 
+    "id": "ZWonI6kGUUaOn35dcBLRow",
+    "name": "Защита всех войск противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "defense",
+    "measure": "number",
+    "description": "Защита всех войск противника",
+    "value": 0
+  },
+  { 
+    "id": "upwZDyHAC0e4DRVZJ-6Esw",
+    "name": "Здоровье всех войск противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "healthRate",
+    "measure": "%",
+    "description": "Здоровье всех войск противника",
+    "value": 0
+  },
+  { 
+    "id": "K8qjfaQt-UG-H7ZpkkVM2w",
+    "name": "Предел максимальной защиты всех войск противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": [ "porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage" ],
+    "property": "defenseLevel",
+    "measure": "number",
+    "description": "Предел максимальной защиты всех войск противника",
+    "value": 0
+  },
+  { 
+    "id": "9Kqr36vIq0GVr6gyWx5gWA",
+    "name": "Атака всех преследователей противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": [ "swordsman", "cavalier", "flying", "archer" ],
+    "property": "persecutionRate",
+    "measure": "%",
+    "description": "Атака всех преследователей противника",
+    "value": 0
+  },
+  { 
+    "id": "w1II027jEE-HV_gWgaxuEw",
+    "name": "Атака магических башен",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": "magicTower",
+    "property": "damageRate",
+    "measure": "%",
+    "description": "Атака магических башен",
+    "value": 0
+  },
+  { 
+    "id": "KFuaNAx_q02Bo6KbY2b-Ig",
+    "name": "Атака башен",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": "tower",
+    "property": "damagekRate",
+    "measure": "%",
+    "description": "Атака башен",
+    "value": 0
+  },
+  { 
+    "id": "Cs0PjyLNVU-USoVc-3fp7A",
+    "name": "Эффективность укреплений",
+    "effect": "player",
+    "homeLand": "all",
+    "unit": "fortification",
+    "property": "damagekRate",
+    "measure": "%",
+    "description": "Эффективность уничтожения войск на укреплениях",
+    "value": 0
+  },
+  { 
+    "id": "c7iD5eHmGECNg0hZOOOMPw",
+    "name": "Атака магических башен противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": "magicTower",
+    "property": "damageRate",
+    "measure": "%",
+    "description": "Атака магических башен противника",
+    "value": 0
+  },
+  { 
+    "id": "mUJqm39Cgk26-Vk-oZ1kCQ",
+    "name": "Атака башен противника",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": "tower",
+    "property": "damageRate",
+    "measure": "%",
+    "description": "Атака башен противника",
+    "value": 0
+  },
+  { 
+    "id": "qiz-e-IquUOfgZiAXUAZHg",
+    "name": "Защита от укреплений",
+    "effect": "enemy",
+    "homeLand": "all",
+    "unit": "fortification",
+    "property": "damageRate",
+    "measure": "%",
+    "description": "Эффективность уничтожения войск на укреплениях",
+    "value": 0
+  }
+]

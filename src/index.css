@@ -1,28 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap");
+@import "../node_modules/reset-css/reset.css";
 
-*{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-body {
-
-    text-align: center;
-    background-color: 	#294b77;
-    
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Shantell Sans", cursive;
+  background-color: #294b77;
 }
-.l {
-    width: 100%;
-    color: 	#111728; /*rgba(17, 23, 40, 1)*/
-    color: 	#294b77; /*rgba(41, 75, 119, 1)*/
-
-    color: 	#8397a7; /*rgba(131, 151, 167, 1)*/
-
-    color: 	#89abad; /* text rgba(137, 171, 173, 1) */
-    color: 	#ddddbd; /* text rgba(221, 221, 189, 1)*/
-    color:  #bb0a01; /*rgba(187, 10, 1, .8)*/
-
-    color: #0641f3;
-    background-color: rgba(71, 67, 67, 0.8);
-
-    color: 	#f7ad0e; /* text rgba(221, 221, 189, 1)*/
-    }

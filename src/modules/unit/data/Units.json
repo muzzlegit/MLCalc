@@ -9,37 +9,42 @@
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "rate": 0,
+        "description": "Колиество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "value": 0,
+        "rate": 0,
+        "attackMinArray": [0, 0, 0, 0],
+        "attackMaxArray": [0, 0, 0, 0],
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
         "value": 0,
-        "defenseLevel": 0
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
         "value": 0,
-        "ico": "defenseLevelIco"
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
         "value": 8,
         "rate": 0,
-        "healthArray": [8, 12, 15, 20]
+        "healthArray": [8, 12, 15, 20],
+        "description": "Здоровье юнита"
       },
       {
         "name": "capacity",
         "value": 50,
-        "rate": 0
+        "rate": 0,
+        "description": "Вместимость носильщика"
       }
     ],
-    "amount": 0,
-    "amountRate": 0,
-    "defense": 0,
-    "defenseLevel": 0,
-    "health": 8,
-    "healthRate": 0,
-    "healthArray": [8, 12, 15, 20],
     "capacity": 50,
     "homeLand": "",
     "alienLand": ""
@@ -54,7 +59,8 @@
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "rate": 0,
+        "description": "Колиество войск вступившик в бой"
       },
       {
         "name": "attack",
@@ -62,21 +68,25 @@
         "rate": 0,
         "attackMinArray": [2, 4, 6, 10],
         "attackMaxArray": [3, 6, 8, 12],
-        "index": "Min"
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
         "value": 8,
         "rate": 0,
-        "healthArray": [8, 12, 15, 20]
+        "healthArray": [8, 12, 15, 20],
+        "description": "Здоровье юнита"
       },
       {
         "name": "persecution",
@@ -258,7 +268,8 @@
         "name": "resurrection",
         "value": 1,
         "rate": 0,
-        "resurrectionArray": [1, 2, 3, 4]
+        "resurrectionArray": [1, 2, 3, 4],
+        "description": "Количество воскрешаемых юнитов 1 целителем"
       }
     ]
   },
@@ -341,7 +352,7 @@
         "name": "towersSuppression",
         "value": 10,
         "rate": 0,
-        "resurrectionArray": [10, 20, 30, 40]
+        "towersSuppressionArray": [10, 20, 30, 40]
       }
     ]
   }
