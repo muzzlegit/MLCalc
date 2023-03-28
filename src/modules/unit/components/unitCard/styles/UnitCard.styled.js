@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import theme from "constants/theme";
 
 export const UnitCardBox = styled.div({
-  padding: "4px",
-  width: "120px",
+  padding: "2px",
+  width: "140px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -64,10 +64,15 @@ export const UnitPropertiesWrap = styled.div({
   alignItems: "flex-start",
   gap: "8px",
 });
-
+export const PropertyBox = styled.div({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "8px",
+});
 export const UnitProperty = styled.p`
-  color: ${theme.colors.text};
-  font-size: 12px;
+  color: ${props => theme.colors[props.color]};
+  font-size: 10px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -80,3 +85,11 @@ export const UnitProperty = styled.p`
     background: ${props => props.background};
   }
 `;
+export const PropertyRate = styled.p(
+  {
+    fontSize: "10px",
+  },
+  props => ({
+    color: theme.colors[props.color],
+  }),
+);

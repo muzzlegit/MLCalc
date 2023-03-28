@@ -1,32 +1,44 @@
 import create from "zustand";
 import { immer } from "zustand/middleware/immer";
+import { devtools } from "zustand/middleware";
 //DATA
-import UNITS from "../data/Units.json";
-//CONSTs
-const initialUnitsArray = UNITS.filter(unit => unit.race === "undead");
+import UNITS from "../data/UNITS.json";
 //----------- STORE -----------
 const useUnitStore = create(
-  immer((set, get) => ({
-    //MAIN ATTACKER --------------------------------
-    mainAttacker: [...initialUnitsArray],
-    // MAIN ATTACKER ALLY --------------------------
-    attackerAlly: [...initialUnitsArray],
-    //MAIN DEFENDER --------------------------------
-    mainDefender: [...initialUnitsArray],
-    //firstDefenderAlly --------------------------
-    firstDefenderAlly: [...initialUnitsArray],
-    //secondDefenderAlly --------------------------
-    secondDefenderAlly: [...initialUnitsArray],
-    //FUNCTIONS --------------------------------
-    functions: {
-      setUnit: (player, unit) =>
-        set(state => {
-          state[player] = state[player].map(currentUnit =>
-            currentUnit.name === unit.name ? { ...unit } : currentUnit,
-          );
-        }),
-    },
-  })),
+  devtools(
+    immer(
+      (set, get) => ({
+        //MAIN ATTACKER --------------------------------
+        mainAttacker: UNITS,
+        // MAIN ATTACKER ALLY --------------------------
+        attackerAlly: UNITS,
+        //MAIN DEFENDER --------------------------------
+        mainDefender: UNITS,
+        //firstDefenderAlly --------------------------
+        firstDefenderAlly: UNITS,
+        //secondDefenderAlly --------------------------
+        secondDefenderAlly: UNITS,
+        //FUNCTIONS --------------------------------
+        functions: {
+          setUnit: (player, newTrooper) =>
+            set(state => {
+              state[player] = state[player].map(trooper =>
+                trooper.unit === newTrooper.unit ? { ...trooper, ...newTrooper } : trooper,
+              );
+            }),
+          setUnitProperty: (player, unit, property, value) =>
+            set(state => {
+              let [currentUnit] = state[player].filter(trooper => trooper.unit === unit);
+              currentUnit.enhancements = { ...currentUnit.enhancements, [property]: value };
+              state[player] = state[player].map(trooper =>
+                trooper.unit === currentUnit.unit ? currentUnit : trooper,
+              );
+            }),
+        },
+      }),
+      { name: "UnitStore" },
+    ),
+  ),
 );
 
 export default useUnitStore;

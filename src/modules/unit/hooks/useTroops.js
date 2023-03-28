@@ -9,6 +9,7 @@ function useTroops(player, unitName) {
 }
 
 export default useTroops;
+
 useTroops.propTypes = {
   player: PropTypes.string.isRequired,
   unitName: PropTypes.string.isRequired,

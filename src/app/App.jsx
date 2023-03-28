@@ -1,12 +1,13 @@
 //CONTEXT
 import PlayerContext from "shared/helpers/context.js";
 //WIDGETS
-import { Squad } from "widgets";
+import { Squad, PlayerSelectors } from "widgets";
 
 const App = () => {
   return (
     <PlayerContext.Provider value="mainAttacker">
       <Squad />
+      <PlayerSelectors />
     </PlayerContext.Provider>
   );
 };

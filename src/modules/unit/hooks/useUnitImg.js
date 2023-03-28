@@ -7,6 +7,8 @@ import DrowUnitsCard from "../img/DrowCards.png";
 import ElfUnitsCard from "../img/ElfCards.png";
 import HumanUnitsCard from "../img/HumanCards.png";
 import UnitsFrames from "../img/unitsFrames.png";
+//HOOKS
+import useRace from "modules/raceSelector/hooks/useRace";
 //CONSTS
 const unitPosition = {
   porter: ["-1px -1px", "-1px -84px", "-1px -167px", "-1px -167px"],
@@ -18,9 +20,10 @@ const unitPosition = {
   mercenary: ["-415px -1px", "-415px -84px", "-415px -167px", "-415px -167px"],
   mage: ["-484px -1px", "-484px -84px", "-484px -167px", "-484px -167px"],
 };
-export default function useUnitImg(race, unitName, unitLevel) {
+export default function useUnitImg(unitName, unitLevel) {
   const [unitImg, setUnitImg] = useState(`url(${UndeadUnitsCard}) ${unitPosition[unitName][0]}`);
   const [unitRaceFrame, setUnitRaceFrame] = useState(`url(${UnitsFrames}) ${"-75px 0px"}`);
+  const { race } = useRace();
   const unitFrame = `url(${UnitsFrames}) ${"0px 0px"}`;
 
   //USE EFFECTS

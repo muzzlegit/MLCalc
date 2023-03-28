@@ -1,8 +1,10 @@
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 //MODULES
 import { UnitCard, useTroops } from "modules/unit";
 //HOOKS
 import usePlayerContext from "shared/hooks/usePlayerContext";
+import useUnitsBuffs from "modules/unit/hooks/useUnitsBuffs";
 //STYLES
 import { SquadBox, UnitsBox } from "./styles/Squad.styled";
 //CoNSTS
@@ -18,6 +20,7 @@ const UNITS = [
 ];
 function Squad() {
   const player = usePlayerContext();
+  useUnitsBuffs(player);
   return (
     <SquadBox>
       <UnitsBox>
@@ -34,3 +37,5 @@ function Squad() {
 }
 
 export default Squad;
+
+Squad.propTypes = {};

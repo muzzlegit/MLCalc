@@ -1,359 +1,427 @@
 [
   {
-    "race": "undead",
     "unit": "porter",
     "level": 1,
-    "name": "Молодой гуль",
-    "nameArray": ["Молодой гуль", "Опытный гуль", "Быстрый гуль", "Командир обоза"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0,
-        "description": "Колиество войск вступившик в бой"
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
       },
       {
         "name": "attack",
         "value": 0,
-        "rate": 0,
-        "attackMinArray": [0, 0, 0, 0],
-        "attackMaxArray": [0, 0, 0, 0],
+        "measure": "%",
         "index": "Min",
         "description": "Атака юнита"
       },
       {
         "name": "defense",
         "value": 0,
+        "measure": "number",
         "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
         "value": 0,
+        "measure": "number",
         "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 8,
-        "rate": 0,
-        "healthArray": [8, 12, 15, 20],
+        "value": 0,
+        "measure": "%",
         "description": "Здоровье юнита"
       },
       {
         "name": "capacity",
-        "value": 50,
-        "rate": 0,
+        "value": 0,
+        "measure": "%",
         "description": "Вместимость носильщика"
       }
     ],
-    "capacity": 50,
-    "homeLand": "",
-    "alienLand": ""
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0,
+      "capacity": 0
+    }
   },
   {
-    "race": "undead",
     "unit": "swordsman",
     "level": 1,
-    "name": "Мертвец",
-    "nameArray": ["Мертвец", "Зомби", "Командир-зомби", "Бессмертный пехотинец"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0,
+        "measure": "%",
         "description": "Колиество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 2,
-        "rate": 0,
-        "attackMinArray": [2, 4, 6, 10],
-        "attackMaxArray": [3, 6, 8, 12],
+        "value": 0,
+        "measure": "%",
         "index": "Min",
         "description": "Атака юнита"
       },
       {
         "name": "defense",
         "value": 0,
+        "measure": "number",
         "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
         "value": 0,
+        "measure": "number",
         "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 8,
-        "rate": 0,
-        "healthArray": [8, 12, 15, 20],
+        "value": 0,
+        "measure": "%",
         "description": "Здоровье юнита"
       },
       {
         "name": "persecution",
-        "rate": 0
+        "value": 0,
+        "measure": "%",
+        "description": "Преследование Лучников"
       }
     ],
+    "enhancements": {
+      "amount": -0.3,
+      "attack": -0.3,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0,
+      "persecution": 0
+    },
     "homeLand": "desert",
     "alienLand": "mountain",
     "persecutor": "cavalier",
     "prey": "archer"
   },
   {
-    "race": "undead",
     "unit": "cavalier",
     "level": 1,
-    "name": "Темный всадник",
-    "nameArray": ["Темный всадник", "Черный рыцарь", "Рыцарь тьмы", "Рыцарь смерти"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 3,
-        "rate": 0,
-        "attackMinArray": [3, 5, 8, 10],
-        "attackMaxArray": [4, 7, 10, 12],
-        "index": "Min"
+        "value": 0,
+        "measure": "%",
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 15,
-        "rate": 0,
-        "healthArray": [15, 25, 35, 40]
+        "value": 0,
+        "measure": "%",
+        "description": "Здоровье юнита"
       },
       {
         "name": "persecution",
-        "rate": 0
+        "value": 0,
+        "measure": "%",
+        "description": "Преследование Воинов"
       }
     ],
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 90,
+      "defenseLevel": 0,
+      "health": 0,
+      "persecution": 0
+    },
     "homeLand": "steppe",
     "alienLand": "forest",
     "persecutor": "flying",
     "prey": "swordsman"
   },
   {
-    "race": "undead",
     "unit": "flying",
     "level": 1,
-    "name": "Костяной дракон",
-    "nameArray": ["Костяной дракон", "Боевой дракон", "Эфирный дракон", "Призрачный дракон"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 4,
-        "rate": 0,
-        "attackMinArray": [4, 8, 10, 14],
-        "attackMaxArray": [6, 10, 12, 16],
-        "index": "Min"
+        "value": 0,
+        "measure": "%",
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 20,
-        "rate": 0,
-        "healthArray": [20, 30, 40, 60]
+        "value": 0,
+        "measure": "%",
+        "description": "Здоровье юнита"
       },
       {
         "name": "persecution",
-        "rate": 0
+        "value": 0,
+        "measure": "%",
+        "description": "Преследование Воинов"
       }
     ],
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0,
+      "persecution": 0
+    },
     "homeLand": "mountain",
     "alienLand": "desert",
     "persecutor": "archer",
     "prey": "cavalier"
   },
   {
-    "race": "undead",
     "unit": "archer",
     "level": 1,
-    "name": "Оборотень",
-    "nameArray": ["Оборотень", "Кровавый оборотень", "Вурдалак", "Лунный стрелок"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 25,
-        "rate": 0,
-        "attackMinArray": [25, 35, 45, 50],
-        "attackMaxArray": [35, 45, 55, 60],
-        "index": "Min"
+        "value": 0,
+        "measure": "%",
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 6,
-        "rate": 0,
-        "healthArray": [6, 10, 15, 15]
+        "value": 0,
+        "measure": "%",
+        "description": "Здоровье юнита"
       },
       {
         "name": "persecution",
-        "rate": 0
+        "value": 0,
+        "measure": "%",
+        "description": "Преследование Воинов"
       }
     ],
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0,
+      "persecution": 0
+    },
     "homeLand": "forest",
     "alienLand": "steppe",
     "persecutor": "swordsman",
     "prey": "flying"
   },
   {
-    "race": "undead",
     "unit": "healer",
     "level": 1,
-    "name": "Озерная ведьма",
-    "nameArray": ["Озерная ведьма", "Банша", "Древняя банша", "Верховная банша"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 1,
-        "rate": 0,
-        "attackMinArray": [0, 1, 1, 1],
-        "attackMaxArray": [1, 1, 2, 2],
-        "index": "Min"
+        "value": 0,
+        "measure": "%",
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 10,
-        "rate": 0,
-        "healthArray": [10, 15, 20, 20]
+        "value": 0,
+        "measure": "%",
+        "description": "Здоровье юнита"
       },
       {
         "name": "resurrection",
-        "value": 1,
-        "rate": 0,
-        "resurrectionArray": [1, 2, 3, 4],
+        "value": 0,
+        "measure": "%",
         "description": "Количество воскрешаемых юнитов 1 целителем"
       }
-    ]
+    ],
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0,
+      "resurrection": 0
+    }
   },
   {
-    "race": "undead",
     "unit": "mercenary",
     "level": 1,
-    "name": "Затерянная душа",
-    "nameArray": ["Затерянная душа", "Призрак", "Призрак тьмы", "Призрак короля"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 3,
-        "rate": 0,
-        "attackMinArray": [3, 5, 7, 8],
-        "attackMaxArray": [5, 7, 9, 10],
-        "index": "Min"
+        "value": 0,
+        "measure": "%",
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 1,
-        "rate": 0,
-        "healthArray": [1, 1, 1, 1]
+        "value": 0,
+        "measure": "%",
+        "description": "Здоровье юнита"
       }
     ],
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0
+    },
     "alienLand": "mine"
   },
   {
-    "race": "undead",
     "unit": "mage",
     "level": 1,
-    "name": "Слуга тьмы",
-    "nameArray": ["Слуга тьмы", "Некромант", "Собиратель душ", "Повелитель душ"],
     "properties": [
       {
         "name": "amount",
         "value": 0,
-        "rate": 0
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
       },
       {
         "name": "attack",
-        "value": 3,
-        "rate": 0,
-        "attackMinArray": [3, 4, 5, 8],
-        "attackMaxArray": [3, 4, 5, 8],
-        "index": "Min"
+        "value": 0,
+        "measure": "%",
+        "index": "Min",
+        "description": "Атака юнита"
       },
       {
         "name": "defense",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Защита юнита"
       },
       {
         "name": "defenseLevel",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Предел максимальной защиты"
       },
       {
         "name": "health",
-        "value": 10,
-        "rate": 0,
-        "healthArray": [10, 15, 20, 20]
+        "value": 0,
+        "measure": "%",
+        "description": "Здоровье юнита"
       },
       {
         "name": "suppression",
-        "value": 0
+        "value": 0,
+        "measure": "number",
+        "description": "Подавление урона магами"
       },
       {
         "name": "towersSuppression",
-        "value": 10,
-        "rate": 0,
-        "towersSuppressionArray": [10, 20, 30, 40]
+        "value": 0,
+        "measure": "%",
+        "description": "Уменьшение урона от Башен и магических башен"
       }
-    ]
+    ],
+    "enhancements": {
+      "amount": 0,
+      "attack": 0,
+      "defense": 0,
+      "defenseLevel": 0,
+      "health": 0,
+      "suppression": 0,
+      "towersSuppression": 0
+    }
   }
 ]

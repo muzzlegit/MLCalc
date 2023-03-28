@@ -1,2 +1,3 @@
 import Squad from "./squad/Squad";
-export { Squad };
+import PlayerSelectors from "./playerSelectors/PlayerSelectors";
+export { Squad, PlayerSelectors };
