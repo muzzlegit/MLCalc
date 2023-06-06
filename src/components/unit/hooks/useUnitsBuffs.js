@@ -11,6 +11,7 @@ function useUnitsBuffs(player) {
 
   //USE EFFECT
   useEffect(() => {
+    console.log("storage change");
     const properties = {
       attack: 0,
       defense: 0,
@@ -37,7 +38,6 @@ function useUnitsBuffs(player) {
         towersSuppression: 0,
       },
     };
-
     unitsBuffs.forEach(buff => {
       if (player === "attackerAlly") {
         console.log(buff);
@@ -86,10 +86,10 @@ function useUnitsBuffs(player) {
       //     }
       //   }
       // });
+      console.log(unitsProperties);
       for (const unit in unitsProperties) {
         for (const property in unitsProperties[unit]) {
-          if (unitsProperties[unit][property])
-            setUnitProperty(player, unit, property, unitsProperties[unit][property]);
+          setUnitProperty(player, unit, property, unitsProperties[unit][property]);
         }
       }
     });

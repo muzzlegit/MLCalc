@@ -1,0 +1,307 @@
+{
+  "porter": {
+    "unit": "porter",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "capacity",
+        "measure": "%",
+        "description": "Вместимость носильщика"
+      }
+    ]
+  },
+  "swordsman": {
+    "unit": "swordsman",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "persecution",
+        "measure": "%",
+        "description": "Преследование Лучников"
+      }
+    ],
+    "homeLand": "desert",
+    "alienLand": "mountain",
+    "persecutor": "cavalier",
+    "prey": "archer"
+  },
+  "cavalier": {
+    "unit": "cavalier",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "persecution",
+        "measure": "%",
+        "description": "Преследование Воинов"
+      }
+    ],
+    "homeLand": "steppe",
+    "alienLand": "forest",
+    "persecutor": "flying",
+    "prey": "swordsman"
+  },
+  "flying": {
+    "unit": "flying",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "persecution",
+        "measure": "%",
+        "description": "Преследование Воинов"
+      }
+    ],
+    "homeLand": "mountain",
+    "alienLand": "desert",
+    "persecutor": "archer",
+    "prey": "cavalier"
+  },
+  "archer": {
+    "unit": "archer",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Количество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "persecution",
+        "measure": "%",
+        "description": "Преследование Воинов"
+      }
+    ],
+    "homeLand": "forest",
+    "alienLand": "steppe",
+    "persecutor": "swordsman",
+    "prey": "flying"
+  },
+  "healer": {
+    "unit": "healer",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "resurrection",
+        "measure": "%",
+        "description": "Количество воскрешаемых юнитов 1 целителем"
+      }
+    ]
+  },
+  "mercenary": {
+    "unit": "mercenary",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      }
+    ],
+    "alienLand": "mine"
+  },
+  "mage": {
+    "unit": "mage",
+    "level": 1,
+    "properties": [
+      {
+        "name": "amount",
+        "measure": "%",
+        "description": "Колиество войск вступившик в бой"
+      },
+      {
+        "name": "attack",
+        "measure": "%",
+        "description": "Атака юнита"
+      },
+      {
+        "name": "defense",
+        "measure": "number",
+        "description": "Защита юнита"
+      },
+      {
+        "name": "defenseLevel",
+        "measure": "number",
+        "description": "Предел максимальной защиты"
+      },
+      {
+        "name": "health",
+        "measure": "%",
+        "description": "Здоровье юнита"
+      },
+      {
+        "name": "suppression",
+        "measure": "number",
+        "description": "Подавление урона магами"
+      },
+      {
+        "name": "towersSuppression",
+        "measure": "%",
+        "description": "Уменьшение урона от Башен и магических башен"
+      }
+    ]
+  }
+}

@@ -1,15 +1,19 @@
 import PropTypes from "prop-types";
-import { PlayerSelectors, Squad } from "modules";
+import { Squad, RaceSelector, AttackRateSelector, ApostateChecker } from "modules/army";
 //STYLES
-import { PlayerWrap, PlayerTitle } from "./styles/Player.styled";
+import { Container, Title } from "./styles/Player.styled";
 
 function Player({ title }) {
   return (
-    <PlayerWrap>
-      <PlayerTitle>{title}</PlayerTitle>
-      <PlayerSelectors />
+    <Container>
+      <Title>{title}</Title>
+      <div className="flex justify-between gap-4">
+        <RaceSelector />
+        <AttackRateSelector />
+        <ApostateChecker />
+      </div>
       <Squad />
-    </PlayerWrap>
+    </Container>
   );
 }
 

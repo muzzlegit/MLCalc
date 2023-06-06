@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 //IMAGES
-import unitsIcons from "../img/unitsIcons.png";
+import unitsIcons from "../img/unitsIcons.webp";
 //CONSTS
 const unitIcoPosition = {
   porter: "-1px -1px",

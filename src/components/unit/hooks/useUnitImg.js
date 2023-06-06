@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 //IMAGES
-import UndeadUnitsCard from "../img/UndeadCards.png";
-import DemonUnitsCard from "../img/DemonCards.png";
-import DrowUnitsCard from "../img/DrowCards.png";
-import ElfUnitsCard from "../img/ElfCards.png";
-import HumanUnitsCard from "../img/HumanCards.png";
-import MonstersCard from "../img/MonsterCards.png";
-import UnitsFrames from "../img/unitsFrames.png";
+import UndeadUnitsCard from "../img/UndeadCards.webp";
+import DemonUnitsCard from "../img/DemonCards.webp";
+import DrowUnitsCard from "../img/DrowCards.webp";
+import ElfUnitsCard from "../img/ElfCards.webp";
+import HumanUnitsCard from "../img/HumanCards.webp";
+import MonstersCard from "../img/MonsterCards.webp";
+import UnitsFrames from "../img/unitsFrames.webp";
 //HOOKS
 import useRace from "components/selectors/raceSelector/hooks/useRace";
 //CONSTS

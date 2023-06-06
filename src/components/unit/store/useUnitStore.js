@@ -22,16 +22,35 @@ const useUnitStore = create(
         functions: {
           setUnit: (player, newTrooper) =>
             set(state => {
-              state[player] = state[player].map(trooper =>
-                trooper.unit === newTrooper.unit ? { ...trooper, ...newTrooper } : trooper,
-              );
+              state[player] = state[player].map(trooper => {
+                if (trooper.unit === newTrooper.unit) {
+                  return {
+                    ...trooper,
+                    ...newTrooper,
+                    properties: [
+                      ...newTrooper.properties,
+                      ...trooper.properties.filter(property => property.measure === "number"),
+                    ],
+                  };
+                } else {
+                  return trooper;
+                }
+              });
             }),
           setUnitProperty: (player, unit, property, value) =>
             set(state => {
+              if (player === "mainAttacker" && unit === "porter" && property === "defense")
+                console.log(value);
               let [currentUnit] = state[player].filter(trooper => trooper.unit === unit);
-              currentUnit.enhancements = { ...currentUnit.enhancements, [property]: value };
+              currentUnit = {
+                ...currentUnit,
+                properties: currentUnit.properties.map(item =>
+                  item.measure === "number" && item.name === property ? { ...item, value } : item,
+                ),
+                enhancements: { ...currentUnit.enhancements, [property]: value },
+              };
               state[player] = state[player].map(trooper =>
-                trooper.unit === currentUnit.unit ? currentUnit : trooper,
+                trooper.unit === currentUnit.unit ? { ...currentUnit } : trooper,
               );
             }),
         },

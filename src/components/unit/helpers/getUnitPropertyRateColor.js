@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import limits from "constants/limits";
+import limits from "shared/utils/constants";
 
 function getUnitPropertyRateColor(propertyName, rate) {
   if (rate < 0 && (rate >= limits[propertyName] || propertyName === "amount")) return "red";

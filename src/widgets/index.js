@@ -1,3 +1,3 @@
-import Player from "./player/Player";
-import Battlefield from "./battlefield/Battlefield";
-export { Player, Battlefield };
+import Player from "./Player/Player";
+import BattlePlace from "./BattlePlace/BattlePlace";
+export { Player, BattlePlace };

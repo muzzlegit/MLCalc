@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import limits from "constants/limits";
+import limits from "shared/utils/constants";
 
 function getUnitPropertyRate(property, enhancements) {
   const { name, measure } = property;

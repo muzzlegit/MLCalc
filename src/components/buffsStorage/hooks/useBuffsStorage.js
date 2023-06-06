@@ -1,30 +1,27 @@
 import PropTypes from "prop-types";
 //STORE
 import useBuffsStore from "../store/useBuffsStore";
-//CONSTS
-const defaultDefenseLevel = {
-  id: "nRC1VO01ZEqP0V1t8Eq5_g",
-  source: "nRC1VO01ZEqP0V1t8Eq5_g",
-  character: "default",
-  player: "mainAttacker",
-  target: "player",
-  appliedOn: "all",
-  unit: "units",
-  units: ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-  property: "defenseLevel",
-  measure: "number",
-  value: 50,
-  description: "Дефолтный предел защиты",
-};
+//HOOKS
+import usePlayerContext from "shared/hooks/usePlayerContext";
 
-function useBuffsStorage(player) {
+function useBuffsStorage() {
+  const player = usePlayerContext();
   const buffsStorage = useBuffsStore(state => state[player]);
   const addBuff = useBuffsStore(state => state.functions.addBuff);
-  function defaultBuffs() {
-    addBuff(player, defaultDefenseLevel);
-  }
-  defaultBuffs();
-  return { buffsStorage };
+  const removeBuff = useBuffsStore(state => state.functions.removeBuff);
+
+  const addBuffToStorage = (player, buffs) => {
+    buffs.forEach(buff => {
+      addBuff(player, buff);
+    });
+  };
+  const removeBuffFromStorage = (player, buffs) => {
+    buffs.forEach(buff => {
+      removeBuff(player, buff);
+    });
+  };
+
+  return { buffsStorage, addBuffToStorage, removeBuffFromStorage };
 }
 
 export default useBuffsStorage;
