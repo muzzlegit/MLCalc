@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 //COMPONENTS
-import UnitCard from "../UnitCard";
+import UnitCard from "../UnitCard/UnitCard";
 //STYLES
 import { Container } from "./styles/Squad.styled";
 //CoNSTS

@@ -5,6 +5,16 @@ import useUnitImg from "modules/army/hooks/useUnitImg";
 import useUnitIcons from "modules/army/hooks/useUnitIcons";
 //CONSTS
 import { LIMITS } from "shared/utils/constants";
+//STYLes
+import {
+  Container,
+  CardTitle,
+  CardImage,
+  FrameImg,
+  UnitImg,
+  Input,
+  PropertyesContainer,
+} from "./styles/UnitCard.styled";
 
 const UnitCard = ({ unitName }) => {
   const { unitDate, changeLevel, changeAmount } = useUnit(unitName);
@@ -34,30 +44,23 @@ const UnitCard = ({ unitName }) => {
   const { attackLimit, healthLimit, defenseLevelLimit, persecutionLimit } = LIMITS;
 
   return (
-    <div className="p-1 w-[140px] h-full flex flex-col items-center gap-1 rounded bg-secondary">
-      <p className="text-[10px] text-text">{name}</p>
+    <Container>
+      <CardTitle>{name}</CardTitle>
       {/*---IMAGE BLOCK---*/}
-      <div
-        className=" relative w-[74px] h-[100px]  hover:cursor-pointer"
-        id={unit}
-        onClick={changeLevel}
-      >
+      <CardImage id={unit} onClick={changeLevel}>
         {/*---FRAME IMAGE---*/}
-        <div
-          style={level === 4 ? { background: `${unitRaceFrame}` } : { background: `${unitFrame}` }}
-          className={`absolute  z-20  w-full h-full flex justify-center items-center
-          ${Number(amount) ? "grayscale-0" : "grayscale"}`}
-        ></div>
+        <FrameImg
+          filter={Number(amount) ? "grayscale-0" : "grayscale"}
+          background={level === 4 ? unitRaceFrame : unitFrame}
+        ></FrameImg>
         {/*---UNIT IMAGE---*/}
-        <div
-          style={{ background: `${unitImg}` }}
-          className={`absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[68px] h-[82px]
-          ${Number(amount) ? "grayscale-0" : "grayscale"}`}
-        ></div>
-      </div>
+        <UnitImg
+          filter={Number(amount) ? "grayscale-0" : "grayscale"}
+          background={unitImg}
+        ></UnitImg>
+      </CardImage>
       {/*---INPUT UNIT AMOUNT---*/}
-      <input
-        className="p-1 w-11/12 h-4 rounded text-center text-xs text-secondary outline-none"
+      <Input
         id={unit}
         type="text"
         autoComplete="off"
@@ -68,7 +71,7 @@ const UnitCard = ({ unitName }) => {
         }}
       />
       {/*---PROPERTYES SECTION---*/}
-      <div className="p-2 w-full flex flex-col justify-normal items-start gap-2">
+      <PropertyesContainer>
         {/*---UNIT LEVEL---*/}
         <div className="w-full flex items-center gap-2">
           {/*---LEVEL IMAGE---*/}
@@ -234,8 +237,8 @@ const UnitCard = ({ unitName }) => {
             </p>
           </div>
         ) : null}
-      </div>
-    </div>
+      </PropertyesContainer>
+    </Container>
   );
 };
 

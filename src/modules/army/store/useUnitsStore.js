@@ -2,7 +2,7 @@ import create from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { devtools } from "zustand/middleware";
 //HELPERS
-import getInitialUnitData from "../helpers/getInitialUnitData";
+import { getInitialUnitData, getPlayerHomeland, getPlayerFraction } from "../helpers";
 //----------- STORE -----------
 const useUnitStore = create(
   devtools(
@@ -121,6 +121,8 @@ const useUnitStore = create(
         setRace: (player, race) =>
           set(state => {
             state[player].race = race;
+            state[player].homeLand = getPlayerHomeland(race);
+            state[player].fraction = getPlayerFraction(race);
           }),
         setAttackIndex: (player, index) =>
           set(state => {

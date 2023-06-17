@@ -6,7 +6,7 @@ import useBattlefield from "modules/battlefield/hooks/useBattlefield";
 import { Container } from "./styles/BattlePlace.styled";
 
 function BattlePlace() {
-  useBattlefield();
+  // useBattlefield();
   return (
     <Container className="my-2 p-3 rounded-lg bg-primary">
       <BattlefieldSelector />

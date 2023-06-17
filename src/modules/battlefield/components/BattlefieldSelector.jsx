@@ -1,10 +1,10 @@
 //STORE
-import useBattlefieldSelector from "modules/battlefield/hooks/useBattlefieldSelector";
+import useBattlefield from "modules/battlefield/hooks/useBattlefield";
 import useBattleFieldStore from "modules/battlefield/store/useBattleFieldStore";
 
 function BattlefieldSelector() {
   const battlefield = useBattleFieldStore(state => state.battlefield);
-  const { onBattlefieldChange, onStructureChange } = useBattlefieldSelector();
+  const { onBattlefieldChange, onStructureChange } = useBattlefield();
 
   return (
     <div className="flex justify-center items-center gap-4">

@@ -7,6 +7,7 @@ import useUnitStore from "../../modules/army/store/useUnitsStore";
 import getDefaulValues from "shared/helpers/getDefaulValues";
 import getBuffsArraysByPlayers from "shared/helpers/getBuffsArraysByPlayers";
 import useBuffsToUnitProvider from "./useBuffsToUnitProvider";
+
 function useBuffsProvider() {
   const addBuffs = useUnitStore(state => state.functions.addBuffs);
   const removeBuffs = useUnitStore(state => state.functions.removeBuffs);

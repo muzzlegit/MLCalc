@@ -4,13 +4,13 @@ import usePlayerContext from "./usePlayerContext";
 //HOOKS
 import useBuffsProvider from "./useBuffsProvider";
 //HELPERS
-import getDefaulValues from "shared/helpers/getDefaulValues";
+import { isAttacker, getUnitLand } from "shared/helpers";
 //STORES
 import useUnitStore from "modules/army/store/useUnitsStore";
 
 function useBuffsToUnitProvider(player) {
-  // const player = usePlayerContext();
-  const buffsStorage = useUnitStore(state => state[player].buffsStorage);
+  const state = useUnitStore(state => state);
+  const { buffsStorage, apostate, homeLand, race, fraction } = useUnitStore(state => state[player]);
   const setUnitProperty = useUnitStore(state => state.functions.setUnitProperty);
 
   useEffect(() => {
@@ -50,8 +50,38 @@ function useBuffsToUnitProvider(player) {
           });
           break;
         case "homeLand":
+          if (isAttacker(player)) {
+            if (
+              homeLand === buff.battlefield &&
+              !apostate &&
+              (race !== state.mainDefender.race || state.mainDefender.apostate)
+            ) {
+              buff.units.forEach(unit => {
+                unitsProperties[unit][buff.property] += buff.value;
+              });
+            }
+          }
+          if (!isAttacker(player)) {
+            if (homeLand === buff.battlefield && !apostate) {
+              buff.units.forEach(unit => {
+                unitsProperties[unit][buff.property] += buff.value;
+              });
+            }
+          }
+          break;
+        case "unitHomeLand":
           buff.units.forEach(unit => {
-            unitsProperties[unit][buff.property] += buff.value;
+            if (buff.battlefield === getUnitLand(race, unit, "homeLand"))
+              unitsProperties[unit][buff.property] += buff.value;
+            if (buff.battlefield === getUnitLand(race, unit, "alienLand"))
+              unitsProperties[unit][buff.property] -= buff.value;
+          });
+          break;
+        case "fraction":
+          if (!isAttacker(player) || fraction !== state.mainDefender.fraction) return;
+          buff.units.forEach(unit => {
+            unitsProperties[unit][buff.property] +=
+              race === state.mainDefender.race ? buff.value[0] : buff.value[1];
           });
           break;
         default:
@@ -63,7 +93,18 @@ function useBuffsToUnitProvider(player) {
         setUnitProperty(player, unit, { [property]: unitsProperties[unit][property] });
       }
     }
-  }, [buffsStorage, setUnitProperty, player]);
+  }, [
+    buffsStorage,
+    setUnitProperty,
+    player,
+    race,
+    homeLand,
+    apostate,
+    fraction,
+    state.mainDefender.fraction,
+    state.mainDefender.race,
+    state.mainDefender.apostate,
+  ]);
 }
 
 export default useBuffsToUnitProvider;
