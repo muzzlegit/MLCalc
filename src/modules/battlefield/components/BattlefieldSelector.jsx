@@ -1,9 +1,10 @@
-//STORE
+//HOOKS
 import useBattlefield from "modules/battlefield/hooks/useBattlefield";
-import useBattleFieldStore from "modules/battlefield/store/useBattleFieldStore";
+//STORE
+import useStore from "store/useStore";
 
 function BattlefieldSelector() {
-  const battlefield = useBattleFieldStore(state => state.battlefield);
+  const battlefield = useStore(state => state.battlePlace.battlefield);
   const { onBattlefieldChange, onStructureChange } = useBattlefield();
 
   return (

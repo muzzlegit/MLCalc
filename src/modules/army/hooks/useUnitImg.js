@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
@@ -11,7 +10,7 @@ import HumanUnitsCard from "../img/HumanCards.webp";
 import MonstersCard from "../img/MonsterCards.webp";
 import UnitsFrames from "../img/unitsFrames.webp";
 //STORE
-import useUnitStore from "../store/useUnitsStore";
+import useStore from "store/useStore";
 //CONSTS
 const unitPosition = {
   porter: ["-1px -1px", "-1px -84px", "-1px -167px", "-1px -167px"],
@@ -23,9 +22,10 @@ const unitPosition = {
   mercenary: ["-415px -1px", "-415px -84px", "-415px -167px", "-415px -167px"],
   mage: ["-484px -1px", "-484px -84px", "-484px -167px", "-484px -167px"],
 };
-export default function useUnitImg(unitName, unitLevel) {
+
+function useUnitImg(unitName, unitLevel) {
   const player = usePlayerContext();
-  const race = useUnitStore(state => state[player].race);
+  const race = useStore(state => state[player].race);
   const [unitImg, setUnitImg] = useState(`url(${UndeadUnitsCard}) ${unitPosition[unitName][0]}`);
   const [unitRaceFrame, setUnitRaceFrame] = useState(`url(${UnitsFrames}) ${"-75px 0px"}`);
 
@@ -66,7 +66,4 @@ export default function useUnitImg(unitName, unitLevel) {
   return { unitImg, unitFrame, unitRaceFrame };
 }
 
-useUnitImg.propTypes = {
-  unitName: PropTypes.string.isRequired,
-  unitLevel: PropTypes.number.isRequired,
-};
+export default useUnitImg;

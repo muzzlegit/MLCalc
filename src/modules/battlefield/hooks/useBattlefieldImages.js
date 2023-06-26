@@ -1,50 +1,44 @@
 import { useState, useEffect } from "react";
+//STORE
+import useStore from "store/useStore";
 //IMAGES
-import battlefieldsImgs from "../img/battlefields.webp";
-//HOOKS
-import useBattleFieldStore from "../store/useBattleFieldStore";
-import useUnitStore from "modules/army/store/useUnitsStore";
-//CONSTS
-const battlefieldsPositios = {
-  cursedForest: "-164px -129px",
-  deadLand: "-164px -1px",
-  hollyLand: "-164px -257px",
-  magicForest: "-164px -385px",
-  mountain: "-1px -1px",
-  desert: "-1px -257px",
-  forest: "-1px -129px",
-  steppe: "-1px -385px",
-  mine: "-327px -1px",
-  undead: "-327px -432px",
-  demon: "-327px -230px",
-  drow: "-408px -230px",
-  human: "-327px -129px",
-  elf: "-408px -129px",
-  monsters: "-408px -432px",
-  castle: "-327px -331px",
-  puddle: "-408px -331px",
-};
+import battlefieldsImgs from "modules/battlefield/img/battlefields.webp";
+import battlefieldsPositios from "modules/battlefield/img/maps/battlefields.map";
 
 export default function useBattlefieldImages() {
-  const battlefield = useBattleFieldStore(state => state.battlefield);
-  const structure = useBattleFieldStore(state => state.structure);
-  const race = useUnitStore(state => state.mainDefender.race);
+  const { battlefield, structure } = useStore(state => state.battlePlace);
+  const mainDefenderRace = useStore(state => state.mainDefender.race);
 
-  const [battlefieldImg, setBattlefieldImg] = useState(
-    `url(${battlefieldsImgs}) ${battlefieldsPositios[battlefield]}`,
-  );
+  const [battlefieldImg, setBattlefieldImg] = useState(getBattlefieldImage(battlefield));
   const [structureImg, setStructureImg] = useState(
-    `url(${battlefieldsImgs}) ${battlefieldsPositios[race]}`,
+    getBattlefieldImage(structure, mainDefenderRace),
+  );
+  const [tower, setTower] = useState(getBattlefieldImage("tower", mainDefenderRace));
+  const [magicTower, setMagicTower] = useState(getBattlefieldImage("magicTower", mainDefenderRace));
+  const [fortification, setFortification] = useState(
+    getBattlefieldImage("fortification", mainDefenderRace),
   );
 
+  function getBattlefieldImage(imageName, race) {
+    if (race) return `url(${battlefieldsImgs}) ${battlefieldsPositios[imageName][race]}`;
+    return `url(${battlefieldsImgs}) ${battlefieldsPositios[imageName]}`;
+  }
   //USE EFFECTS
   useEffect(() => {
-    setStructureImg(`url(${battlefieldsImgs}) ${battlefieldsPositios[race]}`);
-    setBattlefieldImg(`url(${battlefieldsImgs}) ${battlefieldsPositios[battlefield]}`);
+    setBattlefieldImg(getBattlefieldImage(battlefield));
     setStructureImg(
-      `url(${battlefieldsImgs}) ${battlefieldsPositios[structure !== "town" ? structure : race]}`,
+      structure !== "town"
+        ? getBattlefieldImage(structure)
+        : getBattlefieldImage(structure, mainDefenderRace),
     );
-  }, [battlefield, race, structure]);
+    setTower(getBattlefieldImage("tower", structure === "castle" ? "monsters" : mainDefenderRace));
+    setMagicTower(
+      getBattlefieldImage("magicTower", structure === "castle" ? "monsters" : mainDefenderRace),
+    );
+    setFortification(
+      getBattlefieldImage("fortification", structure === "castle" ? "monsters" : mainDefenderRace),
+    );
+  }, [battlefield, mainDefenderRace, structure]);
 
-  return { battlefieldImg, structureImg };
+  return { battlefieldImg, structureImg, tower, magicTower, fortification, getBattlefieldImage };
 }

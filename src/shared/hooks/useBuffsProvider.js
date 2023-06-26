@@ -1,16 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
-//CONTEXT
-import usePlayerContext from "shared/hooks/usePlayerContext";
-//HOOKS
-import useUnitStore from "../../modules/army/store/useUnitsStore";
+import { useCallback } from "react";
+//STORE
+import useStore from "store/useStore";
 //HELERS
-import getDefaulValues from "shared/helpers/getDefaulValues";
-import getBuffsArraysByPlayers from "shared/helpers/getBuffsArraysByPlayers";
-import useBuffsToUnitProvider from "./useBuffsToUnitProvider";
+import { getBuffsArraysByPlayers } from "shared/helpers";
 
 function useBuffsProvider() {
-  const addBuffs = useUnitStore(state => state.functions.addBuffs);
-  const removeBuffs = useUnitStore(state => state.functions.removeBuffs);
+  const { addBuffs, removeBuffs } = useStore(state => state.functions);
 
   const applyBuffs = useCallback(
     buffs => {

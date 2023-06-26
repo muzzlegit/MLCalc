@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 //STORE
-import useBattleFieldStore from "modules/battlefield/store/useBattleFieldStore";
+import useStore from "store/useStore";
 //HOOKS
 import useBuffsProvider from "shared/hooks/useBuffsProvider";
 import useBuffsToUnitProvider from "shared/hooks/useBuffsToUnitProvider";
@@ -33,8 +33,8 @@ const unitHomeLandBuff = {
 };
 
 function useBattlefield() {
-  const battlefield = useBattleFieldStore(state => state.battlefield);
-  const { setBattlefield, setStructure } = useBattleFieldStore(state => state.functions);
+  const battlefield = useStore(state => state.battlePlace.battlefield);
+  const { setBattlefield, setStructure } = useStore(state => state.functions);
   const { applyBuffs } = useBuffsProvider();
 
   useBuffsToUnitProvider("mainAttacker");

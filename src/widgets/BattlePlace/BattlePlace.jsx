@@ -1,5 +1,10 @@
 //COMPONENTS
-import { BattlefieldSelector, BattlefieldPicture } from "modules/battlefield";
+import {
+  BattlefieldSelector,
+  BattlefieldPicture,
+  TowersSelector,
+  TowersList,
+} from "modules/battlefield";
 //HOOKS
 import useBattlefield from "modules/battlefield/hooks/useBattlefield";
 //STYLES
@@ -9,8 +14,10 @@ function BattlePlace() {
   // useBattlefield();
   return (
     <Container className="my-2 p-3 rounded-lg bg-primary">
+      <TowersSelector />
       <BattlefieldSelector />
       <BattlefieldPicture />
+      <TowersList />
     </Container>
   );
 }

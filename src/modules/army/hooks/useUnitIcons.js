@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import { useState } from "react";
 //IMAGES
 import unitsIcons from "../img/unitsIcons.webp";
 //CONSTS
@@ -23,7 +22,8 @@ const unitIcoPosition = {
   suppressionIco: "-64px -70px",
   amountIco: "-47px -70px",
 };
-export default function useUnitIcons(unitName) {
+
+function useUnitIcons(unitName) {
   const [unitIco] = useState(`url(${unitsIcons}) ${unitIcoPosition[unitName]}`);
   const attack = `url(${unitsIcons}) ${unitIcoPosition.attackIco}`;
   const defense = `url(${unitsIcons}) ${unitIcoPosition.defenseIco}`;
@@ -35,10 +35,6 @@ export default function useUnitIcons(unitName) {
   const persecution = `url(${unitsIcons}) ${unitIcoPosition.persecutorIco}`;
   const suppression = `url(${unitsIcons}) ${unitIcoPosition.suppressionIco}`;
   const amount = `url(${unitsIcons}) ${unitIcoPosition.amountIco}`;
-  //USE EFFECTS
-  // useEffect(() => {
-  //   setUnitIco(`url(${unitsIcons}) ${unitIcoPosition[unitName]}`);
-  // }, [unitName]);
 
   return {
     unitIco,
@@ -55,6 +51,4 @@ export default function useUnitIcons(unitName) {
   };
 }
 
-useUnitIcons.propTypes = {
-  unitName: PropTypes.string.isRequired,
-};
+export default useUnitIcons;

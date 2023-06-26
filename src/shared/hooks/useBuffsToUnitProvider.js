@@ -1,17 +1,13 @@
-import { useEffect, useMemo } from "react";
-//CONTEXT
-import usePlayerContext from "./usePlayerContext";
-//HOOKS
-import useBuffsProvider from "./useBuffsProvider";
+import { useEffect } from "react";
 //HELPERS
 import { isAttacker, getUnitLand } from "shared/helpers";
 //STORES
-import useUnitStore from "modules/army/store/useUnitsStore";
+import useStore from "store/useStore";
 
 function useBuffsToUnitProvider(player) {
-  const state = useUnitStore(state => state);
-  const { buffsStorage, apostate, homeLand, race, fraction } = useUnitStore(state => state[player]);
-  const setUnitProperty = useUnitStore(state => state.functions.setUnitProperty);
+  const state = useStore(state => state);
+  const { buffsStorage, apostate, homeLand, race, fraction } = useStore(state => state[player]);
+  const setUnitProperty = useStore(state => state.functions.setUnitProperty);
 
   useEffect(() => {
     const properties = {

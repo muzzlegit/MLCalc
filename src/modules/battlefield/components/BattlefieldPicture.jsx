@@ -1,10 +1,10 @@
 //HOOKS
 import useBattlefieldImages from "modules/battlefield/hooks/useBattlefieldImages";
 //STORE
-import useBattleFieldStore from "../store/useBattleFieldStore";
+import useStore from "store/useStore";
 
 function BattlefieldPicture() {
-  const battlefield = useBattleFieldStore(state => state.battlefield);
+  const battlefield = useStore(state => state.battlePlace.battlefield);
   const { battlefieldImg, structureImg } = useBattlefieldImages();
 
   return (

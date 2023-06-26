@@ -4,7 +4,7 @@ import useRace from "modules/army/hooks/useRace";
 import { Container, Label, Select, Option } from "./styles/RaceSelector.styled";
 
 function RaceSelector() {
-  const { сhangeRace } = useRace();
+  const { сhangeRace, isMonstersShow } = useRace();
 
   return (
     <Container>
@@ -20,7 +20,7 @@ function RaceSelector() {
         <Option value="drow">Темные эльфы</Option>
         <Option value="human">Рыцари</Option>
         <Option value="elf">Эльфы</Option>
-        <Option value="monsters">Монстры</Option>
+        {isMonstersShow ? <Option value="monsters">Монстры</Option> : null}
       </Select>
     </Container>
   );

@@ -1,18 +1,16 @@
-import PropTypes from "prop-types";
 import { useEffect } from "react";
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
 //STORE
-import useUnitStore from "../store/useUnitsStore";
+import useStore from "store/useStore";
 //HELPERS
-import getUnitData from "../helpers/getUnitData";
+import { getUnitData } from "shared/helpers";
 
 function useUnit(unitName) {
   const player = usePlayerContext();
-  const unitDate = useUnitStore(state => state[player][unitName]);
-  const race = useUnitStore(state => state[player].race);
-  const attackIndex = useUnitStore(state => state[player].attackIndex);
-  const { setUnit, setUnitLevel, setUnitAmount } = useUnitStore(state => state.functions);
+  const unitDate = useStore(state => state[player][unitName]);
+  const { race, attackIndex } = useStore(state => state[player]);
+  const { setUnit, setUnitLevel, setUnitAmount } = useStore(state => state.functions);
   const { level, amount } = unitDate;
 
   const changeLevel = () => {
@@ -35,7 +33,3 @@ function useUnit(unitName) {
 }
 
 export default useUnit;
-
-useUnit.propTypes = {
-  unitName: PropTypes.string.isRequired,
-};

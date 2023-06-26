@@ -1,0 +1,58 @@
+const battlefieldsPositios = {
+  cursedForest: "-164px -129px",
+  deadLand: "-164px -1px",
+  hollyLand: "-164px -257px",
+  magicForest: "-164px -385px",
+  mountain: "-1px -1px",
+  desert: "-1px -257px",
+  forest: "-1px -129px",
+  steppe: "-1px -385px",
+  mine: "-327px -1px",
+  town: {
+    undead: "-327px -432px",
+    demon: "-327px -230px",
+    drow: "-408px -230px",
+    human: "-327px -129px",
+    elf: "-408px -129px",
+    monsters: "-408px -432px",
+  },
+
+  castle: "-327px -331px",
+  puddle: "-408px -331px",
+  tower: {
+    undead: "-490px -83px",
+    demon: "-525px -83px",
+    drow: "-490px -209px",
+    human: "-525px -209px",
+    elf: "-490px -335px",
+    monsters: "-525px -335px",
+  },
+  magicTower: {
+    undead: "-490px -125px",
+    demon: "-525px -125px",
+    drow: "-490px -251px",
+    human: "-525px -251px",
+    elf: "-490px -377px",
+    monsters: "-525px -377px",
+  },
+  fortification: {
+    undead: "-490px -167px",
+    demon: "-525px -167px",
+    drow: "-490px -293px",
+    human: "-525px -293px",
+    elf: "-490px -419px",
+    monsters: "-525px -419px",
+  },
+  gate: {
+    monsters: "-525px -461px",
+  },
+  towerIcon: "-516px -1px",
+  magicTowerIcon: "-490px -1px",
+  fortificationIcon: "-490px -40px",
+  addIcon: "-530px -55px",
+  deleteIcon: "-530px -40px",
+  largePerfectIcon: "-490px -460px",
+  perfectIcon: "-530px -69px",
+};
+
+export default battlefieldsPositios;

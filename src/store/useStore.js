@@ -2,9 +2,9 @@ import create from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { devtools } from "zustand/middleware";
 //HELPERS
-import { getInitialUnitData, getPlayerHomeland, getPlayerFraction } from "../helpers";
+import { getInitialUnitData, getPlayerHomeland, getPlayerFraction } from "shared/helpers";
 //----------- STORE -----------
-const useUnitStore = create(
+const useStore = create(
   devtools(
     immer((set, get) => ({
       //MAIN ATTACKER --------------------------------
@@ -112,6 +112,16 @@ const useUnitStore = create(
         homeLand: "cursedForest",
         buffsStorage: [],
       },
+      //BattlePlace --------------------------
+      battlePlace: {
+        battlefield: "cursedForest",
+        structure: "town",
+        garrison: {},
+        towers: [],
+        fortifications: [],
+        gate: null,
+        race: "monsters",
+      },
       //FUNCTIONS --------------------------------
       functions: {
         setUnit: (player, unit) =>
@@ -168,10 +178,30 @@ const useUnitStore = create(
             });
             state[player].buffsStorage = [...filteredBuffs];
           }),
+        setBattlefield: battlefield =>
+          set(state => {
+            state.battlePlace.battlefield = battlefield;
+          }),
+        setStructure: structure =>
+          set(state => {
+            state.battlePlace.structure = structure;
+          }),
+        setFortfications: fortifications =>
+          set(state => {
+            state.battlePlace.fortifications = fortifications;
+          }),
+        setTowers: towers =>
+          set(state => {
+            state.battlePlace.towers = towers;
+          }),
+        setGate: gate =>
+          set(state => {
+            state.battlePlace.gate = gate;
+          }),
       },
     })),
-    { name: "UnitStore" },
+    { name: "Store" },
   ),
 );
 
-export default useUnitStore;
+export default useStore;
