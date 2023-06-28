@@ -1,18 +1,29 @@
-import { nanoid } from "nanoid";
 //COMPONENTS
 import UnitCard from "../UnitCard/UnitCard";
-//STYLES
-import { Container } from "./styles/Squad.styled";
+//HOOKS
+import usePlayerContext from "shared/hooks/usePlayerContext";
+import useUnit from "modules/army/hooks/useUnit";
+//STORE
+import useStore from "store/useStore";
 //CoNSTS
 import { UNITS } from "shared/utils/constants";
+//STYLES
+import { Container } from "./styles/Squad.styled";
 
 function Squad() {
+  const player = usePlayerContext();
+  const playerData = useStore(state => state[player]);
+  const { changeLevel, changeAmount } = useUnit("porter");
   return (
     <Container>
-      {UNITS.map(trooper => {
+      {UNITS.map(unit => {
         return (
-          <li key={nanoid()}>
-            <UnitCard unitName={trooper} />
+          <li key={unit}>
+            <UnitCard
+              unitData={playerData[unit]}
+              changeLevel={changeLevel}
+              changeAmount={changeAmount}
+            />
           </li>
         );
       })}

@@ -3,12 +3,12 @@ import useAttackRate from "modules/army/hooks/useAttackRate";
 //STYLES
 import { Container, Label, Select, Option } from "./styles/AttackRateSelector.styled";
 
-function AttackRateSelector() {
+function AttackRateSelector({ title }) {
   const { changeAttackRate } = useAttackRate();
 
   return (
     <Container>
-      <Label>Уровень атаки</Label>
+      <Label>{title ?? "Уровень атаки"}</Label>
       <Select
         id="index"
         onChange={e => {

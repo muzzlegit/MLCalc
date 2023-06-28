@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+//HOOKS
+import useBattlefield from "./useBattlefield";
 //STORE
 import useStore from "store/useStore";
 
 export default function useTowerSelector() {
-  const { towers, structure } = useStore(state => state.battlePlace);
+  const { towers } = useStore(state => state.battlePlace);
+  const { isCastle } = useBattlefield();
   const { race } = useStore(state => state.mainDefender);
   const [level, setLevel] = useState(1);
   const [levelsArray, setLevelsArray] = useState(Array.from({ length: 8 }, (_, i) => i + 1));
@@ -43,11 +46,17 @@ export default function useTowerSelector() {
 
   //USE EFFECTS
   useEffect(() => {
-    setLevelsArray(Array.from({ length: `${structure === "castle" ? 7 : 8}` }, (_, i) => i + 1));
-    race === "monsters" && structure !== "castle"
+    setLevelsArray(Array.from({ length: `${isCastle ? 7 : 8}` }, (_, i) => i + 1));
+    race === "monsters" && isCastle
       ? setIsSelectorActive("disabled")
       : setIsSelectorActive("active");
-  }, [race, structure]);
+  }, [race, isCastle]);
+
+  useEffect(() => {
+    if (isCastle && level === 8) {
+      setLevel(7);
+    }
+  }, [isCastle, level]);
 
   useEffect(() => {
     if (isSelected === "fortification") {
@@ -60,6 +69,7 @@ export default function useTowerSelector() {
       }
     }
   }, [towers, isSelected]);
+
   useEffect(() => {
     if (isSelected === "fortification") {
       setIsButtonActive(false);
@@ -71,8 +81,8 @@ export default function useTowerSelector() {
       }
     }
   }, [towers, isSelected]);
+
   return {
-    structure,
     levelsArray,
     level,
     isSelected,

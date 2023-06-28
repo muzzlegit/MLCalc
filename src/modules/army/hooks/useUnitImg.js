@@ -25,6 +25,7 @@ const unitPosition = {
 
 function useUnitImg(unitName, unitLevel) {
   const player = usePlayerContext();
+
   const race = useStore(state => state[player].race);
   const [unitImg, setUnitImg] = useState(`url(${UndeadUnitsCard}) ${unitPosition[unitName][0]}`);
   const [unitRaceFrame, setUnitRaceFrame] = useState(`url(${UnitsFrames}) ${"-75px 0px"}`);

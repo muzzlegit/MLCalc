@@ -1,5 +1,6 @@
 //HOOKS
 import useTowerSelector from "modules/battlefield/hooks/useTowerSelector";
+import useBattlefield from "modules/battlefield/hooks/useBattlefield";
 import useTowers from "modules/battlefield/hooks/useTowers";
 import useBattlefieldImages from "modules/battlefield/hooks/useBattlefieldImages";
 //STYLES
@@ -19,7 +20,6 @@ import {
 
 export default function TowersSelector() {
   const {
-    structure,
     levelsArray,
     level,
     isSelected,
@@ -36,6 +36,7 @@ export default function TowersSelector() {
     fortificationAmount,
   );
   const { getBattlefieldImage } = useBattlefieldImages();
+  const { isCastle } = useBattlefield();
 
   const selectShadow = "drop-shadow(#61e7fd 0px 0px 7px) drop-shadow(#61e7fd 0px 0px 7px)";
 
@@ -89,12 +90,13 @@ export default function TowersSelector() {
               disabled={isSelected === "fortification" ? false : true}
             />
           </TowerBox>
-          {structure === "castle" ? (
+          {isCastle ? (
             <TowerBox>
               <Tower
                 id="gate"
-                background={getBattlefieldImage("gate", "monsters")}
-                width={"23px"}
+                title="Внутренние ворота"
+                background={getBattlefieldImage("gateIcon")}
+                width={"32px"}
                 filter={isSelected === "gate" ? selectShadow : "none"}
                 onClick={onTowerClick}
               ></Tower>
@@ -103,6 +105,7 @@ export default function TowersSelector() {
         </TowersBox>
         <LevelBox>
           {levelsArray.map(lev => {
+            if (isCastle && lev === 8) return null;
             return (
               <Level
                 id={lev}

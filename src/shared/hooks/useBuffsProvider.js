@@ -10,7 +10,6 @@ function useBuffsProvider() {
   const applyBuffs = useCallback(
     buffs => {
       const playersArrays = getBuffsArraysByPlayers(buffs);
-
       for (const key in playersArrays) {
         if (playersArrays[key].buffsArray.length) {
           playersArrays[key].playerNames.forEach(name => {

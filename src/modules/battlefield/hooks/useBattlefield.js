@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 //STORE
 import useStore from "store/useStore";
 //HOOKS
@@ -33,13 +33,14 @@ const unitHomeLandBuff = {
 };
 
 function useBattlefield() {
-  const battlefield = useStore(state => state.battlePlace.battlefield);
+  const [isCastle, setIsCastle] = useState(false);
+  const { battlefield, structure } = useStore(state => state.battlePlace);
   const { setBattlefield, setStructure } = useStore(state => state.functions);
   const { applyBuffs } = useBuffsProvider();
 
   useBuffsToUnitProvider("mainAttacker");
   useBuffsToUnitProvider("mainDefender");
-
+  useBuffsToUnitProvider("battlePlace");
   const onBattlefieldChange = e => {
     setBattlefield(e.currentTarget.value);
     if (e.currentTarget.value === "mine") setStructure("town");
@@ -61,7 +62,11 @@ function useBattlefield() {
     ]);
   }, [battlefield, applyBuffs]);
 
-  return { onBattlefieldChange, onStructureChange };
+  useEffect(() => {
+    structure === "castle" ? setIsCastle(true) : setIsCastle(false);
+  }, [structure]);
+
+  return { onBattlefieldChange, onStructureChange, isCastle };
 }
 
 export default useBattlefield;

@@ -49,10 +49,11 @@ const battlefieldsPositios = {
   towerIcon: "-516px -1px",
   magicTowerIcon: "-490px -1px",
   fortificationIcon: "-490px -40px",
-  addIcon: "-530px -55px",
-  deleteIcon: "-530px -40px",
-  largePerfectIcon: "-490px -460px",
-  perfectIcon: "-530px -69px",
+  gateIcon: "-490px -461px",
+  addIcon: "-545px -15px",
+  deleteIcon: "-545px -1px",
+  largePerfectIcon: "-530px -43px",
+  perfectIcon: "-545px -29px",
 };
 
 export default battlefieldsPositios;

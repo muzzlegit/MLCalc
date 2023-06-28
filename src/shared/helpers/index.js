@@ -36,11 +36,11 @@ export function getPlayerAlly(player) {
     case "attackerSecondAlly":
       return ["mainAttacker", "attackerAlly"];
     case "mainDefender":
-      return ["firstDefenderAlly", "secondDefenderAlly"];
+      return ["firstDefenderAlly", "secondDefenderAlly", "battlePlace"];
     case "firstDefenderAlly":
-      return ["mainDefender", "secondDefenderAlly"];
+      return ["mainDefender", "secondDefenderAlly", "battlePlace"];
     case "secondDefenderAlly":
-      return ["firstDefenderAlly", "mainDefender"];
+      return ["firstDefenderAlly", "mainDefender", "battlePlace"];
     default:
       break;
   }
@@ -49,11 +49,11 @@ export function getPlayerAlly(player) {
 export function getPlayerEnemy(player) {
   switch (player) {
     case "mainAttacker":
-      return ["mainDefender", "firstDefenderAlly", "secondDefenderAlly"];
+      return ["mainDefender", "firstDefenderAlly", "secondDefenderAlly", "battlePlace"];
     case "attackerAlly":
-      return ["mainDefender", "firstDefenderAlly", "secondDefenderAlly"];
+      return ["mainDefender", "firstDefenderAlly", "secondDefenderAlly", "battlePlace"];
     case "attackerSecondAlly":
-      return ["mainDefender", "firstDefenderAlly", "secondDefenderAlly"];
+      return ["mainDefender", "firstDefenderAlly", "secondDefenderAlly", "battlePlace"];
     case "mainDefender":
       return ["mainAttacker", "attackerAlly", "attackerSecondAlly"];
     case "firstDefenderAlly":
@@ -106,6 +106,7 @@ export function getBuffsArraysByPlayers(buffs) {
         "mainDefender",
         "firstDefenderAlly",
         "secondDefenderAlly",
+        "battlePlace",
       ];
       playersArrays.all.buffsArray = buffs;
     } else {
@@ -190,61 +191,64 @@ export function getUnitData(unitName, level, race, index, amount) {
   return { ...unit, attack: unit[`attack${index}`], level, amount };
 }
 
-export function getInitialUnitData(unit, race) {
+export function getInitialUnitData(unit, race, level) {
   if (!unit) return {};
+  let unitLevel = "level1";
+  if (level) unitLevel = `level${level}`;
+
   const squad = {
     porter: {
-      ...UNITS[race].porter.level1,
+      ...UNITS[race].porter[unitLevel],
       race,
       attack: 0,
       ...initialUnitsProperties,
       ...initialPorterProperties,
     },
     swordsman: {
-      ...UNITS[race].swordsman.level1,
+      ...UNITS[race].swordsman[unitLevel],
       race,
-      attack: UNITS[race].swordsman.level1.attackMin,
+      attack: UNITS[race].swordsman[unitLevel].attackMin,
       ...initialUnitsProperties,
       ...initialWarriorsProperties,
     },
     cavalier: {
-      ...UNITS[race].cavalier.level1,
+      ...UNITS[race].cavalier[unitLevel],
       race,
-      attack: UNITS[race].cavalier.level1.attackMin,
+      attack: UNITS[race].cavalier[unitLevel].attackMin,
       ...initialUnitsProperties,
       ...initialWarriorsProperties,
     },
     flying: {
-      ...UNITS[race].flying.level1,
+      ...UNITS[race].flying[unitLevel],
       race,
-      attack: UNITS[race].flying.level1.attackMin,
+      attack: UNITS[race].flying[unitLevel].attackMin,
       ...initialUnitsProperties,
       ...initialWarriorsProperties,
     },
     archer: {
-      ...UNITS[race].archer.level1,
+      ...UNITS[race].archer[unitLevel],
       race,
-      attack: UNITS[race].archer.level1.attackMin,
+      attack: UNITS[race].archer[unitLevel].attackMin,
       ...initialUnitsProperties,
       ...initialWarriorsProperties,
     },
     healer: {
-      ...UNITS[race].healer.level1,
+      ...UNITS[race].healer[unitLevel],
       race,
-      attack: UNITS[race].healer.level1.attackMin,
+      attack: UNITS[race].healer[unitLevel].attackMin,
       ...initialUnitsProperties,
       ...initialHealerProperties,
     },
     mercenary: {
-      ...UNITS[race].mercenary.level1,
+      ...UNITS[race].mercenary[unitLevel],
       race,
-      attack: UNITS[race].mercenary.level1.attackMin,
+      attack: UNITS[race].mercenary[unitLevel].attackMin,
       ...initialUnitsProperties,
     },
     mage: {
-      ...UNITS[race].mage.level1,
+      ...UNITS[race].mage[unitLevel],
       race,
-      attack: UNITS[race].mage.level1.attackMin,
+      attack: UNITS[race].mage[unitLevel].attackMin,
       ...initialUnitsProperties,
       ...initialMageProperties,
     },

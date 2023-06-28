@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
 //STORE
@@ -18,7 +18,6 @@ function useUnit(unitName) {
       ? setUnitLevel(player, unitName, 1)
       : setUnitLevel(player, unitName, level + 1);
   };
-
   const changeAmount = value => {
     if (isNaN(Number(value))) return;
     setUnitAmount(player, unitName, Number(value));

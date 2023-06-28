@@ -1,24 +1,30 @@
 import { nanoid } from "nanoid";
 import { useCallback, useEffect } from "react";
+//HOOKS
+import useBuffsProvider from "shared/hooks/useBuffsProvider";
 //STORE
 import useStore from "store/useStore";
 //DATA
 import TOWERS from "shared/data/TOWERS.json";
 
 //CONST
-const BUFF = {
+const fortificationBuff = {
   id: "wRPzU5K430O0kKMkKYbaXA",
-  name: "fortifications",
-  effect: "player",
-  homeLand: "all",
-  unit: ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+  source: "fortifications",
+  character: "fortification",
+  target: "player",
+  appliedOn: "all",
+  unit: "units",
+  units: ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "defense",
+  description: "Защита укреплений",
 };
 
 const useTowers = (isSelected, level, value) => {
   const mainDefenderRace = useStore(state => state.mainDefender.race);
   const { structure, towers, fortifications, gate } = useStore(state => state.battlePlace);
   const { setTowers, setFortfications, setGate } = useStore(state => state.functions);
+  const { applyBuffs, removeBuff } = useBuffsProvider();
 
   const getTowersData = useCallback((name, level, structure) => {
     return structure === "castle"
@@ -38,6 +44,7 @@ const useTowers = (isSelected, level, value) => {
       ]);
     }
     if (isSelected === "fortification") {
+      if (!value) return;
       let isAdd = false;
       if (!fortifications.length) {
         setFortfications([
@@ -107,15 +114,47 @@ const useTowers = (isSelected, level, value) => {
     if (mainDefenderRace === "monsters") {
       setTowers([]);
       setFortfications([]);
+      removeBuff([
+        {
+          ...fortificationBuff,
+          player: "mainDefender",
+        },
+      ]);
       setGate(null);
     }
-  }, [mainDefenderRace, setFortfications, setTowers, setGate]);
+  }, [mainDefenderRace, setFortfications, setTowers, setGate, removeBuff]);
 
   useEffect(() => {
     setTowers([]);
     setFortfications([]);
     setGate(null);
-  }, [setFortfications, setGate, setTowers, structure]);
+    removeBuff([
+      {
+        ...fortificationBuff,
+        player: "battlePlace",
+      },
+    ]);
+    removeBuff([
+      {
+        ...fortificationBuff,
+        player: "mainDefender",
+      },
+    ]);
+  }, [removeBuff, setFortfications, setGate, setTowers, structure]);
+
+  useEffect(() => {
+    const defence = fortifications.reduce((acc, { quantity, defense }) => {
+      acc = acc + quantity * defense;
+      return acc;
+    }, 0);
+    applyBuffs([
+      {
+        ...fortificationBuff,
+        player: structure === "castle" ? "battlePlace" : "mainDefender",
+        value: defence,
+      },
+    ]);
+  }, [applyBuffs, fortifications, removeBuff, structure]);
 
   return {
     towers,
