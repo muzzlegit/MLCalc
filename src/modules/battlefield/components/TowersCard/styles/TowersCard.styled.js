@@ -14,7 +14,7 @@ export const TowerImgBox = styled.div(
     backgroundColor: "grey",
     "&:hover": {
       cursor: "pointer",
-      boxShadow: "0px 0px 4px 4px rgba(255,255,255,.4)",
+      boxShadow: "0px 0px 4px 4px rgba(255,0,0,.4)",
       backgroundColor: "#4a5153",
     },
   },

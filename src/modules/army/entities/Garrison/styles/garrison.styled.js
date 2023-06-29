@@ -6,7 +6,7 @@ export const Container = styled.ul(
     gap: "4px",
     listStyle: "none",
     opacity: 1,
-    transform: "opacity 2000ms linear",
+    transition: "opacity 400ms linear",
   },
   props => ({
     pointerEvents: props.isActive === "active" ? true : "none",

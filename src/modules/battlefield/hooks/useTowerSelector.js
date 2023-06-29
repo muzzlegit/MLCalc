@@ -15,7 +15,7 @@ export default function useTowerSelector() {
   const [isButtonActive, setIsButtonActive] = useState(
     towers.length >= 2 || isSelected === "fortification" ? true : false,
   );
-  const [isSelectorActive, setIsSelectorActive] = useState("active");
+  const isSelectorActive = race === "monsters" ? null : "active";
 
   //HANDLE FUCTIONS
   const onLevelClick = e => {
@@ -46,29 +46,11 @@ export default function useTowerSelector() {
 
   //USE EFFECTS
   useEffect(() => {
-    setLevelsArray(Array.from({ length: `${isCastle ? 7 : 8}` }, (_, i) => i + 1));
-    race === "monsters" && isCastle
-      ? setIsSelectorActive("disabled")
-      : setIsSelectorActive("active");
-  }, [race, isCastle]);
-
-  useEffect(() => {
     if (isCastle && level === 8) {
       setLevel(7);
     }
+    setLevelsArray(Array.from({ length: `${isCastle ? 7 : 8}` }, (_, i) => i + 1));
   }, [isCastle, level]);
-
-  useEffect(() => {
-    if (isSelected === "fortification") {
-      setIsButtonActive(false);
-    } else {
-      if (towers.length >= 2) {
-        setIsButtonActive(true);
-      } else {
-        setIsButtonActive(false);
-      }
-    }
-  }, [towers, isSelected]);
 
   useEffect(() => {
     if (isSelected === "fortification") {

@@ -7,12 +7,12 @@ import { PropertyBox, PropertyIcon, PropertyValue } from "./styles/UnitCardPrope
 import theme from "shared/utils/theme";
 
 const UnitCardProperty = ({ unitData, name }) => {
-  const { unit } = unitData;
+  const { unit, defenseLevel } = unitData;
   const property = unitData[name];
   const propertyRate = unitData[`${name}Rate`];
   const icons = useUnitIcons(unit);
   const { attackLimit, healthLimit, defenseLevelLimit, persecutionLimit } = LIMITS;
-
+  if (name === "defense") console.log(property);
   switch (name) {
     case "amount":
       return (
@@ -60,18 +60,18 @@ const UnitCardProperty = ({ unitData, name }) => {
           <PropertyIcon background={icons[name]}></PropertyIcon>
           <PropertyValue
             color={
-              property > propertyRate || property < 0 ? theme.colors.orange : theme.colors.text
+              property > defenseLevel || property < 0 ? theme.colors.orange : theme.colors.text
             }
           >
             {propertyRate < 0
               ? 0
-              : property > propertyRate
-              ? propertyRate
+              : property > defenseLevel
+              ? defenseLevel
               : property < 0
               ? 0
               : property}
           </PropertyValue>
-          {property > propertyRate || property < 0 ? (
+          {property > defenseLevel || property < 0 ? (
             <PropertyValue color={theme.colors.orange}>{`(${property})`}</PropertyValue>
           ) : null}
         </PropertyBox>

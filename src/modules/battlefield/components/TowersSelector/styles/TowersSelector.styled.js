@@ -10,6 +10,7 @@ export const SelectorsWrap = styled.div(
     justifyContent: "center",
     alignItems: "center",
     gap: "12px",
+    transition: "opacity 200ms linear",
   },
   props => ({
     pointerEvents: props.isActive === "active" ? true : "none",

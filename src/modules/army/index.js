@@ -1,5 +1,5 @@
-import Squad from "./modules/Squad/Squad";
-import Garrison from "./modules/Garrison/Garrison";
+import Squad from "./entities/Squad/Squad";
+import Garrison from "./entities/Garrison/Garrison";
 import RaceSelector from "./components/RaceSelector/RaceSelector";
 import AttackRateSelector from "./components/AttackRateSelector/AttackRateSelector";
 import ApostateChecker from "./components/ApostateChecker/ApostateChecker";

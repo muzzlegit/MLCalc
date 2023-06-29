@@ -9,6 +9,7 @@ const useStore = create(
     immer((set, get) => ({
       //MAIN ATTACKER --------------------------------
       mainAttacker: {
+        hero: true,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -27,6 +28,7 @@ const useStore = create(
       },
       // MAIN ATTACKER ALLY --------------------------
       attackerAlly: {
+        hero: null,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -45,6 +47,7 @@ const useStore = create(
       },
       // MAIN ATTACKER SECOND ALLY --------------------------
       attackerSecondAlly: {
+        hero: null,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -63,6 +66,7 @@ const useStore = create(
       },
       //MAIN DEFENDER --------------------------------
       mainDefender: {
+        hero: true,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -80,6 +84,7 @@ const useStore = create(
       },
       //firstDefenderAlly --------------------------
       firstDefenderAlly: {
+        hero: null,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -97,6 +102,7 @@ const useStore = create(
       },
       //secondDefenderAlly --------------------------
       secondDefenderAlly: {
+        hero: null,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
