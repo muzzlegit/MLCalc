@@ -1,5 +1,5 @@
 //COMPONENTS
-import GarrisonUnitCard from "../GarrisonUnitCard/GarrisonUnitCard";
+import GarrisonUnitCard from "../../components/GarrisonUnitCard/GarrisonUnitCard";
 //STORE
 import useStore from "store/useStore";
 //CONSTS
@@ -8,15 +8,18 @@ import { UNITS } from "shared/utils/constants";
 import { Container } from "./styles/garrison.styled";
 
 const Garrison = () => {
-  const battlePlace = useStore(state => state.battlePlace);
-  const { structure } = battlePlace;
+  const structure = useStore(state => state.battlePlace.structure);
 
   return (
     <>
       {structure === "castle" ? (
         <Container>
           {UNITS.map(unit => {
-            return <GarrisonUnitCard key={unit} unitData={battlePlace[unit]} />;
+            return (
+              <li key={unit}>
+                <GarrisonUnitCard unitData={unit} />
+              </li>
+            );
           })}
         </Container>
       ) : null}

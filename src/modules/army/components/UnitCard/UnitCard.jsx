@@ -6,6 +6,7 @@ import UnitCardLevel from "../UnitCardLevel/UnitCardLevel";
 import UnitCardProperty from "../UnitCardProperty/UnitCardProperty";
 //STYLes
 import { Container, PropertyesContainer } from "./styles/UnitCard.styled";
+import useUnit from "modules/army/hooks/useUnit";
 
 //CONSTS
 const propertyes = [
@@ -21,8 +22,9 @@ const propertyes = [
   "towersSuppression",
 ];
 
-const UnitCard = ({ unitData }) => {
-  const { name, amount } = unitData;
+const UnitCard = ({ unitName }) => {
+  const { unitData } = useUnit(unitName);
+  const { amount, name } = unitData;
 
   return (
     <Container boxShadow={Number(amount) && "active"}>

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import "animate.css";
 
-export const Container = styled.div({
+export const Container = styled.ul({
   display: "flex",
   gap: "4px",
   listStyle: "none",

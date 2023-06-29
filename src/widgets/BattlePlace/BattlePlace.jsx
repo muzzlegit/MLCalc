@@ -18,7 +18,7 @@ function BattlePlace() {
       <AttackRateSelector title="Уровень атаки гарнизона" />
       <BattlefieldPicture />
       <TowersList />
-      <Garrison />
+      {/* <Garrison /> */}
     </Container>
   );
 }

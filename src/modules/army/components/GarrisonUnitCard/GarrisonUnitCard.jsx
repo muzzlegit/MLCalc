@@ -5,6 +5,8 @@ import UnitCardInput from "../UnitCardInput/UnitCardInput";
 import UnitCardLevel from "../UnitCardLevel/UnitCardLevel";
 import UnitCardTitle from "../UnitCardTitle/UnitCardTitle";
 import UnitCardProperty from "../UnitCardProperty/UnitCardProperty";
+//HOOKS
+import useUnit from "modules/army/hooks/useUnit";
 //STYLES
 import {
   Container,
@@ -13,10 +15,12 @@ import {
   OnClickWrap,
   BlockClickWrap,
 } from "./styles/GarrisonUnitCard.styled";
+
 //CONSTS
 const propertyes = ["amount", "attack", "defense", "health", "persecution", "resurrection"];
 
-const GarrisonUnitCard = ({ unitData }) => {
+const GarrisonUnitCard = ({ unitName }) => {
+  const { unitData } = useUnit(unitName);
   const { name, amount } = unitData;
 
   const [isPropertyesShow, setIsPropertyesShow] = useState(false);
