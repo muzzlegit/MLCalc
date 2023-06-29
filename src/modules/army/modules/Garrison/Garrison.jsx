@@ -11,19 +11,15 @@ const Garrison = () => {
   const structure = useStore(state => state.battlePlace.structure);
 
   return (
-    <>
-      {structure === "castle" ? (
-        <Container>
-          {UNITS.map(unit => {
-            return (
-              <li key={unit}>
-                <GarrisonUnitCard unitData={unit} />
-              </li>
-            );
-          })}
-        </Container>
-      ) : null}
-    </>
+    <Container isActive={structure === "castle" && "active"}>
+      {UNITS.map(unit => {
+        return (
+          <li key={unit}>
+            <GarrisonUnitCard unitName={unit} />
+          </li>
+        );
+      })}
+    </Container>
   );
 };
 

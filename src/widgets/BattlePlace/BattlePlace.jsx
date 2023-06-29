@@ -3,16 +3,20 @@ import { BattlefieldSelector, BattlefieldPicture, Towers } from "modules/battlef
 import { Garrison, AttackRateSelector } from "modules/army";
 
 //STYLES
-import { Container } from "./styles/BattlePlace.styled";
+import { Container, SelectorsBox, GarrisonBox } from "./styles/BattlePlace.styled";
 
 function BattlePlace() {
   return (
-    <Container className="my-2 p-3 rounded-lg bg-primary">
+    <Container>
       <Towers />
-      <BattlefieldSelector />
-      <AttackRateSelector title="Уровень атаки гарнизона" />
-      <BattlefieldPicture />
-      {/* <Garrison /> */}
+      <SelectorsBox>
+        <BattlefieldSelector />
+        <AttackRateSelector title="Уровень атаки гарнизона" />
+      </SelectorsBox>
+      <GarrisonBox>
+        <BattlefieldPicture />
+        <Garrison />
+      </GarrisonBox>
     </Container>
   );
 }

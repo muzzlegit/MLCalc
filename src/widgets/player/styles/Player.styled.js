@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div(
   {
+    marginBottom: "8px",
     padding: "16px",
     width: "fit-content",
     display: "flex",
