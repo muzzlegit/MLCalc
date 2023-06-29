@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import useTowers from "modules/battlefield/hooks/useTowers";
 import useBattlefieldImages from "modules/battlefield/hooks/useBattlefieldImages";
 //STYLES
-import { TowerBox, ImgWrap, TowerImgBox, LevelLabel } from "./styles/TowersCard.styled";
+import { TowerBox, ImgWrap, TowerImgBox, LevelLabel, Quantity } from "./styles/TowersCard.styled";
 
 const TowersList = () => {
   const { towers, fortifications, gate, onTowerClick, onFortificationClick, onGateClick } =
@@ -47,7 +47,7 @@ const TowersList = () => {
                 onFortificationClick(fortification.id);
               }}
             />
-            <div>x{fortification.quantity}</div>
+            <Quantity>x{fortification.quantity}</Quantity>
             <LevelLabel
               border={fortification.level}
               background={fortification.level === 8 ? getBattlefieldImage("perfectIcon") : null}

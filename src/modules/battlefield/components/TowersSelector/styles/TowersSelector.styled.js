@@ -1,25 +1,22 @@
 import styled from "@emotion/styled";
 
 export const TowerSelectorBox = styled.div({
-  marginLeft: "8px",
   padding: "4px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "12px",
-  borderRadius: "8px",
-  border: "1px solid #383c3d",
-  backgroundColor: "#111728",
+  width: "300px",
 });
 export const SelectorsWrap = styled.div(
   {
-    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "12px",
   },
   props => ({
     pointerEvents: props.isActive === "active" ? true : "none",
     opacity: props.isActive === "active" ? 1 : 0.4,
   }),
 );
+export const SelectorsBox = styled.div({});
 export const TowersBox = styled.div({
   display: "flex",
   justifyContent: "center",
@@ -72,42 +69,37 @@ export const Level = styled.li(
     background: props.background,
   }),
 );
-export const AddButton = styled.button({
-  position: "absolute",
-  top: "40%",
-  right: "0",
-  transform: "translate(50%, -50%)",
-  height: "30px",
-  width: "30px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "50%",
-  border: "1px solid #4a5153",
-  backgroundColor: "#212425",
-  "&:hover": {
+export const AddButton = styled.button(
+  {
+    height: "30px",
+    width: "30px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "50%",
     cursor: "pointer",
-    boxShadow: "0px 0px 4px 4px rgba(0,255,0,.4)",
-    backgroundColor: "#4a5153",
+    transition: "box-shadow 300ms linear",
+    "&:hover": {
+      boxShadow: "0px 0px 4px 4px rgba(0,255,0,.4)",
+      transition: "box-shadow 200ms linear",
+    },
   },
-});
+  props => ({
+    background: props.theme.colors.secondary,
+  }),
+);
 export const RemoveButton = styled.button({
-  position: "absolute",
-  top: "40%",
-  left: "0",
-  transform: "translate(-50%, -50%)",
   height: "30px",
   width: "30px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   borderRadius: "50%",
-  border: "1px solid #4a5153",
-  backgroundColor: "#212425",
+  cursor: "pointer",
+  transition: "box-shadow 200ms linear",
   "&:hover": {
-    cursor: "pointer",
     boxShadow: "0px 0px 4px 4px rgba(187, 10, 1, .5)",
-    backgroundColor: "#4a5153",
+    transition: "box-shadow 200ms linear",
   },
 });
 export const ButtonImg = styled.div(

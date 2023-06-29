@@ -1,6 +1,5 @@
 import BattlefieldSelector from "./components/BattlefieldSelector/BattlefieldSelector";
 import BattlefieldPicture from "./components/BattlefieldPicture/BattlefieldPicture";
-import TowersSelector from "./components/TowersSelector/TowersSelector";
-import TowersList from "./components/TowersCard/TowersList";
+import Towers from "./modules/Towers/Towers";
 
-export { BattlefieldSelector, BattlefieldPicture, TowersSelector, TowersList };
+export { BattlefieldSelector, BattlefieldPicture, Towers };

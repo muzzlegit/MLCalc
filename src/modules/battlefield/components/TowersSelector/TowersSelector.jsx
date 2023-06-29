@@ -16,6 +16,7 @@ import {
   RemoveButton,
   ButtonImg,
   Input,
+  SelectorsBox,
 } from "./styles/TowersSelector.styled";
 
 export default function TowersSelector() {
@@ -53,82 +54,85 @@ export default function TowersSelector() {
   return (
     <TowerSelectorBox>
       <SelectorsWrap isActive={isSelectorActive}>
-        <TowersBox>
-          <TowerBox>
-            <Tower
-              id="tower"
-              background={getBattlefieldImage("towerIcon")}
-              width={"28px"}
-              filter={isSelected === "tower" ? selectShadow : "none"}
-              onClick={onTowerClick}
-            ></Tower>
-          </TowerBox>
-          <TowerBox>
-            <Tower
-              id="magicTower"
-              background={getBattlefieldImage("magicTowerIcon")}
-              width={"23px"}
-              filter={isSelected === "magicTower" ? selectShadow : "none"}
-              onClick={onTowerClick}
-            ></Tower>
-          </TowerBox>
-          <TowerBox>
-            <Tower
-              id="fortification"
-              background={getBattlefieldImage("fortificationIcon")}
-              width={"40px"}
-              filter={isSelected === "fortification" ? selectShadow : "none"}
-              onClick={onTowerClick}
-            ></Tower>
-            <Input
-              type="text"
-              autoComplete="off"
-              autoFocus
-              placeholder="0"
-              value={fortificationAmount}
-              onChange={onfortificationAmountChange}
-              disabled={isSelected === "fortification" ? false : true}
-            />
-          </TowerBox>
-          {isCastle ? (
+        <RemoveButton type="button" onClick={onRemoveButtonClick}>
+          <ButtonImg background={getBattlefieldImage("deleteIcon")}></ButtonImg>
+        </RemoveButton>
+        <SelectorsBox>
+          <TowersBox>
             <TowerBox>
               <Tower
-                id="gate"
-                title="Внутренние ворота"
-                background={getBattlefieldImage("gateIcon")}
-                width={"32px"}
-                filter={isSelected === "gate" ? selectShadow : "none"}
+                id="tower"
+                background={getBattlefieldImage("towerIcon")}
+                width={"28px"}
+                filter={isSelected === "tower" ? selectShadow : "none"}
                 onClick={onTowerClick}
               ></Tower>
             </TowerBox>
-          ) : null}
-        </TowersBox>
-        <LevelBox>
-          {levelsArray.map(lev => {
-            if (isCastle && lev === 8) return null;
-            return (
-              <Level
-                id={lev}
-                key={lev}
-                color={lev === level ? "#ddddbd" : "#294b77"}
-                filter={getFilter(lev, level)}
-                onClick={onLevelClick}
-                background={lev === 8 ? getBattlefieldImage("largePerfectIcon") : null}
-              >
-                {lev !== 8 ? lev : null}
-              </Level>
-            );
-          })}
-        </LevelBox>
+            <TowerBox>
+              <Tower
+                id="magicTower"
+                background={getBattlefieldImage("magicTowerIcon")}
+                width={"23px"}
+                filter={isSelected === "magicTower" ? selectShadow : "none"}
+                onClick={onTowerClick}
+              ></Tower>
+            </TowerBox>
+            <TowerBox>
+              <Tower
+                id="fortification"
+                background={getBattlefieldImage("fortificationIcon")}
+                width={"40px"}
+                filter={isSelected === "fortification" ? selectShadow : "none"}
+                onClick={onTowerClick}
+              ></Tower>
+              <Input
+                type="text"
+                autoComplete="off"
+                autoFocus
+                placeholder="0"
+                value={fortificationAmount}
+                onChange={onfortificationAmountChange}
+                disabled={isSelected === "fortification" ? false : true}
+              />
+            </TowerBox>
+            {isCastle ? (
+              <TowerBox>
+                <Tower
+                  id="gate"
+                  title="Внутренние ворота"
+                  background={getBattlefieldImage("gateIcon")}
+                  width={"32px"}
+                  filter={isSelected === "gate" ? selectShadow : "none"}
+                  onClick={onTowerClick}
+                ></Tower>
+              </TowerBox>
+            ) : null}
+          </TowersBox>
+          <LevelBox>
+            {levelsArray.map(lev => {
+              if (isCastle && lev === 8) return null;
+              return (
+                <Level
+                  id={lev}
+                  key={lev}
+                  color={lev === level ? "#ddddbd" : "#294b77"}
+                  filter={getFilter(lev, level)}
+                  onClick={onLevelClick}
+                  background={lev === 8 ? getBattlefieldImage("largePerfectIcon") : null}
+                >
+                  {lev !== 8 ? lev : null}
+                </Level>
+              );
+            })}
+          </LevelBox>
+        </SelectorsBox>
+
         <AddButton type="button" disabled={isButtonActive} onClick={onAddButtonClick}>
           <ButtonImg
             background={getBattlefieldImage("addIcon")}
             filter={isButtonActive ? "grayscale(100%) brightness(70%)" : null}
           ></ButtonImg>
         </AddButton>
-        <RemoveButton type="button" onClick={onRemoveButtonClick}>
-          <ButtonImg background={getBattlefieldImage("deleteIcon")}></ButtonImg>
-        </RemoveButton>
       </SelectorsWrap>
     </TowerSelectorBox>
   );
