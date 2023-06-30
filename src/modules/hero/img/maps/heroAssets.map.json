@@ -1,18 +1,18 @@
-const herroAssets = {
-  attacker: "-84px -1px",
-  attackerAlly: "-1px -1px",
-  defender: "-84px -101px",
-  defenderAlly: "-1px -101px",
-  monster: "-1px -201px",
-  monsterAlly: "-1px -201px",
-  heroFrame: "-1px -301px",
-  artefactFrame: "-98px -301px",
-  heroSkillFrame: "-167px -301px",
-  skills: {
+{
+  "attacker": "-84px -1px",
+  "attackerAlly": "-1px -1px",
+  "defender": "-84px -101px",
+  "defenderAlly": "-1px -101px",
+  "monster": "-1px -201px",
+  "monsterAlly": "-1px -201px",
+  "heroFrame": "-1px -301px",
+  "artefactFrame": "-98px -301px",
+  "heroSkillFrame": "-167px -301px",
+  "skills": {
     "Подавление здоровья войск": "-167px -1px",
     "Подавление защиты": "-167px -101px",
     "Защита от укреплений": "-167px -201px",
-    Защита: "-250px -1px",
+    "Защита": "-250px -1px",
     "Охрана союзника": "-250px -101px",
     "Снижение опыта противнику": "-250px -101px",
     "Сила войск": "-250px -101px",
@@ -28,19 +28,17 @@ const herroAssets = {
     "Мастер башен": "-250px -101px",
     "Переносное укрепление": "-250px -101px",
     "Тактика укреплений": "-250px -101px",
-    "Мастерство обороны": "-250px -101px",
+    "Мастерство обороны": "-250px -101px"
   },
-  backgrounds: {
-    undead: "-167px -1px",
-    demon: "-167px -101px",
-    drow: "-167px -201px",
-    human: "-250px -1px",
-    elf: "-250px -101px",
-    monsters: "-250px -201px",
+  "backgrounds": {
+    "undead": "-167px -1px",
+    "demon": "-167px -101px",
+    "drow": "-167px -201px",
+    "human": "-250px -1px",
+    "elf": "-250px -101px",
+    "monsters": "-250px -201px"
   },
-  addIcon: "-250px -339px",
-  deleteIcon: "-250px -301px",
-  chengeIcon: "-250px -320px",
-};
-
-export default herroAssets;
+  "addIcon": "-250px -339px",
+  "deleteIcon": "-250px -301px",
+  "chengeIcon": "-250px -320px"
+}

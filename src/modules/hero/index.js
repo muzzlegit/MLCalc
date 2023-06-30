@@ -1,3 +1,3 @@
-import HeroBox from "./entities/HeroBox/HeroBox";
+import Hero from "./entities/Hero/Hero";
 
-export { HeroBox };
+export { Hero };

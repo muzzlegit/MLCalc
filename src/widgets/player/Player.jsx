@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Squad, RaceSelector, AttackRateSelector, ApostateChecker } from "modules/army";
-import { HeroBox } from "modules/hero";
+import { Hero } from "modules/hero";
 //STYLES
 import { Container, Title } from "./styles/Player.styled";
 
@@ -14,7 +14,7 @@ function Player({ title }) {
         <ApostateChecker />
       </div>
       <div className="flex gap-4">
-        <HeroBox />
+        <Hero />
         <Squad />
       </div>
     </Container>

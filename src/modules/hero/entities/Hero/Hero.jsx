@@ -1,11 +1,17 @@
+//CONTEXT
+import usePlayerContext from "shared/hooks/usePlayerContext";
 //COMPONENTS
 import { HeroPicture } from "modules/hero/components";
+//STORE
+import useStore from "store/useStore";
 //STYLES
 import { Container, ClickWrapper } from "./styles/HeroBox.styled";
 
-const HeroBox = () => {
+const Hero = () => {
+  const player = usePlayerContext();
+  const hero = useStore(state => state[player].hero);
   return (
-    <Container>
+    <Container boxShadow={hero && "active"}>
       <ClickWrapper
         onClick={() => {
           console.log("click");
@@ -17,4 +23,4 @@ const HeroBox = () => {
   );
 };
 
-export default HeroBox;
+export default Hero;

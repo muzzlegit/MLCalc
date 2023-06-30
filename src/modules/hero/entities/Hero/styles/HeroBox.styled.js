@@ -12,6 +12,7 @@ export const Container = styled.div(
   },
   props => ({
     backgroundColor: props.theme.colors.secondary,
+    boxShadow: props.boxShadow === "active" && "0px 0px 8px 4px rgba(131, 151, 167, 0.7)",
   }),
 );
 export const ClickWrapper = styled.div({
