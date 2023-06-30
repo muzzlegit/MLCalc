@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
+//COMPONENTS
+import Modal from "shared/components/Modal/Modal";
+//MODULES
 import { Squad, RaceSelector, AttackRateSelector, ApostateChecker } from "modules/army";
-import { Hero } from "modules/hero";
+import { Hero, HeroDall } from "modules/hero";
+//HOOKS
+import useModal from "shared/components/Modal/useModal";
 //STYLES
 import { Container, Title } from "./styles/Player.styled";
 
 function Player({ title }) {
+  const { isModal, toggleModal } = useModal();
   return (
     <Container>
       <Title>{title}</Title>
@@ -14,9 +20,14 @@ function Player({ title }) {
         <ApostateChecker />
       </div>
       <div className="flex gap-4">
-        <Hero />
+        <Hero toggleModal={toggleModal} />
         <Squad />
       </div>
+      {isModal ? (
+        <Modal>
+          <HeroDall />
+        </Modal>
+      ) : null}
     </Container>
   );
 }
