@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Modal from "shared/components/Modal/Modal";
 //MODULES
 import { Squad, RaceSelector, AttackRateSelector, ApostateChecker } from "modules/army";
-import { Hero, HeroDall } from "modules/hero";
+import { Hero, HeroDall, HeroSelector } from "modules/hero";
 //HOOKS
 import useModal from "shared/components/Modal/useModal";
 //STYLES
@@ -26,6 +26,7 @@ function Player({ title }) {
       {isModal ? (
         <Modal>
           <HeroDall />
+          <HeroSelector />
         </Modal>
       ) : null}
     </Container>

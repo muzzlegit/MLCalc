@@ -15,8 +15,10 @@ function useHeroImg() {
     `url(${heroImgs}) ${heroImgsMap.backgrounds.undead}`,
   );
 
-  const getHeroImage = useCallback(imageName => {
-    return `url(${heroImgs}) ${heroImgsMap[imageName]}`;
+  const getHeroImage = useCallback((imageName, subProperty) => {
+    return subProperty
+      ? `url(${heroImgs}) ${heroImgsMap[subProperty][imageName]}`
+      : `url(${heroImgs}) ${heroImgsMap[imageName]}`;
   }, []);
 
   //USE EFFECTS

@@ -12,7 +12,7 @@ const UnitCardProperty = ({ unitData, name }) => {
   const propertyRate = unitData[`${name}Rate`];
   const icons = useUnitIcons(unit);
   const { attackLimit, healthLimit, defenseLevelLimit, persecutionLimit } = LIMITS;
-  if (name === "defense") console.log(property);
+
   switch (name) {
     case "amount":
       return (

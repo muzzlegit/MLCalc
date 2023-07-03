@@ -255,3 +255,25 @@ export function getInitialUnitData(unit, race, level) {
   };
   return squad[unit];
 }
+
+export const getHeroClassesList = data => {
+  return data.reduce((acc, hero) => {
+    if (!acc.includes(hero.class)) acc = [...acc, hero.class];
+    return acc;
+  }, []);
+};
+
+export const getHeroBranchesList = (data, heroClass) => {
+  return data.reduce((acc, hero) => {
+    if (hero.class === heroClass) acc = [...acc, hero.name];
+    return acc;
+  }, []);
+};
+
+export const getHero = (data, heroName) => {
+  const { skills, ...rest } = data.find(hero => hero.name === heroName);
+  return {
+    ...rest,
+    branch1: skills,
+  };
+};

@@ -5,7 +5,7 @@ export const Backdrop = styled.div(
     position: "fixed",
     top: 0,
     left: 0,
-    zIndex: 1000,
+    zIndex: 999,
     width: "100%",
     height: "100%",
     padding: "8px",

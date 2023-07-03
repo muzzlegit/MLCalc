@@ -8,16 +8,19 @@ import useBuffsProvider from "shared/hooks/useBuffsProvider";
 //CONSTS
 const fractionBuff = {
   id: "aGPoxZQA",
-  source: "race",
-  character: "default",
+  name: "Штраф атаки фракции",
+  source: "default",
+  character: "race",
   player: "all",
   target: "player",
   appliedOn: "fraction",
   unit: "units",
   units: ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "attackRate",
+  index: 0,
+  description: "Штраф атаки фракции -50%",
   value: [-0.5, -0.25],
-  description: "Штраф атаки фракции",
+  battle: true,
 };
 
 function useRace() {

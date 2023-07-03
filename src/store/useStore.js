@@ -9,7 +9,7 @@ const useStore = create(
     immer((set, get) => ({
       //MAIN ATTACKER --------------------------------
       mainAttacker: {
-        hero: true,
+        hero: null,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -66,7 +66,7 @@ const useStore = create(
       },
       //MAIN DEFENDER --------------------------------
       mainDefender: {
-        hero: true,
+        hero: null,
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -212,6 +212,14 @@ const useStore = create(
         setGate: gate =>
           set(state => {
             state.battlePlace.gate = gate;
+          }),
+        setHero: (player, hero) =>
+          set(state => {
+            state[player].hero = hero;
+          }),
+        setHeroBranch: (player, hero) =>
+          set(state => {
+            state[player].hero = { ...state[player].hero, ...hero };
           }),
       },
     })),

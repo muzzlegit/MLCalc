@@ -7,29 +7,35 @@ import useBuffsToUnitProvider from "shared/hooks/useBuffsToUnitProvider";
 //CONSTS
 const homeLandBuff = {
   id: "2B0eBD4m",
-  source: "battlefield",
-  character: "default",
+  name: "Защита родной земли",
+  source: "default",
+  character: "battlefield",
   player: "all",
   target: "player",
   appliedOn: "homeLand",
   unit: "units",
   units: ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "defense",
-  value: 25,
-  description: "Защита родной земли",
+  index: 0,
+  description: ["Защита всех войск +25"],
+  value: [25],
+  battle: true,
 };
 const unitHomeLandBuff = {
   id: "9CKGyeAH",
-  source: "battlefield",
-  character: "default",
+  name: "Атака родной земли юнита",
+  source: "default",
+  character: "battlefield",
   player: "all",
   target: "player",
   appliedOn: "unitHomeLand",
   unit: "units",
   units: ["swordsman", "cavalier", "flying", "archer", "mercenary"],
   property: "attackRate",
-  value: 0.5,
-  description: "Атака родной земли юнита",
+  index: 0,
+  description: ["Атака родной земли юнита 50% "],
+  value: [0.5],
+  battle: true,
 };
 
 function useBattlefield() {
@@ -53,10 +59,14 @@ function useBattlefield() {
     applyBuffs([
       {
         ...homeLandBuff,
+        value: homeLandBuff.value[homeLandBuff.index],
+        description: homeLandBuff.description[homeLandBuff.index],
         battlefield,
       },
       {
         ...unitHomeLandBuff,
+        value: unitHomeLandBuff.value[unitHomeLandBuff.index],
+        description: unitHomeLandBuff.description[unitHomeLandBuff.index],
         battlefield,
       },
     ]);

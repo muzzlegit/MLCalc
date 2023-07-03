@@ -1,0 +1,266 @@
+[
+  {
+    "id": "3WwE5CRM",
+    "class": "Стратег",
+    "name": "Воитель",
+    "skills": [
+      {
+        "id": "Kf6OC1sXskGS9uDmCWbpXQ",
+        "name": "Сила войск",
+        "level": 1,
+        "buff": [
+          {
+            "id": "AZuXv9yP9EiWOJ0DQe1j-w",
+            "name": "Сила войск",
+            "source": "3WwE5CRM",
+            "character": "heroSkill",
+            "player": null,
+            "target": "player",
+            "appliedOn": "all",
+            "unit": "units",
+            "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+            "property": "attackRate",
+            "index": 0,
+            "description": [
+              "Атака всех войск +5%",
+              "Атака всех войск +10%",
+              "Атака всех войск +15%",
+              "Атака всех войск +20%",
+              "Атака всех войск +25%"
+            ],
+            "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+            "battle": true
+          }
+        ]
+      },
+      {
+        "id": "qm11zer5b0mjCPY1JzCtdg",
+        "name": "Сила союзнику",
+        "level": 1,
+        "buff": [
+          {
+            "id": "Nmd_eFwHkUqpEMhb_1xKJw",
+            "name": "Сила союзнику",
+            "source": "3WwE5CRM",
+            "character": "heroSkill",
+            "player": null,
+            "target": "ally",
+            "appliedOn": "all",
+            "unit": "units",
+            "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+            "property": "attackRate",
+            "index": 0,
+            "description": [
+              "Атака всех войск +5% Действует на союзника",
+              "Атака всех войск +10% Действует на союзника",
+              "Атака всех войск +15% Действует на союзника",
+              "Атака всех войск +20% Действует на союзника",
+              "Атака всех войск +25% Действует на союзника"
+            ],
+            "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+            "battle": true
+          }
+        ]
+      },
+      {
+        "id": "jrgRJLL-JBTKrIvC",
+        "name": "Индульгенция отступнику",
+        "source": "3WwE5CRM",
+        "character": "heroSkill",
+        "player": null,
+        "target": "player",
+        "appliedOn": "all",
+        "unit": "player",
+        "units": null,
+        "property": "",
+        "index": 0,
+        "description": [
+          "Отрицательный фракционный рейтинг за атаку своей фракции -20%",
+          "Отрицательный фракционный рейтинг за атаку своей фракции -40%",
+          "Отрицательный фракционный рейтинг за атаку своей фракции -60%",
+          "Отрицательный фракционный рейтинг за атаку своей фракции -80%",
+          "Отрицательный фракционный рейтинг за атаку своей фракции -100%"
+        ],
+        "value": [-0.2, -0.4, -0.6, -0.8, -1],
+        "battle": true
+      }
+    ]
+  },
+  {
+    "id": "qjpbsreQ",
+    "class": "Стратег",
+    "name": "Миротворец",
+    "skills": [
+      {
+        "id": "DgJI_7cQdbW6pKOQ",
+        "name": "Снижение опыта противнику",
+        "source": "qjpbsreQ",
+        "character": "heroSkill",
+        "player": null,
+        "target": "enemy",
+        "appliedOn": "all",
+        "unit": "player",
+        "units": null,
+        "property": "",
+        "index": 0,
+        "description": [
+          "Получаемый героем опыт в бою -20%",
+          "Получаемый героем опыт в бою -40%",
+          "Получаемый героем опыт в бою -60%",
+          "Получаемый героем опыт в бою -80%",
+          "Получаемый героем опыт в бою -100%"
+        ],
+        "value": [-0.2, -0.4, -0.6, -0.8, -1],
+        "battle": true
+      },
+      {
+        "id": "neVzRAAnPNEWrYCy",
+        "name": "Уничтожитель монстров",
+        "source": "qjpbsreQ",
+        "character": "heroSkill",
+        "player": null,
+        "target": "enemy",
+        "appliedOn": "all",
+        "unit": "player",
+        "units": null,
+        "property": "",
+        "index": 0,
+        "description": [
+          "Получаемый героем опыт в бою В бою против расы Монстры +100%",
+          "Получаемый героем опыт в бою В бою против расы Монстры +200%",
+          "Получаемый героем опыт в бою В бою против расы Монстры +300%",
+          "Получаемый героем опыт в бою В бою против расы Монстры +400%",
+          "Получаемый героем опыт в бою В бою против расы Монстры +500%"
+        ],
+        "value": [1, 2, 3, 4, 5],
+        "battle": true
+      }
+    ]
+  },
+  {
+    "id": "gVhi63YY",
+    "class": "Стратег",
+    "name": "Паладин",
+    "skills": [
+      {
+        "id": "chFdZhf4WEKAVxLiIe-5dA",
+        "name": "Защита от укреплений",
+        "source": "gVhi63YY",
+        "character": "heroSkill",
+        "player": null,
+        "target": "enemy",
+        "appliedOn": "all",
+        "unit": "fortification",
+        "units": null,
+        "property": "damageRate",
+        "index": 0,
+        "description": [
+          "Эффективность уничтожения войск на укреплениях -20%",
+          "Эффективность уничтожения войск на укреплениях -40%",
+          "Эффективность уничтожения войск на укреплениях -60%",
+          "Эффективность уничтожения войск на укреплениях -80%",
+          "Эффективность уничтожения войск на укреплениях -100%"
+        ],
+        "value": [-0.2, -0.4, -0.6, -0.8, -100],
+        "battle": true
+      },
+      {
+        "id": "kodUadYWjnQRd0Yn",
+        "name": "Защита",
+        "source": "gVhi63YY",
+        "character": "heroSkill",
+        "player": null,
+        "target": "player",
+        "appliedOn": "all",
+        "unit": "unit",
+        "units": [
+          "porter",
+          "swordsman",
+          "cavalier",
+          "flying",
+          "archer",
+          "healer",
+          "mercenary",
+          "mage"
+        ],
+        "property": "defense",
+        "index": 0,
+        "description": [
+          "Защита всех войск +5",
+          "Защита всех войск +10",
+          "Защита всех войск +15",
+          "Защита всех войск +20",
+          "Защита всех войск +25"
+        ],
+        "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+        "battle": true
+      },
+      {
+        "id": "5kIVjg_u2kO6Vs3JjItTTQ",
+        "name": "Охрана союзника",
+        "source": "gVhi63YY",
+        "character": "heroSkill",
+        "player": null,
+        "target": "ally",
+        "appliedOn": "all",
+        "unit": "unit",
+        "units": [
+          "porter",
+          "swordsman",
+          "cavalier",
+          "flying",
+          "archer",
+          "healer",
+          "mercenary",
+          "mage"
+        ],
+        "property": "defense",
+        "index": 0,
+        "description": [
+          "Защита всех войск +5 Действует на союзника",
+          "Защита всех войск +10 Действует на союзника",
+          "Защита всех войск +15 Действует на союзника",
+          "Защита всех войск +20 Действует на союзника",
+          "Защита всех войск +25 Действует на союзника"
+        ],
+        "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+        "battle": true
+      }
+    ]
+  },
+  {
+    "id": "N_idwc4qhElPJdTp",
+    "class": "Полководец",
+    "name": "Гладиатор"
+  },
+  {
+    "id": "g6CVGXRfWUq0MOab",
+    "class": "Волшебник",
+    "name": "Некромант"
+  },
+  {
+    "id": "0wuTpxDii-ier3Eu",
+    "class": "Волшебник",
+    "name": "Целитель"
+  },
+  {
+    "id": "4R75wDcIDijAQJu_",
+    "class": "Волшебник",
+    "name": "Иллюзионист"
+  },
+  {
+    "id": "QNB5wh7Wl707U3d9",
+    "class": "Волшебник",
+    "name": "Рассеиватель"
+  },
+  {
+    "id": "arr9NLO8dT84PvSM",
+    "class": "Градоначальник",
+    "name": "Защитник"
+  },
+  {
+    "id": "7_avcr-HBIjFF6aC",
+    "class": "Градоначальник",
+    "name": "Строитель"
+  }
+]
