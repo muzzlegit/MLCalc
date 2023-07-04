@@ -74,7 +74,12 @@ function useBuffsToUnitProvider(player) {
           });
           break;
         case "fraction":
-          if (!isAttacker(player) || fraction !== state.mainDefender.fraction) return;
+          if (
+            !isAttacker(player) ||
+            fraction !== state.mainDefender.fraction ||
+            state.mainDefender.apostate
+          )
+            return;
           buff.units.forEach(unit => {
             unitsProperties[unit][buff.property] +=
               race === state.mainDefender.race ? buff.value[0] : buff.value[1];

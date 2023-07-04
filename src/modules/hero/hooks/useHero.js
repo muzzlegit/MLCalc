@@ -1,55 +1,83 @@
-import { useEffect, useCallback } from "react";
+import { useCallback } from "react";
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
+//HOOKS
+import useBuffsProvider from "shared/hooks/useBuffsProvider";
 //DATA
 import HEROES from "shared/data/HEROES.json";
 //STORE
 import useStore from "store/useStore";
 //HELPERS
-import { getHero } from "shared/helpers";
+import { getHeroSkills, getFormattedHeroSkill, getFormattedHeroSkills } from "shared/helpers";
 
-const useHero = filter => {
+const useHero = () => {
   const player = usePlayerContext();
-  const hero = useStore(state => state[player].hero);
-  const { setHero, setHeroBranch } = useStore(state => state.functions);
+  const { hero: currentHero } = useStore(state => state[player]);
+  const { setHero, setHeroBranch, setHeroSkillLevel } = useStore(state => state.functions);
+  const { applyBuffs, removeBuff } = useBuffsProvider();
 
-  const handleHeroBranch = useCallback(
-    branch => {
-      filter[branch]
-        ? setHeroBranch(player, {
-            [branch]: getHero(HEROES, filter[branch]).branch1,
-          })
-        : setHeroBranch(player, {
-            [branch]: null,
-          });
+  const clearSkillsBufs = useCallback(() => {
+    ["branch1", "branch2", "branch3"].forEach(branch => {
+      if (currentHero?.[branch]) removeBuff(currentHero[branch]);
+    });
+  }, [currentHero, removeBuff]);
+
+  const handleHero = useCallback(
+    heroClass => {
+      if (heroClass) {
+        setHero(player, {
+          class: heroClass,
+          branch1: null,
+          branch2: null,
+          branch3: null,
+        });
+        clearSkillsBufs();
+      } else {
+        clearSkillsBufs();
+        setHero(player, null);
+      }
     },
-    [filter, player, setHeroBranch],
+    [setHero, player, clearSkillsBufs],
   );
 
-  useEffect(() => {
-    if (!filter.class) {
-      setHero(player, null);
-      return;
-    }
-    if (filter.branch1 && !filter.branch2 && !filter.branch3)
-      setHero(player, {
-        ...getHero(HEROES, filter.branch1),
-      });
+  const handleHeroBranch = useCallback(
+    (heroName, branchKey) => {
+      if (!heroName) {
+        setHeroBranch(player, branchKey, null);
+        if (currentHero[branchKey]) removeBuff(currentHero[branchKey]);
+        return;
+      }
+      const skills = getHeroSkills(HEROES, heroName, player, branchKey);
+      if (currentHero[branchKey]) removeBuff(currentHero[branchKey]);
+      setHeroBranch(player, branchKey, skills, heroName);
+      applyBuffs(getFormattedHeroSkills(skills, 0));
+    },
+    [applyBuffs, currentHero, player, removeBuff, setHeroBranch],
+  );
 
-    handleHeroBranch("branch1");
-    handleHeroBranch("branch2");
-    handleHeroBranch("branch3");
-  }, [
-    filter.branch1,
-    filter.branch2,
-    filter.branch3,
-    filter.class,
-    handleHeroBranch,
-    player,
-    setHero,
-  ]);
+  const handleSkillLevel = useCallback(
+    skill => {
+      const { index, level, branchKey } = skill;
+      if (skill.level >= 5) {
+        setHeroSkillLevel(player, branchKey, {
+          ...skill,
+          level: 1,
+          index: 0,
+        });
+        applyBuffs([getFormattedHeroSkill(skill, 0)]);
+      } else {
+        setHeroSkillLevel(player, branchKey, {
+          ...skill,
+          level: level + 1,
+          index: index + 1,
+        });
+        applyBuffs([getFormattedHeroSkill(skill, index + 1)]);
+      }
+    },
+    [applyBuffs, player, setHeroSkillLevel],
+  );
 
-  return { hero };
+  return { currentHero, handleHero, handleHeroBranch, handleSkillLevel };
 };
 
 export default useHero;

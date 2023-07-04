@@ -5,16 +5,9 @@ import useHero from "modules/hero/hooks/useHero";
 import useHeroSelectors from "modules/hero/hooks/useHeroSelectors";
 
 const HeroSelector = () => {
-  const {
-    filter,
-    heroesClasessList,
-    firstBrunchesList,
-    secondBrunchesList,
-    thirdBrunchesList,
-    handleHeroClass,
-    handleHeroBranch,
-  } = useHeroSelectors();
-  const { hero } = useHero(filter);
+  const { currentHero, handleSkillLevel, handleHero, handleHeroBranch } = useHero();
+  const { heroesClasessList, firstBrunchesList, secondBrunchesList, thirdBrunchesList } =
+    useHeroSelectors(currentHero);
 
   return (
     <div>
@@ -23,7 +16,8 @@ const HeroSelector = () => {
         title="Класс героя"
         defaultValue="Класс"
         list={heroesClasessList}
-        handleSelector={handleHeroClass}
+        handleSelector={handleHero}
+        value={currentHero?.class}
       />
       <Selector
         filterKey="branch1"
@@ -31,6 +25,7 @@ const HeroSelector = () => {
         defaultValue="Специальность"
         list={firstBrunchesList}
         handleSelector={handleHeroBranch}
+        value={currentHero?.branch1?.[0].heroName}
       />
       <Selector
         filterKey="branch2"
@@ -38,6 +33,7 @@ const HeroSelector = () => {
         defaultValue="Специальность"
         list={secondBrunchesList}
         handleSelector={handleHeroBranch}
+        value={currentHero?.branch2?.[0].heroName}
       />
       <Selector
         filterKey="branch3"
@@ -45,11 +41,18 @@ const HeroSelector = () => {
         defaultValue="Специальность"
         list={thirdBrunchesList}
         handleSelector={handleHeroBranch}
+        value={currentHero?.branch3?.[0].heroName}
       />
       <div className="flex">
-        {hero?.branch1 ? <HeroBranch branch={hero.branch1} /> : null}
-        {hero?.branch2 ? <HeroBranch branch={hero.branch2} /> : null}
-        {hero?.branch3 ? <HeroBranch branch={hero.branch3} /> : null}
+        {currentHero?.branch1 ? (
+          <HeroBranch branch={currentHero.branch1} handleSkillLevel={handleSkillLevel} />
+        ) : null}
+        {currentHero?.branch2 ? (
+          <HeroBranch branch={currentHero.branch2} handleSkillLevel={handleSkillLevel} />
+        ) : null}
+        {currentHero?.branch3 ? (
+          <HeroBranch branch={currentHero.branch3} handleSkillLevel={handleSkillLevel} />
+        ) : null}
       </div>
     </div>
   );

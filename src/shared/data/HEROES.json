@@ -5,73 +5,62 @@
     "name": "Воитель",
     "skills": [
       {
-        "id": "Kf6OC1sXskGS9uDmCWbpXQ",
+        "id": "AZuXv9yP9EiWOJ0DQe1j-w",
         "name": "Сила войск",
         "level": 1,
-        "buff": [
-          {
-            "id": "AZuXv9yP9EiWOJ0DQe1j-w",
-            "name": "Сила войск",
-            "source": "3WwE5CRM",
-            "character": "heroSkill",
-            "player": null,
-            "target": "player",
-            "appliedOn": "all",
-            "unit": "units",
-            "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-            "property": "attackRate",
-            "index": 0,
-            "description": [
-              "Атака всех войск +5%",
-              "Атака всех войск +10%",
-              "Атака всех войск +15%",
-              "Атака всех войск +20%",
-              "Атака всех войск +25%"
-            ],
-            "value": [0.05, 0.1, 0.15, 0.2, 0.25],
-            "battle": true
-          }
-        ]
+        "source": "3WwE5CRM",
+        "character": "heroSkill",
+        "player": null,
+        "target": "player",
+        "appliedOn": "all",
+        "unit": "units",
+        "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+        "property": "attackRate",
+        "index": 0,
+        "description": [
+          "Атака всех войск +5%",
+          "Атака всех войск +10%",
+          "Атака всех войск +15%",
+          "Атака всех войск +20%",
+          "Атака всех войск +25%"
+        ],
+        "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+        "battle": true
       },
       {
-        "id": "qm11zer5b0mjCPY1JzCtdg",
+        "id": "Nmd_eFwHkUqpEMhb_1xKJw",
         "name": "Сила союзнику",
         "level": 1,
-        "buff": [
-          {
-            "id": "Nmd_eFwHkUqpEMhb_1xKJw",
-            "name": "Сила союзнику",
-            "source": "3WwE5CRM",
-            "character": "heroSkill",
-            "player": null,
-            "target": "ally",
-            "appliedOn": "all",
-            "unit": "units",
-            "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-            "property": "attackRate",
-            "index": 0,
-            "description": [
-              "Атака всех войск +5% Действует на союзника",
-              "Атака всех войск +10% Действует на союзника",
-              "Атака всех войск +15% Действует на союзника",
-              "Атака всех войск +20% Действует на союзника",
-              "Атака всех войск +25% Действует на союзника"
-            ],
-            "value": [0.05, 0.1, 0.15, 0.2, 0.25],
-            "battle": true
-          }
-        ]
+        "source": "3WwE5CRM",
+        "character": "heroSkill",
+        "player": null,
+        "target": "ally",
+        "appliedOn": "all",
+        "unit": "units",
+        "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+        "property": "attackRate",
+        "index": 0,
+        "description": [
+          "Атака всех войск +5% Действует на союзника",
+          "Атака всех войск +10% Действует на союзника",
+          "Атака всех войск +15% Действует на союзника",
+          "Атака всех войск +20% Действует на союзника",
+          "Атака всех войск +25% Действует на союзника"
+        ],
+        "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+        "battle": true
       },
       {
         "id": "jrgRJLL-JBTKrIvC",
         "name": "Индульгенция отступнику",
+        "level": 1,
         "source": "3WwE5CRM",
         "character": "heroSkill",
         "player": null,
         "target": "player",
         "appliedOn": "all",
         "unit": "player",
-        "units": null,
+        "units": [],
         "property": "",
         "index": 0,
         "description": [
@@ -94,6 +83,7 @@
       {
         "id": "DgJI_7cQdbW6pKOQ",
         "name": "Снижение опыта противнику",
+        "level": 1,
         "source": "qjpbsreQ",
         "character": "heroSkill",
         "player": null,
@@ -116,6 +106,7 @@
       {
         "id": "neVzRAAnPNEWrYCy",
         "name": "Уничтожитель монстров",
+        "level": 1,
         "source": "qjpbsreQ",
         "character": "heroSkill",
         "player": null,
@@ -145,13 +136,14 @@
       {
         "id": "chFdZhf4WEKAVxLiIe-5dA",
         "name": "Защита от укреплений",
+        "level": 1,
         "source": "gVhi63YY",
         "character": "heroSkill",
         "player": null,
         "target": "enemy",
         "appliedOn": "all",
         "unit": "fortification",
-        "units": null,
+        "units": [],
         "property": "damageRate",
         "index": 0,
         "description": [
@@ -167,6 +159,7 @@
       {
         "id": "kodUadYWjnQRd0Yn",
         "name": "Защита",
+        "level": 1,
         "source": "gVhi63YY",
         "character": "heroSkill",
         "player": null,
@@ -192,12 +185,13 @@
           "Защита всех войск +20",
           "Защита всех войск +25"
         ],
-        "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+        "value": [5, 10, 15, 20, 25],
         "battle": true
       },
       {
         "id": "5kIVjg_u2kO6Vs3JjItTTQ",
         "name": "Охрана союзника",
+        "level": 1,
         "source": "gVhi63YY",
         "character": "heroSkill",
         "player": null,
@@ -223,7 +217,7 @@
           "Защита всех войск +20 Действует на союзника",
           "Защита всех войск +25 Действует на союзника"
         ],
-        "value": [0.05, 0.1, 0.15, 0.2, 0.25],
+        "value": [5, 10, 15, 20, 25],
         "battle": true
       }
     ]

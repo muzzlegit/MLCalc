@@ -179,6 +179,7 @@ const useStore = create(
           }),
         addBuffs: (player, buffs) =>
           set(state => {
+            console.log(player);
             let filteredBuffs = state[player].buffsStorage;
             buffs.forEach(item => {
               filteredBuffs = filteredBuffs.filter(element => element.id !== item.id);
@@ -217,9 +218,16 @@ const useStore = create(
           set(state => {
             state[player].hero = hero;
           }),
-        setHeroBranch: (player, hero) =>
+        setHeroBranch: (player, branchName, branch, name) =>
           set(state => {
-            state[player].hero = { ...state[player].hero, ...hero };
+            state[player].hero[`${branchName}Name`] = name;
+            state[player].hero[branchName] = branch;
+          }),
+        setHeroSkillLevel: (player, branchName, newSkill) =>
+          set(state => {
+            state[player].hero[branchName] = state[player].hero[branchName].map(skill =>
+              skill.id === newSkill.id ? newSkill : skill,
+            );
           }),
       },
     })),

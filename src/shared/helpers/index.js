@@ -116,11 +116,11 @@ export function getBuffsArraysByPlayers(buffs) {
           playersArrays.player.buffsArray = [...playersArrays.player.buffsArray, buff];
           break;
         case "ally":
-          playersArrays.ally.playerNames = [getPlayerAlly(buff.player)];
+          playersArrays.ally.playerNames = getPlayerAlly(buff.player);
           playersArrays.ally.buffsArray = [...playersArrays.ally.buffsArray, buff];
           break;
         case "enemy":
-          playersArrays.enemy.playerNames = [getPlayerEnemy(buff.player)];
+          playersArrays.enemy.playerNames = getPlayerEnemy(buff.player);
           playersArrays.enemy.buffsArray = [...playersArrays.enemy.buffsArray, buff];
           break;
         case "player_ally":
@@ -147,7 +147,7 @@ export function getBuffsArraysByPlayers(buffs) {
       }
     }
   });
-
+  console.log(playersArrays);
   return playersArrays;
 }
 
@@ -270,10 +270,31 @@ export const getHeroBranchesList = (data, heroClass) => {
   }, []);
 };
 
-export const getHero = (data, heroName) => {
-  const { skills, ...rest } = data.find(hero => hero.name === heroName);
-  return {
-    ...rest,
-    branch1: skills,
+export const getHeroSkills = (data, heroName, player, branchKey) => {
+  const { skills } = data.find(hero => hero.name === heroName);
+  const formattedSkills = skills.map(skill => ({
+    heroName,
+    branchKey,
+    ...skill,
+    player,
+  }));
+  return formattedSkills;
+};
+
+export const getFormattedHeroSkill = (skill, index) => {
+  const formattedSkill = {
+    ...skill,
+    description: skill.description[index],
+    value: skill.value[index],
   };
+  return formattedSkill;
+};
+
+export const getFormattedHeroSkills = (skills, index) => {
+  const formattedSkills = skills.map(skill => ({
+    ...skill,
+    description: skill.description[index],
+    value: skill.value[index],
+  }));
+  return formattedSkills;
 };

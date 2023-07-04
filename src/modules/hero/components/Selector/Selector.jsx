@@ -1,9 +1,10 @@
-const Selector = ({ filterKey, title, defaultValue, list, handleSelector }) => {
+const Selector = ({ filterKey, title, defaultValue, list, value, handleSelector }) => {
   return (
     <div>
       <label>{title}</label>
       <select
         disabled={!list || !list.length}
+        value={value}
         onChange={e => {
           handleSelector(e.target.value, filterKey);
         }}
