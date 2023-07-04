@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 //COMPONENTS
-import Modal from "shared/components/Modal/Modal";
+import { Modal } from "shared/components";
 //MODULES
 import { Squad, RaceSelector, AttackRateSelector, ApostateChecker } from "modules/army";
 import { Hero, HeroDall, HeroSelector } from "modules/hero";

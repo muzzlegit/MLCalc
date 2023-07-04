@@ -44,9 +44,6 @@ function useBattlefield() {
   const { setBattlefield, setStructure } = useStore(state => state.functions);
   const { applyBuffs } = useBuffsProvider();
 
-  useBuffsToUnitProvider("mainAttacker");
-  useBuffsToUnitProvider("mainDefender");
-  useBuffsToUnitProvider("battlePlace");
   const onBattlefieldChange = e => {
     setBattlefield(e.currentTarget.value);
     if (e.currentTarget.value === "mine") setStructure("town");
