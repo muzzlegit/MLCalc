@@ -1,27 +1,23 @@
 {
   "files": {
-    "main.css": "/mlcalc/static/css/main.dbad1703.css",
-    "main.js": "/mlcalc/static/js/main.12efb000.js",
-    "static/media/ArtifactAssets.webp": "/mlcalc/static/media/ArtifactAssets.e4afc920af5669a94fef.webp",
-    "static/media/ElfCards.png": "/mlcalc/static/media/ElfCards.e681101376acfadae69f.png",
-    "static/media/DrowCards.png": "/mlcalc/static/media/DrowCards.e5bdbd9da504579229df.png",
-    "static/media/DemonCards.png": "/mlcalc/static/media/DemonCards.70a3f3466ab44f13202e.png",
-    "static/media/UndeadCards.png": "/mlcalc/static/media/UndeadCards.bec5c5d8760770006577.png",
-    "static/media/Heroes.webp": "/mlcalc/static/media/Heroes.7461495c219443d335d2.webp",
-    "static/media/HumanCards.png": "/mlcalc/static/media/HumanCards.8e0811296c98385dee30.png",
-    "static/media/CommonAssets.png": "/mlcalc/static/media/CommonAssets.e67309b964d7d41bb88f.png",
-    "static/media/heroSkills.png": "/mlcalc/static/media/heroSkills.c0520043680531aedd29.png",
-    "static/media/UndeadCommon.png": "/mlcalc/static/media/UndeadCommon.def7b40f85c4060c4d0d.png",
-    "static/media/DrowCommon.png": "/mlcalc/static/media/DrowCommon.0cfe0160c284556ae113.png",
-    "static/media/DemonCommon.png": "/mlcalc/static/media/DemonCommon.5deb85aba0ad0ae1e1b6.png",
-    "static/media/ElfCommon.png": "/mlcalc/static/media/ElfCommon.4b9dfac0eebb7a3dc76e.png",
-    "static/media/HumanCommon.png": "/mlcalc/static/media/HumanCommon.9359080a384d50708206.png",
+    "main.css": "/mlcalc/static/css/main.91956234.css",
+    "main.js": "/mlcalc/static/js/main.63e2b976.js",
+    "static/media/battlefields.webp": "/mlcalc/static/media/battlefields.d668eaebf54dcdaeebe5.webp",
+    "static/media/HeroAssets.webp": "/mlcalc/static/media/HeroAssets.9b709b9aad2431b9f8bd.webp",
+    "static/media/ElfCards.webp": "/mlcalc/static/media/ElfCards.618f4485a379535b0e5a.webp",
+    "static/media/HumanCards.webp": "/mlcalc/static/media/HumanCards.bb033d6963e089fa99ff.webp",
+    "static/media/DrowCards.webp": "/mlcalc/static/media/DrowCards.5d5cb869122d329c3244.webp",
+    "static/media/MonsterCards.webp": "/mlcalc/static/media/MonsterCards.436f30fb7784d35e582d.webp",
+    "static/media/DemonCards.webp": "/mlcalc/static/media/DemonCards.767cad49b03c234c4381.webp",
+    "static/media/UndeadCards.webp": "/mlcalc/static/media/UndeadCards.d797533df23fd83dddc1.webp",
+    "static/media/unitsFrames.webp": "/mlcalc/static/media/unitsFrames.0a191ec0a68d0a4ebc45.webp",
+    "static/media/unitsIcons.webp": "/mlcalc/static/media/unitsIcons.95a124648610409b3368.webp",
     "index.html": "/mlcalc/index.html",
-    "main.dbad1703.css.map": "/mlcalc/static/css/main.dbad1703.css.map",
-    "main.12efb000.js.map": "/mlcalc/static/js/main.12efb000.js.map"
+    "main.91956234.css.map": "/mlcalc/static/css/main.91956234.css.map",
+    "main.63e2b976.js.map": "/mlcalc/static/js/main.63e2b976.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbad1703.css",
-    "static/js/main.12efb000.js"
+    "static/css/main.91956234.css",
+    "static/js/main.63e2b976.js"
   ]
 }
