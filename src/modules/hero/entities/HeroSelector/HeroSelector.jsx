@@ -2,15 +2,18 @@
 import { Selector, HeroBranch } from "modules/hero/components";
 //HOOKS
 import useHero from "modules/hero/hooks/useHero";
+import useHeroImg from "modules/hero/hooks/useHeroImg";
 import useHeroSelectors from "modules/hero/hooks/useHeroSelectors";
+//STYLES
+import { Container, BranchesBox } from "./styles/HeroSelector.styled";
 
 const HeroSelector = () => {
   const { currentHero, handleSkillLevel, handleHero, handleHeroBranch } = useHero();
   const { heroesClasessList, firstBrunchesList, secondBrunchesList, thirdBrunchesList } =
     useHeroSelectors(currentHero);
-
+  const { heroImg } = useHeroImg();
   return (
-    <div>
+    <Container background={heroImg}>
       <Selector
         filterKey="class"
         title="Класс героя"
@@ -43,7 +46,7 @@ const HeroSelector = () => {
         handleSelector={handleHeroBranch}
         value={currentHero?.branch3?.[0].heroName}
       />
-      <div className="flex">
+      <BranchesBox>
         {currentHero?.branch1 ? (
           <HeroBranch branch={currentHero.branch1} handleSkillLevel={handleSkillLevel} />
         ) : null}
@@ -53,8 +56,8 @@ const HeroSelector = () => {
         {currentHero?.branch3 ? (
           <HeroBranch branch={currentHero.branch3} handleSkillLevel={handleSkillLevel} />
         ) : null}
-      </div>
-    </div>
+      </BranchesBox>
+    </Container>
   );
 };
 

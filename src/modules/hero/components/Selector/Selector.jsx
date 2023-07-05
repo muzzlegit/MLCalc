@@ -1,24 +1,27 @@
+//STYLES
+import { Container, Label, Select, Option } from "./styles/Selector.styled";
+
 const Selector = ({ filterKey, title, defaultValue, list, value, handleSelector }) => {
   return (
-    <div>
-      <label>{title}</label>
-      <select
-        disabled={!list || !list.length}
+    <Container isActive={list ? "active" : null}>
+      <Label>{title}</Label>
+      <Select
+        disabled={!list}
         value={value}
         onChange={e => {
           handleSelector(e.target.value, filterKey);
         }}
       >
-        <option value="">--- {defaultValue} ---</option>
+        <Option value="">- {defaultValue} -</Option>
         {list?.map(item => {
           return (
-            <option key={item} value={item}>
+            <Option key={item} value={item}>
               {item}
-            </option>
+            </Option>
           );
         })}
-      </select>
-    </div>
+      </Select>
+    </Container>
   );
 };
 

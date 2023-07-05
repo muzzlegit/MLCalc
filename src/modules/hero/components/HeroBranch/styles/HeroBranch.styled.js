@@ -1,12 +1,19 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.ul({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "start",
-  gap: "16px",
-});
+export const Container = styled.ul(
+  {
+    padding: "4px 4px 12px 4px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "canter",
+    alignItems: "start",
+    gap: "16px",
+    borderRadius: "8px",
+  },
+  props => ({
+    backgroundColor: "rgba(41, 75, 119, 0.6)",
+  }),
+);
 export const BranchCell = styled.li(
   {
     position: "relative",

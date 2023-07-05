@@ -18,6 +18,10 @@ const App = () => {
           <Player title="Атакующий" />
           <PlayerProvider />
         </PlayerContext.Provider>
+        <PlayerContext.Provider value="attackerAlly">
+          <Player title="Атакующий" />
+          <PlayerProvider />
+        </PlayerContext.Provider>
         <PlayerContext.Provider value="battlePlace">
           <BattlePlace />
           <PlayerProvider />

@@ -90,7 +90,7 @@
         "target": "enemy",
         "appliedOn": "all",
         "unit": "player",
-        "units": null,
+        "units": [],
         "property": "",
         "index": 0,
         "description": [
@@ -113,7 +113,7 @@
         "target": "enemy",
         "appliedOn": "all",
         "unit": "player",
-        "units": null,
+        "units": [],
         "property": "",
         "index": 0,
         "description": [
