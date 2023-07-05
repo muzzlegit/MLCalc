@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/mlcalc/static/css/main.91956234.css",
-    "main.js": "/mlcalc/static/js/main.5faa3c12.js",
+    "main.js": "/mlcalc/static/js/main.82e4ea2f.js",
+    "static/media/Artefacts.webp": "/mlcalc/static/media/Artefacts.446e4144ce58b989e678.webp",
     "static/media/battlefields.webp": "/mlcalc/static/media/battlefields.d668eaebf54dcdaeebe5.webp",
     "static/media/HeroAssets.webp": "/mlcalc/static/media/HeroAssets.9b709b9aad2431b9f8bd.webp",
     "static/media/ElfCards.webp": "/mlcalc/static/media/ElfCards.618f4485a379535b0e5a.webp",
@@ -14,10 +15,10 @@
     "static/media/unitsIcons.webp": "/mlcalc/static/media/unitsIcons.95a124648610409b3368.webp",
     "index.html": "/mlcalc/index.html",
     "main.91956234.css.map": "/mlcalc/static/css/main.91956234.css.map",
-    "main.5faa3c12.js.map": "/mlcalc/static/js/main.5faa3c12.js.map"
+    "main.82e4ea2f.js.map": "/mlcalc/static/js/main.82e4ea2f.js.map"
   },
   "entrypoints": [
     "static/css/main.91956234.css",
-    "static/js/main.5faa3c12.js"
+    "static/js/main.82e4ea2f.js"
   ]
 }
