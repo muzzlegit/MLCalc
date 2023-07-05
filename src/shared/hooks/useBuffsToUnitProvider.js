@@ -39,6 +39,8 @@ function useBuffsToUnitProvider(player) {
     };
 
     buffsStorage.forEach(buff => {
+      if (!buff.battle) return;
+
       switch (buff.appliedOn) {
         case "all":
           buff.units.forEach(unit => {

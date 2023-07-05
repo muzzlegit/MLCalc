@@ -55,14 +55,10 @@ function useBattlefield() {
     applyBuffs([
       {
         ...homeLandBuff,
-        value: homeLandBuff.value[homeLandBuff.index],
-        description: homeLandBuff.description[homeLandBuff.index],
         battlefield,
       },
       {
         ...unitHomeLandBuff,
-        value: unitHomeLandBuff.value[unitHomeLandBuff.index],
-        description: unitHomeLandBuff.description[unitHomeLandBuff.index],
         battlefield,
       },
     ]);

@@ -10,6 +10,77 @@ const useStore = create(
       //MAIN ATTACKER --------------------------------
       mainAttacker: {
         hero: null,
+        artefacts: {
+          head: null,
+          armor: null,
+          belt: null,
+          pants: null,
+          boots: null,
+          neck: null,
+          bracers: null,
+          ring: null,
+          rightHand: null,
+          bag: null,
+          back: {
+            id: "IOTd100__UStXBNzxPQkRQ",
+            level: 5,
+            ancient: true,
+            perfect: false,
+            name: "Накидка жертвоприношения",
+            place: "back",
+            set: "Головорез",
+            buffs: {
+              common: [
+                {
+                  id: "hunZ4K6d0E618__mqDbDMg",
+                  name: "Накидка жертвоприношения",
+                  character: "artefact",
+                  player: null,
+                  target: "enemy",
+                  appliedOn: "fraction",
+                  unit: "units",
+                  units: [
+                    "swordsman",
+                    "cavalier",
+                    "flying",
+                    "archer",
+                    "healer",
+                    "mercenary",
+                    "mage",
+                  ],
+                  property: "",
+                  index: 0,
+                  description: [
+                    "Вероятность минимальной атаки всех войск +55%",
+                    "Вероятность минимальной атаки всех войск +66%",
+                  ],
+                  value: [0.55, 0.66],
+                  battle: false,
+                },
+              ],
+              perfect: [
+                {
+                  id: "cHWTyhUf1szHe3Jo",
+                  name: "Накидка жертвоприношения",
+                  character: "artefact",
+                  player: null,
+                  target: "",
+                  appliedOn: "",
+                  unit: "units",
+                  units: [],
+                  property: "",
+                  index: 0,
+                  description: [""],
+                  value: [0],
+                  battle: false,
+                },
+              ],
+            },
+            runes: [],
+            sharpening: [],
+          },
+          leftHand: null,
+        },
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -29,6 +100,20 @@ const useStore = create(
       // MAIN ATTACKER ALLY --------------------------
       attackerAlly: {
         hero: null,
+        artefacts: {
+          head: null,
+          armor: null,
+          belt: null,
+          pants: null,
+          boots: null,
+          neck: null,
+          bracers: null,
+          ring: null,
+          rightHand: null,
+          bag: null,
+          back: null,
+          leftHand: null,
+        },
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -48,6 +133,20 @@ const useStore = create(
       // MAIN ATTACKER SECOND ALLY --------------------------
       attackerSecondAlly: {
         hero: null,
+        artefacts: {
+          head: null,
+          armor: null,
+          belt: null,
+          pants: null,
+          boots: null,
+          neck: null,
+          bracers: null,
+          ring: null,
+          rightHand: null,
+          bag: null,
+          back: null,
+          leftHand: null,
+        },
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -67,6 +166,20 @@ const useStore = create(
       //MAIN DEFENDER --------------------------------
       mainDefender: {
         hero: null,
+        artefacts: {
+          head: null,
+          armor: null,
+          belt: null,
+          pants: null,
+          boots: null,
+          neck: null,
+          bracers: null,
+          ring: null,
+          rightHand: null,
+          bag: null,
+          back: null,
+          leftHand: null,
+        },
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -85,6 +198,20 @@ const useStore = create(
       //firstDefenderAlly --------------------------
       firstDefenderAlly: {
         hero: null,
+        artefacts: {
+          head: null,
+          armor: null,
+          belt: null,
+          pants: null,
+          boots: null,
+          neck: null,
+          bracers: null,
+          ring: null,
+          rightHand: null,
+          bag: null,
+          back: null,
+          leftHand: null,
+        },
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -103,6 +230,20 @@ const useStore = create(
       //secondDefenderAlly --------------------------
       secondDefenderAlly: {
         hero: null,
+        artefacts: {
+          head: null,
+          armor: null,
+          belt: null,
+          pants: null,
+          boots: null,
+          neck: null,
+          bracers: null,
+          ring: null,
+          rightHand: null,
+          bag: null,
+          back: null,
+          leftHand: null,
+        },
         porter: getInitialUnitData("porter", "undead"),
         swordsman: getInitialUnitData("swordsman", "undead"),
         cavalier: getInitialUnitData("cavalier", "undead"),
@@ -179,7 +320,6 @@ const useStore = create(
           }),
         addBuffs: (player, buffs) =>
           set(state => {
-            console.log(player);
             let filteredBuffs = state[player].buffsStorage;
             buffs.forEach(item => {
               filteredBuffs = filteredBuffs.filter(element => element.id !== item.id);

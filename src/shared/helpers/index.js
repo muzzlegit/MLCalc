@@ -147,7 +147,6 @@ export function getBuffsArraysByPlayers(buffs) {
       }
     }
   });
-  console.log(playersArrays);
   return playersArrays;
 }
 
@@ -290,11 +289,12 @@ export const getFormattedHeroSkill = (skill, index) => {
   return formattedSkill;
 };
 
-export const getFormattedHeroSkills = (skills, index) => {
-  const formattedSkills = skills.map(skill => ({
-    ...skill,
-    description: skill.description[index],
-    value: skill.value[index],
+export const getFormattedBuffs = (player, buffs) => {
+  const formattedBuffs = buffs.map(buff => ({
+    ...buff,
+    player: buff.player ? buff.player : player,
+    description: buff.description[buff.index],
+    value: buff?.appliedOn === "fraction" ? buff.value : buff.value[buff.index],
   }));
-  return formattedSkills;
+  return formattedBuffs;
 };

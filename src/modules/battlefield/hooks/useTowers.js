@@ -18,6 +18,7 @@ const fortificationBuff = {
   units: ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "defense",
   description: "Защита укреплений",
+  index: 0,
 };
 
 const useTowers = (isSelected, level, value) => {
@@ -151,7 +152,7 @@ const useTowers = (isSelected, level, value) => {
       {
         ...fortificationBuff,
         player: structure === "castle" ? "battlePlace" : "mainDefender",
-        value: defence,
+        value: [defence],
       },
     ]);
   }, [applyBuffs, fortifications, removeBuff, structure]);

@@ -55,5 +55,5 @@ export const DALL_CELLS = [
   { place: "rightHand", top: "350px", left: "10px", art: false },
   { place: "bag", top: "130px", left: "190px", art: false },
   { place: "back", top: "230px", left: "190px", art: false },
-  { place: "leftHand", top: "330px", left: "1900px", art: false },
+  { place: "leftHand", top: "330px", left: "190px", art: false },
 ];

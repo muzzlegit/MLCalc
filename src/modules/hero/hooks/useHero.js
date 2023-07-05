@@ -8,7 +8,7 @@ import HEROES from "shared/data/HEROES.json";
 //STORE
 import useStore from "store/useStore";
 //HELPERS
-import { getHeroSkills, getFormattedHeroSkill, getFormattedHeroSkills } from "shared/helpers";
+import { getHeroSkills, getFormattedHeroSkill } from "shared/helpers";
 
 const useHero = () => {
   const player = usePlayerContext();
@@ -50,7 +50,7 @@ const useHero = () => {
       const skills = getHeroSkills(HEROES, heroName, player, branchKey);
       if (currentHero[branchKey]) removeBuff(currentHero[branchKey]);
       setHeroBranch(player, branchKey, skills, heroName);
-      applyBuffs(getFormattedHeroSkills(skills, 0));
+      applyBuffs(skills);
     },
     [applyBuffs, currentHero, player, removeBuff, setHeroBranch],
   );
@@ -64,14 +64,26 @@ const useHero = () => {
           level: 1,
           index: 0,
         });
-        applyBuffs([getFormattedHeroSkill(skill, 0)]);
+        applyBuffs([
+          {
+            ...skill,
+            level: 1,
+            index: 0,
+          },
+        ]);
       } else {
         setHeroSkillLevel(player, branchKey, {
           ...skill,
           level: level + 1,
           index: index + 1,
         });
-        applyBuffs([getFormattedHeroSkill(skill, index + 1)]);
+        applyBuffs([
+          {
+            ...skill,
+            level: level + 1,
+            index: index + 1,
+          },
+        ]);
       }
     },
     [applyBuffs, player, setHeroSkillLevel],

@@ -18,7 +18,7 @@ const fractionBuff = {
   units: ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "attackRate",
   index: 0,
-  description: "Штраф атаки фракции -50%",
+  description: ["Штраф атаки фракции "],
   value: [-0.5, -0.25],
   battle: true,
 };
