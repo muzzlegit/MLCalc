@@ -3,7 +3,7 @@
     "id": "id2Yj4L8vkeIhzfZnhZloA",
     "level": 5,
     "setName": "Головорез",
-    "value": [
+    "buffs": [
       {
         "id": "z4Zy3iE9Zk2EKJs9AhzwSg",
         "name": "Комплект Головорез",
@@ -42,19 +42,6 @@
         {
           "id": "hunZ4K6d0E618__mqDbDMg",
           "name": "Накидка жертвоприношения",
-          "character": "artefact",
-          "player": null,
-          "target": "enemy",
-          "appliedOn": "fraction",
-          "unit": "units",
-          "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "",
-          "index": 0,
-          "description": [
-            "Вероятность минимальной атаки всех войск +55%",
-            "Вероятность минимальной атаки всех войск +66%"
-          ],
-          "value": [0.55, 0.66],
           "battle": false
         }
       ],
@@ -62,22 +49,13 @@
         {
           "id": "cHWTyhUf1szHe3Jo",
           "name": "Накидка жертвоприношения",
-          "character": "artefact",
-          "player": null,
-          "target": "",
-          "appliedOn": "",
-          "unit": "units",
-          "units": [],
-          "property": "",
-          "index": 0,
-          "description": [""],
-          "value": [0],
           "battle": false
         }
       ]
     },
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "3h0Uua6r40OX7Ei3mZP1Tw",
@@ -87,47 +65,35 @@
     "name": "Кольцо банды головорезов",
     "place": "ring",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "",
           "name": "Кольцо банды головорезов",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
-        }
-      ],
-      "ancient": [
-        {
-          "id": "",
-          "name": "Кольцо банды головорезов",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ],
       "perfect": [
         {
           "id": "EgtOtghzEUKYG4SVf7iVGQ",
           "name": "Кольцо банды головорезов",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "magicTower",
-          "property": "",
-          "description": "Атака магических башен +25%",
-          "value": 0.25
+          "units": ["magicTower"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Атака магических башен +25%"],
+          "value": [0.25],
+          "battle": true
         }
       ]
     },
-    "icon": "-187px -373px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "VMQGwOIDZkO8qvLrF6w0dA",
@@ -137,47 +103,35 @@
     "name": "Шлем дезинформации",
     "place": "head",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "",
           "name": "Шлем дезинформации",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
-        }
-      ],
-      "ancient": [
-        {
-          "id": "",
-          "name": "Шлем дезинформации",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ],
       "perfect": [
         {
           "id": "2JqfTeBwF0uOjViz5UE2fg",
           "name": "Шлем дезинформации",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "tower",
-          "property": "",
-          "description": "Атака башен +200%",
-          "value": 2
+          "units": ["tower"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Атака башен +200%"],
+          "value": [2],
+          "battle": true
         }
       ]
     },
-    "icon": "-187px -63px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "LIHhBbSkt02Nml67psTORg",
@@ -187,47 +141,25 @@
     "name": "Лампа великого шпионажа",
     "place": "bag",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "",
           "name": "Лампа великого шпионажа",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
-        }
-      ],
-      "ancient": [
-        {
-          "id": "",
-          "name": "Лампа великого шпионажа",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ],
       "perfect": [
         {
           "id": "",
           "name": "Лампа великого шпионажа",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ]
     },
-    "icon": "-187px -125px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "zL2CInuh4EaNKUD_BLM7CQ",
@@ -237,48 +169,49 @@
     "name": "Топор Головореза",
     "place": "rightHand",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "5bIteEpwOUC4uFF_cVdL9g",
           "name": "Топор Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["swordsman", "cavalier", "flying", "archer"],
           "property": "persecutionRate",
-          "description": "Атака всех преследователей +50%",
-          "value": 0.5
-        }
-      ],
-      "ancient": [
-        {
-          "id": "hJn9sAUsQUqY7mNooVOWIQ",
-          "name": "Топор Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
-          "property": "persecutionRate",
-          "description": "Атака всех преследователей +60%",
-          "value": 0.6
+          "index": 0,
+          "description": ["Атака всех преследователей +50%", "Атака всех преследователей +60%"],
+          "value": [0.5, 0.6],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "LN3KG4xiRUK8NDy0p4PTYg",
           "name": "Топор Головореза",
-          "effect": "enemy",
-          "homeLand": "all",
-          "unit": ["mercenary"],
+          "character": "artefact",
+          "player": null,
+          "target": "enemy",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["mercenary"],
           "property": "attackRate",
-          "description": "Атака наемников -15%",
-          "value": -0.15
+          "index": 0,
+          "description": ["Атака наемников -15%"],
+          "value": [-0.15],
+          "battle": true
         },
         {
           "id": "6w9ghJ3LUk2wO0y0O392Iw",
           "name": "Топор Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -289,14 +222,15 @@
             "mage"
           ],
           "property": "defenseLevel",
-          "description": "Предел максимальной защиты +5",
-          "value": 5
+          "description": ["Предел максимальной защиты +5"],
+          "value": [5],
+          "battle": true
         }
       ]
     },
-    "icon": "-187px -497px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "4g9QyfyOd0qzZalvydefIg",
@@ -306,48 +240,47 @@
     "name": "Наручни испепеления",
     "place": "bracers",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "M9KvwVW7n0GMHhwFWbDq8g",
           "name": "Наручни испепеления",
-          "effect": "player",
-          "homeLand": "fraction",
-          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "fraction",
+          "unit": "units",
+          "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
           "property": "attackRate",
-          "description": "Атака всех войск +55% В бою против вражеской фракции",
-          "value": 0.55
-        }
-      ],
-      "ancient": [
-        {
-          "id": "m8wBHiUVWUe3N_Y2LHH1xw",
-          "name": "Наручни испепеления",
-          "effect": "player",
-          "homeLand": "fraction",
-          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
-          "property": "attackRate",
-          "description": "Атака всех войск +66% В бою против вражеской фракции",
-          "value": 0.66
+          "index": 0,
+          "description": [
+            "Атака всех войск +55% В бою против вражеской фракции",
+            "Атака всех войск +66% В бою против вражеской фракции"
+          ],
+          "value": [0.55, 0.66],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "JvO2lVn5A0mFhkUHTG1x6w",
           "name": "Наручни испепеления",
-          "effect": "enemy",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "enemy",
+          "appliedOn": "all",
           "unit": "magicTower",
-          "propert": "",
-          "property": "",
-          "description": "Атака магических башен -15%",
-          "value": -0.15
+          "units": ["magicTower"],
+          "property": "damageRate",
+          "description": ["Атака магических башен -15%"],
+          "value": [-0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-187px -187px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "ryUZ_I7QkUu_QmEi1jURPw",
@@ -357,48 +290,52 @@
     "name": "Кольчуга Головореза",
     "place": "armor",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "FP5Q69jSOkOdOhM9wmjpMA",
           "name": "Кольчуга Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["swordsman", "cavalier", "flying", "archer"],
           "property": "healthRate",
-          "description": "Здоровье воинов, всадников, летунов, стрелков своих +55%",
-          "value": 0.55
-        }
-      ],
-      "ancient": [
-        {
-          "id": "ebfDo44L20KhkMSp449B5g",
-          "name": "Кольчуга Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
-          "property": "healthRate",
-          "description": "Здоровье воинов, всадников, летунов, стрелков своих +66%",
-          "value": 0.66
+          "index": 0,
+          "description": [
+            "Здоровье воинов, всадников, летунов, стрелков своих +55%",
+            "Здоровье воинов, всадников, летунов, стрелков своих +66%"
+          ],
+          "value": [0.55, 0.66],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "KrTSAzmbTUKJQ-KGY24DxA",
           "name": "Кольчуга Головореза",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "fortification",
-          "property": "",
-          "description": "Эффективность уничтожения войск на укреплениях +300%",
-          "value": 3
+          "units": ["fortification"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Эффективность уничтожения войск на укреплениях +300%"],
+          "value": [3],
+          "battle": true
         },
         {
           "id": "5JBIaBoaY0-SxLgIyFAnsw",
           "name": "Кольчуга Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "unitі": [
             "porter",
             "swordsman",
             "cavalier",
@@ -409,14 +346,16 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +15%",
-          "value": 0.15
+          "index": 0,
+          "description": ["Здоровье всех войск +15%"],
+          "value": [0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-187px -249px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "xeVGcIdJx02id-x_RPC4TQ",
@@ -426,47 +365,25 @@
     "name": "Пояс Головореза",
     "place": "belt",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "Y3k22UyM2UympBrYrJpKJg",
           "name": "Пояс Головореза",
-          "effect": "",
-          "homeLand": "",
-          "unit": [],
-          "property": "",
-          "description": "",
-          "value": 0
-        }
-      ],
-      "ancient": [
-        {
-          "id": "rPjRFu_K806G3kbX9ZfivA",
-          "name": "Пояс Головореза",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ],
       "perfect": [
         {
           "id": "d8rbrygAe0yzuvy6ESrQsQ",
           "name": "Пояс Головореза",
-          "effect": "",
-          "unit": "",
-          "homeLand": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ]
     },
-    "icon": "-187px -435px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "J9ajWi8mvEKXvdbo2ikJ3g",
@@ -476,45 +393,22 @@
     "name": "Сапоги экспансии",
     "place": "boots",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "",
           "name": "Сапоги экспансии",
-          "effect": "",
-          "homeLand": "",
-          "unit": [],
-          "property": "",
-          "description": "",
-          "value": 0
-        }
-      ],
-      "ancient": [
-        {
-          "id": "",
-          "name": "Сапоги экспансии",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ],
       "perfect": [
         {
           "id": "",
           "name": "Сапоги экспансии",
-          "effect": "",
-          "unit": "",
-          "homeLand": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ]
     },
-    "icon": "-187px -683px",
     "runes": [],
     "sharpening": []
   },
@@ -526,47 +420,25 @@
     "name": "Магический скорпион",
     "place": "neck",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "",
           "name": "Магический скорпион",
-          "effect": "",
-          "homeLand": "",
-          "unit": [],
-          "property": "",
-          "description": "",
-          "value": 0
-        }
-      ],
-      "ancient": [
-        {
-          "id": "",
-          "name": "Магический скорпион",
-          "effect": "",
-          "homeLand": "",
-          "unit": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ],
       "perfect": [
         {
           "id": "",
           "name": "Магический скорпион",
-          "effect": "",
-          "unit": "",
-          "homeLand": "",
-          "property": "",
-          "description": "",
-          "value": 0
+          "battle": false
         }
       ]
     },
-    "icon": "-187px -1px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "nPW39zTntkCdLJDOVy8pvQ",
@@ -576,24 +448,35 @@
     "name": "Щит Головореза",
     "place": "leftHand",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "eoX-C3nfdkWJjmySKrl-7A",
           "name": "Щит Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["swordsman", "cavalier", "flying", "archer"],
           "property": "defense",
-          "description": "Защита Воинов +50 Всадников +50 Летающих +50 Стрелков +50",
-          "value": 50
+          "index": 0,
+          "description": [
+            "Защита Воинов +50 Всадников +50 Летающих +50 Стрелков +50",
+            "Защита Воинов +60 Всадников +60 Летающих +60 Стрелков +60"
+          ],
+          "value": [50, 60],
+          "battle": true
         },
         {
           "id": "AiRBkWXE-UKOifG2X6ny-Q",
           "name": "Щит Головореза",
-          "effect": "enemy",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "enemy",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -604,57 +487,36 @@
             "mage"
           ],
           "property": "defense",
-          "description": "Защита всех войск -50 Действует на противника",
-          "value": -50
-        }
-      ],
-      "ancient": [
-        {
-          "id": "9_KKRa0Nx02ZyX9ulR0lDw",
-          "name": "Щит Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer"],
-          "property": "defense",
-          "description": "Защита Воинов +60 Всадников +60 Летающих +60 Стрелков +60",
-          "value": 60
-        },
-        {
-          "id": "t9Rt-hR_AUmDkS06xVfaSA",
-          "name": "Щит Головореза",
-          "effect": "enemy",
-          "homeLand": "all",
-          "unit": [
-            "porter",
-            "swordsman",
-            "cavalier",
-            "flying",
-            "archer",
-            "healer",
-            "mercenary",
-            "mage"
+          "index": 0,
+          "description": [
+            "Защита всех войск -50 Действует на противника",
+            "Защита всех войск -60 Действует на противника"
           ],
-          "property": "defense",
-          "description": "Защита всех войск -60 Действует на противника",
-          "value": -60
+          "value": [-50, -60],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "QF3L7fdT6k6opPEBiZdOng",
           "name": "Щит Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
           "property": "attackRate",
-          "description": "Атака всех войск +15%",
-          "value": 0.15
+          "index": 0,
+          "description": ["Атака всех войск +15%"],
+          "value": [0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-187px -621px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "W9-Z5-J2yEGWZuZCjWzcRQ",
@@ -664,14 +526,17 @@
     "name": "Кольчужные штаны Головореза",
     "place": "pants",
     "set": "Головорез",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "FiIZVuzuCkGLP26H3GneZg",
           "name": "Кольчужные штаны Головореза",
-          "effect": "enemy",
-          "homeLand": "fraction",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "enemy",
+          "appliedOn": "fraction",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -682,38 +547,25 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск -45% Действует на противника В бою против вражеской фракции",
-          "value": -0.45
-        }
-      ],
-      "ancient": [
-        {
-          "id": "LeG6CS9ROUy4Ihl6FoR6nA",
-          "name": "Кольчужные штаны Головореза",
-          "effect": "enemy",
-          "homeLand": "fraction",
-          "unit": [
-            "porter",
-            "swordsman",
-            "cavalier",
-            "flying",
-            "archer",
-            "healer",
-            "mercenary",
-            "mage"
+          "index": 0,
+          "description": [
+            "Здоровье всех войск -45% Действует на противника В бою против вражеской фракции",
+            "Здоровье всех войск -54% Действует на противника В бою против вражеской фракции"
           ],
-          "property": "healthRate",
-          "description": "Здоровье всех войск -54% Действует на противника В бою против вражеской фракции",
-          "value": -0.54
+          "value": [-0.45, -0.54],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "2jM_jxo9AkSGbMWb2NwuxA",
           "name": "Кольчужные штаны Головореза",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -724,14 +576,15 @@
             "mage"
           ],
           "property": "defense",
-          "description": "Защита всех войск +15",
-          "value": 15
+          "index": 0,
+          "description": ["Защита всех войск +15"],
+          "value": [15]
         }
       ]
     },
-    "icon": "-187px -559px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
 
   {
@@ -742,14 +595,17 @@
     "name": "Броня Властелина мира",
     "place": "armor",
     "set": "Властелин мира",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "bTB3NXvWaU6paYCPZnVW2A",
           "name": "Броня Властелина мира",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -760,48 +616,37 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +50%",
-          "value": 0.5
-        }
-      ],
-      "ancient": [
-        {
-          "id": "9AO-1rS9ok6SpvqSf4jfIA",
-          "name": "Броня Властелина мира",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
-            "porter",
-            "swordsman",
-            "cavalier",
-            "flying",
-            "archer",
-            "healer",
-            "mercenary",
-            "mage"
-          ],
-          "property": "healthRate",
-          "description": "Здоровье всех войск +60%",
-          "value": 0.6
+          "index": 0,
+          "description": ["Здоровье всех войск +50%", "Здоровье всех войск +60%"],
+          "value": [0.5, 0.6],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "5mBqsS0jikG71AzlMIpOrQ",
           "name": "Броня Властелина мира",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "fortification",
+          "units": ["fortification"],
           "property": "damageRate",
-          "description": "Эффективность уничтожения войск на укреплениях +300%",
-          "value": 3
+          "index": 0,
+          "description": ["Эффективность уничтожения войск на укреплениях +300%"],
+          "value": [3],
+          "battle": true
         },
         {
           "id": "JThLsYhnoEG1U738HCfMEw",
           "name": "Броня Властелина мира",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -812,15 +657,16 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +15%",
-          "value": 0.15
+          "index": 0,
+          "description": ["Здоровье всех войск +15%"],
+          "value": [0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-1px -249px",
-    "battle": true,
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
 
   {
@@ -831,14 +677,17 @@
     "name": "Броня королевской стойкости",
     "place": "armor",
     "set": "Королевский",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "Nsrw06axckiWNtlzCgSC8g",
           "name": "Броня королевской стойкости",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -849,15 +698,20 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +50%",
-          "value": 0.5
+          "index": 0,
+          "description": ["Здоровье всех войск +50%"],
+          "value": [0.5],
+          "battle": true
         },
         {
           "id": "rmUvCNlzEkCHO7yeNJn_Nw",
           "name": "Броня королевской стойкости",
-          "effect": "enemy",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "enemy",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -868,27 +722,37 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск -50%",
-          "value": -0.5
+          "index": 0,
+          "description": ["Здоровье всех войск -50%"],
+          "value": [-0.5],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "tMzAbyORPkmfJFkxpVSjcA",
           "name": "Броня королевской стойкости",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "fortification",
-          "property": "",
-          "description": "Эффективность уничтожения войск на укреплениях +300%",
-          "value": 3
+          "units": ["fortification"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Эффективность уничтожения войск на укреплениях +300%"],
+          "value": [3],
+          "battle": true
         },
         {
           "id": "aO7pPhpwAEe3-tMO06xvGA",
           "name": "Броня королевской стойкости",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -899,15 +763,16 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +15%",
-          "value": 0.15
+          "index": 0,
+          "description": ["Здоровье всех войск +15%"],
+          "value": [0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-249px -249px",
-    "battle": true,
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
 
   {
@@ -918,14 +783,17 @@
     "name": "Кольчуга магического здоровья",
     "place": "armor",
     "set": "Архимаг",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "EpsIsHB1K06QLWlBlpuYQw",
           "name": "Кольчуга магического здоровья",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -936,68 +804,52 @@
             "mage"
           ],
           "property": "defenseLevel",
-          "description": "Предел максимальной защиты +20",
-          "value": 20
+          "index": 0,
+          "description": ["Предел максимальной защиты +20", "Предел максимальной защиты +24"],
+          "value": [20, 24],
+          "battle": 0
         },
         {
           "id": "H1bBLP5S60-Y4Yjw183NDQ",
           "name": "Кольчуга магического здоровья",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["mage"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["mage"],
           "property": "healthRate",
-          "description": "Здоровье Магов +55%",
-          "value": 0.55
-        }
-      ],
-      "ancient": [
-        {
-          "id": "KeY-iqWiiki5wuof0joGIA",
-          "name": "Кольчуга магического здоровья",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
-            "porter",
-            "swordsman",
-            "cavalier",
-            "flying",
-            "archer",
-            "healer",
-            "mercenary",
-            "mage"
-          ],
-          "property": "defenseLevel",
-          "description": "Предел максимальной защиты +24",
-          "value": 24
-        },
-        {
-          "id": "wLmiQLlzd0WOfCq39Kf9lQ",
-          "name": "Кольчуга магического здоровья",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["mage"],
-          "property": "healthRate",
-          "description": "Здоровье Магов +66%",
-          "value": 0.66
+          "index": 0,
+          "description": ["Здоровье Магов +55%", "Здоровье Магов +66%"],
+          "value": [0.55, 0.66],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "QsHrMqAAI0KODkwpf_-QTg",
           "name": "Кольчуга магического здоровья",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "fortification",
-          "property": "",
-          "description": "Эффективность уничтожения войск на укреплениях +300%",
-          "value": 3
+          "units": ["fortification"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Эффективность уничтожения войск на укреплениях +300%"],
+          "value": [3],
+          "battle": true
         },
         {
           "id": "HVygN2nODUSN8-HFvUfFXw",
           "name": "Кольчуга магического здоровья",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -1008,15 +860,16 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +15%",
-          "value": 0.15
+          "index": 0,
+          "description": ["Здоровье всех войск +15%"],
+          "value": [0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-125px -249px",
-    "battle": true,
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
 
   {
@@ -1027,14 +880,17 @@
     "name": "Кольчуга Бога",
     "place": "armor",
     "set": "Доспехи Бога",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "tAXfS1evgkqRBpwcWkzB-g",
           "name": "Кольчуга Бога",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -1045,15 +901,20 @@
             "mage"
           ],
           "property": "defenseLevel",
-          "description": "Предел максимальной защиты +20",
-          "value": 20
+          "index": 0,
+          "description": ["Предел максимальной защиты +20", "Предел максимальной защиты +24"],
+          "value": [20, 24],
+          "battle": true
         },
         {
           "id": "Rn352DmExUiPUoEiVdyp6w",
           "name": "Кольчуга Бога",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -1064,67 +925,37 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +25%",
-          "value": 0.25
-        }
-      ],
-      "ancient": [
-        {
-          "id": "Z9HUR2Vpw0qGcsrUyT5wKA",
-          "name": "Кольчуга Бога",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
-            "porter",
-            "swordsman",
-            "cavalier",
-            "flying",
-            "archer",
-            "healer",
-            "mercenary",
-            "mage"
-          ],
-          "property": "defenseLevel",
-          "description": "Предел максимальной защиты +24",
-          "value": 24
-        },
-        {
-          "id": "fEENfBcEnkO9_dgDiomW6g",
-          "name": "Кольчуга Бога",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
-            "porter",
-            "swordsman",
-            "cavalier",
-            "flying",
-            "archer",
-            "healer",
-            "mercenary",
-            "mage"
-          ],
-          "property": "healthRate",
-          "description": "Здоровье всех войск +30%",
-          "value": 0.3
+          "index": 0,
+          "description": ["Здоровье всех войск +25%", "Здоровье всех войск +30%"],
+          "value": [0.25, 0.3],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "lXrUAtv6-U-RrdKpUqIPxA",
           "name": "Кольчуга Бога",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "fortification",
-          "property": "",
-          "description": "Эффективность уничтожения войск на укреплениях +300%",
-          "value": 3
+          "units": ["fortification"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Эффективность уничтожения войск на укреплениях +300%"],
+          "value": [3],
+          "battle": true
         },
         {
           "id": "Msc1ELqXLkmo44QEtWgFpw",
           "name": "Кольчуга Бога",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -1135,15 +966,16 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +15%",
-          "value": 0.15
+          "index": 0,
+          "description": ["Здоровье всех войск +15%"],
+          "value": [0.15],
+          "battle": true
         }
       ]
     },
-    "icon": "-63px -249px",
-    "battle": true,
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
 
   {
@@ -1154,48 +986,49 @@
     "name": "Броня стрелков",
     "place": "armor",
     "set": "Мастер-исследователь",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "pzBJVmwVb0eH-1Z5-Qdbew",
           "name": "Броня стрелков",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["archer"],
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": ["archer"],
           "property": "healthRate",
-          "description": "Здоровье Стрелков +45%",
-          "value": 0.45
-        }
-      ],
-      "ancient": [
-        {
-          "id": "IyLgqG-bpk-3UVHdkhp0XA",
-          "name": "Броня стрелков",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": ["archer"],
-          "property": "healthRate",
-          "description": "Здоровье Стрелков +54%",
-          "value": 0.54
+          "index": 0,
+          "description": ["Здоровье Стрелков +45%", "Здоровье Стрелков +54%"],
+          "value": [0.45, 0.54],
+          "battle": true
         }
       ],
       "perfect": [
         {
           "id": "KWVazODtPECzuThy-0RKnw",
           "name": "Броня стрелков",
-          "effect": "player",
-          "homeLand": "all",
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
           "unit": "fortification",
-          "property": "",
-          "description": "Эффективность уничтожения войск на укреплениях +200%",
-          "value": 2
+          "units": ["fortification"],
+          "property": "damageRate",
+          "index": 0,
+          "description": ["Эффективность уничтожения войск на укреплениях +200%"],
+          "value": [2],
+          "battle": true
         },
         {
           "id": "g82edQ3OR0q4ZvWwypfRvA",
           "name": "Броня стрелков",
-          "effect": "player",
-          "homeLand": "all",
-          "unit": [
+          "character": "artefact",
+          "player": null,
+          "target": "player",
+          "appliedOn": "all",
+          "unit": "units",
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -1206,15 +1039,16 @@
             "mage"
           ],
           "property": "healthRate",
-          "description": "Здоровье всех войск +12%",
-          "value": 0.12
+          "index": 0,
+          "description": ["Здоровье всех войск +12%"],
+          "value": [0.12],
+          "battle": true
         }
       ]
     },
-    "icon": "-931px -249px",
-    "battle": true,
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
 
   {
