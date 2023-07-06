@@ -383,7 +383,7 @@
     },
     "runes": [],
     "sharpening": [],
-    "battle": true
+    "battle": false
   },
   {
     "id": "J9ajWi8mvEKXvdbo2ikJ3g",
@@ -410,7 +410,8 @@
       ]
     },
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": false
   },
   {
     "id": "5kHSQcCkuUiGIjd9vfdDkA",
@@ -438,7 +439,7 @@
     },
     "runes": [],
     "sharpening": [],
-    "battle": true
+    "battle": false
   },
   {
     "id": "nPW39zTntkCdLJDOVy8pvQ",

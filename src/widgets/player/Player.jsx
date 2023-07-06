@@ -3,14 +3,19 @@ import PropTypes from "prop-types";
 import { Modal } from "shared/components";
 //MODULES
 import { Squad, RaceSelector, AttackRateSelector, ApostateChecker } from "modules/army";
-import { Hero, HeroDall, HeroSelector } from "modules/hero";
+import { ArtefactSelector } from "modules/artefacts/enteties";
+import { Hero, HeroSelector } from "modules/hero";
 //HOOKS
 import useModal from "shared/components/Modal/useModal";
+import { useArtefactSelector } from "modules/artefacts/hooks";
 //STYLES
 import { Container, Title } from "./styles/Player.styled";
 
 function Player({ title }) {
   const { isModal, toggleModal } = useModal();
+  const { selectedArtefact, selectedPlace, handleSelectedArtefact, changeSelectedArtefact } =
+    useArtefactSelector();
+
   return (
     <Container>
       <Title>{title}</Title>
@@ -25,8 +30,15 @@ function Player({ title }) {
       </div>
       {isModal ? (
         <Modal>
-          <HeroDall />
-          <HeroSelector />
+          <div className="flex">
+            <ArtefactSelector
+              artefact={selectedArtefact}
+              selectedPlace={selectedPlace}
+              changeSelectedArtefact={changeSelectedArtefact}
+              handleSelectedArtefact={handleSelectedArtefact}
+            />
+            {/* <HeroSelector /> */}
+          </div>
         </Modal>
       ) : null}
     </Container>

@@ -15,12 +15,12 @@ const useStore = create(
           armor: {
             id: "ryUZ_I7QkUu_QmEi1jURPw",
             level: 5,
-            ancient: false,
-            perfect: false,
+            ancient: true,
+            perfect: true,
             name: "Кольчуга Головореза",
             place: "armor",
             set: "Головорез",
-            value: {
+            buffs: {
               common: [
                 {
                   id: "FP5Q69jSOkOdOhM9wmjpMA",
@@ -82,8 +82,8 @@ const useStore = create(
                 },
               ],
             },
-            runes: [],
-            sharpening: [],
+            runes: ["ddfs"],
+            sharpening: ["dfdff"],
           },
           belt: null,
           pants: null,
@@ -496,6 +496,10 @@ const useStore = create(
             state[player].hero[branchName] = state[player].hero[branchName].map(skill =>
               skill.id === newSkill.id ? newSkill : skill,
             );
+          }),
+        setArtefact: (player, artefact) =>
+          set(state => {
+            state[player].artefacts[artefact.place] = artefact;
           }),
       },
     })),
