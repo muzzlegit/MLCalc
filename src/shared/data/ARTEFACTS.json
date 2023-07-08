@@ -55,7 +55,7 @@
     },
     "runes": [],
     "sharpening": [],
-    "battle": true
+    "battle": false
   },
   {
     "id": "3h0Uua6r40OX7Ei3mZP1Tw",
@@ -1204,7 +1204,8 @@
     },
     "icon": "-993px -993px",
     "runes": [],
-    "sharpening": []
+    "sharpening": [],
+    "battle": true
   },
   {
     "id": "RNrjqfgvI0GX905AScmLSg",

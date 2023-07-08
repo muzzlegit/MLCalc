@@ -26,7 +26,9 @@ const UnitCardProperty = ({ unitData, name }) => {
             )}
           </PropertyValue>
           {propertyRate ? (
-            <PropertyValue color={theme.colors.red}>{propertyRate * 100}%</PropertyValue>
+            <PropertyValue color={theme.colors.red}>
+              {Math.round(propertyRate * 100)}%
+            </PropertyValue>
           ) : null}
         </PropertyBox>
       );
@@ -47,8 +49,8 @@ const UnitCardProperty = ({ unitData, name }) => {
             >
               {propertyRate > 0 ? "+" : ""}
               {propertyRate >= attackLimit
-                ? `${propertyRate * 100}%`
-                : `${attackLimit * 100}% (${propertyRate * 100}%)`}
+                ? `${Math.round(propertyRate * 100)}%`
+                : `${attackLimit * 100}% (${Math.round(propertyRate * 100)}%)`}
               {}
             </PropertyValue>
           ) : null}
@@ -93,8 +95,8 @@ const UnitCardProperty = ({ unitData, name }) => {
             >
               {propertyRate > 0 ? "+" : ""}
               {propertyRate >= healthLimit
-                ? `${propertyRate * 100}%`
-                : `${healthLimit * 100}% (${propertyRate * 100}%)`}
+                ? `${Math.round(propertyRate * 100)}%`
+                : `${healthLimit * 100}% (${Math.round(propertyRate * 100)}%)`}
               {}
             </PropertyValue>
           ) : null}
@@ -126,9 +128,9 @@ const UnitCardProperty = ({ unitData, name }) => {
               <PropertyIcon background={icons[name]}></PropertyIcon>
               <PropertyValue color={theme.colors.text}>{property}</PropertyValue>
               {propertyRate ? (
-                <PropertyValue color={theme.colors.green}>{`(+${
-                  propertyRate * 100
-                }%)`}</PropertyValue>
+                <PropertyValue color={theme.colors.green}>{`(+${Math.round(
+                  propertyRate * 100,
+                )}%)`}</PropertyValue>
               ) : null}
             </PropertyBox>
           ) : null}
@@ -152,8 +154,8 @@ const UnitCardProperty = ({ unitData, name }) => {
                 >
                   {propertyRate > 0 ? "+" : ""}
                   {propertyRate >= persecutionLimit
-                    ? `${propertyRate * 100}%`
-                    : `${persecutionLimit * 100}% (${propertyRate * 100}%)`}
+                    ? `${Math.round(propertyRate * 100)}%`
+                    : `${persecutionLimit * 100}% (${Math.round(propertyRate * 100)}%)`}
                 </PropertyValue>
               ) : null}
             </PropertyBox>
@@ -169,7 +171,7 @@ const UnitCardProperty = ({ unitData, name }) => {
               <PropertyValue>{property}</PropertyValue>
               {propertyRate ? (
                 <PropertyValue color={propertyRate > 0 ? theme.colors.green : theme.colors.red}>
-                  {`${propertyRate > 0 ? "+" : ""} ${propertyRate * 100}`}%
+                  {`${propertyRate > 0 ? "+" : ""} ${Math.round(propertyRate * 100)}`}%
                 </PropertyValue>
               ) : null}
             </PropertyBox>
@@ -196,7 +198,7 @@ const UnitCardProperty = ({ unitData, name }) => {
               <PropertyValue>{property}</PropertyValue>
               {propertyRate ? (
                 <PropertyValue color={propertyRate > 0 ? theme.colors.green : theme.colors.red}>
-                  {`${propertyRate > 0 ? "+" : ""} ${propertyRate * 100}`}%
+                  {`${propertyRate > 0 ? "+" : ""} ${Math.round(propertyRate * 100)}`}%
                 </PropertyValue>
               ) : null}
             </PropertyBox>

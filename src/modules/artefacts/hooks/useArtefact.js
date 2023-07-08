@@ -1,38 +1,49 @@
 import { useCallback } from "react";
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
+//HOOKS
+import useBuffsProvider from "shared/hooks/useBuffsProvider";
 //STORE
 import useStore from "store/useStore";
+//HELPERS
+import { getFormattedArtefactBuffs } from "shared/helpers";
 //DATA
 import ARTEFACTS from "shared/data/ARTEFACTS.json";
 
 const useArtefact = () => {
   const player = usePlayerContext();
   const artefacts = useStore(state => state[player].artefacts);
-  const setArtefact = useStore(state => state.functions.setArtefact);
+  const { setArtefact, deleteArtefact } = useStore(state => state.functions);
+  const { applyBuffs, removeBuff } = useBuffsProvider();
 
   const addArtefact = useCallback(
     artefact => {
       if (!artefact) return;
-      setArtefact(player, artefact);
+      if (artefacts[artefact.place]) {
+        removeBuff(getFormattedArtefactBuffs(artefacts[artefact.place]));
+        setArtefact(player, artefact);
+        applyBuffs(getFormattedArtefactBuffs(artefact));
+      } else {
+        setArtefact(player, artefact);
+        applyBuffs(getFormattedArtefactBuffs(artefact));
+      }
     },
-    [player, setArtefact],
+    [applyBuffs, artefacts, player, removeBuff, setArtefact],
   );
 
-  const setArtefactType = useCallback(
-    (place, key) => {
-      if (!artefacts[place]) return;
-      const changedArtefact = { ...artefacts[place], [key]: !artefacts[place][key] };
-      setArtefact(player, changedArtefact);
+  const removeArtefact = useCallback(
+    artefact => {
+      removeBuff(getFormattedArtefactBuffs(artefact));
+      deleteArtefact(player, artefact);
     },
-    [artefacts, player, setArtefact],
+    [player, removeBuff, deleteArtefact],
   );
 
   const getArtefactsByPlace = useCallback(placeName => {
     return ARTEFACTS.filter(({ place }) => place === placeName);
   }, []);
 
-  return { addArtefact, setArtefactType, getArtefactsByPlace };
+  return { addArtefact, getArtefactsByPlace, removeArtefact };
 };
 
 export default useArtefact;

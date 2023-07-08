@@ -13,8 +13,14 @@ import { Container, Title } from "./styles/Player.styled";
 
 function Player({ title }) {
   const { isModal, toggleModal } = useModal();
-  const { selectedArtefact, selectedPlace, handleSelectedArtefact, changeSelectedArtefact } =
-    useArtefactSelector();
+  const {
+    selectedArtefact,
+    selectedPlace,
+    isArtefactChanged,
+    apllySelectedArtefact,
+    handleSelectedArtefact,
+    changeSelectedArtefact,
+  } = useArtefactSelector();
 
   return (
     <Container>
@@ -34,8 +40,10 @@ function Player({ title }) {
             <ArtefactSelector
               artefact={selectedArtefact}
               selectedPlace={selectedPlace}
+              isArtefactChanged={isArtefactChanged}
               changeSelectedArtefact={changeSelectedArtefact}
               handleSelectedArtefact={handleSelectedArtefact}
+              apllySelectedArtefact={apllySelectedArtefact}
             />
             {/* <HeroSelector /> */}
           </div>

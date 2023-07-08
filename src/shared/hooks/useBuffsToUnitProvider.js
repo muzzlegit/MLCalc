@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 //HELPERS
-import { isAttacker, getUnitLand } from "shared/helpers";
+import { isAttacker, getUnitLand, getPlayerFractionEnemy } from "shared/helpers";
 //STORES
 import useStore from "store/useStore";
 
@@ -40,7 +40,11 @@ function useBuffsToUnitProvider(player) {
 
     buffsStorage.forEach(buff => {
       if (!buff.battle) return;
-
+      // console.log(buff);
+      if (buff.unit === "tower") return console.log("tower");
+      if (buff.unit === "magicTower") return console.log("magicTower");
+      if (buff.unit === "fortification") return console.log("fortification");
+      if (buff.unit === "player") return console.log("player");
       switch (buff.appliedOn) {
         case "all":
           buff.units.forEach(unit => {
@@ -76,6 +80,12 @@ function useBuffsToUnitProvider(player) {
           });
           break;
         case "fraction":
+          if (!(fraction !== state[getPlayerFractionEnemy(buff.player)]?.fraction)) return;
+          buff.units.forEach(unit => {
+            unitsProperties[unit][buff.property] += buff.value;
+          });
+          break;
+        case "fractionAttack":
           if (
             !isAttacker(player) ||
             fraction !== state.mainDefender.fraction ||

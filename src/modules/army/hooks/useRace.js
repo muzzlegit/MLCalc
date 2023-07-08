@@ -13,7 +13,7 @@ const fractionBuff = {
   character: "race",
   player: "all",
   target: "player",
-  appliedOn: "fraction",
+  appliedOn: "fractionAttack",
   unit: "units",
   units: ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "attackRate",
@@ -40,13 +40,14 @@ function useRace() {
   }, [race, applyBuffs]);
 
   useEffect(() => {
+    if (["mainAttacker", "attackerAlly", "attackerSecondAlly"].includes(player)) return;
     if (structure === "castle" || structure === "puddle") {
       if (race === "monsters") setRace("mainDefender", "undead");
       setIsMonstersShow(false);
     } else {
       setIsMonstersShow(true);
     }
-  }, [structure, setRace, race, setIsMonstersShow]);
+  }, [structure, setRace, race, setIsMonstersShow, player]);
 
   return { сhangeRace, isMonstersShow };
 }

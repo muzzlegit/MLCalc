@@ -4,7 +4,13 @@ import { AssetIconButton, AssetIcon } from "..";
 import { useArtefact, useArtefactsImg } from "modules/artefacts/hooks";
 
 //STYLES
-import { Container, ArtefactImg, ArtefactBg, ApplyBtn } from "./styles/SelectedArtefact.styled";
+import {
+  Container,
+  ArtefactImg,
+  ArtefactBg,
+  ApplyBtn,
+  AncientIcon,
+} from "./styles/SelectedArtefact.styled";
 
 const styles = {
   ancientIcon: {
@@ -37,47 +43,47 @@ const styles = {
   },
 };
 
-const SelectedArtefact = ({ artefact, changeSelectedArtefact }) => {
-  const { getArtefactImage } = useArtefactsImg();
-  const { addArtefact } = useArtefact();
+const SelectedArtefact = ({
+  artefact,
+  isArtefactChanged,
+  changeSelectedArtefact,
+  apllySelectedArtefact,
+}) => {
+  const { getArtefactImage, getAssets } = useArtefactsImg();
+
   return (
     <Container>
-      {artefact ? (
-        <ArtefactBg background={artefact.ancient ? "orange" : null}>
-          <ArtefactImg
-            title={artefact.name}
-            background={getArtefactImage(artefact.name)}
-            ancient={artefact.ancient ? "orange" : null}
-          />
-          <AssetIconButton
-            id="ancient"
-            iconName="ancientIcon"
-            isActive={artefact?.ancient}
-            handleFunction={changeSelectedArtefact}
-            styles={styles.ancientIcon}
-          />
-          <AssetIconButton
-            id="perfect"
-            iconName="perfectIcon"
-            isActive={artefact?.perfect}
-            handleFunction={changeSelectedArtefact}
-            styles={styles.perfectIcon}
-          />
-          <AssetIcon
-            iconName="runeIcon"
-            isActive={artefact?.runes.length}
-            styles={styles.runeIcon}
-          />
-          <AssetIcon
-            iconName="sharpeningIcon"
-            isActive={artefact?.sharpening.length}
-            styles={styles.sharpeningIcon}
-          />
-        </ArtefactBg>
-      ) : null}
+      <ArtefactBg background={artefact?.ancient === "none" || !artefact?.ancient ? null : "orange"}>
+        <ArtefactImg title={artefact?.name} background={getArtefactImage(artefact?.name)} />
+        <AncientIcon
+          id="ancient"
+          disabled={artefact?.ancient === "none"}
+          background={getAssets("ancientIcon")}
+          filter={artefact?.ancient === "none" || !artefact?.ancient ? "50%" : "none"}
+          onClick={() => {
+            changeSelectedArtefact("ancient");
+          }}
+        />
+        <AssetIconButton
+          id="perfect"
+          iconName="perfectIcon"
+          isActive={artefact?.perfect}
+          handleFunction={changeSelectedArtefact}
+          styles={styles.perfectIcon}
+        />
+        <AssetIcon iconName="runeIcon" isActive={artefact?.runes.length} styles={styles.runeIcon} />
+        <AssetIcon
+          iconName="sharpeningIcon"
+          isActive={artefact?.sharpening.length}
+          styles={styles.sharpeningIcon}
+        />
+      </ArtefactBg>
+
       <ApplyBtn
+        disabled={!isArtefactChanged}
+        isActive={isArtefactChanged && "true"}
         onClick={() => {
-          addArtefact(artefact);
+          apllySelectedArtefact(artefact);
         }}
       >
         Применить

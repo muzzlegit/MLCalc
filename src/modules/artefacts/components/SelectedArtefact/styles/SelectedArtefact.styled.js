@@ -1,16 +1,15 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div({
-  paddingBottom: "8px",
   width: "140px",
-  border: "1px solid rgba(255, 255, 255, 0.3)",
-  borderRadius: "8px",
+  height: "fit-content",
   overflow: "hidden",
 });
+
 export const ArtefactBg = styled.div(
   {
     position: "relative",
-    width: "100%",
+    width: "140px",
     height: "120px",
     display: "flex",
     justifyContent: "center",
@@ -34,18 +33,31 @@ export const ArtefactImg = styled.div(
   }),
 );
 
+export const AncientIcon = styled.button(
+  {
+    position: "absolute",
+    zIndex: 3,
+    top: "8px",
+    left: "8px",
+    width: "21px",
+    height: "21px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
+  }),
+);
+
 export const ApplyBtn = styled.button(
   {
     padding: "2px 4px",
-    // width: "21px",
-    // height: "25px",
     fontSize: "12px",
     border: "1px solid rgba(255, 255, 255, 0.3)",
     borderRadius: "4px",
   },
   props => ({
     color: props.theme.colors.text,
-    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
-    background: props.background,
+    boxShadow: !!props.isActive ? "2px 2px 10px rgba(0, 0, 0, .1), -1px -1px 6px #fffb" : "none",
+    filter: !!props.isActive ? "none" : `grayscale(70%) brightness(70%)`,
   }),
 );

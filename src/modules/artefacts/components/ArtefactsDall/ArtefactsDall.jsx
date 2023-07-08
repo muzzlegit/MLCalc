@@ -15,6 +15,7 @@ import {
   Cell,
   ArtefactBg,
   ArtefactImg,
+  DeleteIcon,
   AncientIcon,
   PerfectIcon,
   RuneIcon,
@@ -25,7 +26,7 @@ const ArtefactsDall = ({ handleSelectedArtefact }) => {
   const player = usePlayerContext();
   const artefacts = useStore(state => state[player].artefacts);
   const { getArtefactImage, getAssets } = useArtefactsImg();
-  const { setArtefactType } = useArtefact();
+  const { removeArtefact } = useArtefact();
 
   return (
     <Container>
@@ -41,7 +42,11 @@ const ArtefactsDall = ({ handleSelectedArtefact }) => {
               }}
             >
               {artefacts[place] ? (
-                <ArtefactBg backgroundColor={artefact.ancient ? "orange" : null}>
+                <ArtefactBg
+                  backgroundColor={
+                    artefact.ancient === "none" || !artefact.ancient ? null : "orange"
+                  }
+                >
                   <ArtefactImg
                     background={getArtefactImage(artefact.name)}
                     filter={artefact.battle ? "none" : "70%"}
@@ -49,6 +54,14 @@ const ArtefactsDall = ({ handleSelectedArtefact }) => {
                 </ArtefactBg>
               ) : null}
             </Cell>
+            {artefact ? (
+              <DeleteIcon
+                background={getAssets("deleteIcon")}
+                onClick={() => {
+                  removeArtefact(artefact);
+                }}
+              />
+            ) : null}
             {/* <AncientIcon
               background={getAssets("ancientIcon")}
               filter={artefact?.ancient ? "none" : "50%"}

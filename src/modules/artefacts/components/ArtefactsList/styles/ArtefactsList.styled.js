@@ -3,13 +3,11 @@ import styled from "@emotion/styled";
 export const Container = styled.div({
   padding: "8px",
   width: "auto",
-  height: "305px",
+  height: "337px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   gap: "4px",
-  border: "1px solid rgba(255, 255, 255, 0.3)",
-  borderRadius: "8px",
   overflowY: "auto",
 });
 export const ArtefactImg = styled.div(

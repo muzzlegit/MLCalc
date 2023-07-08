@@ -17,8 +17,9 @@ const fortificationBuff = {
   unit: "units",
   units: ["porter", "swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
   property: "defense",
-  description: "Защита укреплений",
+  description: ["Защита укреплений"],
   index: 0,
+  value: [0],
 };
 
 const useTowers = (isSelected, level, value) => {

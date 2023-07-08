@@ -13,11 +13,17 @@ function useBuffsProvider() {
   const applyBuffs = useCallback(
     buffs => {
       const formattedBuffs = getFormattedBuffs(player, buffs);
+      // console.log(formattedBuffs);
       const playersArrays = getBuffsArraysByPlayers(formattedBuffs);
       for (const key in playersArrays) {
         if (playersArrays[key].buffsArray.length) {
           playersArrays[key].playerNames.forEach(name => {
-            addBuffs(name, playersArrays[key].buffsArray);
+            const normalizedBuffsPlayer = playersArrays[key].buffsArray.map(buff => ({
+              ...buff,
+              player: name,
+              source: player,
+            }));
+            addBuffs(name, normalizedBuffsPlayer);
           });
         }
       }
@@ -27,7 +33,8 @@ function useBuffsProvider() {
 
   const removeBuff = useCallback(
     buffs => {
-      const playersArrays = getBuffsArraysByPlayers(buffs);
+      const formattedBuffs = getFormattedBuffs(player, buffs);
+      const playersArrays = getBuffsArraysByPlayers(formattedBuffs);
       for (const key in playersArrays) {
         if (playersArrays[key].buffsArray.length) {
           playersArrays[key].playerNames.forEach(name => {
@@ -36,7 +43,7 @@ function useBuffsProvider() {
         }
       }
     },
-    [removeBuffs],
+    [player, removeBuffs],
   );
 
   return { applyBuffs, removeBuff };

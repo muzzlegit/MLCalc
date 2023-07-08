@@ -55,6 +55,25 @@ export const ArtefactBg = styled.div(
   }),
 );
 
+export const DeleteIcon = styled.button(
+  {
+    position: "absolute",
+    zIndex: 3,
+    bottom: "-4px",
+    right: "-4px",
+    width: "21px",
+    height: "21px",
+  },
+  props => ({
+    ":hover": {
+      scale: "1.05",
+      filter: `drop-shadow(1px 1px 2px red)`,
+    },
+
+    background: props.background,
+  }),
+);
+
 export const AncientIcon = styled.button(
   {
     position: "absolute",

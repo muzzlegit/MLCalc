@@ -65,6 +65,25 @@ export function getPlayerEnemy(player) {
   }
 }
 
+export function getPlayerFractionEnemy(player) {
+  switch (player) {
+    case "mainAttacker":
+      return "mainDefender";
+    case "attackerAlly":
+      return "mainDefender";
+    case "attackerSecondAlly":
+      return "mainDefender";
+    case "mainDefender":
+      return "mainAttacker";
+    case "firstDefenderAlly":
+      return "mainAttacker";
+    case "secondDefenderAlly":
+      return "mainAttacker";
+    default:
+      break;
+  }
+}
+
 //depends [getPlayerAlly, getPlayerEnemy]
 export function getBuffsArraysByPlayers(buffs) {
   const playersArrays = {
@@ -290,11 +309,30 @@ export const getFormattedHeroSkill = (skill, index) => {
 };
 
 export const getFormattedBuffs = (player, buffs) => {
-  const formattedBuffs = buffs.map(buff => ({
-    ...buff,
-    player: buff.player ? buff.player : player,
-    description: buff.description[buff.index],
-    value: buff?.appliedOn === "fraction" ? buff.value : buff.value[buff.index],
-  }));
+  const formattedBuffs = buffs.map(buff =>
+    buff.battle
+      ? {
+          ...buff,
+          player: buff.player ? buff.player : player,
+          description: buff.description[buff.index],
+          value: buff?.appliedOn === "fractionAttack" ? buff.value : buff.value[buff.index],
+        }
+      : buff,
+  );
   return formattedBuffs;
+};
+
+export const getFormattedArtefactBuffs = artefact => {
+  const common = artefact.buffs.common.map(buff => ({
+    ...buff,
+    index: artefact.ancient ? 1 : 0,
+  }));
+  if (artefact.perfect) {
+    const perfect = artefact.buffs.perfect.map(buff => ({
+      ...buff,
+    }));
+    return [...common, ...perfect];
+  } else {
+    return common;
+  }
 };

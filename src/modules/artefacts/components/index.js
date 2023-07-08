@@ -3,5 +3,6 @@ import AssetIcon from "./AssetIcon/AssetIcon";
 import SelectedArtefact from "./SelectedArtefact/SelectedArtefact";
 import ArtefactsDall from "./ArtefactsDall/ArtefactsDall";
 import ArtefactsList from "./ArtefactsList/ArtefactsList";
+import LevelFilter from "./LevelFilter/LevelFilter";
 
-export { SelectedArtefact, AssetIconButton, AssetIcon, ArtefactsDall, ArtefactsList };
+export { SelectedArtefact, AssetIconButton, AssetIcon, ArtefactsDall, ArtefactsList, LevelFilter };
