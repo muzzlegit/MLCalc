@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mlcalc/static/css/main.4c86fb3a.css",
-    "main.js": "/mlcalc/static/js/main.3a66961f.js",
+    "main.js": "/mlcalc/static/js/main.1e8ed3a8.js",
     "static/media/Artefacts.webp": "/mlcalc/static/media/Artefacts.446e4144ce58b989e678.webp",
     "static/media/battlefields.webp": "/mlcalc/static/media/battlefields.d668eaebf54dcdaeebe5.webp",
     "static/media/HeroAssets.webp": "/mlcalc/static/media/HeroAssets.9b709b9aad2431b9f8bd.webp",
@@ -16,10 +16,10 @@
     "static/media/ArtefactsAssets.webp": "/mlcalc/static/media/ArtefactsAssets.54c8db4e9a5d2594a33c.webp",
     "index.html": "/mlcalc/index.html",
     "main.4c86fb3a.css.map": "/mlcalc/static/css/main.4c86fb3a.css.map",
-    "main.3a66961f.js.map": "/mlcalc/static/js/main.3a66961f.js.map"
+    "main.1e8ed3a8.js.map": "/mlcalc/static/js/main.1e8ed3a8.js.map"
   },
   "entrypoints": [
     "static/css/main.4c86fb3a.css",
-    "static/js/main.3a66961f.js"
+    "static/js/main.1e8ed3a8.js"
   ]
 }
