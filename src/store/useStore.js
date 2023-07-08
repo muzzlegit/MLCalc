@@ -11,6 +11,7 @@ const useStore = create(
       mainAttacker: {
         hero: null,
         artefacts: {
+          kit: null,
           head: null,
           armor: null,
           belt: null,
@@ -44,6 +45,7 @@ const useStore = create(
       attackerAlly: {
         hero: null,
         artefacts: {
+          kit: null,
           head: null,
           armor: null,
           belt: null,
@@ -77,6 +79,7 @@ const useStore = create(
       attackerSecondAlly: {
         hero: null,
         artefacts: {
+          kit: null,
           head: null,
           armor: null,
           belt: null,
@@ -110,6 +113,7 @@ const useStore = create(
       mainDefender: {
         hero: null,
         artefacts: {
+          kit: null,
           head: null,
           armor: null,
           belt: null,
@@ -142,6 +146,7 @@ const useStore = create(
       firstDefenderAlly: {
         hero: null,
         artefacts: {
+          kit: null,
           head: null,
           armor: null,
           belt: null,
@@ -174,6 +179,7 @@ const useStore = create(
       secondDefenderAlly: {
         hero: null,
         artefacts: {
+          kit: null,
           head: null,
           armor: null,
           belt: null,
@@ -319,6 +325,10 @@ const useStore = create(
         deleteArtefact: (player, artefact) =>
           set(state => {
             state[player].artefacts[artefact.place] = null;
+          }),
+        setArtefactKit: (player, kit) =>
+          set(state => {
+            state[player].artefacts.kit = kit;
           }),
       },
     })),

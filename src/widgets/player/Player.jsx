@@ -18,6 +18,7 @@ function Player({ title }) {
     selectedPlace,
     isArtefactChanged,
     apllySelectedArtefact,
+    deleteArtefact,
     handleSelectedArtefact,
     changeSelectedArtefact,
   } = useArtefactSelector();
@@ -44,6 +45,7 @@ function Player({ title }) {
               changeSelectedArtefact={changeSelectedArtefact}
               handleSelectedArtefact={handleSelectedArtefact}
               apllySelectedArtefact={apllySelectedArtefact}
+              deleteArtefact={deleteArtefact}
             />
             {/* <HeroSelector /> */}
           </div>

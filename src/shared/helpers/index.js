@@ -325,7 +325,8 @@ export const getFormattedBuffs = (player, buffs) => {
 export const getFormattedArtefactBuffs = artefact => {
   const common = artefact.buffs.common.map(buff => ({
     ...buff,
-    index: artefact.ancient ? 1 : 0,
+    j: 1,
+    index: artefact.ancient === "none" || !artefact.ancient ? 0 : 1,
   }));
   if (artefact.perfect) {
     const perfect = artefact.buffs.perfect.map(buff => ({
@@ -335,4 +336,8 @@ export const getFormattedArtefactBuffs = artefact => {
   } else {
     return common;
   }
+};
+
+export const getArtefactsSet = (data, name) => {
+  return data.find(({ setName }) => setName === name);
 };

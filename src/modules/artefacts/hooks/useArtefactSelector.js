@@ -9,7 +9,7 @@ import useStore from "store/useStore";
 const useArtefactSelector = () => {
   const player = usePlayerContext();
   const artefacts = useStore(state => state[player].artefacts);
-  const { addArtefact } = useArtefact();
+  const { addArtefact, removeArtefact } = useArtefact();
 
   const [selectedArtefact, setSelectedArtefact] = useState(null);
   const [selectedPlace, setSelectedPlace] = useState(null);
@@ -40,6 +40,13 @@ const useArtefactSelector = () => {
     },
     [addArtefact],
   );
+  const deleteArtefact = useCallback(
+    artefact => {
+      // setIsArtefactChanged(true);
+      removeArtefact(artefact);
+    },
+    [removeArtefact],
+  );
 
   return {
     selectedArtefact,
@@ -48,6 +55,7 @@ const useArtefactSelector = () => {
     handleSelectedArtefact,
     changeSelectedArtefact,
     apllySelectedArtefact,
+    deleteArtefact,
   };
 };
 

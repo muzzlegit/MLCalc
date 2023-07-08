@@ -23,6 +23,7 @@
           "mage"
         ],
         "property": "healthRate",
+        "index": 0,
         "description": ["Здоровье всех войск -50% Действует на противника"],
         "value": [-0.5],
         "battle": true
@@ -1127,7 +1128,7 @@
     "name": "Кожаный доспех Кочевника",
     "place": "armor",
     "set": "Кочевник",
-    "value": {
+    "buffs": {
       "common": [
         {
           "id": "eItm1U-aTUqUwBcNYFAKpA",

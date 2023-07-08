@@ -17,6 +17,7 @@ const ArtefactSelector = ({
   handleSelectedArtefact,
   changeSelectedArtefact,
   apllySelectedArtefact,
+  deleteArtefact,
 }) => {
   const { filter, handleFilter } = useArtefactFilter();
 
@@ -40,7 +41,10 @@ const ArtefactSelector = ({
         </ListWrap>
       </SelectorWrap>
 
-      <ArtefactsDall handleSelectedArtefact={handleSelectedArtefact} />
+      <ArtefactsDall
+        handleSelectedArtefact={handleSelectedArtefact}
+        deleteArtefact={deleteArtefact}
+      />
     </Container>
   );
 };

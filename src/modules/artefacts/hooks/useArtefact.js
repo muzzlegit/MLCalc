@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
 //HOOKS
@@ -6,14 +6,14 @@ import useBuffsProvider from "shared/hooks/useBuffsProvider";
 //STORE
 import useStore from "store/useStore";
 //HELPERS
-import { getFormattedArtefactBuffs } from "shared/helpers";
+import { getFormattedArtefactBuffs, getFormattedBuffs, getArtefactsSet } from "shared/helpers";
 //DATA
 import ARTEFACTS from "shared/data/ARTEFACTS.json";
 
 const useArtefact = () => {
   const player = usePlayerContext();
   const artefacts = useStore(state => state[player].artefacts);
-  const { setArtefact, deleteArtefact } = useStore(state => state.functions);
+  const { setArtefact, deleteArtefact, setArtefactKit } = useStore(state => state.functions);
   const { applyBuffs, removeBuff } = useBuffsProvider();
 
   const addArtefact = useCallback(
@@ -42,6 +42,33 @@ const useArtefact = () => {
   const getArtefactsByPlace = useCallback(placeName => {
     return ARTEFACTS.filter(({ place }) => place === placeName);
   }, []);
+
+  //USE EFFECTS
+  useEffect(() => {
+    const { kit, ...artsArray } = artefacts;
+
+    const namesQuantity = {};
+    Object.values(artsArray).forEach(artefact => {
+      if (!artefact) return;
+      const current = namesQuantity[artefact.set] ?? 0;
+      namesQuantity[artefact.set] = current + 1;
+    });
+    for (const name in namesQuantity) {
+      if (namesQuantity[name] >= 9) {
+        if (artefacts.kit) removeBuff(artefacts.kit.buffs);
+
+        setArtefactKit(player, getArtefactsSet(ARTEFACTS, name));
+
+        applyBuffs(getArtefactsSet(ARTEFACTS, name).buffs);
+      } else {
+        if (artefacts.kit?.setName === name) {
+          console.log("dellll");
+          setArtefactKit(player, null);
+          removeBuff(kit.buffs);
+        }
+      }
+    }
+  }, [applyBuffs, artefacts, player, removeBuff, setArtefactKit]);
 
   return { addArtefact, getArtefactsByPlace, removeArtefact };
 };

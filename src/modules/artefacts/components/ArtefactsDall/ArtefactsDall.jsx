@@ -3,7 +3,7 @@ import usePlayerContext from "shared/hooks/usePlayerContext";
 //COMPONENTS
 import { AssetIconButton } from "..";
 //HOOKS
-import { useArtefact, useArtefactsImg } from "modules/artefacts/hooks";
+import { useArtefactsImg } from "modules/artefacts/hooks";
 //STORE
 import useStore from "store/useStore";
 //CONSTS
@@ -22,11 +22,10 @@ import {
   SharpeningIcon,
 } from "./styles/ArtefactsDall.styled";
 
-const ArtefactsDall = ({ handleSelectedArtefact }) => {
+const ArtefactsDall = ({ handleSelectedArtefact, deleteArtefact }) => {
   const player = usePlayerContext();
   const artefacts = useStore(state => state[player].artefacts);
   const { getArtefactImage, getAssets } = useArtefactsImg();
-  const { removeArtefact } = useArtefact();
 
   return (
     <Container>
@@ -36,6 +35,7 @@ const ArtefactsDall = ({ handleSelectedArtefact }) => {
         return (
           <ContainerItem key={cell.place} top={top} left={left}>
             <Cell
+              isSet={artefacts.kit && "true"}
               background={getAssets("artCell")}
               onClick={() => {
                 handleSelectedArtefact(place);
@@ -58,7 +58,7 @@ const ArtefactsDall = ({ handleSelectedArtefact }) => {
               <DeleteIcon
                 background={getAssets("deleteIcon")}
                 onClick={() => {
-                  removeArtefact(artefact);
+                  deleteArtefact(artefact);
                 }}
               />
             ) : null}

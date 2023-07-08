@@ -29,6 +29,7 @@ export const Cell = styled.div(
     cursor: "pointer",
   },
   props => ({
+    filter: !!props.isSet && `drop-shadow(-1px -1px 2px ${props.theme.colors.text})`,
     background: props.background,
   }),
 );

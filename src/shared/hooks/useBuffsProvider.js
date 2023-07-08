@@ -13,7 +13,6 @@ function useBuffsProvider() {
   const applyBuffs = useCallback(
     buffs => {
       const formattedBuffs = getFormattedBuffs(player, buffs);
-      // console.log(formattedBuffs);
       const playersArrays = getBuffsArraysByPlayers(formattedBuffs);
       for (const key in playersArrays) {
         if (playersArrays[key].buffsArray.length) {
