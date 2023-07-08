@@ -4,6 +4,7 @@ import {
   SelectedArtefact,
   ArtefactsList,
   LevelFilter,
+  KitsSelector,
 } from "modules/artefacts/components";
 //HOOKS
 import { useArtefactFilter } from "modules/artefacts/hooks";
@@ -30,6 +31,7 @@ const ArtefactSelector = ({
           changeSelectedArtefact={changeSelectedArtefact}
           apllySelectedArtefact={apllySelectedArtefact}
         />
+        <KitsSelector />
         <ListWrap>
           <LevelFilter filter={filter} handleFilter={handleFilter} />
           <ArtefactsList

@@ -7,7 +7,7 @@
       {
         "id": "z4Zy3iE9Zk2EKJs9AhzwSg",
         "name": "Комплект Головорез",
-        "character": "artefact",
+        "character": "artefactKit",
         "player": null,
         "target": "enemy",
         "appliedOn": "all",
@@ -1057,16 +1057,21 @@
     "id": "a397eBeH3kW7bmvzxmgYUg",
     "level": 1,
     "setName": "Кочевник",
-    "value": [
+    "buffs": [
       {
         "id": "qaEDCPhfI0SSaW5qq14ceA",
         "name": "Комплект Кочевник",
-        "effect": "player",
-        "homeLand": "all",
-        "unit": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
+        "character": "artefactKit",
+        "player": null,
+        "target": "player",
+        "appliedOn": "all",
+        "unit": "units",
+        "units": ["swordsman", "cavalier", "flying", "archer", "healer", "mercenary", "mage"],
         "property": "attackRate",
-        "description": "Атака всех войск +15%",
-        "value": 0.15
+        "index": 0,
+        "description": ["Атака всех войск +15%"],
+        "value": [0.15],
+        "battle": true
       }
     ]
   },

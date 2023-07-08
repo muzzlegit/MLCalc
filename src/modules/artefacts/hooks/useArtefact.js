@@ -6,9 +6,10 @@ import useBuffsProvider from "shared/hooks/useBuffsProvider";
 //STORE
 import useStore from "store/useStore";
 //HELPERS
-import { getFormattedArtefactBuffs, getFormattedBuffs, getArtefactsSet } from "shared/helpers";
+import { getFormattedArtefactBuffs, getArtefactsSet, getKitArtefacts } from "shared/helpers";
 //DATA
 import ARTEFACTS from "shared/data/ARTEFACTS.json";
+import { filter } from "lodash";
 
 const useArtefact = () => {
   const player = usePlayerContext();
@@ -43,10 +44,31 @@ const useArtefact = () => {
     return ARTEFACTS.filter(({ place }) => place === placeName);
   }, []);
 
+  const handleArtefactsKit = useCallback(
+    kitName => {
+      if (kitName === "" && artefacts.kit) {
+        const kitArtefacts = getKitArtefacts(ARTEFACTS, artefacts.kit.setName);
+        kitArtefacts.forEach(artefact => {
+          removeArtefact(artefact);
+        });
+        return;
+      }
+      const kitArtefacts = getKitArtefacts(ARTEFACTS, kitName);
+      kitArtefacts.forEach(artefact => {
+        addArtefact(artefact);
+      });
+    },
+    [addArtefact, artefacts.kit, removeArtefact],
+  );
+
   //USE EFFECTS
   useEffect(() => {
     const { kit, ...artsArray } = artefacts;
-
+    console.log("ff", Object.values(artsArray).filter(artefact => artefact).length);
+    if (!Object.values(artsArray).filter(artefact => artefact).length && kit) {
+      setArtefactKit(player, null);
+      removeBuff(kit.buffs);
+    }
     const namesQuantity = {};
     Object.values(artsArray).forEach(artefact => {
       if (!artefact) return;
@@ -56,13 +78,10 @@ const useArtefact = () => {
     for (const name in namesQuantity) {
       if (namesQuantity[name] >= 9) {
         if (artefacts.kit) removeBuff(artefacts.kit.buffs);
-
         setArtefactKit(player, getArtefactsSet(ARTEFACTS, name));
-
         applyBuffs(getArtefactsSet(ARTEFACTS, name).buffs);
       } else {
         if (artefacts.kit?.setName === name) {
-          console.log("dellll");
           setArtefactKit(player, null);
           removeBuff(kit.buffs);
         }
@@ -70,7 +89,7 @@ const useArtefact = () => {
     }
   }, [applyBuffs, artefacts, player, removeBuff, setArtefactKit]);
 
-  return { addArtefact, getArtefactsByPlace, removeArtefact };
+  return { addArtefact, getArtefactsByPlace, removeArtefact, handleArtefactsKit };
 };
 
 export default useArtefact;

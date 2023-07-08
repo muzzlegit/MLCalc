@@ -341,3 +341,18 @@ export const getFormattedArtefactBuffs = artefact => {
 export const getArtefactsSet = (data, name) => {
   return data.find(({ setName }) => setName === name);
 };
+
+export const getKitsList = data => {
+  return data.reduce((acc, kit) => {
+    if (!kit?.setName) return acc;
+    if (!acc.includes(kit.setName)) acc = [...acc, kit.setName];
+    return acc;
+  }, []);
+};
+
+export const getKitArtefacts = (data, kitName) => {
+  return data.reduce((acc, artefact) => {
+    if (artefact.set === kitName) acc = [...acc, artefact];
+    return acc;
+  }, []);
+};
