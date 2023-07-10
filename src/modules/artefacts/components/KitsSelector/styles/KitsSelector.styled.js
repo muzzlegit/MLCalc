@@ -4,6 +4,9 @@ export const Container = styled.div(
   {
     width: "fit-content",
     height: "fit-content",
+    display: "flex",
+    alignItems: "center",
+    gap: "4px",
   },
   props => ({}),
 );
@@ -26,5 +29,26 @@ export const Option = styled.option(
   },
   props => ({
     color: props.theme.colors.secondary,
+  }),
+);
+export const AncientIcon = styled.button(
+  {
+    width: "21px",
+    height: "21px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
+  }),
+);
+
+export const PerfectIcon = styled.button(
+  {
+    width: "21px",
+    height: "24px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
   }),
 );

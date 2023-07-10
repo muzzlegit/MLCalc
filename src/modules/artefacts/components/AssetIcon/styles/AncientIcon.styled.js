@@ -9,17 +9,19 @@ export const Container = styled.div(
     justifyContent: "center",
   },
   props => ({
-    width: props.size,
-    height: props.size,
     top: props.top,
     bottom: props.bottom,
     left: props.left,
     right: props.right,
   }),
 );
-export const Icon = styled.div({}, props => ({
-  width: props.width,
-  height: props.height,
-  filter: `grayscale(${props.filter}) brightness(${props.filter})`,
-  background: props.background,
-}));
+export const Icon = styled.div(
+  {
+    width: "21px",
+    height: "21px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
+  }),
+);

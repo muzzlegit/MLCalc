@@ -9,7 +9,6 @@ import useStore from "store/useStore";
 import { getFormattedArtefactBuffs, getArtefactsSet, getKitArtefacts } from "shared/helpers";
 //DATA
 import ARTEFACTS from "shared/data/ARTEFACTS.json";
-import { filter } from "lodash";
 
 const useArtefact = () => {
   const player = usePlayerContext();
@@ -45,7 +44,7 @@ const useArtefact = () => {
   }, []);
 
   const handleArtefactsKit = useCallback(
-    kitName => {
+    (kitName, ancient, perfect) => {
       if (kitName === "" && artefacts.kit) {
         const kitArtefacts = getKitArtefacts(ARTEFACTS, artefacts.kit.setName);
         kitArtefacts.forEach(artefact => {
@@ -55,16 +54,23 @@ const useArtefact = () => {
       }
       const kitArtefacts = getKitArtefacts(ARTEFACTS, kitName);
       kitArtefacts.forEach(artefact => {
-        addArtefact(artefact);
+        addArtefact({ ...artefact, ancient: ancient === "none" ? false : ancient, perfect });
       });
     },
     [addArtefact, artefacts.kit, removeArtefact],
   );
 
+  const setArtefactType = useCallback(
+    (place, typeKey) => {
+      if (artefacts[place][typeKey] === "none") return;
+      addArtefact({ ...artefacts[place], [typeKey]: !artefacts[place][typeKey] });
+    },
+    [addArtefact, artefacts],
+  );
+
   //USE EFFECTS
   useEffect(() => {
     const { kit, ...artsArray } = artefacts;
-    console.log("ff", Object.values(artsArray).filter(artefact => artefact).length);
     if (!Object.values(artsArray).filter(artefact => artefact).length && kit) {
       setArtefactKit(player, null);
       removeBuff(kit.buffs);
@@ -89,7 +95,7 @@ const useArtefact = () => {
     }
   }, [applyBuffs, artefacts, player, removeBuff, setArtefactKit]);
 
-  return { addArtefact, getArtefactsByPlace, removeArtefact, handleArtefactsKit };
+  return { addArtefact, getArtefactsByPlace, removeArtefact, handleArtefactsKit, setArtefactType };
 };
 
 export default useArtefact;

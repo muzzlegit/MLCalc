@@ -10,7 +10,11 @@ import {
   ArtefactBg,
   ApplyBtn,
   AncientIcon,
+  PerfectIcon,
+  RuneIcon,
+  SharpeningIcon,
 } from "./styles/SelectedArtefact.styled";
+import * as ancientIconStyles from "modules/artefacts/components/AssetIcon/styles/AncientIcon.styled";
 
 const styles = {
   ancientIcon: {
@@ -56,7 +60,6 @@ const SelectedArtefact = ({
       <ArtefactBg background={artefact?.ancient === "none" || !artefact?.ancient ? null : "orange"}>
         <ArtefactImg title={artefact?.name} background={getArtefactImage(artefact?.name)} />
         <AncientIcon
-          id="ancient"
           disabled={artefact?.ancient === "none"}
           background={getAssets("ancientIcon")}
           filter={artefact?.ancient === "none" || !artefact?.ancient ? "50%" : "none"}
@@ -64,18 +67,20 @@ const SelectedArtefact = ({
             changeSelectedArtefact("ancient");
           }}
         />
-        <AssetIconButton
-          id="perfect"
-          iconName="perfectIcon"
-          isActive={artefact?.perfect}
-          handleFunction={changeSelectedArtefact}
-          styles={styles.perfectIcon}
+        <PerfectIcon
+          background={getAssets("perfectIcon")}
+          filter={artefact?.perfect ? "none" : "50%"}
+          onClick={() => {
+            changeSelectedArtefact("perfect");
+          }}
         />
-        <AssetIcon iconName="runeIcon" isActive={artefact?.runes.length} styles={styles.runeIcon} />
-        <AssetIcon
-          iconName="sharpeningIcon"
-          isActive={artefact?.sharpening.length}
-          styles={styles.sharpeningIcon}
+        <RuneIcon
+          background={getAssets("runeIcon")}
+          filter={artefact?.runes.length ? "none" : "50%"}
+        />
+        <SharpeningIcon
+          background={getAssets("sharpeningIcon")}
+          filter={artefact?.sharpening.length ? "none" : "50%"}
         />
       </ArtefactBg>
 

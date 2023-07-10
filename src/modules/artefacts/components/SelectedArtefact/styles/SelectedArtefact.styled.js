@@ -48,6 +48,51 @@ export const AncientIcon = styled.button(
   }),
 );
 
+export const PerfectIcon = styled.button(
+  {
+    position: "absolute",
+    zIndex: 3,
+    top: "8px",
+    right: "8px",
+    width: "21px",
+    height: "24px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
+  }),
+);
+
+export const RuneIcon = styled.div(
+  {
+    position: "absolute",
+    zIndex: 3,
+    bottom: "8px",
+    left: "8px",
+    width: "16px",
+    height: "23px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
+  }),
+);
+
+export const SharpeningIcon = styled.div(
+  {
+    position: "absolute",
+    zIndex: 3,
+    bottom: "8px",
+    left: "8px",
+    width: "21px",
+    height: "25px",
+  },
+  props => ({
+    filter: `grayscale(${props.filter}) brightness(${props.filter})`,
+    background: props.background,
+  }),
+);
+
 export const ApplyBtn = styled.button(
   {
     padding: "2px 4px",

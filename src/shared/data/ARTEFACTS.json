@@ -223,6 +223,7 @@
             "mage"
           ],
           "property": "defenseLevel",
+          "index": 0,
           "description": ["Предел максимальной защиты +5"],
           "value": [5],
           "battle": true
@@ -336,7 +337,7 @@
           "target": "player",
           "appliedOn": "all",
           "unit": "units",
-          "unitі": [
+          "units": [
             "porter",
             "swordsman",
             "cavalier",
@@ -580,7 +581,8 @@
           "property": "defense",
           "index": 0,
           "description": ["Защита всех войск +15"],
-          "value": [15]
+          "value": [15],
+          "battle": true
         }
       ]
     },

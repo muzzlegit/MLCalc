@@ -107,8 +107,8 @@ export const PerfectIcon = styled.button(
 export const RuneIcon = styled.div(
   {
     position: "absolute",
-    zIndex: 3,
-    bottom: "-8px",
+    zIndex: 4,
+    bottom: "0px",
     left: "-8px",
     width: "16px",
     height: "23px",
@@ -122,8 +122,8 @@ export const SharpeningIcon = styled.div(
   {
     position: "absolute",
     zIndex: 3,
-    bottom: "-8px",
-    right: "-8px",
+    bottom: "-14px",
+    left: "2px",
     width: "21px",
     height: "25px",
   },

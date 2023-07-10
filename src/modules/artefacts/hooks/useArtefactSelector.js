@@ -37,6 +37,7 @@ const useArtefactSelector = () => {
     artefact => {
       setIsArtefactChanged(false);
       addArtefact(artefact);
+      setSelectedArtefact(null);
     },
     [addArtefact],
   );

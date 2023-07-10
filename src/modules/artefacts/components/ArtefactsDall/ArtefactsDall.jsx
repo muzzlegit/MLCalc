@@ -1,9 +1,9 @@
 //CONTEXT
 import usePlayerContext from "shared/hooks/usePlayerContext";
 //COMPONENTS
-import { AssetIconButton } from "..";
+// import { AssetIconButton } from "..";
 //HOOKS
-import { useArtefactsImg } from "modules/artefacts/hooks";
+import { useArtefact, useArtefactsImg } from "modules/artefacts/hooks";
 //STORE
 import useStore from "store/useStore";
 //CONSTS
@@ -26,6 +26,7 @@ const ArtefactsDall = ({ handleSelectedArtefact, deleteArtefact }) => {
   const player = usePlayerContext();
   const artefacts = useStore(state => state[player].artefacts);
   const { getArtefactImage, getAssets } = useArtefactsImg();
+  const { setArtefactType } = useArtefact();
 
   return (
     <Container>
@@ -49,41 +50,39 @@ const ArtefactsDall = ({ handleSelectedArtefact, deleteArtefact }) => {
                 >
                   <ArtefactImg
                     background={getArtefactImage(artefact.name)}
-                    filter={artefact.battle ? "none" : "70%"}
+                    filter={artefact.battle ? "none" : "80%"}
                   />
                 </ArtefactBg>
               ) : null}
             </Cell>
             {artefact ? (
-              <DeleteIcon
-                background={getAssets("deleteIcon")}
-                onClick={() => {
-                  deleteArtefact(artefact);
-                }}
-              />
+              <>
+                <DeleteIcon
+                  background={getAssets("deleteIcon")}
+                  onClick={() => {
+                    deleteArtefact(artefact);
+                  }}
+                />
+                <AncientIcon
+                  background={getAssets("ancientIcon")}
+                  filter={artefact?.ancient === "none" || !artefact?.ancient ? "50%" : "none"}
+                  onClick={() => {
+                    setArtefactType(place, "ancient");
+                  }}
+                />
+                <PerfectIcon
+                  background={getAssets("perfectIcon")}
+                  filter={artefact?.perfect ? "none" : "50%"}
+                  onClick={() => {
+                    setArtefactType(place, "perfect");
+                  }}
+                />
+                {artefact?.runes.length ? <RuneIcon background={getAssets("runeIcon")} /> : null}
+                {artefact?.sharpening.length ? (
+                  <SharpeningIcon background={getAssets("sharpeningIcon")} />
+                ) : null}
+              </>
             ) : null}
-            {/* <AncientIcon
-              background={getAssets("ancientIcon")}
-              filter={artefact?.ancient ? "none" : "50%"}
-              onClick={() => {
-                setArtefactType(place, "ancient");
-              }}
-            />
-            <PerfectIcon
-              background={getAssets("perfectIcon")}
-              filter={artefact?.perfect ? "none" : "50%"}
-              onClick={() => {
-                setArtefactType(place, "perfect");
-              }}
-            />
-            <RuneIcon
-              background={getAssets("runeIcon")}
-              filter={artefact?.runes.length ? "none" : "50%"}
-            />
-            <SharpeningIcon
-              background={getAssets("sharpeningIcon")}
-              filter={artefact?.sharpening.length ? "none" : "50%"}
-            /> */}
           </ContainerItem>
         );
       })}
